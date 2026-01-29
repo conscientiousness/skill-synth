@@ -2,9 +2,9 @@
 set -euo pipefail
 
 # Usage: scripts/enhance_with_gemini.sh [SKILL_DIR]
-# Example: scripts/enhance_with_gemini.sh skills/tastyworks-api
+# Example: scripts/enhance_with_gemini.sh skills/using-tastytrade-python-sdk
 
-SKILL_DIR=${1:-skills/tastyworks-api}
+SKILL_DIR=${1:-skills/using-tastytrade-python-sdk}
 SKILL_DIR=${SKILL_DIR%/}
 SKILL_MD="$SKILL_DIR/SKILL.md"
 

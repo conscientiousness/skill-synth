@@ -10,8 +10,8 @@ Build, enhance, and package SKILL.md libraries with Skill Seekers. This repo pro
 - `templates/` – reusable templates
 
 ## Available Skills
-- `skillseekers-docs` – Skill Seekers documentation: scraping, enhancement, packaging, upload, and MCP workflows.
-- `tastyworks-api` – tastytrade (tastyworks) Python SDK: sessions, accounts, orders, instruments, market data, and streaming APIs.
+- `using-skillseekers-docs` – Skill Seekers documentation: scraping, enhancement, packaging, upload, and MCP workflows.
+- `using-tastytrade-python-sdk` – tastytrade (tastyworks) Python SDK: sessions, accounts, orders, instruments, market data, and streaming APIs.
 
 ## Quick Start (One Command)
 Generate or update a skill from a URL (name is required):

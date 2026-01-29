@@ -1,20 +1,20 @@
 ---
-name: skillseekers-docs
+name: using-skillseekers-docs
 description: Use this skill for Skill Seekers documentation: setup, scraping, enhancement, packaging, and CLI workflows.
 ---
 
-# Skillseekers-Docs Skill
+# Using Skill Seekers Docs Skill
 
 Use this skill for skill seekers documentation: setup, scraping, enhancement, packaging, and cli workflows., generated from official documentation.
 
 ## When to Use This Skill
 
 This skill should be triggered when:
-- Working with skillseekers-docs
-- Asking about skillseekers-docs features or APIs
-- Implementing skillseekers-docs solutions
-- Debugging skillseekers-docs code
-- Learning skillseekers-docs best practices
+- Working with using-skillseekers-docs
+- Asking about using-skillseekers-docs features or APIs
+- Implementing using-skillseekers-docs solutions
+- Debugging using-skillseekers-docs code
+- Learning using-skillseekers-docs best practices
 
 ## Quick Reference
 

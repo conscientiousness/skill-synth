@@ -6,7 +6,7 @@ set -euo pipefail
 #                                     [--workers N] [--no-clean] [--no-sync]
 #
 # Example:
-#   scripts/skill_from_url.sh https://skillseekersweb.com/docs/getting-started/overview/ --name skillseekers-docs --engine codex
+#   scripts/skill_from_url.sh https://skillseekersweb.com/docs/getting-started/overview/ --name using-skillseekers-docs --engine codex
 
 URL=""
 NAME=""

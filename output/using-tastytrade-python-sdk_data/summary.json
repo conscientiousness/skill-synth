@@ -1,5 +1,5 @@
 {
-  "name": "tastyworks-api",
+  "name": "using-tastytrade-python-sdk",
   "total_pages": 23,
   "base_url": "https://tastyworks-api.readthedocs.io/en/latest/",
   "llms_txt_detected": false,

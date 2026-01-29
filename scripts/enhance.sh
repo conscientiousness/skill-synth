@@ -19,7 +19,7 @@ while [[ $# -gt 0 ]]; do
  done
 
 if [[ -z "$SKILL_DIR" ]]; then
-  SKILL_DIR="skills/tastyworks-api"
+  SKILL_DIR="skills/using-tastytrade-python-sdk"
 fi
 
 case "$ENGINE" in

@@ -1,16 +1,27 @@
 {
-  "name": "tastyworks-api",
+  "name": "using-tastytrade-python-sdk",
   "description": "Use this skill for the tastytrade (tastyworks) Python SDK: sessions, accounts, orders, instruments, market data, and streaming APIs.",
   "base_url": "https://tastyworks-api.readthedocs.io/en/latest/",
-  "start_urls": ["https://tastyworks-api.readthedocs.io/en/latest/index.html"],
+  "start_urls": [
+    "https://tastyworks-api.readthedocs.io/en/latest/index.html"
+  ],
   "selectors": {
     "main_content": "article[role='main']",
     "title": "title",
     "code_blocks": "pre code"
   },
   "url_patterns": {
-    "include": [".html"],
-    "exclude": ["genindex.html", "search.html", "py-modindex.html", "objects.inv", "_static/", "_sources/"]
+    "include": [
+      ".html"
+    ],
+    "exclude": [
+      "genindex.html",
+      "search.html",
+      "py-modindex.html",
+      "objects.inv",
+      "_static/",
+      "_sources/"
+    ]
   },
   "rate_limit": 0.5,
   "max_pages": 500
