@@ -1,6 +1,6 @@
 ---
 name: using-skillseekers-docs
-description: Use this skill for Skill Seekers documentation: setup, scraping, enhancement, packaging, and CLI workflows.
+description: "Provides guidance for Skill Seekers documentation workflows: setup, scraping, enhancement, packaging, and CLI usage."
 ---
 
 # Using Skill Seekers Docs Skill

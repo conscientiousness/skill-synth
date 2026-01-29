@@ -95,9 +95,11 @@ PY
 fi
 
 uv run skill-seekers scrape --config "$CONFIG" --async --workers "$WORKERS"
+python scripts/normalize_skill_frontmatter.py "output/$NAME/SKILL.md"
 
 if [[ "$ENGINE" != "none" ]]; then
   scripts/enhance.sh --engine "$ENGINE" "output/$NAME"
+  python scripts/normalize_skill_frontmatter.py "output/$NAME/SKILL.md"
 fi
 
 printf "y\n" | uv run skill-seekers package --no-open "output/$NAME/"

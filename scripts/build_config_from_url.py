@@ -69,7 +69,7 @@ def main() -> int:
     include_pattern = base_path if base_path != "/" else parsed.path or "/"
 
     name = args.name
-    description = args.description or f"Use this skill for documentation at {parsed.netloc}{base_path}"
+    description = args.description or f"Provides guidance for documentation at {parsed.netloc}{base_path}"
 
     config = {
         "name": name,

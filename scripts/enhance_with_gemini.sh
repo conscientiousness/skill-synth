@@ -18,6 +18,8 @@ if [[ ! -f "$SKILL_MD" ]]; then
   exit 1
 fi
 
+python scripts/normalize_skill_frontmatter.py "$SKILL_MD"
+
 PROMPT_FILE=$(mktemp)
 python scripts/build_skillseekers_prompt.py "$SKILL_DIR" > "$PROMPT_FILE"
 
@@ -58,6 +60,7 @@ out_path.write_text(trimmed, encoding="utf-8")
 PY
 
 mv "$TMP_OUT" "$SKILL_MD"
+python scripts/normalize_skill_frontmatter.py "$SKILL_MD"
 
 echo "Updated: $SKILL_MD"
 echo "Backup:  $SKILL_MD.backup"

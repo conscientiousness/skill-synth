@@ -1,6 +1,6 @@
 ---
 name: using-tastytrade-python-sdk
-description: Use this skill for the tastytrade (tastyworks) Python SDK: sessions, accounts, orders, instruments, market data, and streaming APIs.
+description: "Provides guidance for the tastytrade (tastyworks) Python SDK (sessions, accounts, orders, instruments, market data, and streaming APIs)."
 ---
 
 # Using Tastytrade Python SDK Skill

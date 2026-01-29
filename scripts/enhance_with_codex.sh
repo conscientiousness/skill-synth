@@ -18,6 +18,8 @@ if [[ ! -f "$SKILL_MD" ]]; then
   exit 1
 fi
 
+python scripts/normalize_skill_frontmatter.py "$SKILL_MD"
+
 PROMPT_FILE=$(mktemp)
 python scripts/build_skillseekers_prompt.py "$SKILL_DIR" > "$PROMPT_FILE"
 
@@ -38,6 +40,7 @@ CODEX_FLAGS=${CODEX_FLAGS:-"--full-auto"}
 codex exec $CODEX_FLAGS --cd "$SKILL_DIR" - < "$PROMPT_FILE"
 
 rm -f "$PROMPT_FILE"
+python scripts/normalize_skill_frontmatter.py "$SKILL_MD"
 
 if [[ -f "$SKILL_MD" ]]; then
   echo "Updated: $SKILL_MD"

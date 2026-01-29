@@ -302,6 +302,7 @@ IMPORTANT:
 - Prioritize SHORT, clear examples
 - Make it actionable and practical
 - Keep the frontmatter (---\nname: ...\n---) intact
+- Ensure YAML frontmatter is valid YAML (quote the description if needed)
 - Use proper markdown formatting
 
 SAVE THE RESULT:
