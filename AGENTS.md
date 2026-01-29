@@ -15,12 +15,17 @@
 - Quality: avoid verbose history, ensure examples run, and update regularly to prevent deprecated guidance.
 - Scraping configs: start with `rate_limit: 0.5`, use `max_pages` only for testing, and tune `url_patterns.exclude` to avoid 404 noise.
 
-## Claude Skills Best Practices (Condensed)
+## Claude Skills Best Practices
 - `SKILL.md` is required with YAML frontmatter; `name` becomes the `/slash-command` and must be lowercase letters, digits, or hyphens (max 64 chars).
 - `description` drives auto-invocation; write “what + when” clearly to avoid under/over-triggering.
 - Keep `SKILL.md` concise (<500 lines) and move deep detail into `references/` or `examples/`.
-- Use `disable-model-invocation: true` for side-effecting tasks; use `user-invocable: false` for background knowledge skills.
-- Restrict tool access with `allowed-tools` when a skill should not use broad permissions.
+
+## Codex Skills Best Practices
+- Keep skills small and composable; avoid a single oversized workflow skill.
+- Write clear step-by-step instructions; avoid vague or assumed context.
+- Prefer instructions over scripts unless determinism or external calls are required.
+- Use `description` to state “what + when” for reliable auto-invocation; test trigger prompts.
+- Remember only `name` and `description` are loaded at startup; full `SKILL.md` loads on invocation.
 
 ## Project Structure & Module Organization
 - `main.py` is a minimal entrypoint; `pyproject.toml` pins Python 3.14+ and `skill-seekers`.
