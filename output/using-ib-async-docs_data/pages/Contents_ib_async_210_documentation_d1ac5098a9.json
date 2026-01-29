@@ -1,0 +1,255 @@
+{
+  "url": "https://ib-api-reloaded.github.io/ib_async/index.html",
+  "title": "Contents — ib_async 2.1.0 documentation",
+  "content": "ib_async is a Python library that provides a clean, modern interface to Interactive Brokers’ Trader Workstation (TWS) and IB Gateway. It handles the complexities of the IBKR API so you can focus on building trading applications, research tools, and market data analysis.\n\nMarket Data Applications: Stream live quotes, historical data, and market depth\n\nTrading Systems: Place, modify, and monitor orders programmatically\n\nPortfolio Tools: Track positions, account balances, and P&L in real-time\n\nResearch Platforms: Analyze contract details, option chains, and fundamental data\n\nRisk Management: Monitor exposures and implement automated controls\n\nSimple and Intuitive: Write straightforward Python code without dealing with callback complexity\n\nAutomatic Synchronization: The IB component stays in sync with TWS/Gateway automatically\n\nAsync-Ready: Built on asyncio and eventkit for high-performance applications\n\nJupyter-Friendly: Interactive development with live data in notebooks\n\nProduction-Ready: Robust error handling, reconnection logic, and comprehensive logging\n\nBe sure to take a look at the notebooks, the recipes and the API docs.\n\nPython 3.10 or higher\n\nWe plan to support Python releases 2 years back which allows us to continue adding newer features and performance improvements over time.\n\nA running IB Gateway application (or TWS with API mode enabled)\n\nstable gateway — updated every few months\n\nlatest gateway — updated weekly\n\nMake sure the API port is enabled and ‘Download open orders on connection’ is checked.\n\nYou may also want to increase the Java memory usage under Configure->Settings->Memory Allocation to 4096 MB minimum to prevent gateway crashes when loading bulk data.\n\nThe ibapi package from IB is not needed. ib_async implements the full IBKR API binary protocol internally.\n\nFirst, install poetry:\n\nIB Gateway (Stable) — Updated every few months, more stable\n\nIB Gateway (Latest) — Updated weekly, newest features\n\nTrader Workstation (TWS) — Full trading platform\n\nEnable API: Go to Configure → API → Settings and check “Enable ActiveX and Socket Clients”\n\nSet Port: Default ports are 7497 (TWS) and 4001 (Gateway). You can change these if needed.\n\nAllow Connections: Add 127.0.0.1 to “Trusted IPs” if connecting locally\n\nDownload Orders: Check “Download open orders on connection” to see existing orders\n\nMemory: Go to Configure → Settings → Memory Allocation and set to 4096 MB minimum to prevent crashes with bulk data\n\nTimeouts: Increase API timeout settings if you experience disconnections during large data requests\n\nib_async.ib.IB - Main interface class\n\nConnection management (connect(), disconnect(), connectAsync())\n\nMarket data requests (reqMktData(), reqHistoricalData())\n\nOrder management (placeOrder(), cancelOrder())\n\nAccount data (positions(), accountSummary(), reqPnL())\n\nib_async.contract - Financial instruments\n\nStock, Option, Future, Forex, Index, Bond\n\nContract - Base class for all instruments\n\nComboLeg, DeltaNeutralContract - Complex instruments\n\nib_async.order - Order types and management\n\nMarketOrder, LimitOrder, StopOrder, StopLimitOrder\n\nOrder - Base order class with all parameters\n\nOrderStatus, OrderState - Order execution tracking\n\nTrade - Complete order lifecycle tracking\n\nib_async.ticker - Real-time market data\n\nTicker - Live quotes, trades, and market data\n\nAutomatic field updates (bid, ask, last, volume, etc.)\n\nEvent-driven updates via updateEvent\n\nib_async.objects - Data structures\n\nBarData - Historical price bars\n\nPosition - Portfolio positions\n\nPortfolioItem - Portfolio details with P&L\n\nAccountValue - Account metrics\n\nSynchronous vs Asynchronous\n\nThe complete API documentation.\n\nClone the repository:\n\nInstall dependencies:\n\nMake your changes and run tests:\n\nSubmit a pull request with:\n\nClear description of changes\n\nTests for new functionality\n\nUpdated documentation if needed\n\nFollow existing code style (enforced by ruff)\n\nAdd tests for new features\n\nUpdate documentation for user-facing changes\n\nKeep commits focused and well-described\n\nBe responsive to code review feedback\n\nIf you have other public work related to ib_async or ib_insync open an issue and we can keep an active list here.\n\nProjects below are not endorsed by any entity and are purely for reference or entertainment purposes.\n\nAdi’s livestream VODs about using IBKR APIs: Interactive Brokers API in Python\n\nMatt’s IBKR python CLI: icli\n\nCorporate data parsing via IBKR API: ib_fundamental\n\nThe software is provided on the conditions of the simplified BSD license.\n\nThis project is not affiliated with Interactive Brokers Group, Inc.\n\nOfficial Interactive Brokers API Docs\n\nThis library was originally created by Ewald de Wit as tws_async in early-2017 then became the more prominent ib_insync library in mid-2017. He maintained and improved the library for the world to use for free until his unexpected passing in early 2024. Afterward, we decided to rename the project to ib_async under a new github organization since we lost access to modify anything in the original repos and packaging and docs infrastructure.\n\nThe library is currently maintained by Matt Stancliff and we are open to adding more committers and org contributors if people show interest in helping out.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Contents",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "ib_async",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Update",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Introduction",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "What You Can Build",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Key Features",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Installation",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Build Manually",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Installing Only Library",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Install Everything (enable docs + dev testing)",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Generate Docs",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Check Types",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Build Package",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Upload Package (if maintaining)",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Setup Interactive Brokers",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "1. Download IB Gateway or TWS",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "2. Configure API Access",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "3. Performance Settings",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "4. Common Connection Issues",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Connection Patterns",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Basic Script Usage",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Jupyter Notebook Usage",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Async Application",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Quick Start",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Basic Connection",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Get Account Information",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Historical Data",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Live Market Data",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Place a Simple Order",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "More Complete Examples",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Portfolio Monitoring",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Real-time P&L Tracking",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Advanced Order Management",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Historical Data Analysis",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Library Structure",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Core Components",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Key Patterns",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Documentation",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Development",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Running Tests",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Type Checking",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Code Formatting",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Local Development",
+      "id": ""
+    },
+    {
+      "level": "h4",
+      "text": "Contributing Guidelines",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Community Resources",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "Disclaimer",
+      "id": ""
+    },
+    {
+      "level": "h3",
+      "text": "History",
+      "id": ""
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://ib-api-reloaded.github.io/ib_async/index.html",
+    "https://ib-api-reloaded.github.io/ib_async/readme.html",
+    "https://ib-api-reloaded.github.io/ib_async/api.html",
+    "https://ib-api-reloaded.github.io/ib_async/notebooks.html",
+    "https://ib-api-reloaded.github.io/ib_async/recipes.html",
+    "https://ib-api-reloaded.github.io/ib_async/code.html",
+    "https://ib-api-reloaded.github.io/ib_async/changelog.html",
+    "https://ib-api-reloaded.github.io/ib_async/links.html",
+    "https://ib-api-reloaded.github.io/ib_async/"
+  ]
+}

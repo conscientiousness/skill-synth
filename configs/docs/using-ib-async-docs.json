@@ -1,0 +1,30 @@
+{
+  "name": "using-ib-async-docs",
+  "description": "Provides guidance for documentation at ib-api-reloaded.github.io/ib_async/",
+  "base_url": "https://ib-api-reloaded.github.io/ib_async/",
+  "start_urls": [
+    "https://ib-api-reloaded.github.io/ib_async/index.html"
+  ],
+  "selectors": {
+    "main_content": "article, main, div[role='main']",
+    "title": "title",
+    "code_blocks": "pre code"
+  },
+  "url_patterns": {
+    "include": [
+      "/ib_async/"
+    ],
+    "exclude": [
+      "/zh/",
+      "search",
+      "#",
+      "_static/",
+      "_sources/",
+      "genindex.html",
+      "py-modindex.html",
+      "objects.inv"
+    ]
+  },
+  "rate_limit": 0.5,
+  "max_pages": 300
+}

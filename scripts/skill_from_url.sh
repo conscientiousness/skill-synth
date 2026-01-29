@@ -70,12 +70,12 @@ if [[ -z "$CONFIG" ]]; then
 fi
 
 if [[ -z "$NAME" && -n "$CONFIG" ]]; then
-  NAME=$(python - <<'PY'
+  NAME=$(python - "$CONFIG" <<'PY'
 import json, sys
 cfg = json.load(open(sys.argv[1], 'r', encoding='utf-8'))
 print(cfg.get('name',''))
 PY
-"$CONFIG")
+)
 fi
 
 if [[ -z "$NAME" ]]; then
@@ -84,14 +84,13 @@ if [[ -z "$NAME" ]]; then
 fi
 
 if [[ "$CLEAN" == "1" ]]; then
-  python - <<'PY'
+  python - "$NAME" <<'PY'
 import shutil, pathlib, sys
 name = sys.argv[1]
 for p in [pathlib.Path('output')/name, pathlib.Path('output')/f"{name}_data"]:
     if p.exists():
         shutil.rmtree(p)
 PY
-"$NAME"
 fi
 
 uv run skill-seekers scrape --config "$CONFIG" --async --workers "$WORKERS"
@@ -105,7 +104,7 @@ fi
 printf "y\n" | uv run skill-seekers package --no-open "output/$NAME/"
 
 if [[ "$SYNC" == "1" ]]; then
-  python - <<'PY'
+  python - "$NAME" <<'PY'
 import shutil, pathlib, sys
 src = pathlib.Path('output')/sys.argv[1]
 dst = pathlib.Path('skills')/sys.argv[1]
@@ -113,7 +112,6 @@ if dst.exists():
     shutil.rmtree(dst)
 shutil.copytree(src, dst)
 PY
-"$NAME"
 fi
 
 echo "Done. Output: output/$NAME and output/$NAME.zip"

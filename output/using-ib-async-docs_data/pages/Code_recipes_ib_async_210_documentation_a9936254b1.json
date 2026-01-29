@@ -1,0 +1,99 @@
+{
+  "url": "https://ib-api-reloaded.github.io/ib_async/recipes.html",
+  "title": "Code recipes — ib_async 2.1.0 documentation",
+  "content": "Collection of useful patterns, snippets and recipes.\n\nWhen using the recipes in a notebook, don’t forget to use util.startLoop().\n\nSuppose we want to get the 1 min bar data of Tesla since the very beginning up until now. The best way is to start with now and keep requesting further and further back in time until there is no more data returned.\n\nA Wall Street Horizon subscription is needed to get corporate event data.\n\nThis IB socket protocol is designed to be used for a long-lived connection, lasting a day or so. For short connections, where for example just a few orders are fired of, it is best to add one second of delay before closing the connection. This gives the connection some time to flush the data that has not been sent yet.\n\nThis example of a ticker table shows how to integrate both realtime streaming and synchronous API requests in a single-threaded Qt application. The API requests in this example are connect and ib.qualifyContracts(); The latter is used to get the conId of a contract and use that as a unique key.\n\nThe Qt interface will not freeze when a request is ongoing and it is even possible to have multiple outstanding requests at the same time.\n\nThis example depends on PyQt5:\n\npip3 install -U PyQt5.\n\nIt’s also possible to use PySide2 instead; To do so uncomment the PySide2 import and util.useQt lines in the example and comment out their PyQt5 counterparts.\n\nTo integrate with the Tkinter event loop, take a look at this example app.\n\nBy calling ib.sleep from within the PyGame run loop, ib_async can periodically run for short whiles and keep up to date:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Code recipes",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Fetching consecutive historical data",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Scanner data (blocking)",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Scanner data (streaming)",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Option calculations",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Order book",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Minimum price increments",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "News articles",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "News bulletins",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "WSH Event Calendar",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Dividends",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Fundamental ratios",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Short-lived connections",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Integration with PyQt5 or PySide2",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Integration with Tkinter",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Integration with PyGame",
+      "id": ""
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://ib-api-reloaded.github.io/ib_async/index.html",
+    "https://ib-api-reloaded.github.io/ib_async/readme.html",
+    "https://ib-api-reloaded.github.io/ib_async/api.html",
+    "https://ib-api-reloaded.github.io/ib_async/notebooks.html",
+    "https://ib-api-reloaded.github.io/ib_async/recipes.html",
+    "https://ib-api-reloaded.github.io/ib_async/code.html",
+    "https://ib-api-reloaded.github.io/ib_async/changelog.html",
+    "https://ib-api-reloaded.github.io/ib_async/links.html"
+  ]
+}

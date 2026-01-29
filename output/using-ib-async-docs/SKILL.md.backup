@@ -1,0 +1,103 @@
+---
+name: using-ib-async-docs
+description: "Provides guidance for documentation at ib-api-reloaded.github.io/ib_async/"
+---
+
+# Using-Ib-Async-Docs Skill
+
+Provides guidance for documentation at ib-api-reloaded.github.io/ib_async/, generated from official documentation.
+
+## When to Use This Skill
+
+This skill should be triggered when:
+- Working with using-ib-async-docs
+- Asking about using-ib-async-docs features or APIs
+- Implementing using-ib-async-docs solutions
+- Debugging using-ib-async-docs code
+- Learning using-ib-async-docs best practices
+
+## Quick Reference
+
+### Common Patterns
+
+**Pattern 1:** API docs Release 2
+
+```
+sleep()
+```
+
+**Pattern 2:** Usage:
+
+```
+float
+```
+
+**Pattern 3:** Example usage:
+
+```
+ibc = IBC(976, gateway=True, tradingMode='live',
+    userid='edemo', password='demouser')
+ibc.start()
+IB.run()
+```
+
+**Pattern 4:** Example usage:
+
+```
+def onConnected():
+    print(ib.accountValues())
+
+ibc = IBC(974, gateway=True, tradingMode='paper')
+ib = IB()
+ib.connectedEvent += onConnected
+watchdog = Watchdog(ibc, ib, port=4002)
+watchdog.start()
+ib.run()
+```
+
+## Reference Files
+
+This skill includes comprehensive documentation in `references/`:
+
+- **ib_async.md** - Ib Async documentation
+
+Use `view` to read specific reference files when detailed information is needed.
+
+## Working with This Skill
+
+### For Beginners
+Start with the getting_started or tutorials reference files for foundational concepts.
+
+### For Specific Features
+Use the appropriate category reference file (api, guides, etc.) for detailed information.
+
+### For Code Examples
+The quick reference section above contains common patterns extracted from the official docs.
+
+## Resources
+
+### references/
+Organized documentation extracted from official sources. These files contain:
+- Detailed explanations
+- Code examples with language annotations
+- Links to original documentation
+- Table of contents for quick navigation
+
+### scripts/
+Add helper scripts here for common automation tasks.
+
+### assets/
+Add templates, boilerplate, or example projects here.
+
+## Notes
+
+- This skill was automatically generated from official documentation
+- Reference files preserve the structure and examples from source docs
+- Code examples include language detection for better syntax highlighting
+- Quick reference patterns are extracted from common usage examples in the docs
+
+## Updating
+
+To refresh this skill with updated documentation:
+1. Re-run the scraper with the same configuration
+2. The skill will be rebuilt with the latest information
