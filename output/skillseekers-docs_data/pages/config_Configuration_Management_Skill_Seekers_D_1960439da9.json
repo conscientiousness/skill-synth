@@ -1,0 +1,337 @@
+{
+  "url": "https://skillseekersweb.com/docs/cli/config",
+  "title": "config - Configuration Management | Skill Seekers Docs",
+  "content": "Interactive wizard for managing Skill Seekers configuration including GitHub tokens, API keys, and system settings.\n\nThe main configuration menu provides 7 options:\n\nManage multiple GitHub profiles for flexible token management:\n\nRate Limit Strategies:\n\nSet up API keys for AI enhancement:\n\nConfigure rate limit behavior:\n\nConfigure resumable job preferences:\n\nDisplay all current settings:\n\nVerify all configured tokens and API keys:\n\nRemove old resumable job files:\n\nRemoves progress files older than configured cleanup age (default: 7 days).\n\nPermissions: 600 (read/write for owner only)\n\nIf not in config file, Skill Seekers checks these environment variables:\n\nSkill Seekers accepts these GitHub token formats:\n\nWithout token: 60 requests/hour With token: 5000 requests/hour\n\nThe configuration wizard shows an upfront warning if no token is configured.\n\nWhen a profile hits rate limits:\n\nOn first installation, Skill Seekers shows a welcome message with setup options:\n\nStored at: ~/.config/skill-seekers/.setup_shown\n\nThe interactive menu provides real-time connection testing for each service.\n\nFor automated pipelines, use environment variables instead of interactive config:\n\nNon-interactive mode:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "config - Configuration Management",
+      "id": "config---configuration-management"
+    },
+    {
+      "level": "h2",
+      "text": "Basic Usage",
+      "id": "basic-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Examples",
+      "id": "quick-examples"
+    },
+    {
+      "level": "h2",
+      "text": "Options",
+      "id": "options"
+    },
+    {
+      "level": "h3",
+      "text": "Optional Flags",
+      "id": "optional-flags"
+    },
+    {
+      "level": "h2",
+      "text": "Interactive Menu",
+      "id": "interactive-menu"
+    },
+    {
+      "level": "h3",
+      "text": "1. GitHub Token Setup",
+      "id": "1-github-token-setup"
+    },
+    {
+      "level": "h3",
+      "text": "2. API Keys Configuration",
+      "id": "2-api-keys-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "3. Rate Limit Settings",
+      "id": "3-rate-limit-settings"
+    },
+    {
+      "level": "h3",
+      "text": "4. Resume Settings",
+      "id": "4-resume-settings"
+    },
+    {
+      "level": "h3",
+      "text": "5. View Current Configuration",
+      "id": "5-view-current-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "6. Test Connections",
+      "id": "6-test-connections"
+    },
+    {
+      "level": "h3",
+      "text": "7. Clean Up Old Progress Files",
+      "id": "7-clean-up-old-progress-files"
+    },
+    {
+      "level": "h2",
+      "text": "Configuration Storage",
+      "id": "configuration-storage"
+    },
+    {
+      "level": "h3",
+      "text": "Config File Location",
+      "id": "config-file-location"
+    },
+    {
+      "level": "h3",
+      "text": "Config File Structure",
+      "id": "config-file-structure"
+    },
+    {
+      "level": "h3",
+      "text": "Environment Variable Fallback",
+      "id": "environment-variable-fallback"
+    },
+    {
+      "level": "h2",
+      "text": "GitHub Token Setup",
+      "id": "github-token-setup"
+    },
+    {
+      "level": "h3",
+      "text": "Creating a GitHub Token",
+      "id": "creating-a-github-token"
+    },
+    {
+      "level": "h3",
+      "text": "Token Formats",
+      "id": "token-formats"
+    },
+    {
+      "level": "h3",
+      "text": "Rate Limits",
+      "id": "rate-limits"
+    },
+    {
+      "level": "h2",
+      "text": "Multi-Profile Workflow",
+      "id": "multi-profile-workflow"
+    },
+    {
+      "level": "h3",
+      "text": "Use Case: Personal + Work Accounts",
+      "id": "use-case-personal--work-accounts"
+    },
+    {
+      "level": "h3",
+      "text": "Profile Switching",
+      "id": "profile-switching"
+    },
+    {
+      "level": "h3",
+      "text": "Selecting Profile",
+      "id": "selecting-profile"
+    },
+    {
+      "level": "h2",
+      "text": "API Keys Setup",
+      "id": "api-keys-setup"
+    },
+    {
+      "level": "h3",
+      "text": "Claude (Anthropic)",
+      "id": "claude-anthropic"
+    },
+    {
+      "level": "h3",
+      "text": "Google Gemini",
+      "id": "google-gemini"
+    },
+    {
+      "level": "h3",
+      "text": "OpenAI ChatGPT",
+      "id": "openai-chatgpt"
+    },
+    {
+      "level": "h2",
+      "text": "First-Run Experience",
+      "id": "first-run-experience"
+    },
+    {
+      "level": "h2",
+      "text": "Testing Configuration",
+      "id": "testing-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "Test All Connections",
+      "id": "test-all-connections"
+    },
+    {
+      "level": "h3",
+      "text": "Test Individual Connections",
+      "id": "test-individual-connections"
+    },
+    {
+      "level": "h2",
+      "text": "CI/CD Mode",
+      "id": "cicd-mode"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Config File Not Found",
+      "id": "config-file-not-found"
+    },
+    {
+      "level": "h3",
+      "text": "Permission Errors",
+      "id": "permission-errors"
+    },
+    {
+      "level": "h3",
+      "text": "Token Validation Failed",
+      "id": "token-validation-failed"
+    },
+    {
+      "level": "h3",
+      "text": "API Key Not Working",
+      "id": "api-key-not-working"
+    },
+    {
+      "level": "h2",
+      "text": "Security Best Practices",
+      "id": "security-best-practices"
+    },
+    {
+      "level": "h2",
+      "text": "See Also",
+      "id": "see-also"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers config [OPTIONS]",
+      "language": "unknown"
+    },
+    {
+      "code": "# Launch interactive configuration menu\nskill-seekers config\n\n# Direct to GitHub token setup\nskill-seekers config --github\n\n# Set up API keys\nskill-seekers config --api-keys\n\n# View current configuration\nskill-seekers config --show\n\n# Test all connections\nskill-seekers config --test",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers config --github",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers config --api-keys",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers config --show",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers config --test",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers config --clean",
+      "language": "unknown"
+    },
+    {
+      "code": "~/.config/skill-seekers/config.json",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"github_profiles\": {\n    \"personal\": {\n      \"token\": \"ghp_...\",\n      \"description\": \"Personal projects\",\n      \"rate_limit_strategy\": \"prompt\",\n      \"timeout\": 1800\n    },\n    \"work\": {\n      \"token\": \"github_pat_...\",\n      \"description\": \"Work projects\",\n      \"rate_limit_strategy\": \"switch\",\n      \"timeout\": 900\n    }\n  },\n  \"default_github_profile\": \"personal\",\n  \"api_keys\": {\n    \"anthropic\": \"sk-ant-...\",\n    \"google\": \"AIza...\",\n    \"openai\": \"sk-...\"\n  },\n  \"resume\": {\n    \"auto_save_interval\": 60,\n    \"auto_cleanup_days\": 7\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "# GitHub token\nexport GITHUB_TOKEN=ghp_your_token_here\n\n# API keys\nexport ANTHROPIC_API_KEY=sk-ant-...\nexport GOOGLE_API_KEY=AIza...\nexport OPENAI_API_KEY=sk-...",
+      "language": "markdown"
+    },
+    {
+      "code": "# Add profiles\nskill-seekers config --github\n\n# Profile 1: Personal (unlimited timeout, prompt strategy)\nname: personal\ntoken: ghp_personal_token\nstrategy: prompt\ntimeout: unlimited\n\n# Profile 2: Work (15 min timeout, auto-switch)\nname: work\ntoken: ghp_work_token\nstrategy: switch\ntimeout: 900\n\n# Set default\ndefault: personal",
+      "language": "yaml"
+    },
+    {
+      "code": "# Use specific profile\nskill-seekers github --repo owner/repo --profile work\n\n# Use default profile (from config)\nskill-seekers github --repo owner/repo",
+      "language": "sql"
+    },
+    {
+      "code": "skill-seekers config --api-keys\n# Select \"Claude (Anthropic)\"\n# Browser opens to: https://console.anthropic.com/settings/keys",
+      "language": "sql"
+    },
+    {
+      "code": "skill-seekers config --api-keys\n# Select \"Google Gemini\"\n# Browser opens to: https://aistudio.google.com/app/apikey",
+      "language": "sql"
+    },
+    {
+      "code": "skill-seekers config --api-keys\n# Select \"OpenAI ChatGPT\"\n# Browser opens to: https://platform.openai.com/api-keys",
+      "language": "sql"
+    },
+    {
+      "code": "Welcome to Skill Seekers! 🎯\n\nChoose your installation profile:\n1. CLI Only (no MCP dependencies)\n2. MCP Integration (full Claude Code support)\n3. All Features (everything enabled)\n\nRun 'skill-seekers config' to set up GitHub tokens and API keys.",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers config --test",
+      "language": "unknown"
+    },
+    {
+      "code": "Testing GitHub Tokens:\n✓ personal (ghp_...) - 4,987/5,000 requests remaining\n✓ work (github_pat_...) - 4,999/5,000 requests remaining\n\nTesting API Keys:\n✓ Claude (Anthropic) - Connected\n✓ Google Gemini - Connected\n× OpenAI ChatGPT - Not configured\n\nTesting Network:\n✓ GitHub API - Reachable\n✓ Anthropic API - Reachable\n✓ Google AI API - Reachable",
+      "language": "unknown"
+    },
+    {
+      "code": "# GitHub Actions example\nenv:\n  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}\n\n# Run in non-interactive mode\nskill-seekers github --repo owner/repo --non-interactive",
+      "language": "yaml"
+    },
+    {
+      "code": "# Create config directory\nmkdir -p ~/.config/skill-seekers\n\n# Run config wizard\nskill-seekers config",
+      "language": "markdown"
+    },
+    {
+      "code": "# Fix config file permissions\nchmod 600 ~/.config/skill-seekers/config.json",
+      "language": "markdown"
+    },
+    {
+      "code": "# Test token manually\ncurl -H \"Authorization: Bearer YOUR_TOKEN\" https://api.github.com/user\n\n# Re-run config wizard\nskill-seekers config --github",
+      "language": "markdown"
+    },
+    {
+      "code": "# Test connection\nskill-seekers config --test\n\n# Remove and re-add key\nskill-seekers config --api-keys",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

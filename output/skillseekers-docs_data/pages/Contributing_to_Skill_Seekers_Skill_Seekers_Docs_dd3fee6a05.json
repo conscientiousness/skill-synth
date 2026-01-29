@@ -1,0 +1,279 @@
+{
+  "url": "https://skillseekersweb.com/docs/community/contributing",
+  "title": "Contributing to Skill Seekers | Skill Seekers Docs",
+  "content": "First off, thank you for considering contributing to Skill Seekers! It’s people like you that make Skill Seekers such a great tool.\n\n⚠️ IMPORTANT: Skill Seekers uses a two-branch workflow.\n\nmain - Production branch\n\ndevelopment - Integration branch\n\nFeature branches - Your work\n\nThis project and everyone participating in it is governed by our commitment to fostering an open and welcoming environment. Please be respectful and constructive in all interactions.\n\nBefore creating bug reports, please check the existing issues to avoid duplicates.\n\nWhen creating a bug report, include:\n\nEnhancement suggestions are tracked as GitHub issues.\n\nWe welcome new framework configurations! To add one:\n\nWe actively welcome your pull requests!\n\n⚠️ IMPORTANT: All PRs must target the development branch, not main.\n\nFork and clone the repository\n\nCreate a feature branch from development\n\nCreate a Pull Request\n\nWe follow PEP 8 with some modifications:\n\nReleases are managed by maintainers:\n\nContributors will be recognized in:\n\nThank you for contributing to Skill Seekers! 🎉",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Contributing to Skill Seekers",
+      "id": "contributing-to-skill-seekers"
+    },
+    {
+      "level": "h2",
+      "text": "Table of Contents",
+      "id": "table-of-contents"
+    },
+    {
+      "level": "h2",
+      "text": "Branch Workflow",
+      "id": "branch-workflow"
+    },
+    {
+      "level": "h3",
+      "text": "Branch Structure",
+      "id": "branch-structure"
+    },
+    {
+      "level": "h3",
+      "text": "Branches",
+      "id": "branches"
+    },
+    {
+      "level": "h3",
+      "text": "Workflow Example",
+      "id": "workflow-example"
+    },
+    {
+      "level": "h2",
+      "text": "Code of Conduct",
+      "id": "code-of-conduct"
+    },
+    {
+      "level": "h2",
+      "text": "How Can I Contribute?",
+      "id": "how-can-i-contribute"
+    },
+    {
+      "level": "h3",
+      "text": "Reporting Bugs",
+      "id": "reporting-bugs"
+    },
+    {
+      "level": "h3",
+      "text": "Suggesting Enhancements",
+      "id": "suggesting-enhancements"
+    },
+    {
+      "level": "h3",
+      "text": "Adding New Framework Configs",
+      "id": "adding-new-framework-configs"
+    },
+    {
+      "level": "h3",
+      "text": "Pull Requests",
+      "id": "pull-requests"
+    },
+    {
+      "level": "h2",
+      "text": "Development Setup",
+      "id": "development-setup"
+    },
+    {
+      "level": "h3",
+      "text": "Prerequisites",
+      "id": "prerequisites"
+    },
+    {
+      "level": "h3",
+      "text": "Setup Steps",
+      "id": "setup-steps"
+    },
+    {
+      "level": "h2",
+      "text": "Pull Request Process",
+      "id": "pull-request-process"
+    },
+    {
+      "level": "h3",
+      "text": "Before Submitting",
+      "id": "before-submitting"
+    },
+    {
+      "level": "h3",
+      "text": "PR Template",
+      "id": "pr-template"
+    },
+    {
+      "level": "h3",
+      "text": "Review Process",
+      "id": "review-process"
+    },
+    {
+      "level": "h2",
+      "text": "Coding Standards",
+      "id": "coding-standards"
+    },
+    {
+      "level": "h3",
+      "text": "Python Style Guide",
+      "id": "python-style-guide"
+    },
+    {
+      "level": "h3",
+      "text": "Code Organization",
+      "id": "code-organization"
+    },
+    {
+      "level": "h3",
+      "text": "Documentation",
+      "id": "documentation"
+    },
+    {
+      "level": "h2",
+      "text": "Testing",
+      "id": "testing"
+    },
+    {
+      "level": "h3",
+      "text": "Running Tests",
+      "id": "running-tests"
+    },
+    {
+      "level": "h3",
+      "text": "Writing Tests",
+      "id": "writing-tests"
+    },
+    {
+      "level": "h3",
+      "text": "Test Coverage",
+      "id": "test-coverage"
+    },
+    {
+      "level": "h2",
+      "text": "Documentation",
+      "id": "documentation-1"
+    },
+    {
+      "level": "h3",
+      "text": "Where to Document",
+      "id": "where-to-document"
+    },
+    {
+      "level": "h3",
+      "text": "Documentation Style",
+      "id": "documentation-style"
+    },
+    {
+      "level": "h2",
+      "text": "Project Structure",
+      "id": "project-structure"
+    },
+    {
+      "level": "h2",
+      "text": "Release Process",
+      "id": "release-process"
+    },
+    {
+      "level": "h2",
+      "text": "Questions?",
+      "id": "questions"
+    },
+    {
+      "level": "h2",
+      "text": "Recognition",
+      "id": "recognition"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "main (production)\n  ↑\n  │ (only maintainer merges)\n  │\ndevelopment (integration) ← default branch for PRs\n  ↑\n  │ (all contributor PRs go here)\n  │\nfeature branches",
+      "language": "unknown"
+    },
+    {
+      "code": "# 1. Fork and clone\ngit clone https://github.com/YOUR_USERNAME/Skill_Seekers.git\ncd Skill_Seekers\n\n# 2. Add upstream\ngit remote add upstream https://github.com/yusufkaraaslan/Skill_Seekers.git\n\n# 3. Create feature branch from development\ngit checkout development\ngit pull upstream development\ngit checkout -b my-feature\n\n# 4. Make changes, commit, push\ngit add .\ngit commit -m \"Add my feature\"\ngit push origin my-feature\n\n# 5. Create PR targeting 'development' branch",
+      "language": "sql"
+    },
+    {
+      "code": "**Bug:** MCP tool fails when config has no categories\n\n**Steps to Reproduce:**\n1. Create config with empty categories: `\"categories\": {}`\n2. Run `skill-seekers scrape --config configs/test.json`\n3. See error\n\n**Expected:** Should use auto-inferred categories\n**Actual:** Crashes with KeyError\n\n**Environment:**\n- OS: Ubuntu 22.04\n- Python: 3.10.5\n- Version: v2.7.0",
+      "language": "json"
+    },
+    {
+      "code": "**Add Svelte Documentation Config**\n\nAdds configuration for Svelte documentation (https://svelte.dev/docs).\n\n- Config: `configs/svelte.json`\n- Tested with max_pages: 100\n- Successfully categorized: getting_started, components, api, advanced\n- Total pages available: ~150",
+      "language": "json"
+    },
+    {
+      "code": "git clone https://github.com/YOUR_USERNAME/Skill_Seekers.git\ncd Skill_Seekers",
+      "language": "unknown"
+    },
+    {
+      "code": "pip install -e \".[dev,test]\"",
+      "language": "unknown"
+    },
+    {
+      "code": "git checkout development\ngit pull upstream development\ngit checkout -b feature/my-awesome-feature",
+      "language": "unknown"
+    },
+    {
+      "code": "# Edit files...",
+      "language": "markdown"
+    },
+    {
+      "code": "git add .\ngit commit -m \"Add awesome feature\"",
+      "language": "unknown"
+    },
+    {
+      "code": "git push origin feature/my-awesome-feature",
+      "language": "unknown"
+    },
+    {
+      "code": "## Description\nBrief description of what this PR does.\n\n## Type of Change\n- [ ] Bug fix (non-breaking change which fixes an issue)\n- [ ] New feature (non-breaking change which adds functionality)\n- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)\n- [ ] Documentation update\n\n## How Has This Been Tested?\nDescribe the tests you ran to verify your changes.\n\n## Checklist\n- [ ] My code follows the style guidelines of this project\n- [ ] I have performed a self-review of my own code\n- [ ] I have commented my code, particularly in hard-to-understand areas\n- [ ] I have made corresponding changes to the documentation\n- [ ] My changes generate no new warnings\n- [ ] I have added tests that prove my fix is effective or that my feature works\n- [ ] New and existing unit tests pass locally with my changes",
+      "language": "markdown"
+    },
+    {
+      "code": "# 1. Standard library imports\nimport os\nimport sys\nfrom pathlib import Path\n\n# 2. Third-party imports\nimport requests\nfrom bs4 import BeautifulSoup\n\n# 3. Local application imports\nfrom skill_seekers.cli.utils import open_folder\n\n# 4. Constants\nMAX_PAGES = 1000\nDEFAULT_RATE_LIMIT = 0.5\n\n# 5. Functions and classes\ndef my_function():\n    \"\"\"Docstring describing what this function does.\"\"\"\n    pass",
+      "language": "python"
+    },
+    {
+      "code": "def scrape_page(url: str, selectors: dict) -> dict:\n    \"\"\"\n    Scrape a single page and extract content.\n\n    Args:\n        url: The URL to scrape\n        selectors: Dictionary of CSS selectors\n\n    Returns:\n        Dictionary containing extracted content\n\n    Raises:\n        RequestException: If page cannot be fetched\n    \"\"\"\n    pass",
+      "language": "python"
+    },
+    {
+      "code": "# Run all tests\npytest\n\n# Run specific test file\npytest tests/test_mcp_server.py\n\n# Run with coverage\npytest --cov=skill_seekers --cov-report=html",
+      "language": "markdown"
+    },
+    {
+      "code": "def test_config_validation_with_missing_fields():\n    \"\"\"Test that config validation fails when required fields are missing.\"\"\"\n    config = {\"name\": \"test\"}  # Missing base_url\n    result = validate_config(config)\n    assert result is False",
+      "language": "json"
+    },
+    {
+      "code": "Skill_Seekers/\n├── src/\n│   └── skill_seekers/\n│       ├── cli/              # CLI tools\n│       │   ├── doc_scraper.py\n│       │   ├── package_skill.py\n│       │   └── utils.py\n│       └── mcp/              # MCP server\n│           ├── server.py\n│           └── tools/\n├── configs/                  # Framework configs\n├── docs/                     # Documentation\n├── tests/                    # Test suite\n└── pyproject.toml           # Project configuration",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Example:",
+      "code": "**Bug:** MCP tool fails when config has no categories\n\n**Steps to Reproduce:**\n1. Create config with empty categories: `\"categories\": {}`\n2. Run `skill-seekers scrape --config configs/test.json`\n3. See error\n\n**Expected:** Should use auto-inferred categories\n**Actual:** Crashes with KeyError\n\n**Environment:**\n- OS: Ubuntu 22.04\n- Python: 3.10.5\n- Version: v2.7.0"
+    }
+  ],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

@@ -1,0 +1,482 @@
+{
+  "url": "https://skillseekersweb.com/docs/reference/config-schema",
+  "title": "Configuration Schema Reference | Skill Seekers Docs",
+  "content": "Complete reference for the Skill Seekers unified configuration format introduced in v2.6.0.\n\nThe unified config format allows you to combine multiple sources (documentation, GitHub, PDFs) into a single AI skill with intelligent content merging.\n\nSchema Version: v2.6.0 Format: JSON Backward Compatible: Yes (legacy configs still supported)\n\nRequired - Unique identifier for the config.\n\nRequired - Human-readable description of what the skill covers.\n\nRequired - Array of source configurations (at least 1 required).\n\nOptional - Content merging strategy when using multiple sources.\n\nExtract content from documentation websites.\n\nDefault: false - Whether to extract API reference sections separately.\n\nSpecific URLs to start scraping from (bypasses automatic discovery).\n\nCSS selectors for extracting content.\n\nControl which URLs to include/exclude.\n\nCategorize pages for better organization and merging.\n\nDelay between requests in seconds (prevents rate limiting).\n\nOptional - Maximum pages to scrape. Defaults to unlimited if not specified.\n\nNote: Since v2.6.0, unlimited scraping is the default. Only specify max_pages if you need to limit pages for testing or rate-limit concerns.\n\nExtract code, issues, and repository metadata from GitHub.\n\nDefault: false - Enable C3.x codebase analysis with AST parsing.\n\nDepth of code analysis when C3.x is enabled.\n\nDefault: false - Include GitHub issues in the skill.\n\nMaximum number of issues to fetch (requires fetch_issues: true).\n\nDefault: false - Extract CHANGELOG.md if it exists.\n\nDefault: false - Include GitHub releases.\n\nGlob patterns for files to analyze (requires codebase analysis).\n\nAI enhancement mode for C3.x analysis.\n\nExtract content from PDF documents.\n\nDefault: false - Enable OCR for scanned PDFs.\n\nPassword for encrypted PDFs.\n\nDefault: false - Extract tables as structured data.\n\nDefault: false - Process pages in parallel for faster extraction.\n\nVisit skillseekersweb.com/configs and scroll to the “Validate Your Config” section:\n\nSkill Seekers v2.6.0+ still supports legacy configs (single-source format).\n\nAutomatically converts to:\n\nIf you have legacy configs (pre-v2.6.0), you can:\n\nSchema Version: v2.6.0 Last Updated: January 2026 Backward Compatible: Yes (legacy configs supported)",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Configuration Schema Reference",
+      "id": "configuration-schema-reference"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "Top-Level Fields",
+      "id": "top-level-fields"
+    },
+    {
+      "level": "h3",
+      "text": "Required Fields",
+      "id": "required-fields"
+    },
+    {
+      "level": "h4",
+      "text": "name (string)",
+      "id": "name-string"
+    },
+    {
+      "level": "h4",
+      "text": "description (string)",
+      "id": "description-string"
+    },
+    {
+      "level": "h4",
+      "text": "sources (array)",
+      "id": "sources-array"
+    },
+    {
+      "level": "h3",
+      "text": "Optional Fields",
+      "id": "optional-fields"
+    },
+    {
+      "level": "h4",
+      "text": "merge_mode (string)",
+      "id": "merge_mode-string"
+    },
+    {
+      "level": "h2",
+      "text": "Source Types",
+      "id": "source-types"
+    },
+    {
+      "level": "h3",
+      "text": "Documentation Source",
+      "id": "documentation-source"
+    },
+    {
+      "level": "h4",
+      "text": "Required Fields",
+      "id": "required-fields-1"
+    },
+    {
+      "level": "h4",
+      "text": "Optional Fields",
+      "id": "optional-fields-1"
+    },
+    {
+      "level": "h5",
+      "text": "extract_api (boolean)",
+      "id": "extract_api-boolean"
+    },
+    {
+      "level": "h5",
+      "text": "start_urls (array of strings)",
+      "id": "start_urls-array-of-strings"
+    },
+    {
+      "level": "h5",
+      "text": "selectors (object)",
+      "id": "selectors-object"
+    },
+    {
+      "level": "h5",
+      "text": "url_patterns (object)",
+      "id": "url_patterns-object"
+    },
+    {
+      "level": "h5",
+      "text": "categories (object)",
+      "id": "categories-object"
+    },
+    {
+      "level": "h5",
+      "text": "rate_limit (number)",
+      "id": "rate_limit-number"
+    },
+    {
+      "level": "h5",
+      "text": "max_pages (number or null)",
+      "id": "max_pages-number-or-null"
+    },
+    {
+      "level": "h4",
+      "text": "Complete Documentation Source Example",
+      "id": "complete-documentation-source-example"
+    },
+    {
+      "level": "h3",
+      "text": "GitHub Source",
+      "id": "github-source"
+    },
+    {
+      "level": "h4",
+      "text": "Required Fields",
+      "id": "required-fields-2"
+    },
+    {
+      "level": "h4",
+      "text": "Optional Fields",
+      "id": "optional-fields-2"
+    },
+    {
+      "level": "h5",
+      "text": "enable_codebase_analysis (boolean)",
+      "id": "enable_codebase_analysis-boolean"
+    },
+    {
+      "level": "h5",
+      "text": "code_analysis_depth (string)",
+      "id": "code_analysis_depth-string"
+    },
+    {
+      "level": "h5",
+      "text": "fetch_issues (boolean)",
+      "id": "fetch_issues-boolean"
+    },
+    {
+      "level": "h5",
+      "text": "max_issues (number)",
+      "id": "max_issues-number"
+    },
+    {
+      "level": "h5",
+      "text": "fetch_changelog (boolean)",
+      "id": "fetch_changelog-boolean"
+    },
+    {
+      "level": "h5",
+      "text": "fetch_releases (boolean)",
+      "id": "fetch_releases-boolean"
+    },
+    {
+      "level": "h5",
+      "text": "file_patterns (array of strings)",
+      "id": "file_patterns-array-of-strings"
+    },
+    {
+      "level": "h5",
+      "text": "ai_mode (string)",
+      "id": "ai_mode-string"
+    },
+    {
+      "level": "h4",
+      "text": "Complete GitHub Source Example",
+      "id": "complete-github-source-example"
+    },
+    {
+      "level": "h3",
+      "text": "PDF Source",
+      "id": "pdf-source"
+    },
+    {
+      "level": "h4",
+      "text": "Required Fields",
+      "id": "required-fields-3"
+    },
+    {
+      "level": "h4",
+      "text": "Optional Fields",
+      "id": "optional-fields-3"
+    },
+    {
+      "level": "h5",
+      "text": "ocr (boolean)",
+      "id": "ocr-boolean"
+    },
+    {
+      "level": "h5",
+      "text": "password (string)",
+      "id": "password-string"
+    },
+    {
+      "level": "h5",
+      "text": "extract_tables (boolean)",
+      "id": "extract_tables-boolean"
+    },
+    {
+      "level": "h5",
+      "text": "parallel (boolean)",
+      "id": "parallel-boolean"
+    },
+    {
+      "level": "h4",
+      "text": "Complete PDF Source Example",
+      "id": "complete-pdf-source-example"
+    },
+    {
+      "level": "h2",
+      "text": "Complete Examples",
+      "id": "complete-examples"
+    },
+    {
+      "level": "h3",
+      "text": "Single Source (Documentation Only)",
+      "id": "single-source-documentation-only"
+    },
+    {
+      "level": "h3",
+      "text": "Multi-Source (Docs + GitHub)",
+      "id": "multi-source-docs--github"
+    },
+    {
+      "level": "h3",
+      "text": "Multi-Source (Docs + GitHub + PDF)",
+      "id": "multi-source-docs--github--pdf"
+    },
+    {
+      "level": "h2",
+      "text": "Validation",
+      "id": "validation"
+    },
+    {
+      "level": "h3",
+      "text": "Using the CLI",
+      "id": "using-the-cli"
+    },
+    {
+      "level": "h3",
+      "text": "Using the Web Validator",
+      "id": "using-the-web-validator"
+    },
+    {
+      "level": "h2",
+      "text": "Legacy Config Support",
+      "id": "legacy-config-support"
+    },
+    {
+      "level": "h2",
+      "text": "Best Practices",
+      "id": "best-practices"
+    },
+    {
+      "level": "h3",
+      "text": "1. Naming Conventions",
+      "id": "1-naming-conventions"
+    },
+    {
+      "level": "h3",
+      "text": "2. Description Guidelines",
+      "id": "2-description-guidelines"
+    },
+    {
+      "level": "h3",
+      "text": "3. Multi-Source Configs",
+      "id": "3-multi-source-configs"
+    },
+    {
+      "level": "h3",
+      "text": "4. Rate Limiting",
+      "id": "4-rate-limiting"
+    },
+    {
+      "level": "h3",
+      "text": "5. Page Limits",
+      "id": "5-page-limits"
+    },
+    {
+      "level": "h3",
+      "text": "6. GitHub Codebase Analysis",
+      "id": "6-github-codebase-analysis"
+    },
+    {
+      "level": "h2",
+      "text": "Migration from Legacy Configs",
+      "id": "migration-from-legacy-configs"
+    },
+    {
+      "level": "h3",
+      "text": "Option 1: Automatic Conversion",
+      "id": "option-1-automatic-conversion"
+    },
+    {
+      "level": "h3",
+      "text": "Option 2: Manual Migration",
+      "id": "option-2-manual-migration"
+    },
+    {
+      "level": "h2",
+      "text": "See Also",
+      "id": "see-also"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "{\n  \"name\": \"react\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"description\": \"Complete React knowledge combining official documentation and React codebase. Use when building React applications or understanding React internals.\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"sources\": [\n    { \"type\": \"documentation\", \"base_url\": \"...\" },\n    { \"type\": \"github\", \"repo\": \"...\" }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"merge_mode\": \"rule-based\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"extract_api\": true\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"start_urls\": [\n    \"https://docs.example.com/getting-started/\",\n    \"https://docs.example.com/api/\"\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"selectors\": {\n    \"main_content\": \"article.docs\",\n    \"title\": \"h1\",\n    \"code_blocks\": \"pre code\"\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"url_patterns\": {\n    \"include\": [\"/docs/\", \"/api/\", \"/guide/\"],\n    \"exclude\": [\"/blog/\", \"/changelog/\"]\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"categories\": {\n    \"getting_started\": [\"intro\", \"installation\", \"quickstart\"],\n    \"api\": [\"api\", \"reference\", \"methods\"],\n    \"guides\": [\"tutorial\", \"guide\", \"how-to\"]\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"rate_limit\": 0.5\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  // Option 1: Omit for unlimited (recommended)\n  // \"max_pages\": not specified\n\n  // Option 2: Explicit unlimited\n  \"max_pages\": null\n\n  // Option 3: Limit to specific count\n  // \"max_pages\": 300\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"type\": \"documentation\",\n  \"base_url\": \"https://docs.astro.build/en/\",\n  \"extract_api\": true,\n  \"start_urls\": [\n    \"https://docs.astro.build/en/getting-started/\",\n    \"https://docs.astro.build/en/core-concepts/\"\n  ],\n  \"selectors\": {\n    \"main_content\": \"article\",\n    \"title\": \"h1\",\n    \"code_blocks\": \"pre code\"\n  },\n  \"url_patterns\": {\n    \"include\": [\"/en/getting-started/\", \"/en/core-concepts/\", \"/en/guides/\"],\n    \"exclude\": [\"/en/community/\", \"/en/blog/\"]\n  },\n  \"categories\": {\n    \"getting_started\": [\"getting-started\", \"install\"],\n    \"core_concepts\": [\"project-structure\", \"components\"],\n    \"integrations\": [\"integrations\", \"framework\"]\n  },\n  \"rate_limit\": 0.5\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"enable_codebase_analysis\": true\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"code_analysis_depth\": \"deep\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"fetch_issues\": true\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"max_issues\": 100\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"fetch_changelog\": true\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"fetch_releases\": true\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"file_patterns\": [\n    \"src/**/*.ts\",\n    \"packages/**/*.ts\",\n    \"core/**/*.js\"\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"ai_mode\": \"auto\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"type\": \"github\",\n  \"repo\": \"withastro/astro\",\n  \"enable_codebase_analysis\": true,\n  \"code_analysis_depth\": \"deep\",\n  \"fetch_issues\": true,\n  \"max_issues\": 100,\n  \"fetch_changelog\": true,\n  \"fetch_releases\": true,\n  \"file_patterns\": [\n    \"packages/astro/src/**/*.ts\",\n    \"packages/integrations/**/*.ts\"\n  ],\n  \"ai_mode\": \"auto\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"ocr\": true\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"password\": \"secret123\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"extract_tables\": true\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"parallel\": true\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"type\": \"pdf\",\n  \"path\": \"/path/to/manual.pdf\",\n  \"ocr\": true,\n  \"extract_tables\": true,\n  \"parallel\": true\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"name\": \"vue\",\n  \"description\": \"Vue.js 3 documentation for building reactive web applications.\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://vuejs.org/guide/\",\n      \"selectors\": {\n        \"main_content\": \"article\",\n        \"title\": \"h1\",\n        \"code_blocks\": \"pre code\"\n      },\n      \"rate_limit\": 0.5\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"name\": \"fastapi\",\n  \"description\": \"Complete FastAPI knowledge combining documentation and codebase analysis. Use for building high-performance Python APIs.\",\n  \"merge_mode\": \"rule-based\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://fastapi.tiangolo.com/\",\n      \"extract_api\": true,\n      \"selectors\": {\n        \"main_content\": \".md-content\",\n        \"title\": \"h1\",\n        \"code_blocks\": \"pre code\"\n      },\n      \"categories\": {\n        \"getting_started\": [\"tutorial\", \"first-steps\"],\n        \"advanced\": [\"advanced\", \"security\", \"database\"],\n        \"deployment\": [\"deployment\", \"docker\", \"server\"]\n      },\n      \"rate_limit\": 0.5\n    },\n    {\n      \"type\": \"github\",\n      \"repo\": \"tiangolo/fastapi\",\n      \"enable_codebase_analysis\": true,\n      \"code_analysis_depth\": \"deep\",\n      \"fetch_issues\": true,\n      \"max_issues\": 50,\n      \"file_patterns\": [\n        \"fastapi/**/*.py\"\n      ]\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"name\": \"enterprise-system\",\n  \"description\": \"Complete enterprise system documentation from multiple sources.\",\n  \"merge_mode\": \"claude-enhanced\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://docs.enterprise.com/\",\n      \"rate_limit\": 1.0\n    },\n    {\n      \"type\": \"github\",\n      \"repo\": \"company/enterprise-system\",\n      \"enable_codebase_analysis\": true,\n      \"code_analysis_depth\": \"full\",\n      \"file_patterns\": [\"src/**/*.ts\", \"api/**/*.ts\"]\n    },\n    {\n      \"type\": \"pdf\",\n      \"path\": \"/docs/enterprise-manual-v2.pdf\",\n      \"extract_tables\": true,\n      \"parallel\": true\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Validate a config file\nskill-seekers validate configs/my-config.json\n\n# Convert legacy config to unified format\nskill-seekers convert configs/legacy-config.json",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"name\": \"example\",\n  \"description\": \"Example docs\",\n  \"base_url\": \"https://docs.example.com\",\n  \"selectors\": { \"main_content\": \"article\" }\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"name\": \"example\",\n  \"description\": \"Example docs\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://docs.example.com\",\n      \"selectors\": { \"main_content\": \"article\" }\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers convert configs/legacy-config.json > configs/new-config.json",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"name\": \"django\",\n  \"base_url\": \"https://docs.djangoproject.com/en/stable/\",\n  \"selectors\": { \"main_content\": \"div.document\" }\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"name\": \"django\",\n  \"description\": \"Django web framework documentation\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://docs.djangoproject.com/en/stable/\",\n      \"selectors\": { \"main_content\": \"div.document\" }\n    }\n  ]\n}",
+      "language": "json"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/tutorials/creating-configs",
+    "https://skillseekersweb.com/docs/manual/codebase-analysis/c3x-codebase-analysis"
+  ]
+}

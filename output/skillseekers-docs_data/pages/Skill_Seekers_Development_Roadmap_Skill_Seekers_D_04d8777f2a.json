@@ -1,0 +1,204 @@
+{
+  "url": "https://skillseekersweb.com/docs/community/roadmap",
+  "title": "Skill Seekers Development Roadmap | Skill Seekers Docs",
+  "content": "Transform Skill Seeker into the easiest way to create Claude AI skills from any knowledge source - documentation websites, PDFs, codebases, GitHub repos, Office docs, and more - with both CLI and MCP interfaces.\n\nPhilosophy: Small tasks → Pick one → Complete → Move on\n\nInstead of rigid milestones, we now use a flexible task-based approach:\n\nSee: Flexible Roadmap for the complete task list!\n\nReleased: October 19, 2025 | Tag: v1.0.0\n\nSee Flexible Roadmap for detailed task breakdown.\n\nGoal: Create professional website and community presence Timeline: November 2025 (Due: Nov 3, 2025)\n\nGoal: Address technical debt and performance Timeline: Late November 2025\n\nTechnical Enhancements:\n\nGoal: Smart defaults and auto-configuration Timeline: December 2025\n\nGoal: Build ecosystem around skill generation\n\nSee Contributing Guide for:\n\nLast Updated: October 20, 2025",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Skill Seeker Development Roadmap",
+      "id": "skill-seeker-development-roadmap"
+    },
+    {
+      "level": "h2",
+      "text": "Vision",
+      "id": "vision"
+    },
+    {
+      "level": "h2",
+      "text": "🎯 New Approach: Flexible, Incremental Development",
+      "id": "-new-approach-flexible-incremental-development"
+    },
+    {
+      "level": "h2",
+      "text": "🎯 Milestones",
+      "id": "-milestones"
+    },
+    {
+      "level": "h3",
+      "text": "✅ v1.0 - Production Release (COMPLETED - Oct 19, 2025)",
+      "id": "-v10---production-release-completed---oct-19-2025"
+    },
+    {
+      "level": "h4",
+      "text": "Core Features ✅",
+      "id": "core-features"
+    },
+    {
+      "level": "h4",
+      "text": "MCP Integration ✅",
+      "id": "mcp-integration"
+    },
+    {
+      "level": "h4",
+      "text": "Large Documentation Support ✅",
+      "id": "large-documentation-support"
+    },
+    {
+      "level": "h4",
+      "text": "Auto-Upload Feature ✅",
+      "id": "auto-upload-feature"
+    },
+    {
+      "level": "h2",
+      "text": "📋 Task Categories (Flexible Development)",
+      "id": "-task-categories-flexible-development"
+    },
+    {
+      "level": "h3",
+      "text": "Category Summary:",
+      "id": "category-summary"
+    },
+    {
+      "level": "h3",
+      "text": "📋 v1.1 - Website Launch (PLANNED) → Now flexible tasks!",
+      "id": "-v11---website-launch-planned--now-flexible-tasks"
+    },
+    {
+      "level": "h3",
+      "text": "📋 v1.2 - Core Improvements (PLANNED)",
+      "id": "-v12---core-improvements-planned"
+    },
+    {
+      "level": "h3",
+      "text": "📋 v2.0 - Intelligence Layer (PLANNED)",
+      "id": "-v20---intelligence-layer-planned"
+    },
+    {
+      "level": "h3",
+      "text": "💭 v3.0 - Platform Features (IDEAS)",
+      "id": "-v30---platform-features-ideas"
+    },
+    {
+      "level": "h2",
+      "text": "🎨 Feature Ideas",
+      "id": "-feature-ideas"
+    },
+    {
+      "level": "h3",
+      "text": "High Priority",
+      "id": "high-priority"
+    },
+    {
+      "level": "h3",
+      "text": "Medium Priority",
+      "id": "medium-priority"
+    },
+    {
+      "level": "h3",
+      "text": "Low Priority",
+      "id": "low-priority"
+    },
+    {
+      "level": "h2",
+      "text": "🔬 Research Areas",
+      "id": "-research-areas"
+    },
+    {
+      "level": "h3",
+      "text": "MCP Enhancements",
+      "id": "mcp-enhancements"
+    },
+    {
+      "level": "h3",
+      "text": "AI Integration",
+      "id": "ai-integration"
+    },
+    {
+      "level": "h3",
+      "text": "Performance",
+      "id": "performance"
+    },
+    {
+      "level": "h2",
+      "text": "📊 Metrics & Goals",
+      "id": "-metrics--goals"
+    },
+    {
+      "level": "h3",
+      "text": "Current State (Oct 20, 2025) ✅",
+      "id": "current-state-oct-20-2025"
+    },
+    {
+      "level": "h3",
+      "text": "Goals for v1.1 (Website Launch)",
+      "id": "goals-for-v11-website-launch"
+    },
+    {
+      "level": "h3",
+      "text": "Goals for v1.2 (Core Improvements)",
+      "id": "goals-for-v12-core-improvements"
+    },
+    {
+      "level": "h3",
+      "text": "Goals for v2.0 (Intelligence)",
+      "id": "goals-for-v20-intelligence"
+    },
+    {
+      "level": "h2",
+      "text": "🤝 Contributing",
+      "id": "-contributing"
+    },
+    {
+      "level": "h2",
+      "text": "📅 Release Schedule",
+      "id": "-release-schedule"
+    },
+    {
+      "level": "h2",
+      "text": "🔗 Related Projects",
+      "id": "-related-projects"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "User: \"Create skill from https://tailwindcss.com/docs\"\nTool: Auto-detects Tailwind, uses template, generates in 30 seconds",
+      "language": "sql"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Example:",
+      "code": "User: \"Create skill from https://tailwindcss.com/docs\"\nTool: Auto-detects Tailwind, uses template, generates in 30 seconds"
+    }
+  ],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "url": "https://skillseekersweb.com/docs/cli/upload",
+  "title": "upload - Upload Skills | Skill Seekers Docs",
+  "content": "Upload packaged skills to LLM platforms.\n\nAdd to shell profile:\n\nSet the appropriate environment variable:\n\nMake sure you packaged first:\n\nIf API upload fails, use manual upload:\n\nEach platform requires specific format:\n\nAfter upload, verify your skill:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "upload - Upload Skills",
+      "id": "upload---upload-skills"
+    },
+    {
+      "level": "h2",
+      "text": "Basic Usage",
+      "id": "basic-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Examples",
+      "id": "quick-examples"
+    },
+    {
+      "level": "h2",
+      "text": "Options",
+      "id": "options"
+    },
+    {
+      "level": "h2",
+      "text": "Prerequisites",
+      "id": "prerequisites"
+    },
+    {
+      "level": "h3",
+      "text": "Claude AI",
+      "id": "claude-ai"
+    },
+    {
+      "level": "h3",
+      "text": "Google Gemini",
+      "id": "google-gemini"
+    },
+    {
+      "level": "h3",
+      "text": "OpenAI ChatGPT",
+      "id": "openai-chatgpt"
+    },
+    {
+      "level": "h2",
+      "text": "Platform-Specific Usage",
+      "id": "platform-specific-usage"
+    },
+    {
+      "level": "h3",
+      "text": "Claude AI",
+      "id": "claude-ai-1"
+    },
+    {
+      "level": "h3",
+      "text": "Google Gemini",
+      "id": "google-gemini-1"
+    },
+    {
+      "level": "h3",
+      "text": "OpenAI ChatGPT",
+      "id": "openai-chatgpt-1"
+    },
+    {
+      "level": "h2",
+      "text": "Complete Workflow",
+      "id": "complete-workflow"
+    },
+    {
+      "level": "h2",
+      "text": "Multi-Platform Upload",
+      "id": "multi-platform-upload"
+    },
+    {
+      "level": "h2",
+      "text": "API Key Management",
+      "id": "api-key-management"
+    },
+    {
+      "level": "h3",
+      "text": "Get API Keys",
+      "id": "get-api-keys"
+    },
+    {
+      "level": "h3",
+      "text": "Persist API Keys",
+      "id": "persist-api-keys"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "”API key not set”",
+      "id": "api-key-not-set"
+    },
+    {
+      "level": "h3",
+      "text": "“Package not found”",
+      "id": "package-not-found"
+    },
+    {
+      "level": "h3",
+      "text": "Upload fails",
+      "id": "upload-fails"
+    },
+    {
+      "level": "h3",
+      "text": "Wrong file format",
+      "id": "wrong-file-format"
+    },
+    {
+      "level": "h2",
+      "text": "Verification",
+      "id": "verification"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers upload PACKAGE_FILE [OPTIONS]",
+      "language": "unknown"
+    },
+    {
+      "code": "# Upload to Claude (default)\nskill-seekers upload output/react.zip\n\n# Upload to specific platform\nskill-seekers upload output/react-gemini.tar.gz --target gemini\nskill-seekers upload output/react-openai.zip --target openai\n\n# With explicit target\nexport ANTHROPIC_API_KEY=sk-ant-...\nskill-seekers upload output/react.zip --target claude",
+      "language": "markdown"
+    },
+    {
+      "code": "# Set API key (for automatic upload)\nexport ANTHROPIC_API_KEY=sk-ant-...\n\n# Get key from: https://console.anthropic.com/",
+      "language": "markdown"
+    },
+    {
+      "code": "# Install Gemini support\npip install skill-seekers[gemini]\n\n# Set API key\nexport GOOGLE_API_KEY=AIzaSy...\n\n# Get key from: https://aistudio.google.com/",
+      "language": "markdown"
+    },
+    {
+      "code": "# Install OpenAI support\npip install skill-seekers[openai]\n\n# Set API key\nexport OPENAI_API_KEY=sk-proj-...\n\n# Get key from: https://platform.openai.com/",
+      "language": "markdown"
+    },
+    {
+      "code": "# Automatic upload (with API key)\nexport ANTHROPIC_API_KEY=sk-ant-...\nskill-seekers upload output/react.zip\n\n# Manual upload (no API key)\n# 1. Go to https://claude.ai/skills\n# 2. Click \"Upload Skill\"\n# 3. Select output/react.zip",
+      "language": "sql"
+    },
+    {
+      "code": "# Upload to Gemini\nexport GOOGLE_API_KEY=AIzaSy...\nskill-seekers upload output/react-gemini.tar.gz --target gemini",
+      "language": "markdown"
+    },
+    {
+      "code": "# Upload to OpenAI\nexport OPENAI_API_KEY=sk-proj-...\nskill-seekers upload output/react-openai.zip --target openai",
+      "language": "markdown"
+    },
+    {
+      "code": "# 1. Scrape documentation\nskill-seekers scrape --config configs/react.json\n\n# 2. Enhance\nskill-seekers enhance output/react/\n\n# 3. Package for platform\nskill-seekers package output/react/ --target claude\n\n# 4. Upload\nexport ANTHROPIC_API_KEY=sk-ant-...\nskill-seekers upload output/react.zip",
+      "language": "go"
+    },
+    {
+      "code": "# Set all API keys\nexport ANTHROPIC_API_KEY=sk-ant-...\nexport GOOGLE_API_KEY=AIzaSy...\nexport OPENAI_API_KEY=sk-proj-...\n\n# Upload to all platforms\nskill-seekers upload output/react.zip --target claude\nskill-seekers upload output/react-gemini.tar.gz --target gemini\nskill-seekers upload output/react-openai.zip --target openai",
+      "language": "markdown"
+    },
+    {
+      "code": "# macOS/Linux (bash)\necho 'export ANTHROPIC_API_KEY=sk-ant-...' >> ~/.bashrc\necho 'export GOOGLE_API_KEY=AIzaSy...' >> ~/.bashrc\necho 'export OPENAI_API_KEY=sk-proj-...' >> ~/.bashrc\nsource ~/.bashrc\n\n# macOS (zsh)\necho 'export ANTHROPIC_API_KEY=sk-ant-...' >> ~/.zshrc\necho 'export GOOGLE_API_KEY=AIzaSy...' >> ~/.zshrc\necho 'export OPENAI_API_KEY=sk-proj-...' >> ~/.zshrc\nsource ~/.zshrc",
+      "language": "markdown"
+    },
+    {
+      "code": "# Claude\nexport ANTHROPIC_API_KEY=sk-ant-...\n\n# Gemini\nexport GOOGLE_API_KEY=AIzaSy...\n\n# OpenAI\nexport OPENAI_API_KEY=sk-proj-...",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers package output/react/ --target claude\nskill-seekers upload output/react.zip",
+      "language": "go"
+    },
+    {
+      "code": "# In Claude Code or claude.ai\nAsk Claude: \"What skills do you have?\"",
+      "language": "markdown"
+    },
+    {
+      "code": "# Visit https://aistudio.google.com/\n# Check Files section for your skill",
+      "language": "markdown"
+    },
+    {
+      "code": "# Visit https://platform.openai.com/assistants/\n# Your assistant should be listed",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

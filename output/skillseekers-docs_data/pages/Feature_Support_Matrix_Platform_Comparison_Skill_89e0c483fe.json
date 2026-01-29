@@ -1,0 +1,268 @@
+{
+  "url": "https://skillseekersweb.com/docs/reference/feature-matrix",
+  "title": "Feature Support Matrix & Platform Comparison | Skill Seekers Docs",
+  "content": "Complete comparison of Skill Seekers features across all supported platforms.\n\nSkill Seekers supports 4 target platforms with different formats, APIs, and capabilities:\n\nAll platforms support:\n\nPlatform-specific support:\n\nAll platforms support C3.x codebase analysis features:\n\n18 MCP tools for Claude Desktop integration:\n\nSee also: MCP Setup Guide\n\nNote: Gemini and OpenAI don’t have native sub-skill routing, so the router flattens into a single comprehensive skill.\n\n✅ LOCAL Enhancement Mode - FREE with Claude Code Max ✅ Sub-Skill Routing - Native hierarchical skill support ✅ Custom Instructions - Behavior customization in YAML frontmatter ✅ MCP Integration - 18 tools for Claude Desktop\n\n✅ Grounding Support - Automatic source attribution ✅ Long Context Window - Up to 1M tokens ✅ Low Cost Enhancement - $0.01-0.05 per skill (Gemini 2.0 Flash)\n\n✅ Vector Store + file_search - Semantic search built-in ✅ Function Calling - Extend with custom tools ✅ Streaming Responses - Real-time answer generation\n\n✅ Universal Compatibility - Works with any LLM ✅ No Platform Lock-In - Pure markdown format ✅ Version Control Friendly - Easy to diff and track changes\n\n24 built-in presets work across all platforms:\n\nStatus: ✅ Complete (v2.6.0)\n\nFound an issue or have suggestions? Open an issue",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Feature Support Matrix & Platform Comparison",
+      "id": "feature-support-matrix--platform-comparison"
+    },
+    {
+      "level": "h2",
+      "text": "Platform Overview",
+      "id": "platform-overview"
+    },
+    {
+      "level": "h2",
+      "text": "Platform Capabilities",
+      "id": "platform-capabilities"
+    },
+    {
+      "level": "h3",
+      "text": "File Formats",
+      "id": "file-formats"
+    },
+    {
+      "level": "h3",
+      "text": "Enhancement Support",
+      "id": "enhancement-support"
+    },
+    {
+      "level": "h3",
+      "text": "Upload Methods",
+      "id": "upload-methods"
+    },
+    {
+      "level": "h2",
+      "text": "Skill Modes",
+      "id": "skill-modes"
+    },
+    {
+      "level": "h3",
+      "text": "Single-Source Skills",
+      "id": "single-source-skills"
+    },
+    {
+      "level": "h3",
+      "text": "Multi-Source Skills",
+      "id": "multi-source-skills"
+    },
+    {
+      "level": "h2",
+      "text": "CLI Command Support",
+      "id": "cli-command-support"
+    },
+    {
+      "level": "h3",
+      "text": "Scraping Commands",
+      "id": "scraping-commands"
+    },
+    {
+      "level": "h3",
+      "text": "Processing Commands",
+      "id": "processing-commands"
+    },
+    {
+      "level": "h2",
+      "text": "C3.x Codebase Analysis",
+      "id": "c3x-codebase-analysis"
+    },
+    {
+      "level": "h3",
+      "text": "Feature Support",
+      "id": "feature-support"
+    },
+    {
+      "level": "h3",
+      "text": "AI Enhancement Modes",
+      "id": "ai-enhancement-modes"
+    },
+    {
+      "level": "h2",
+      "text": "MCP Tool Support",
+      "id": "mcp-tool-support"
+    },
+    {
+      "level": "h3",
+      "text": "Available MCP Tools",
+      "id": "available-mcp-tools"
+    },
+    {
+      "level": "h2",
+      "text": "Workflow Coverage",
+      "id": "workflow-coverage"
+    },
+    {
+      "level": "h3",
+      "text": "Workflow: Documentation → Skill",
+      "id": "workflow-documentation--skill"
+    },
+    {
+      "level": "h3",
+      "text": "Workflow: GitHub → Skill",
+      "id": "workflow-github--skill"
+    },
+    {
+      "level": "h3",
+      "text": "Workflow: Codebase (C3.x) → Skill",
+      "id": "workflow-codebase-c3x--skill"
+    },
+    {
+      "level": "h3",
+      "text": "Workflow: Multi-Source (Unified) → Skill",
+      "id": "workflow-multi-source-unified--skill"
+    },
+    {
+      "level": "h3",
+      "text": "Workflow: Three-Stream Router → Skill",
+      "id": "workflow-three-stream-router--skill"
+    },
+    {
+      "level": "h2",
+      "text": "Platform-Specific Features",
+      "id": "platform-specific-features"
+    },
+    {
+      "level": "h3",
+      "text": "Claude AI Exclusive",
+      "id": "claude-ai-exclusive"
+    },
+    {
+      "level": "h3",
+      "text": "Google Gemini Exclusive",
+      "id": "google-gemini-exclusive"
+    },
+    {
+      "level": "h3",
+      "text": "OpenAI ChatGPT Exclusive",
+      "id": "openai-chatgpt-exclusive"
+    },
+    {
+      "level": "h3",
+      "text": "Generic Markdown",
+      "id": "generic-markdown"
+    },
+    {
+      "level": "h2",
+      "text": "Preset Support",
+      "id": "preset-support"
+    },
+    {
+      "level": "h2",
+      "text": "Cost Comparison",
+      "id": "cost-comparison"
+    },
+    {
+      "level": "h3",
+      "text": "Enhancement Costs",
+      "id": "enhancement-costs"
+    },
+    {
+      "level": "h3",
+      "text": "Storage/Upload Costs",
+      "id": "storageupload-costs"
+    },
+    {
+      "level": "h2",
+      "text": "Version Compatibility",
+      "id": "version-compatibility"
+    },
+    {
+      "level": "h2",
+      "text": "Platform Selection Guide",
+      "id": "platform-selection-guide"
+    },
+    {
+      "level": "h3",
+      "text": "Choose Claude AI if:",
+      "id": "choose-claude-ai-if"
+    },
+    {
+      "level": "h3",
+      "text": "Choose Google Gemini if:",
+      "id": "choose-google-gemini-if"
+    },
+    {
+      "level": "h3",
+      "text": "Choose OpenAI ChatGPT if:",
+      "id": "choose-openai-chatgpt-if"
+    },
+    {
+      "level": "h3",
+      "text": "Choose Generic Markdown if:",
+      "id": "choose-generic-markdown-if"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers package output/skill/ --target [claude|gemini|openai|markdown]",
+      "language": "go"
+    },
+    {
+      "code": "# Claude (API mode)\nexport ANTHROPIC_API_KEY=sk-ant-...\nskill-seekers enhance output/skill/ --enhance\n\n# Claude (LOCAL mode - FREE!)\nskill-seekers enhance output/skill/ --enhance-local\n\n# Gemini (API mode)\nexport GOOGLE_API_KEY=AIza...\nskill-seekers enhance output/skill/ --target gemini\n\n# OpenAI (API mode)\nexport OPENAI_API_KEY=sk-proj-...\nskill-seekers enhance output/skill/ --target openai",
+      "language": "markdown"
+    },
+    {
+      "code": "# Gemini (programmatic)\nskill-seekers upload skill-gemini.tar.gz --target gemini --api-key AIza...\n\n# OpenAI (programmatic)\nskill-seekers upload skill-openai.zip --target openai --api-key sk-proj-...\n\n# Claude (manual for now)\n# Upload skill.zip at claude.ai/skills",
+      "language": "markdown"
+    },
+    {
+      "code": "# Works for all platforms\nskill-seekers-codebase path/to/repo/ \\\n  --output output/codebase/ \\\n  --extract-patterns \\\n  --extract-test-examples \\\n  --build-how-to-guides \\\n  --ai-mode auto",
+      "language": "markdown"
+    },
+    {
+      "code": "pip install skill-seekers[mcp]\n\n# Add to Claude Desktop config\n# ~/.config/Claude/claude_desktop_config.json (Linux)\n# ~/Library/Application Support/Claude/claude_desktop_config.json (macOS)\n# %APPDATA%/Claude/claude_desktop_config.json (Windows)",
+      "language": "markdown"
+    },
+    {
+      "code": "# List all presets\nskill-seekers list-presets\n\n# Use preset (works for all platforms)\nskill-seekers scrape --preset react\nskill-seekers package output/react/ --target [claude|gemini|openai|markdown]",
+      "language": "go"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Example:",
+      "code": "# Works for all platforms\nskill-seekers-codebase path/to/repo/ \\\n  --output output/codebase/ \\\n  --extract-patterns \\\n  --extract-test-examples \\\n  --build-how-to-guides \\\n  --ai-mode auto"
+    },
+    {
+      "description": "Usage:",
+      "code": "# List all presets\nskill-seekers list-presets\n\n# Use preset (works for all platforms)\nskill-seekers scrape --preset react\nskill-seekers package output/react/ --target [claude|gemini|openai|markdown]"
+    }
+  ],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

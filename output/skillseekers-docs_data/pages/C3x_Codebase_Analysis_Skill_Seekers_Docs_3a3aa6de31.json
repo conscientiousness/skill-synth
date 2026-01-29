@@ -1,0 +1,306 @@
+{
+  "url": "https://skillseekersweb.com/docs/manual/codebase-analysis/c3x-codebase-analysis",
+  "title": "C3.x Codebase Analysis | Skill Seekers Docs",
+  "content": "C3.x is Skill Seekers’ deep codebase analysis system that uses Abstract Syntax Tree (AST) parsing to extract comprehensive knowledge from source code. It goes far beyond simple scraping to understand how code actually works.\n\nC3.x stands for Comprehensive Codebase Context Extraction with 7 analysis modules:\n\nC3.x analyzes code through AST parsing for:\n\nAutomatically detects common design patterns in your codebase.\n\nFrom analyzing fastmcp repository:\n\nExtracts working code examples from test files.\n\nFrom fastmcp repository:\n\nGenerates step-by-step tutorials from code patterns.\n\nAnalyzes configuration files to understand setup patterns.\n\nAutomatically scans for:\n\nIdentifies high-level architecture patterns.\n\nEnable only specific modules:\n\nC3.x uses intelligent caching:\n\nAfter C3.x analysis, you can enhance with AI:\n\nUse basic mode instead:\n\nTime: 1-2 minutes Gets: File structure, imports, entry points (no C3.x)",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "C3.x Codebase Analysis",
+      "id": "c3x-codebase-analysis"
+    },
+    {
+      "level": "h2",
+      "text": "What is C3.x?",
+      "id": "what-is-c3x"
+    },
+    {
+      "level": "h2",
+      "text": "Supported Languages",
+      "id": "supported-languages"
+    },
+    {
+      "level": "h2",
+      "text": "C3.1: Design Pattern Detection",
+      "id": "c31-design-pattern-detection"
+    },
+    {
+      "level": "h3",
+      "text": "Patterns Detected",
+      "id": "patterns-detected"
+    },
+    {
+      "level": "h3",
+      "text": "Example Output",
+      "id": "example-output"
+    },
+    {
+      "level": "h3",
+      "text": "Real-World Results",
+      "id": "real-world-results"
+    },
+    {
+      "level": "h2",
+      "text": "C3.2: Test Example Extraction",
+      "id": "c32-test-example-extraction"
+    },
+    {
+      "level": "h3",
+      "text": "Why Test Files?",
+      "id": "why-test-files"
+    },
+    {
+      "level": "h3",
+      "text": "Example Output",
+      "id": "example-output-1"
+    },
+    {
+      "level": "h3",
+      "text": "Real-World Results",
+      "id": "real-world-results-1"
+    },
+    {
+      "level": "h2",
+      "text": "C3.3: How-To Guide Generation",
+      "id": "c33-how-to-guide-generation"
+    },
+    {
+      "level": "h3",
+      "text": "Generation Process",
+      "id": "generation-process"
+    },
+    {
+      "level": "h3",
+      "text": "Example Output",
+      "id": "example-output-2"
+    },
+    {
+      "level": "h2",
+      "text": "C3.4: Configuration Pattern Analysis",
+      "id": "c34-configuration-pattern-analysis"
+    },
+    {
+      "level": "h3",
+      "text": "Supported Formats",
+      "id": "supported-formats"
+    },
+    {
+      "level": "h3",
+      "text": "AI-Powered Security Analysis",
+      "id": "ai-powered-security-analysis"
+    },
+    {
+      "level": "h3",
+      "text": "Example Output",
+      "id": "example-output-3"
+    },
+    {
+      "level": "h2",
+      "text": "C3.7: Architectural Pattern Detection",
+      "id": "c37-architectural-pattern-detection"
+    },
+    {
+      "level": "h3",
+      "text": "Architectures Detected",
+      "id": "architectures-detected"
+    },
+    {
+      "level": "h3",
+      "text": "Example Output",
+      "id": "example-output-4"
+    },
+    {
+      "level": "h2",
+      "text": "Usage",
+      "id": "usage"
+    },
+    {
+      "level": "h3",
+      "text": "Basic C3.x Analysis",
+      "id": "basic-c3x-analysis"
+    },
+    {
+      "level": "h3",
+      "text": "With GitHub Repository",
+      "id": "with-github-repository"
+    },
+    {
+      "level": "h3",
+      "text": "Configuration File",
+      "id": "configuration-file"
+    },
+    {
+      "level": "h3",
+      "text": "Selective Module Analysis",
+      "id": "selective-module-analysis"
+    },
+    {
+      "level": "h2",
+      "text": "Performance",
+      "id": "performance"
+    },
+    {
+      "level": "h3",
+      "text": "Analysis Time",
+      "id": "analysis-time"
+    },
+    {
+      "level": "h3",
+      "text": "Caching",
+      "id": "caching"
+    },
+    {
+      "level": "h2",
+      "text": "Output Structure",
+      "id": "output-structure"
+    },
+    {
+      "level": "h2",
+      "text": "AI Enhancement",
+      "id": "ai-enhancement"
+    },
+    {
+      "level": "h2",
+      "text": "Best Practices",
+      "id": "best-practices"
+    },
+    {
+      "level": "h3",
+      "text": "For Small Projects (< 100 files)",
+      "id": "for-small-projects--100-files"
+    },
+    {
+      "level": "h3",
+      "text": "For Large Projects (1000+ files)",
+      "id": "for-large-projects-1000-files"
+    },
+    {
+      "level": "h3",
+      "text": "For Quick Overview",
+      "id": "for-quick-overview"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "”Analysis taking too long”",
+      "id": "analysis-taking-too-long"
+    },
+    {
+      "level": "h3",
+      "text": "”Not enough patterns detected”",
+      "id": "not-enough-patterns-detected"
+    },
+    {
+      "level": "h3",
+      "text": "”Missing examples”",
+      "id": "missing-examples"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "{\n  \"pattern\": \"Strategy\",\n  \"confidence\": 0.95,\n  \"location\": \"src/providers/oauth_provider.py\",\n  \"line_number\": 42,\n  \"context\": {\n    \"interface\": \"OAuthProvider\",\n    \"implementations\": [\n      \"GoogleProvider\",\n      \"AzureProvider\",\n      \"GitHubProvider\"\n    ],\n    \"usage_count\": 206\n  },\n  \"explanation\": \"Strategy pattern allows runtime selection of OAuth provider implementation\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"title\": \"OAuth with Google Provider\",\n  \"source\": \"tests/test_oauth.py:23-45\",\n  \"language\": \"python\",\n  \"code\": \"def test_google_oauth():\\n    provider = GoogleProvider(\\n        client_id='test-id',\\n        client_secret='test-secret',\\n        redirect_uri='http://localhost:8000/callback'\\n    )\\n    \\n    auth_url = provider.get_authorization_url()\\n    assert 'accounts.google.com' in auth_url\",\n  \"description\": \"Configure Google OAuth provider with credentials and generate authorization URL\",\n  \"category\": \"authentication\",\n  \"complexity\": \"medium\",\n  \"confidence\": 0.92\n}",
+      "language": "json"
+    },
+    {
+      "code": "# How to Implement OAuth Authentication\n\n## Overview\nThis guide shows how to add OAuth authentication using the Strategy pattern.\n\n## Prerequisites\n- Provider credentials (client_id, client_secret)\n- Redirect URI configured\n\n## Step 1: Create Provider Instance\n\\`\\`\\`python\nfrom fastmcp import GoogleProvider\n\nprovider = GoogleProvider(\n    client_id=\"your-client-id\",\n    client_secret=\"your-secret\",\n    redirect_uri=\"http://localhost:8000/callback\"\n)\n\\`\\`\\`\n\n## Step 2: Generate Authorization URL\n\\`\\`\\`python\nauth_url = provider.get_authorization_url()\n# Redirect user to auth_url\n\\`\\`\\`\n\n## Step 3: Handle Callback\n\\`\\`\\`python\ntoken = provider.exchange_code(request.params['code'])\nuser_info = provider.get_user_info(token)\n\\`\\`\\`\n\n## Common Issues\n- **Redirect URI mismatch:** Ensure URI matches exactly in provider console\n- **Invalid credentials:** Double-check client_id and client_secret",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"file\": \"config/settings.json\",\n  \"format\": \"json\",\n  \"structure\": {\n    \"database\": {\n      \"host\": \"localhost\",\n      \"port\": 5432,\n      \"name\": \"myapp_db\"\n    },\n    \"oauth\": {\n      \"providers\": [\"google\", \"github\"],\n      \"redirect_uri\": \"/auth/callback\"\n    }\n  },\n  \"security_issues\": [\n    {\n      \"severity\": \"high\",\n      \"issue\": \"Hardcoded database password\",\n      \"line\": 5,\n      \"recommendation\": \"Use environment variables\"\n    }\n  ],\n  \"best_practices\": [\n    {\n      \"category\": \"security\",\n      \"suggestion\": \"Add secrets rotation policy\"\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"primary_pattern\": \"Service Layer\",\n  \"confidence\": 0.89,\n  \"indicators\": {\n    \"service_classes\": 47,\n    \"repository_classes\": 23,\n    \"controller_classes\": 31,\n    \"pattern_consistency\": 0.92\n  },\n  \"architecture_description\": \"Application follows Service Layer pattern with 47 service classes handling business logic, 23 repositories for data access, and 31 controllers for HTTP handling.\",\n  \"recommendations\": [\n    \"Consider extracting common service logic into base class\",\n    \"Add service interface layer for better testing\"\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers unified \\\n  --source /path/to/project \\\n  --depth c3x \\\n  --output-dir output/my-project",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers unified \\\n  --repo-url https://github.com/fastapi/fastapi \\\n  --depth c3x \\\n  --fetch-github-metadata \\\n  --output-dir output/fastapi",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"name\": \"my-framework\",\n  \"sources\": [\n    {\n      \"type\": \"codebase\",\n      \"source\": \"https://github.com/org/my-framework\",\n      \"analysis_depth\": \"c3x\",\n      \"c3x_modules\": {\n        \"patterns\": true,\n        \"examples\": true,\n        \"guides\": true,\n        \"configs\": true,\n        \"architecture\": true\n      }\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"c3x_modules\": {\n    \"patterns\": true,    // C3.1\n    \"examples\": true,    // C3.2\n    \"guides\": false,     // C3.3 (skip)\n    \"configs\": true,     // C3.4\n    \"architecture\": true // C3.7\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "# First run: 30 minutes\nskill-seekers unified --source /my/project --depth c3x\n\n# After changing 5 files: 3 minutes\nskill-seekers unified --source /my/project --depth c3x",
+      "language": "markdown"
+    },
+    {
+      "code": "output/my-framework_unified_data/\n├── c3_analysis_temp/\n│   ├── patterns/\n│   │   └── detected_patterns.json        (C3.1)\n│   ├── test_examples/\n│   │   └── test_examples.json            (C3.2)\n│   ├── how_to_guides/\n│   │   └── guides.json                   (C3.3)\n│   ├── config_patterns/\n│   │   └── config_patterns.json          (C3.4)\n│   └── architecture/\n│       └── architectural_patterns.json    (C3.7)\n│\n├── references/\n│   ├── patterns.md\n│   ├── examples.md\n│   ├── guides.md\n│   └── architecture.md\n│\n└── SKILL.md                               (Final skill file)",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers enhance \\\n  --input output/my-framework_unified_data \\\n  --ai-provider anthropic \\\n  --enhancement-mode comprehensive",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"analysis_depth\": \"c3x\",\n  \"c3x_modules\": {\n    \"patterns\": true,\n    \"examples\": true,\n    \"guides\": true,\n    \"configs\": true,\n    \"architecture\": true\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"analysis_depth\": \"c3x\",\n  \"c3x_modules\": {\n    \"patterns\": true,      // Essential\n    \"examples\": true,      // Essential\n    \"guides\": false,       // Skip (time-consuming)\n    \"configs\": true,       // Essential\n    \"architecture\": true   // Quick, keep it\n  },\n  \"max_examples_per_category\": 50  // Limit output\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers unified \\\n  --source /my/project \\\n  --depth basic",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Example:",
+      "code": "# First run: 30 minutes\nskill-seekers unified --source /my/project --depth c3x\n\n# After changing 5 files: 3 minutes\nskill-seekers unified --source /my/project --depth c3x"
+    }
+  ],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/manual/codebase-analysis/c3x-codebase-analysis"
+  ]
+}

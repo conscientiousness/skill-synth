@@ -1,0 +1,203 @@
+{
+  "url": "https://skillseekersweb.com/docs/tutorials/scraping-docs",
+  "title": "Tutorial: Scraping Documentation | Skill Seekers Docs",
+  "content": "Learn how to scrape any documentation website and create an AI skill in this hands-on tutorial.\n\nTime: 15 minutes | Level: Beginner | Result: Working React docs skill\n\nFor this tutorial, we’ll scrape React documentation. Skill Seekers includes 24 preset configs for popular frameworks.\n\nView available presets:\n\nBefore scraping, estimate how many pages will be processed:\n\nRun the scraper with the React preset:\n\nCheck what was created:\n\nTransform the skill from basic (3/10) to comprehensive (9/10) using AI:\n\nOption A: Local Enhancement (FREE with Claude Max)\n\nThis opens Claude Code in a new terminal and enhances the skill using your Claude Max subscription (no API costs!).\n\nOption B: API Enhancement (Fast)\n\nPackage for your preferred platform:\n\nAutomatic Upload (Recommended):\n\nTry these prompts in Claude:\n\nResult: Claude responds with accurate, context-aware answers based on official React documentation!\n\nSolution: Check your config selectors:\n\nInteractive mode shows extracted content and lets you test selectors.\n\nYou just created your first AI skill! 🎉\n\nTime investment: 15 minutes Result: Professional-quality AI skill ready to use!",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Tutorial: Scraping Documentation",
+      "id": "tutorial-scraping-documentation"
+    },
+    {
+      "level": "h2",
+      "text": "What You’ll Learn",
+      "id": "what-youll-learn"
+    },
+    {
+      "level": "h2",
+      "text": "Prerequisites",
+      "id": "prerequisites"
+    },
+    {
+      "level": "h2",
+      "text": "Step 1: Choose a Documentation Site",
+      "id": "step-1-choose-a-documentation-site"
+    },
+    {
+      "level": "h2",
+      "text": "Step 2: Estimate Page Count",
+      "id": "step-2-estimate-page-count"
+    },
+    {
+      "level": "h2",
+      "text": "Step 3: Scrape the Documentation",
+      "id": "step-3-scrape-the-documentation"
+    },
+    {
+      "level": "h2",
+      "text": "Step 4: Review the Skill",
+      "id": "step-4-review-the-skill"
+    },
+    {
+      "level": "h2",
+      "text": "Step 5: Enhance with AI (Optional)",
+      "id": "step-5-enhance-with-ai-optional"
+    },
+    {
+      "level": "h2",
+      "text": "Step 6: Package the Skill",
+      "id": "step-6-package-the-skill"
+    },
+    {
+      "level": "h2",
+      "text": "Step 7: Upload to AI Assistant",
+      "id": "step-7-upload-to-ai-assistant"
+    },
+    {
+      "level": "h2",
+      "text": "Step 8: Test Your Skill",
+      "id": "step-8-test-your-skill"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: “No pages found”",
+      "id": "issue-no-pages-found"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: “Scraping too slow”",
+      "id": "issue-scraping-too-slow"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: “Enhancement failed”",
+      "id": "issue-enhancement-failed"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    },
+    {
+      "level": "h2",
+      "text": "Summary",
+      "id": "summary"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers list-configs",
+      "language": "unknown"
+    },
+    {
+      "code": "Available configs:\n- react.json        (React documentation)\n- vue.json          (Vue.js documentation)\n- django.json       (Django framework)\n- godot.json        (Godot game engine)\n- fastapi.json      (FastAPI framework)\n... and 19 more",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers estimate --config configs/react.json",
+      "language": "unknown"
+    },
+    {
+      "code": "📊 Estimation Results:\nBase URL: https://react.dev/learn\nEstimated pages: ~180 pages\nEstimated time: 3-5 minutes\nCategories detected: 4",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers scrape --config configs/react.json --output output/react/",
+      "language": "unknown"
+    },
+    {
+      "code": "🔍 Checking for llms.txt...\n✅ Found llms-full.txt (2.3 MB)\n📥 Downloading...\n✅ Downloaded in 1.8 seconds\n📝 Creating skill structure...\n✅ Skill created: output/react/SKILL.md\n⚡ Time saved: 4m 32s vs traditional scraping",
+      "language": "json"
+    },
+    {
+      "code": "ls -lh output/react/",
+      "language": "unknown"
+    },
+    {
+      "code": "output/react/\n├── SKILL.md                    # Main skill file (200-500 lines)\n├── references/                 # Detailed documentation\n│   ├── hooks.md\n│   ├── components.md\n│   ├── state-management.md\n│   └── ... (50-100 reference files)\n└── examples/                   # Code examples\n    ├── useState-example.md\n    ├── useEffect-example.md\n    └── ...",
+      "language": "unknown"
+    },
+    {
+      "code": "head -50 output/react/SKILL.md",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers enhance output/react/",
+      "language": "unknown"
+    },
+    {
+      "code": "export ANTHROPIC_API_KEY=\"sk-ant-...\"\nskill-seekers enhance output/react/ --mode api",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers package output/react/ --target claude",
+      "language": "go"
+    },
+    {
+      "code": "skill-seekers package output/react/ --target gemini",
+      "language": "go"
+    },
+    {
+      "code": "skill-seekers package output/react/ --target openai",
+      "language": "go"
+    },
+    {
+      "code": "✅ Packaged: react-claude.zip (2.3 MB)\n📦 Format: Claude AI (YAML frontmatter)\n📄 Files: 1 SKILL.md + 87 references\n🎯 Ready to upload!",
+      "language": "swift"
+    },
+    {
+      "code": "# Set API key first\nexport ANTHROPIC_API_KEY=\"sk-ant-...\"\n\n# Upload\nskill-seekers upload react-claude.zip --target claude",
+      "language": "markdown"
+    },
+    {
+      "code": "\"Explain React hooks to me\"\n\"Show me how to use useState with arrays\"\n\"What's the difference between useEffect and useLayoutEffect?\"\n\"Create a simple counter component using hooks\"",
+      "language": "julia"
+    },
+    {
+      "code": "skill-seekers scrape --config configs/react.json --interactive",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/tutorials/analyzing-github",
+    "https://skillseekersweb.com/docs/tutorials/creating-configs",
+    "https://skillseekersweb.com/docs/tutorials/multi-source-skills",
+    "https://skillseekersweb.com/docs/manual/mcp/setup",
+    "https://skillseekersweb.com/docs/manual/enhancement/ai-enhancement",
+    "https://skillseekersweb.com/docs/tutorials/scraping-docs"
+  ]
+}

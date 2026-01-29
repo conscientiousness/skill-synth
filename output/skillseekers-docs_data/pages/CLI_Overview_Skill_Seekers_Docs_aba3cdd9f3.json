@@ -1,0 +1,154 @@
+{
+  "url": "https://skillseekersweb.com/docs/cli/overview",
+  "title": "CLI Overview | Skill Seekers Docs",
+  "content": "Skill Seekers provides a comprehensive command-line interface for creating, enhancing, and deploying AI skills across multiple platforms.\n\nExtract content from various sources:\n\nTransform and package skills:\n\nMost commands support these options:\n\nNew in v2.7.0: Interactive configuration wizard and job resumption.\n\nAuto-resume features:\n\nConfiguration (v2.7.0):",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "CLI Overview",
+      "id": "cli-overview"
+    },
+    {
+      "level": "h2",
+      "text": "Available Commands",
+      "id": "available-commands"
+    },
+    {
+      "level": "h3",
+      "text": "Core Commands",
+      "id": "core-commands"
+    },
+    {
+      "level": "h3",
+      "text": "Processing Commands",
+      "id": "processing-commands"
+    },
+    {
+      "level": "h3",
+      "text": "Utility Commands",
+      "id": "utility-commands"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Reference",
+      "id": "quick-reference"
+    },
+    {
+      "level": "h3",
+      "text": "Complete Workflow",
+      "id": "complete-workflow"
+    },
+    {
+      "level": "h3",
+      "text": "Multi-Platform Workflow",
+      "id": "multi-platform-workflow"
+    },
+    {
+      "level": "h2",
+      "text": "Command Categories",
+      "id": "command-categories"
+    },
+    {
+      "level": "h3",
+      "text": "Source Commands",
+      "id": "source-commands"
+    },
+    {
+      "level": "h3",
+      "text": "Processing Commands",
+      "id": "processing-commands-1"
+    },
+    {
+      "level": "h2",
+      "text": "Common Options",
+      "id": "common-options"
+    },
+    {
+      "level": "h2",
+      "text": "Configuration Management (v2.7.0)",
+      "id": "configuration-management-v270"
+    },
+    {
+      "level": "h3",
+      "text": "Setup GitHub Tokens",
+      "id": "setup-github-tokens"
+    },
+    {
+      "level": "h3",
+      "text": "Configure API Keys",
+      "id": "configure-api-keys"
+    },
+    {
+      "level": "h3",
+      "text": "Resume Interrupted Jobs",
+      "id": "resume-interrupted-jobs"
+    },
+    {
+      "level": "h2",
+      "text": "Getting Help",
+      "id": "getting-help"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "# 1. Scrape documentation\nskill-seekers scrape --config configs/react.json\n\n# 2. Enhance with AI\nskill-seekers enhance output/react/\n\n# 3. Package for platform\nskill-seekers package output/react/ --target claude\n\n# 4. Upload to platform\nskill-seekers upload output/react.zip",
+      "language": "go"
+    },
+    {
+      "code": "# Scrape once\nskill-seekers scrape --config configs/react.json\n\n# Package for all platforms\nskill-seekers package output/react/ --target claude\nskill-seekers package output/react/ --target gemini\nskill-seekers package output/react/ --target openai\nskill-seekers package output/react/ --target markdown\n\n# Upload to platforms\nskill-seekers upload output/react.zip --target claude\nskill-seekers upload output/react-gemini.tar.gz --target gemini\nskill-seekers upload output/react-openai.zip --target openai",
+      "language": "go"
+    },
+    {
+      "code": "# Interactive wizard for multi-profile token management\nskill-seekers config --github\n\n# Set up multiple profiles (personal, work, etc.)\n# Configure rate limit strategies (prompt, wait, switch, fail)\n# Test connections and view rate limits",
+      "language": "markdown"
+    },
+    {
+      "code": "# Set up API keys for AI enhancement\nskill-seekers config --api-keys\n\n# Supported: Claude (Anthropic), Google Gemini, OpenAI ChatGPT\n# Browser integration opens API key creation pages\n# Secure storage with 600 permissions",
+      "language": "markdown"
+    },
+    {
+      "code": "# List all resumable jobs\nskill-seekers resume --list\n\n# Resume specific job from checkpoint\nskill-seekers resume abc123def456\n\n# Clean up old job files\nskill-seekers resume --clean",
+      "language": "sql"
+    },
+    {
+      "code": "# General help\nskill-seekers --help\n\n# Command-specific help\nskill-seekers scrape --help\nskill-seekers github --help\nskill-seekers package --help\nskill-seekers config --help\nskill-seekers resume --help",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

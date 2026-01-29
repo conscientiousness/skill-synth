@@ -1,0 +1,532 @@
+{
+  "url": "https://skillseekersweb.com/docs/community/changelog",
+  "title": "Changelog | Skill Seekers Docs",
+  "content": "All notable changes to Skill Seeker will be documented in this file.\n\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning.\n\nThis minor feature release introduces intelligent GitHub rate limit handling, multi-profile token management, and comprehensive configuration system. Say goodbye to indefinite waits and confusing token setup!\n\n🎯 Multi-Token Configuration System - Flexible GitHub token management with profiles\n\n🧙 Interactive Configuration Wizard - Beautiful terminal UI for easy setup\n\n🚦 Smart Rate Limit Handler - Intelligent GitHub API rate limit management\n\n📦 Resume Command - Resume interrupted scraping jobs\n\n⚙️ CLI Enhancements - New flags and improved UX\n\n🧪 Comprehensive Test Suite - Full test coverage for new features\n\n🎯 Bootstrap Skill Feature - Self-hosting capability (PR #249)\n\n🔧 MCP Now Optional - User choice for installation profile\n\n🧪 E2E Testing for Bootstrap - Comprehensive end-to-end tests\n\n📚 Comprehensive Documentation Overhaul - Complete v2.7.0 documentation update\n\n📦 Git Submodules for Configuration Management - Improved config organization and API deployment\n\n🔍 Config Discovery Enhancements - Improved config listing\n\nGitHub Fetcher - Integrated rate limit handler\n\nGitHub Scraper - Added rate limit support\n\nMain CLI - Enhanced with new commands\n\npyproject.toml - New entry points and dependency restructuring\n\ninstall_skill.py - Lazy MCP loading\n\nCode Quality Improvements - Fixed all 21 ruff linting errors across codebase\n\nVersion Synchronization - Fixed version mismatch across package (Issue #248)\n\nCase-Insensitive Regex in Install Workflow - Fixed install workflow failures (Issue #236)\n\nTest Fixture Error - Fixed pytest fixture error in bootstrap skill tests\n\nMCP Setup Modernization - Updated MCP server configuration (PR #252, @MiaoDX)\n\nRate limit indefinite wait - No more infinite waiting\n\nToken setup confusion - Clear, guided setup process\n\nCI/CD failures - Non-interactive mode support\n\nAttributeError in codebase_scraper.py - Fixed incorrect flag check (PR #249)\n\nExisting users - No migration needed! Everything works as before.\n\nMCP users - If you use MCP integration features:\n\nNew installation profiles:\n\nNone - this release is fully backward compatible.\n\nThis minor feature release completes the C3.x codebase analysis suite with standalone SKILL.md generation for codebase scraper, adds comprehensive documentation reorganization, and includes quality-of-life improvements for setup and testing.\n\nThis patch release improves the packaging configuration by switching from manual package listing to automatic package discovery.\n\nThis patch release fixes a critical packaging bug that made v2.5.0 completely unusable for PyPI users.\n\nThis major feature release adds complete multi-platform support for Claude AI, Google Gemini, OpenAI ChatGPT, and Generic Markdown export.\n\nThis major release upgrades the MCP infrastructure to the 2025 specification with support for 5 AI coding agents.\n\nThis release adds automatic skill installation to 10+ AI coding agents with a single command.\n\nThis major release adds git-based config sources, enabling teams to fetch configs from private/team repositories.\n\nThis release significantly improves GitHub repository scraping with unlimited local analysis.\n\nThis release focuses on quality and reliability improvements.\n\nSkill Seekers is now available on PyPI! Install with: pip install skill-seekers\n\nMajor enhancement to PDF extraction capabilities.\n\nMajor improvements to documentation scraping.\n\nThis is the first production-ready release with complete feature set.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Changelog",
+      "id": "changelog"
+    },
+    {
+      "level": "h2",
+      "text": "Unreleased",
+      "id": "unreleased"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added"
+    },
+    {
+      "level": "h3",
+      "text": "Changed",
+      "id": "changed"
+    },
+    {
+      "level": "h3",
+      "text": "Fixed",
+      "id": "fixed"
+    },
+    {
+      "level": "h3",
+      "text": "Removed",
+      "id": "removed"
+    },
+    {
+      "level": "h2",
+      "text": "[2.7.0] - 2026-01-18",
+      "id": "270---2026-01-18"
+    },
+    {
+      "level": "h3",
+      "text": "🔐 Smart Rate Limit Management & Multi-Token Configuration",
+      "id": "-smart-rate-limit-management--multi-token-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-1"
+    },
+    {
+      "level": "h3",
+      "text": "Changed",
+      "id": "changed-1"
+    },
+    {
+      "level": "h3",
+      "text": "Fixed",
+      "id": "fixed-1"
+    },
+    {
+      "level": "h3",
+      "text": "Technical Details",
+      "id": "technical-details"
+    },
+    {
+      "level": "h3",
+      "text": "Migration Guide",
+      "id": "migration-guide"
+    },
+    {
+      "level": "h3",
+      "text": "Breaking Changes",
+      "id": "breaking-changes"
+    },
+    {
+      "level": "h2",
+      "text": "2.6.0 - 2026-01-13",
+      "id": "260---2026-01-13"
+    },
+    {
+      "level": "h3",
+      "text": "🚀 Codebase Analysis Enhancements & Documentation Reorganization",
+      "id": "-codebase-analysis-enhancements--documentation-reorganization"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-2"
+    },
+    {
+      "level": "h3",
+      "text": "Changed",
+      "id": "changed-2"
+    },
+    {
+      "level": "h3",
+      "text": "Fixed",
+      "id": "fixed-2"
+    },
+    {
+      "level": "h2",
+      "text": "2.5.2 - 2025-12-31",
+      "id": "252---2025-12-31"
+    },
+    {
+      "level": "h3",
+      "text": "🔧 Package Configuration Improvement",
+      "id": "-package-configuration-improvement"
+    },
+    {
+      "level": "h3",
+      "text": "Changed",
+      "id": "changed-3"
+    },
+    {
+      "level": "h2",
+      "text": "2.5.1 - 2025-12-30",
+      "id": "251---2025-12-30"
+    },
+    {
+      "level": "h3",
+      "text": "🐛 Critical Bug Fix - PyPI Package Broken",
+      "id": "-critical-bug-fix---pypi-package-broken"
+    },
+    {
+      "level": "h3",
+      "text": "Fixed",
+      "id": "fixed-3"
+    },
+    {
+      "level": "h2",
+      "text": "2.5.0 - 2025-12-28",
+      "id": "250---2025-12-28"
+    },
+    {
+      "level": "h3",
+      "text": "🚀 Multi-Platform Feature Parity - 4 LLM Platforms Supported",
+      "id": "-multi-platform-feature-parity---4-llm-platforms-supported"
+    },
+    {
+      "level": "h3",
+      "text": "🎯 Major Features",
+      "id": "-major-features"
+    },
+    {
+      "level": "h4",
+      "text": "Multi-LLM Platform Support",
+      "id": "multi-llm-platform-support"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-3"
+    },
+    {
+      "level": "h2",
+      "text": "2.4.0 - 2025-12-25",
+      "id": "240---2025-12-25"
+    },
+    {
+      "level": "h3",
+      "text": "🚀 MCP 2025 Upgrade - Multi-Agent Support & HTTP Transport",
+      "id": "-mcp-2025-upgrade---multi-agent-support--http-transport"
+    },
+    {
+      "level": "h3",
+      "text": "🎯 Major Features",
+      "id": "-major-features-1"
+    },
+    {
+      "level": "h4",
+      "text": "MCP SDK v1.25.0 Upgrade",
+      "id": "mcp-sdk-v1250-upgrade"
+    },
+    {
+      "level": "h4",
+      "text": "Dual Transport Support",
+      "id": "dual-transport-support"
+    },
+    {
+      "level": "h4",
+      "text": "Multi-Agent Auto-Configuration",
+      "id": "multi-agent-auto-configuration"
+    },
+    {
+      "level": "h4",
+      "text": "Expanded Tool Suite (17 Tools)",
+      "id": "expanded-tool-suite-17-tools"
+    },
+    {
+      "level": "h2",
+      "text": "2.3.0 - 2025-12-22",
+      "id": "230---2025-12-22"
+    },
+    {
+      "level": "h3",
+      "text": "🤖 Multi-Agent Installation Support",
+      "id": "-multi-agent-installation-support"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-4"
+    },
+    {
+      "level": "h2",
+      "text": "2.2.0 - 2025-12-21",
+      "id": "220---2025-12-21"
+    },
+    {
+      "level": "h3",
+      "text": "🚀 Private Config Repositories - Team Collaboration Unlocked",
+      "id": "-private-config-repositories---team-collaboration-unlocked"
+    },
+    {
+      "level": "h3",
+      "text": "🎯 Major Features",
+      "id": "-major-features-2"
+    },
+    {
+      "level": "h4",
+      "text": "Git-Based Config Sources",
+      "id": "git-based-config-sources"
+    },
+    {
+      "level": "h4",
+      "text": "New MCP Tools",
+      "id": "new-mcp-tools"
+    },
+    {
+      "level": "h2",
+      "text": "[2.1.1] - 2025-11-30",
+      "id": "211---2025-11-30"
+    },
+    {
+      "level": "h3",
+      "text": "Fixed",
+      "id": "fixed-4"
+    },
+    {
+      "level": "h2",
+      "text": "[2.1.0] - 2025-11-29",
+      "id": "210---2025-11-29"
+    },
+    {
+      "level": "h3",
+      "text": "🚀 GitHub Repository Analysis Enhancements",
+      "id": "-github-repository-analysis-enhancements"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-5"
+    },
+    {
+      "level": "h3",
+      "text": "Fixed",
+      "id": "fixed-5"
+    },
+    {
+      "level": "h3",
+      "text": "Improved",
+      "id": "improved"
+    },
+    {
+      "level": "h2",
+      "text": "[2.1.0] - 2025-11-12",
+      "id": "210---2025-11-12"
+    },
+    {
+      "level": "h3",
+      "text": "🎉 Major Enhancement: Quality Assurance + Race Condition Fixes",
+      "id": "-major-enhancement-quality-assurance--race-condition-fixes"
+    },
+    {
+      "level": "h3",
+      "text": "🚀 Major Features",
+      "id": "-major-features-3"
+    },
+    {
+      "level": "h4",
+      "text": "Comprehensive Quality Checker",
+      "id": "comprehensive-quality-checker"
+    },
+    {
+      "level": "h4",
+      "text": "Headless Enhancement Mode (Default)",
+      "id": "headless-enhancement-mode-default"
+    },
+    {
+      "level": "h2",
+      "text": "2.0.0 - 2025-11-11",
+      "id": "200---2025-11-11"
+    },
+    {
+      "level": "h3",
+      "text": "🎉 Major Release: PyPI Publication + Modern Python Packaging",
+      "id": "-major-release-pypi-publication--modern-python-packaging"
+    },
+    {
+      "level": "h3",
+      "text": "🚀 Major Changes",
+      "id": "-major-changes"
+    },
+    {
+      "level": "h4",
+      "text": "PyPI Publication",
+      "id": "pypi-publication"
+    },
+    {
+      "level": "h4",
+      "text": "Modern Python Packaging",
+      "id": "modern-python-packaging"
+    },
+    {
+      "level": "h4",
+      "text": "Unified CLI Interface",
+      "id": "unified-cli-interface"
+    },
+    {
+      "level": "h2",
+      "text": "[1.3.0] - 2025-10-26",
+      "id": "130---2025-10-26"
+    },
+    {
+      "level": "h3",
+      "text": "Added - Refactoring & Performance Improvements",
+      "id": "added---refactoring--performance-improvements"
+    },
+    {
+      "level": "h3",
+      "text": "Changed",
+      "id": "changed-4"
+    },
+    {
+      "level": "h2",
+      "text": "[1.2.0] - 2025-10-23",
+      "id": "120---2025-10-23"
+    },
+    {
+      "level": "h3",
+      "text": "🚀 PDF Advanced Features Release",
+      "id": "-pdf-advanced-features-release"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-6"
+    },
+    {
+      "level": "h4",
+      "text": "Priority 2: Support More PDF Types",
+      "id": "priority-2-support-more-pdf-types"
+    },
+    {
+      "level": "h4",
+      "text": "Priority 3: Performance Optimizations",
+      "id": "priority-3-performance-optimizations"
+    },
+    {
+      "level": "h2",
+      "text": "[1.1.0] - 2025-10-22",
+      "id": "110---2025-10-22"
+    },
+    {
+      "level": "h3",
+      "text": "🌐 Documentation Scraping Enhancements",
+      "id": "-documentation-scraping-enhancements"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-7"
+    },
+    {
+      "level": "h4",
+      "text": "Unlimited Scraping & Performance",
+      "id": "unlimited-scraping--performance"
+    },
+    {
+      "level": "h4",
+      "text": "New Configurations",
+      "id": "new-configurations"
+    },
+    {
+      "level": "h2",
+      "text": "1.0.0 - 2025-10-19",
+      "id": "100---2025-10-19"
+    },
+    {
+      "level": "h3",
+      "text": "🎉 First Production Release",
+      "id": "-first-production-release"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-8"
+    },
+    {
+      "level": "h4",
+      "text": "Smart Auto-Upload Feature",
+      "id": "smart-auto-upload-feature"
+    },
+    {
+      "level": "h4",
+      "text": "MCP Integration Enhancements",
+      "id": "mcp-integration-enhancements"
+    },
+    {
+      "level": "h2",
+      "text": "[0.4.0] - 2025-10-18",
+      "id": "040---2025-10-18"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-9"
+    },
+    {
+      "level": "h4",
+      "text": "Large Documentation Support (40K+ Pages)",
+      "id": "large-documentation-support-40k-pages"
+    },
+    {
+      "level": "h2",
+      "text": "[0.3.0] - 2025-10-15",
+      "id": "030---2025-10-15"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-10"
+    },
+    {
+      "level": "h4",
+      "text": "MCP Server Integration",
+      "id": "mcp-server-integration"
+    },
+    {
+      "level": "h2",
+      "text": "[0.2.0] - 2025-10-10",
+      "id": "020---2025-10-10"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-11"
+    },
+    {
+      "level": "h4",
+      "text": "Testing & Quality",
+      "id": "testing--quality"
+    },
+    {
+      "level": "h4",
+      "text": "New Configs",
+      "id": "new-configs"
+    },
+    {
+      "level": "h2",
+      "text": "[0.1.0] - 2025-10-05",
+      "id": "010---2025-10-05"
+    },
+    {
+      "level": "h3",
+      "text": "Added",
+      "id": "added-12"
+    },
+    {
+      "level": "h4",
+      "text": "Initial Release",
+      "id": "initial-release"
+    },
+    {
+      "level": "h2",
+      "text": "Release Links",
+      "id": "release-links"
+    },
+    {
+      "level": "h2",
+      "text": "Version History Summary",
+      "id": "version-history-summary"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "# Reinstall with MCP support\npip install -U skill-seekers[mcp]\n\n# Or install everything\npip install -U skill-seekers[all]",
+      "language": "markdown"
+    },
+    {
+      "code": "# CLI only (no MCP)\npip install skill-seekers\n\n# With MCP integration\npip install skill-seekers[mcp]\n\n# With multi-LLM support (Gemini, OpenAI)\npip install skill-seekers[all-llms]\n\n# Everything\npip install skill-seekers[all]\n\n# See all options\nskill-seekers-setup",
+      "language": "markdown"
+    },
+    {
+      "code": "# Set up GitHub token (one-time)\nskill-seekers config --github\n\n# Add multiple profiles\nskill-seekers config\n# → Select \"1. GitHub Token Setup\"\n# → Select \"1. Add New Profile\"\n\n# Use specific profile\nskill-seekers github --repo owner/repo --profile work\n\n# CI/CD mode\nskill-seekers github --repo owner/repo --non-interactive\n\n# View configuration\nskill-seekers config --show\n\n# Bootstrap skill-seekers as a Claude Code skill\n./scripts/bootstrap_skill.sh\ncp -r output/skill-seekers ~/.claude/skills/",
+      "language": "sql"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

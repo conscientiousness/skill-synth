@@ -1,0 +1,230 @@
+{
+  "url": "https://skillseekersweb.com/docs/getting-started/first-skill",
+  "title": "Create Your First Skill | Skill Seekers Docs",
+  "content": "Learn by doing! This tutorial walks you through creating your first AI skill from documentation in just 5 minutes.\n\nPrerequisites: Skill Seekers installed (Installation Guide)\n\nTime: 5 minutes | Result: Working Claude skill ready to upload\n\nWe’ll create a skill from Tailwind CSS documentation because it’s:\n\nFinal result: A Claude skill that knows Tailwind CSS utilities, components, and best practices.\n\nMake sure Skill Seekers is ready:\n\nYou should see something like: Skill Seekers v2.7.0\n\nIf not installed: See Installation Guide\n\nRun this single command:\n\nTransform from basic (3/10) to comprehensive (9/10):\n\nOption A: Local Enhancement (FREE with Claude Max)\n\nUses your Claude Max subscription - no API costs!\n\nOption B: API Enhancement (Fast)\n\nWhat enhancement does:\n\nPackage for Claude AI:\n\nTry these prompts in Claude:\n\nResult: Claude responds with accurate, context-aware answers based on official Tailwind documentation!\n\nTime investment: 5 minutes (10-15 with enhancement)\n\nResult: Production-quality AI skill ready to use!\n\nNow that you know the basics, try:\n\nSkill Seekers includes 24 presets for popular frameworks:\n\nAdd code analysis to your skills:\n\nSee: Analyzing GitHub Tutorial\n\nTurn technical PDFs into searchable skills:\n\nSee: Extracting PDFs Tutorial\n\nCombine docs + GitHub + PDFs:\n\nSee: Multi-Source Tutorial\n\nProblem: Scraper couldn’t find content\n\nSolution: Use interactive mode to test selectors:\n\nFull troubleshooting: Troubleshooting Guide\n\nYour typical workflow:\n\nQuestions? Open an issue: https://github.com/yusufkaraaslan/Skill_Seekers/issues",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Create Your First Skill",
+      "id": "create-your-first-skill"
+    },
+    {
+      "level": "h2",
+      "text": "What We’ll Build",
+      "id": "what-well-build"
+    },
+    {
+      "level": "h2",
+      "text": "Step 1: Check Your Installation",
+      "id": "step-1-check-your-installation"
+    },
+    {
+      "level": "h2",
+      "text": "Step 2: Scrape the Documentation",
+      "id": "step-2-scrape-the-documentation"
+    },
+    {
+      "level": "h2",
+      "text": "Step 3: Review What Was Created",
+      "id": "step-3-review-what-was-created"
+    },
+    {
+      "level": "h2",
+      "text": "Step 4: Enhance with AI (Optional)",
+      "id": "step-4-enhance-with-ai-optional"
+    },
+    {
+      "level": "h2",
+      "text": "Step 5: Package the Skill",
+      "id": "step-5-package-the-skill"
+    },
+    {
+      "level": "h2",
+      "text": "Step 6: Upload to Claude",
+      "id": "step-6-upload-to-claude"
+    },
+    {
+      "level": "h2",
+      "text": "Step 7: Test Your Skill",
+      "id": "step-7-test-your-skill"
+    },
+    {
+      "level": "h2",
+      "text": "What You Just Learned",
+      "id": "what-you-just-learned"
+    },
+    {
+      "level": "h2",
+      "text": "Try These Next",
+      "id": "try-these-next"
+    },
+    {
+      "level": "h3",
+      "text": "1. Use a Preset Configuration",
+      "id": "1-use-a-preset-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "2. Scrape a GitHub Repository",
+      "id": "2-scrape-a-github-repository"
+    },
+    {
+      "level": "h3",
+      "text": "3. Extract from PDFs",
+      "id": "3-extract-from-pdfs"
+    },
+    {
+      "level": "h3",
+      "text": "4. Create Multi-Source Skills",
+      "id": "4-create-multi-source-skills"
+    },
+    {
+      "level": "h2",
+      "text": "Common Issues",
+      "id": "common-issues"
+    },
+    {
+      "level": "h3",
+      "text": "”No pages found”",
+      "id": "no-pages-found"
+    },
+    {
+      "level": "h3",
+      "text": "“Scraping too slow”",
+      "id": "scraping-too-slow"
+    },
+    {
+      "level": "h3",
+      "text": "“Enhancement failed”",
+      "id": "enhancement-failed"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Reference",
+      "id": "quick-reference"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers --version",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape https://tailwindcss.com/docs/installation --max-pages 50",
+      "language": "unknown"
+    },
+    {
+      "code": "🔍 Checking for llms.txt...\n📥 Scraping documentation...\n   ├─ Page 1/50: Installation\n   ├─ Page 2/50: Editor Setup\n   ├─ Page 3/50: Utility-First Fundamentals\n   ...\n   └─ Page 50/50: Plugin API\n\n✅ Skill created: output/tailwindcss/SKILL.md\n📊 Statistics:\n   - Pages: 50\n   - Code examples: 127\n   - Categories: 8\n   - Time: 45 seconds",
+      "language": "json"
+    },
+    {
+      "code": "ls output/tailwindcss/",
+      "language": "unknown"
+    },
+    {
+      "code": "output/tailwindcss/\n├── SKILL.md                    # Main skill file (250-400 lines)\n├── references/                 # Detailed documentation\n│   ├── utilities/\n│   │   ├── layout.md\n│   │   ├── flexbox.md\n│   │   └── spacing.md\n│   ├── components/\n│   │   └── forms.md\n│   └── configuration/\n│       └── theme.md\n└── examples/                   # Code examples extracted\n    ├── custom-colors.md\n    └── responsive-design.md",
+      "language": "unknown"
+    },
+    {
+      "code": "head -50 output/tailwindcss/SKILL.md",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers enhance output/tailwindcss/",
+      "language": "unknown"
+    },
+    {
+      "code": "export ANTHROPIC_API_KEY=\"sk-ant-...\"\nskill-seekers enhance output/tailwindcss/ --mode api",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers package output/tailwindcss/ --target claude",
+      "language": "go"
+    },
+    {
+      "code": "✅ Packaged: tailwindcss-claude.zip (1.8 MB)\n📦 Format: Claude AI (YAML frontmatter)\n📄 Files: 1 SKILL.md + 45 references\n🎯 Ready to upload!",
+      "language": "swift"
+    },
+    {
+      "code": "# Google Gemini\nskill-seekers package output/tailwindcss/ --target gemini\n\n# OpenAI ChatGPT\nskill-seekers package output/tailwindcss/ --target openai\n\n# Generic Markdown\nskill-seekers package output/tailwindcss/ --target markdown",
+      "language": "go"
+    },
+    {
+      "code": "export ANTHROPIC_API_KEY=\"sk-ant-...\"\nskill-seekers upload tailwindcss-claude.zip --target claude",
+      "language": "unknown"
+    },
+    {
+      "code": "\"What are the Tailwind spacing utilities?\"\n\n\"Show me how to create a responsive navbar with Tailwind\"\n\n\"What's the difference between px-4 and p-4?\"\n\n\"Create a card component using Tailwind utilities\"",
+      "language": "julia"
+    },
+    {
+      "code": "# List available presets\nskill-seekers list-configs\n\n# Try React\nskill-seekers scrape --config react --max-pages 100\n\n# Try Vue\nskill-seekers scrape --config vue --max-pages 100\n\n# Try Django\nskill-seekers scrape --config django --max-pages 150",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers github facebook/react --local-repo-path /path/to/react",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers pdf --input manual.pdf --ocr",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers unified --config django-complete.json",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape https://your-site.com/docs --interactive",
+      "language": "unknown"
+    },
+    {
+      "code": "# Use async mode (2-3x faster)\nskill-seekers scrape URL --async\n\n# Reduce pages for testing\nskill-seekers scrape URL --max-pages 10\n\n# Check if llms.txt is available (10x faster!)\ncurl https://your-site.com/llms.txt",
+      "language": "markdown"
+    },
+    {
+      "code": "# 1. Scrape\nskill-seekers scrape https://docs.site.com/ --max-pages 50\n\n# 2. Enhance (optional)\nskill-seekers enhance output/sitename/\n\n# 3. Package\nskill-seekers package output/sitename/ --target claude\n\n# 4. Upload\nskill-seekers upload sitename-claude.zip\n\n# Done! 🎉",
+      "language": "go"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/tutorials/analyzing-github",
+    "https://skillseekersweb.com/docs/tutorials/extracting-pdfs",
+    "https://skillseekersweb.com/docs/tutorials/multi-source-skills",
+    "https://skillseekersweb.com/docs/tutorials/scraping-docs",
+    "https://skillseekersweb.com/docs/manual/enhancement/ai-enhancement"
+  ]
+}

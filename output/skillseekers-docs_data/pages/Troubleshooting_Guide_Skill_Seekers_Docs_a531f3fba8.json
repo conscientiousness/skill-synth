@@ -1,0 +1,332 @@
+{
+  "url": "https://skillseekersweb.com/docs/guides/troubleshooting",
+  "title": "Troubleshooting Guide | Skill Seekers Docs",
+  "content": "Common issues and solutions when using Skill Seeker.\n\nCheck if Python is installed:\n\nUse python instead of python3:\n\nInstall dependencies:\n\nUse —user flag if permission denied:\n\nCheck pip is working:\n\nUse sudo (not recommended):\n\nUse virtual environment (best practice):\n\nCheck you’re in the Skill_Seekers directory:\n\nChange to the correct directory:\n\nCreate missing config:\n\nCheck configuration file:\n\nVerify paths are ABSOLUTE (not placeholders):\n\n❌ Bad: $REPO_PATH or /path/to/Skill_Seekers ✅ Good: /Users/john/Projects/Skill_Seekers\n\nTest server manually:\n\nRESTART Claude Code completely:\n\nProblem: Config has $REPO_PATH or /Users/username/ instead of real paths\n\nCheck working directory:\n\nTest CLI tools directly:\n\nCheck network connection:\n\nUse smaller max_pages for testing:\n\nIncrease rate_limit in config:\n\nProblem: Pages scraped but content is empty\n\nCheck selector in config:\n\nVerify website is accessible:\n\nTry different selectors:\n\nIssue: Can’t run ./setup_mcp.sh\n\nIssue: Homebrew not installed\n\nIssue: pip3 not found\n\nIssue: Permission errors\n\nIssue: Python not in PATH\n\nIssue: Line ending errors\n\nUse these to check your setup:\n\nIf none of these solutions work:\n\nCheck existing issues: https://github.com/yusufkaraaslan/Skill_Seekers/issues\n\nOpen a new issue with:\n\nInclude this debug info:\n\nStill stuck? Open an issue: https://github.com/yusufkaraaslan/Skill_Seekers/issues/new",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Troubleshooting Guide",
+      "id": "troubleshooting-guide"
+    },
+    {
+      "level": "h2",
+      "text": "Installation Issues",
+      "id": "installation-issues"
+    },
+    {
+      "level": "h3",
+      "text": "Python Not Found",
+      "id": "python-not-found"
+    },
+    {
+      "level": "h3",
+      "text": "Module Not Found",
+      "id": "module-not-found"
+    },
+    {
+      "level": "h3",
+      "text": "Permission Denied",
+      "id": "permission-denied"
+    },
+    {
+      "level": "h2",
+      "text": "Runtime Issues",
+      "id": "runtime-issues"
+    },
+    {
+      "level": "h3",
+      "text": "File Not Found",
+      "id": "file-not-found"
+    },
+    {
+      "level": "h3",
+      "text": "Config File Not Found",
+      "id": "config-file-not-found"
+    },
+    {
+      "level": "h2",
+      "text": "MCP Setup Issues",
+      "id": "mcp-setup-issues"
+    },
+    {
+      "level": "h3",
+      "text": "MCP Server Not Loading",
+      "id": "mcp-server-not-loading"
+    },
+    {
+      "level": "h3",
+      "text": "Placeholder Paths in Config",
+      "id": "placeholder-paths-in-config"
+    },
+    {
+      "level": "h3",
+      "text": "Tools Appear But Don’t Work",
+      "id": "tools-appear-but-dont-work"
+    },
+    {
+      "level": "h2",
+      "text": "Scraping Issues",
+      "id": "scraping-issues"
+    },
+    {
+      "level": "h3",
+      "text": "Slow or Hanging",
+      "id": "slow-or-hanging"
+    },
+    {
+      "level": "h3",
+      "text": "No Content Extracted",
+      "id": "no-content-extracted"
+    },
+    {
+      "level": "h3",
+      "text": "Rate Limiting / 429 Errors",
+      "id": "rate-limiting--429-errors"
+    },
+    {
+      "level": "h2",
+      "text": "Platform-Specific Issues",
+      "id": "platform-specific-issues"
+    },
+    {
+      "level": "h3",
+      "text": "macOS",
+      "id": "macos"
+    },
+    {
+      "level": "h3",
+      "text": "Linux",
+      "id": "linux"
+    },
+    {
+      "level": "h3",
+      "text": "Windows (WSL)",
+      "id": "windows-wsl"
+    },
+    {
+      "level": "h2",
+      "text": "Verification Commands",
+      "id": "verification-commands"
+    },
+    {
+      "level": "h2",
+      "text": "Getting Help",
+      "id": "getting-help"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Fixes Checklist",
+      "id": "quick-fixes-checklist"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "python3: command not found",
+      "language": "yaml"
+    },
+    {
+      "code": "which python3\npython --version  # Try without the 3",
+      "language": "unknown"
+    },
+    {
+      "code": "python cli/doc_scraper.py --help",
+      "language": "unknown"
+    },
+    {
+      "code": "ModuleNotFoundError: No module named 'requests'\nModuleNotFoundError: No module named 'bs4'\nModuleNotFoundError: No module named 'mcp'",
+      "language": "julia"
+    },
+    {
+      "code": "pip3 install requests beautifulsoup4\npip3 install -r mcp/requirements.txt  # For MCP",
+      "language": "unknown"
+    },
+    {
+      "code": "pip3 install --user requests beautifulsoup4",
+      "language": "unknown"
+    },
+    {
+      "code": "pip3 --version",
+      "language": "unknown"
+    },
+    {
+      "code": "Permission denied: '/usr/local/lib/python3.x/...'",
+      "language": "unknown"
+    },
+    {
+      "code": "pip3 install --user requests beautifulsoup4",
+      "language": "unknown"
+    },
+    {
+      "code": "sudo pip3 install requests beautifulsoup4",
+      "language": "unknown"
+    },
+    {
+      "code": "python3 -m venv venv\nsource venv/bin/activate\npip install requests beautifulsoup4",
+      "language": "unknown"
+    },
+    {
+      "code": "FileNotFoundError: [Errno 2] No such file or directory: 'cli/doc_scraper.py'",
+      "language": "yaml"
+    },
+    {
+      "code": "pwd\n# Should show: .../Skill_Seekers\n\nls\n# Should show: README.md, cli/, mcp/, configs/",
+      "language": "markdown"
+    },
+    {
+      "code": "cd ~/Projects/Skill_Seekers  # Adjust path",
+      "language": "unknown"
+    },
+    {
+      "code": "FileNotFoundError: configs/react.json",
+      "language": "yaml"
+    },
+    {
+      "code": "ls configs/\n# Should show: godot.json, react.json, vue.json, etc.",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers scrape --config $(pwd)/configs/react.json",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape --interactive",
+      "language": "unknown"
+    },
+    {
+      "code": "cat ~/.config/claude-code/mcp.json",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"mcpServers\": {\n    \"skill-seeker\": {\n      \"args\": [\n        \"/Users/yourname/Projects/Skill_Seekers/mcp/server.py\"\n      ]\n    }\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "cd ~/Projects/Skill_Seekers\npython3 mcp/server.py\n# Should start without errors (Ctrl+C to stop)",
+      "language": "markdown"
+    },
+    {
+      "code": "./setup_mcp.sh\n# Select \"y\" for auto-configure",
+      "language": "sql"
+    },
+    {
+      "code": "# Get your actual path\ncd ~/Projects/Skill_Seekers\npwd\n# Copy this path\n\n# Edit config\nnano ~/.config/claude-code/mcp.json\n\n# Replace ALL instances of placeholders with your actual path\n# Save (Ctrl+O, Enter, Ctrl+X)\n\n# Restart Claude Code",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"cwd\": \"/FULL/PATH/TO/Skill_Seekers\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "ls cli/doc_scraper.py\nls mcp/server.py",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape --help",
+      "language": "unknown"
+    },
+    {
+      "code": "ping google.com\ncurl -I https://docs.yoursite.com",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape --config configs/test.json --max-pages 5",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"rate_limit\": 1.0  // Increase from 0.5\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Test with browser dev tools\n# Look for: article, main, div[role=\"main\"], div.content",
+      "language": "markdown"
+    },
+    {
+      "code": "curl https://docs.example.com",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"selectors\": {\n    \"main_content\": \"article\"  // Try: main, div.content, etc.\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "HTTP Error 429: Too Many Requests",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"rate_limit\": 2.0  // Wait 2 seconds between requests\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"max_pages\": 50  // Scrape fewer pages\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Wait an hour and retry",
+      "language": "markdown"
+    },
+    {
+      "code": "chmod +x setup_mcp.sh\n./setup_mcp.sh",
+      "language": "unknown"
+    },
+    {
+      "code": "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"",
+      "language": "unknown"
+    },
+    {
+      "code": "sudo apt update\nsudo apt install python3-pip",
+      "language": "sql"
+    },
+    {
+      "code": "# Use --user flag\npip3 install --user requests beautifulsoup4",
+      "language": "markdown"
+    },
+    {
+      "code": "dos2unix setup_mcp.sh\n./setup_mcp.sh",
+      "language": "unknown"
+    },
+    {
+      "code": "# 1. Check Python\npython3 --version  # Should be 3.10+\n\n# 2. Check dependencies\npip3 list | grep requests\npip3 list | grep beautifulsoup4\npip3 list | grep mcp\n\n# 3. Check files exist\nls cli/doc_scraper.py\nls mcp/server.py\nls configs/\n\n# 4. Check MCP config\ncat ~/.config/claude-code/mcp.json\n\n# 5. Test scraper\nskill-seekers scrape --help\n\n# 6. Test MCP server\ntimeout 3 python3 mcp/server.py || echo \"Server OK\"\n\n# 7. Check git repo\ngit status\ngit log --oneline -5",
+      "language": "markdown"
+    },
+    {
+      "code": "# System info\nuname -a\npython3 --version\npip3 --version\n\n# Skill Seeker info\ncd ~/Projects/Skill_Seekers  # Your path\npwd\ngit log --oneline -1\nls -la cli/ mcp/ configs/\n\n# MCP config (if using MCP)\ncat ~/.config/claude-code/mcp.json",
+      "language": "julia"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "url": "https://skillseekersweb.com/docs/guides/submit-config",
+  "title": "How to Submit a Config | Skill Seekers Docs",
+  "content": "Learn how to validate and submit your custom configuration files to the official Skill Seekers config repository.\n\nThe Skill Seekers community welcomes configuration contributions for any framework, library, or documentation site. Your configs help other developers quickly create AI skills for their tools.\n\nCreate a config file using the unified format:\n\nBefore submitting, test your config locally:\n\nVisit skillseekersweb.com/configs and scroll to the validator:\n\nThe validator checks:\n\nOnce validated, there are two submission methods:\n\nIf automatic submission doesn’t work:\n\nAutomated Checks (5 minutes)\n\nManual Review (24-48 hours)\n\nYour config will be approved if it:\n\n✅ Validates without errors ✅ Scrapes successfully ✅ Extracts meaningful content ✅ Follows naming conventions ✅ Doesn’t duplicate existing configs ✅ Has accurate selectors ✅ Respects rate limits\n\nCommon Rejection Reasons: ❌ Invalid JSON syntax ❌ Missing required fields ❌ Incorrect selectors (no content extracted) ❌ Duplicate of existing config ❌ Rate limit too aggressive ❌ Broken or inaccessible URLs\n\nConfigs are organized into categories in the gallery:\n\nReact, Vue, Angular, Svelte, Astro, etc.\n\nDjango, FastAPI, Express, Laravel, Rails, etc.\n\nGodot, Unity, Unreal, etc.\n\nKubernetes, Docker, Ansible, Terraform, etc.\n\nGit, VS Code, Claude Code, etc.\n\nReact Native, Flutter, Ionic, etc.\n\nTensorFlow, PyTorch, Pandas, etc.\n\nJest, Pytest, Cypress, Playwright, etc.\n\nWhere does your config fit? Mention the category in your submission for faster processing.\n\nWhen submitting configs with multiple sources:\n\nExplain in submission:\n\nFor private documentation or internal tools:\n\nWe’ll approve the structure even if we can’t test the scraping.\n\nFor sites with 500+ pages:\n\nBrowse 27+ preset configs for inspiration:\n\nContributors are recognized in:\n\nTop contributors get:\n\nBefore submitting, ensure:\n\nQuestions? Open a GitHub Discussion or Issue.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "How to Submit a Config",
+      "id": "how-to-submit-a-config"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "Submission Process",
+      "id": "submission-process"
+    },
+    {
+      "level": "h3",
+      "text": "1. Create Your Config",
+      "id": "1-create-your-config"
+    },
+    {
+      "level": "h3",
+      "text": "2. Test Your Config",
+      "id": "2-test-your-config"
+    },
+    {
+      "level": "h3",
+      "text": "3. Validate Online",
+      "id": "3-validate-online"
+    },
+    {
+      "level": "h3",
+      "text": "4. Submit to GitHub",
+      "id": "4-submit-to-github"
+    },
+    {
+      "level": "h4",
+      "text": "Method A: Automatic Submission (Recommended)",
+      "id": "method-a-automatic-submission-recommended"
+    },
+    {
+      "level": "h4",
+      "text": "Method B: Manual Submission",
+      "id": "method-b-manual-submission"
+    },
+    {
+      "level": "h2",
+      "text": "What Happens Next?",
+      "id": "what-happens-next"
+    },
+    {
+      "level": "h3",
+      "text": "Review Process",
+      "id": "review-process"
+    },
+    {
+      "level": "h3",
+      "text": "Review Criteria",
+      "id": "review-criteria"
+    },
+    {
+      "level": "h2",
+      "text": "Config Categories",
+      "id": "config-categories"
+    },
+    {
+      "level": "h3",
+      "text": "Web Frameworks",
+      "id": "web-frameworks"
+    },
+    {
+      "level": "h3",
+      "text": "Backend Frameworks",
+      "id": "backend-frameworks"
+    },
+    {
+      "level": "h3",
+      "text": "Game Engines",
+      "id": "game-engines"
+    },
+    {
+      "level": "h3",
+      "text": "DevOps Tools",
+      "id": "devops-tools"
+    },
+    {
+      "level": "h3",
+      "text": "Development Tools",
+      "id": "development-tools"
+    },
+    {
+      "level": "h3",
+      "text": "Mobile Frameworks",
+      "id": "mobile-frameworks"
+    },
+    {
+      "level": "h3",
+      "text": "Data & ML",
+      "id": "data--ml"
+    },
+    {
+      "level": "h3",
+      "text": "Testing Frameworks",
+      "id": "testing-frameworks"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Submission Tips",
+      "id": "advanced-submission-tips"
+    },
+    {
+      "level": "h3",
+      "text": "Multi-Source Configs",
+      "id": "multi-source-configs"
+    },
+    {
+      "level": "h3",
+      "text": "Private/Enterprise Configs",
+      "id": "privateenterprise-configs"
+    },
+    {
+      "level": "h3",
+      "text": "Large Documentation Sites",
+      "id": "large-documentation-sites"
+    },
+    {
+      "level": "h2",
+      "text": "Getting Help",
+      "id": "getting-help"
+    },
+    {
+      "level": "h3",
+      "text": "Config Not Working?",
+      "id": "config-not-working"
+    },
+    {
+      "level": "h3",
+      "text": "Questions?",
+      "id": "questions"
+    },
+    {
+      "level": "h3",
+      "text": "Example Configs",
+      "id": "example-configs"
+    },
+    {
+      "level": "h2",
+      "text": "Community Guidelines",
+      "id": "community-guidelines"
+    },
+    {
+      "level": "h3",
+      "text": "Be Respectful",
+      "id": "be-respectful"
+    },
+    {
+      "level": "h3",
+      "text": "Quality Standards",
+      "id": "quality-standards"
+    },
+    {
+      "level": "h3",
+      "text": "Collaboration",
+      "id": "collaboration"
+    },
+    {
+      "level": "h2",
+      "text": "Recognition",
+      "id": "recognition"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Reference",
+      "id": "quick-reference"
+    },
+    {
+      "level": "h3",
+      "text": "Validation Checklist",
+      "id": "validation-checklist"
+    },
+    {
+      "level": "h3",
+      "text": "Submission URLs",
+      "id": "submission-urls"
+    },
+    {
+      "level": "h2",
+      "text": "See Also",
+      "id": "see-also"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "{\n  \"name\": \"your-framework\",\n  \"description\": \"Complete framework knowledge combining docs and codebase.\",\n  \"merge_mode\": \"rule-based\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://docs.yourframework.com\",\n      \"selectors\": {\n        \"main_content\": \"article\",\n        \"title\": \"h1\",\n        \"code_blocks\": \"pre code\"\n      },\n      \"rate_limit\": 0.5,\n      \"max_pages\": 200\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Validate the config structure\nskill-seekers validate configs/your-framework.json\n\n# Test scraping\nskill-seekers scrape configs/your-framework.json\n\n# Check the output\nls output/your-framework/",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"name\": \"advanced-framework\",\n  \"description\": \"Complete knowledge from docs, GitHub, and PDF manual.\",\n  \"merge_mode\": \"rule-based\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://docs.framework.com\"\n    },\n    {\n      \"type\": \"github\",\n      \"repo\": \"company/framework\",\n      \"enable_codebase_analysis\": true,\n      \"code_analysis_depth\": \"deep\"\n    },\n    {\n      \"type\": \"pdf\",\n      \"path\": \"https://framework.com/manual.pdf\"\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"max_pages\": 500,\n  \"rate_limit\": 1.0,\n  \"url_patterns\": {\n    \"include\": [\"/getting-started/\", \"/api/\", \"/guides/\"],\n    \"exclude\": [\"/blog/\", \"/changelog/\", \"/community/\"]\n  }\n}",
+      "language": "json"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/tutorials/creating-configs"
+  ]
+}

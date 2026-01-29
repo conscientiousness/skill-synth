@@ -1,0 +1,196 @@
+---
+name: skillseekers-docs
+description: Use this skill for Skill Seekers documentation: setup, scraping, enhancement, packaging, and CLI workflows.
+---
+
+# Skillseekers-Docs Skill
+
+Use this skill for skill seekers documentation: setup, scraping, enhancement, packaging, and cli workflows., generated from official documentation.
+
+## When to Use This Skill
+
+This skill should be triggered when:
+- Working with skillseekers-docs
+- Asking about skillseekers-docs features or APIs
+- Implementing skillseekers-docs solutions
+- Debugging skillseekers-docs code
+- Learning skillseekers-docs best practices
+
+## Quick Reference
+
+### Common Patterns
+
+**Pattern 1:** Example:
+
+```
+User: "Create skill from https://tailwindcss.com/docs"
+Tool: Auto-detects Tailwind, uses template, generates in 30 seconds
+```
+
+**Pattern 2:** Example:
+
+```
+~/.skill-seekers/git-sources/
+├── company-configs/
+│   ├── .git/
+│   ├── configs/
+│   └── README.md
+└── team-configs/
+    ├── .git/
+    └── configs/
+```
+
+**Pattern 3:** Example:
+
+```
+# First run: 30 minutes
+skill-seekers unified --source /my/project --depth c3x
+
+# After changing 5 files: 3 minutes
+skill-seekers unified --source /my/project --depth c3x
+```
+
+**Pattern 4:** Example:
+
+```
+# Works for all platforms
+skill-seekers-codebase path/to/repo/ \
+  --output output/codebase/ \
+  --extract-patterns \
+  --extract-test-examples \
+  --build-how-to-guides \
+  --ai-mode auto
+```
+
+**Pattern 5:** Usage:
+
+```
+# List all presets
+skill-seekers list-presets
+
+# Use preset (works for all platforms)
+skill-seekers scrape --preset react
+skill-seekers package output/react/ --target [claude|gemini|openai|markdown]
+```
+
+**Pattern 6:** Pattern: Multi-query, context-aware retrieval with agent orchestration
+
+```
+User Query → Agent Plans Retrieval → Multi-Source Fetch →
+Context Synthesis → Response Generation → Self-Verification
+```
+
+**Pattern 7:** Pattern: Knowledge graph structures for complex reasoning
+
+```
+references/
+├── entities/              # Nodes in knowledge graph
+│   ├── Component.md
+│   ├── Hook.md
+│   └── Context.md
+├── relationships/         # Edges in knowledge graph
+│   ├── Component-uses-Hook.md
+│   └── Context-provides-State.md
+└── graph.json            # Machine-readable graph
+```
+
+**Pattern 8:** Pattern: Specialized agents for different knowledge domains
+
+```
+Skill Repository
+├── research-agent-skill/      # Explores information space
+├── verification-agent-skill/  # Checks factual claims
+├── synthesis-agent-skill/     # Combines findings
+└── governance-agent-skill/    # Ensures compliance
+```
+
+### Example Code Patterns
+
+**Example 1** (go):
+```go
+skill-seekers package INPUT_DIR [OPTIONS]
+```
+
+**Example 2** (json):
+```json
+{
+  "name": "kubernetes-concepts",
+  "base_url": "https://kubernetes.io/docs/concepts/",
+  "url_patterns": {
+    "include": ["concepts"],
+    "exclude": []
+  },
+  "max_pages": 500
+}
+```
+
+**Example 3** (json):
+```json
+{
+  "name": "react"
+}
+```
+
+**Example 4** (json):
+```json
+{
+  "description": "Complete React knowledge combining official documentation and React codebase. Use when building React applications or understanding React internals."
+}
+```
+
+**Example 5** (markdown):
+```markdown
+skill-seekers --version
+# Should show: skill-seekers 2.7.0 or higher
+```
+
+## Reference Files
+
+This skill includes comprehensive documentation in `references/`:
+
+- **cli.md** - Cli documentation
+- **community.md** - Community documentation
+- **manual.md** - Manual documentation
+- **reference.md** - Reference documentation
+- **tutorials.md** - Tutorials documentation
+
+Use `view` to read specific reference files when detailed information is needed.
+
+## Working with This Skill
+
+### For Beginners
+Start with the getting_started or tutorials reference files for foundational concepts.
+
+### For Specific Features
+Use the appropriate category reference file (api, guides, etc.) for detailed information.
+
+### For Code Examples
+The quick reference section above contains common patterns extracted from the official docs.
+
+## Resources
+
+### references/
+Organized documentation extracted from official sources. These files contain:
+- Detailed explanations
+- Code examples with language annotations
+- Links to original documentation
+- Table of contents for quick navigation
+
+### scripts/
+Add helper scripts here for common automation tasks.
+
+### assets/
+Add templates, boilerplate, or example projects here.
+
+## Notes
+
+- This skill was automatically generated from official documentation
+- Reference files preserve the structure and examples from source docs
+- Code examples include language detection for better syntax highlighting
+- Quick reference patterns are extracted from common usage examples in the docs
+
+## Updating
+
+To refresh this skill with updated documentation:
+1. Re-run the scraper with the same configuration
+2. The skill will be rebuilt with the latest information

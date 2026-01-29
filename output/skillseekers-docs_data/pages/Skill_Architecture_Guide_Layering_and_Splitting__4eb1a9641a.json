@@ -1,0 +1,345 @@
+{
+  "url": "https://skillseekersweb.com/docs/reference/skill-architecture",
+  "title": "Skill Architecture Guide - Layering and Splitting | Skill Seekers Docs",
+  "content": "Complete guide for architecting complex multi-skill systems using the router/dispatcher pattern.\n\nClaude recommends keeping skill files under 500 lines for optimal performance. This guideline exists because:\n\nAs applications grow complex, developers often create skills that:\n\nSkill layering involves:\n\nResult: Build sophisticated applications while maintaining 500-line guideline per skill.\n\nYou should split when:\n\nYou can keep monolithic when:\n\nA router skill (also called dispatcher or hub skill) is a lightweight master skill that:\n\nProblem: E-commerce skill is 2000+ lines covering catalog, cart, checkout, orders, and admin.\n\nSolution: Split into focused sub-skills with router.\n\n1. ecommerce.md (Router - 150 lines)\n\n2. product_catalog.md (350 lines)\n\n3. shopping_cart.md (280 lines)\n\nProblem: Code assistant handles debugging, refactoring, documentation, testing - 1800+ lines.\n\nSolution: Specialized sub-skills with smart routing.\n\nProblem: ETL pipeline skill covers extraction, transformation, loading, validation, monitoring.\n\nSolution: Pipeline stages as sub-skills.\n\nEach sub-skill should have ONE clear purpose.\n\n❌ Bad: user_management.md handles auth, profiles, permissions, notifications ✅ Good:\n\nMake routing keywords explicit and unambiguous.\n\n❌ Bad: Vague keywords like “data”, “user”, “process” ✅ Good: Specific keywords like “login”, “authenticate”, “extract”, “transform”\n\nKeep router lightweight - just routing logic.\n\n❌ Bad: Router contains actual implementation code ✅ Good: Router only contains:\n\nGroup by responsibility, not by code structure.\n\n❌ Bad: Split by file type (controllers, models, views) ✅ Good: Split by feature (user_auth, product_catalog, order_processing)\n\nDon’t create sub-skills for trivial distinctions.\n\n❌ Bad: Separate skills for “add_user” and “update_user” ✅ Good: Single “user_management” skill covering all CRUD\n\nExplicitly state when sub-skills work together.\n\nUse same SKILL.md structure across all sub-skills.\n\nSymptoms: Wrong sub-skill activated or no routing happening\n\nMore specific keywords:\n\nAdd routing examples:\n\nCheck sub-skill descriptions:\n\nSymptoms: Sub-skill exceeds 500 lines\n\nMove reference material:\n\nSymptoms: Router itself is large (> 300 lines)\n\nSimplify routing logic:\n\nReduce number of sub-skills:\n\nFor very large systems:\n\nWhen to use: Systems with 10+ sub-skills or multiple logical subsystems\n\nRouter considers conversation context:\n\nStatus: ✅ Complete (v2.0.0+)\n\nFound an issue or have suggestions? Open an issue",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Skill Architecture Guide: Layering and Splitting",
+      "id": "skill-architecture-guide-layering-and-splitting"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h3",
+      "text": "The 500-Line Guideline",
+      "id": "the-500-line-guideline"
+    },
+    {
+      "level": "h3",
+      "text": "The Problem with Monolithic Skills",
+      "id": "the-problem-with-monolithic-skills"
+    },
+    {
+      "level": "h3",
+      "text": "The Solution: Skill Layering",
+      "id": "the-solution-skill-layering"
+    },
+    {
+      "level": "h2",
+      "text": "When to Split Skills",
+      "id": "when-to-split-skills"
+    },
+    {
+      "level": "h3",
+      "text": "Decision Matrix",
+      "id": "decision-matrix"
+    },
+    {
+      "level": "h3",
+      "text": "Split Indicators",
+      "id": "split-indicators"
+    },
+    {
+      "level": "h2",
+      "text": "The Router Pattern",
+      "id": "the-router-pattern"
+    },
+    {
+      "level": "h3",
+      "text": "What is a Router Skill?",
+      "id": "what-is-a-router-skill"
+    },
+    {
+      "level": "h3",
+      "text": "How It Works",
+      "id": "how-it-works"
+    },
+    {
+      "level": "h3",
+      "text": "Router Skill Structure",
+      "id": "router-skill-structure"
+    },
+    {
+      "level": "h2",
+      "text": "Manual Skill Architecture",
+      "id": "manual-skill-architecture"
+    },
+    {
+      "level": "h3",
+      "text": "Example 1: E-Commerce Platform",
+      "id": "example-1-e-commerce-platform"
+    },
+    {
+      "level": "h4",
+      "text": "Sub-Skills",
+      "id": "sub-skills"
+    },
+    {
+      "level": "h3",
+      "text": "Example 2: Code Assistant",
+      "id": "example-2-code-assistant"
+    },
+    {
+      "level": "h4",
+      "text": "Architecture",
+      "id": "architecture"
+    },
+    {
+      "level": "h4",
+      "text": "Router Logic",
+      "id": "router-logic"
+    },
+    {
+      "level": "h3",
+      "text": "Example 3: Data Pipeline",
+      "id": "example-3-data-pipeline"
+    },
+    {
+      "level": "h2",
+      "text": "Best Practices",
+      "id": "best-practices"
+    },
+    {
+      "level": "h3",
+      "text": "1. Single Responsibility Principle",
+      "id": "1-single-responsibility-principle"
+    },
+    {
+      "level": "h3",
+      "text": "2. Clear Routing Keywords",
+      "id": "2-clear-routing-keywords"
+    },
+    {
+      "level": "h3",
+      "text": "3. Minimize Router Complexity",
+      "id": "3-minimize-router-complexity"
+    },
+    {
+      "level": "h3",
+      "text": "4. Logical Grouping",
+      "id": "4-logical-grouping"
+    },
+    {
+      "level": "h3",
+      "text": "5. Avoid Over-Splitting",
+      "id": "5-avoid-over-splitting"
+    },
+    {
+      "level": "h3",
+      "text": "6. Document Dependencies",
+      "id": "6-document-dependencies"
+    },
+    {
+      "level": "h3",
+      "text": "7. Maintain Consistent Structure",
+      "id": "7-maintain-consistent-structure"
+    },
+    {
+      "level": "h2",
+      "text": "Complete Examples",
+      "id": "complete-examples"
+    },
+    {
+      "level": "h3",
+      "text": "Travel Planner (Full Implementation)",
+      "id": "travel-planner-full-implementation"
+    },
+    {
+      "level": "h4",
+      "text": "Directory Structure",
+      "id": "directory-structure"
+    },
+    {
+      "level": "h4",
+      "text": "travel_planner.md (Router)",
+      "id": "travel_plannermd-router"
+    },
+    {
+      "level": "h2",
+      "text": "Implementation Guide",
+      "id": "implementation-guide"
+    },
+    {
+      "level": "h3",
+      "text": "Step 1: Analyze Current Skill",
+      "id": "step-1-analyze-current-skill"
+    },
+    {
+      "level": "h3",
+      "text": "Step 2: Design Sub-Skills",
+      "id": "step-2-design-sub-skills"
+    },
+    {
+      "level": "h3",
+      "text": "Step 3: Extract Content",
+      "id": "step-3-extract-content"
+    },
+    {
+      "level": "h3",
+      "text": "Step 4: Create Router",
+      "id": "step-4-create-router"
+    },
+    {
+      "level": "h3",
+      "text": "Step 5: Package and Deploy",
+      "id": "step-5-package-and-deploy"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Claude not routing correctly",
+      "id": "issue-claude-not-routing-correctly"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Sub-skill too large",
+      "id": "issue-sub-skill-too-large"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Router overhead",
+      "id": "issue-router-overhead"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Patterns",
+      "id": "advanced-patterns"
+    },
+    {
+      "level": "h3",
+      "text": "Hierarchical Routing (Router of Routers)",
+      "id": "hierarchical-routing-router-of-routers"
+    },
+    {
+      "level": "h3",
+      "text": "Dynamic Routing (Context-Aware)",
+      "id": "dynamic-routing-context-aware"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "User Query: \"How do I book a flight to Paris?\"\n     ↓\nRouter Skill: Analyzes keywords → \"flight\", \"book\"\n     ↓\nActivates: flight_booking sub-skill\n     ↓\nResponse: Flight booking guidance (only this skill loaded)",
+      "language": "yaml"
+    },
+    {
+      "code": "# Travel Planner (Router)\n\n## When to Use This Skill\n\nUse for travel planning, booking, and itinerary management.\n\nThis is a router skill that directs your questions to specialized sub-skills.\n\n## Sub-Skills Available\n\n### flight_booking\nFor booking flights, searching airlines, comparing prices, seat selection.\n**Keywords:** flight, airline, booking, ticket, departure, arrival\n\n### hotel_reservation\nFor hotel search, room booking, amenities, check-in/check-out.\n**Keywords:** hotel, accommodation, room, reservation, stay\n\n### itinerary_generation\nFor creating travel plans, scheduling activities, route optimization.\n**Keywords:** itinerary, schedule, plan, activities, route\n\n## Routing Logic\n\nBased on your question keywords:\n- Flight-related → Activate `flight_booking`\n- Hotel-related → Activate `hotel_reservation`\n- Planning-related → Activate `itinerary_generation`\n- Multiple topics → Activate relevant combination\n\n## Usage Examples\n\n**\"Find me a flight to Paris\"** → flight_booking\n**\"Book hotel in Tokyo\"** → hotel_reservation\n**\"Create 5-day Rome itinerary\"** → itinerary_generation\n**\"Plan Paris trip with flights and hotel\"** → flight_booking + hotel_reservation + itinerary_generation",
+      "language": "markdown"
+    },
+    {
+      "code": "# E-Commerce Platform (Router)\n\n## Sub-Skills\n- product_catalog - Browse, search, filter products\n- shopping_cart - Add/remove items, quantities\n- checkout_payment - Process orders, payments\n- order_management - Track orders, returns\n- admin_tools - Inventory, analytics\n\n## Routing\nproduct/catalog/search → product_catalog\ncart/basket/add/remove → shopping_cart\ncheckout/payment/billing → checkout_payment\norder/track/return → order_management\nadmin/inventory/analytics → admin_tools",
+      "language": "markdown"
+    },
+    {
+      "code": "# Product Catalog\n\n## When to Use\nProduct browsing, searching, filtering, recommendations.\n\n## Quick Reference\n- Search products: `search(query, filters)`\n- Get details: `getProduct(id)`\n- Filter: `filter(category, price, brand)`\n...",
+      "language": "markdown"
+    },
+    {
+      "code": "# Shopping Cart\n\n## When to Use\nManaging cart items, quantities, totals.\n\n## Quick Reference\n- Add item: `cart.add(productId, quantity)`\n- Update quantity: `cart.update(itemId, quantity)`\n...",
+      "language": "markdown"
+    },
+    {
+      "code": "code_assistant.md (Router - 200 lines)\n├── debugging.md (450 lines)\n├── refactoring.md (380 lines)\n├── documentation.md (320 lines)\n└── testing.md (400 lines)",
+      "language": "unknown"
+    },
+    {
+      "code": "# Code Assistant (Router)\n\n## Routing Keywords\n\n### debugging\nerror, bug, exception, crash, fix, troubleshoot, debug\n\n### refactoring\nrefactor, clean, optimize, simplify, restructure, improve\n\n### documentation\ndocs, comment, docstring, readme, api, explain\n\n### testing\ntest, unit, integration, coverage, assert, mock",
+      "language": "markdown"
+    },
+    {
+      "code": "data_pipeline.md (Router)\n├── data_extraction.md - Source connectors, API calls\n├── data_transformation.md - Cleaning, mapping, enrichment\n├── data_loading.md - Database writes, file exports\n├── data_validation.md - Quality checks, error handling\n└── pipeline_monitoring.md - Logging, alerts, metrics",
+      "language": "unknown"
+    },
+    {
+      "code": "## Multi-Skill Operations\n\n**Place order:** Requires coordination between:\n1. product_catalog - Validate product availability\n2. shopping_cart - Get cart contents\n3. checkout_payment - Process payment\n4. order_management - Create order record",
+      "language": "markdown"
+    },
+    {
+      "code": "# Skill Name\n\n## When to Use This Skill\n[Clear description]\n\n## Quick Reference\n[Common operations]\n\n## Key Concepts\n[Domain terminology]\n\n## Working with This Skill\n[Usage guidance]\n\n## Reference Files\n[Documentation organization]",
+      "language": "json"
+    },
+    {
+      "code": "skills/\n├── travel_planner.md (Router - 180 lines)\n├── flight_booking.md (420 lines)\n├── hotel_reservation.md (380 lines)\n├── itinerary_generation.md (450 lines)\n├── travel_insurance.md (290 lines)\n└── budget_tracking.md (340 lines)",
+      "language": "unknown"
+    },
+    {
+      "code": "---\nname: travel_planner\ndescription: Travel planning, booking, and itinerary management router\n---\n\n# Travel Planner (Router)\n\n## When to Use This Skill\n\nUse for all travel-related planning, bookings, and itinerary management.\n\nThis router skill analyzes your travel needs and activates specialized sub-skills.\n\n## Available Sub-Skills\n\n### flight_booking\n**Purpose:** Flight search, booking, seat selection, airline comparisons\n**Keywords:** flight, airline, plane, ticket, departure, arrival, airport, booking\n**Use for:** Finding and booking flights, comparing prices, selecting seats\n\n### hotel_reservation\n**Purpose:** Hotel search, room booking, amenities, check-in/out\n**Keywords:** hotel, accommodation, room, lodging, reservation, stay, check-in\n**Use for:** Finding hotels, booking rooms, checking amenities\n\n### itinerary_generation\n**Purpose:** Travel planning, scheduling, route optimization\n**Keywords:** itinerary, schedule, plan, route, activities, sightseeing\n**Use for:** Creating day-by-day plans, organizing activities\n\n### travel_insurance\n**Purpose:** Travel insurance options, coverage, claims\n**Keywords:** insurance, coverage, protection, medical, cancellation, claim\n**Use for:** Insurance recommendations, comparing policies\n\n### budget_tracking\n**Purpose:** Travel budget planning, expense tracking\n**Keywords:** budget, cost, expense, price, spending, money\n**Use for:** Estimating costs, tracking expenses\n\n## Routing Logic\n\nThe router analyzes your question and activates relevant skills:\n\n| Query Pattern | Activated Skills |\n|--------------|------------------|\n| \"Find flights to [destination]\" | flight_booking |\n| \"Book hotel in [city]\" | hotel_reservation |\n| \"Plan [duration] trip to [destination]\" | itinerary_generation |\n| \"Need travel insurance\" | travel_insurance |\n| \"How much will trip cost?\" | budget_tracking |\n| \"Plan complete Paris vacation\" | ALL (coordinated) |\n\n## Multi-Skill Coordination\n\nSome requests require multiple skills working together:\n\n### Complete Trip Planning\n1. **budget_tracking** - Set budget constraints\n2. **flight_booking** - Find flights within budget\n3. **hotel_reservation** - Book accommodation\n4. **itinerary_generation** - Create daily schedule\n5. **travel_insurance** - Recommend coverage\n\n### Booking Modification\n1. **flight_booking** - Check flight change fees\n2. **hotel_reservation** - Verify cancellation policy\n3. **budget_tracking** - Calculate cost impact\n\n## Usage Examples\n\n**Simple (single skill):**\n- \"Find direct flights to Tokyo\" → flight_booking\n- \"5-star hotels in Paris under $200/night\" → hotel_reservation\n- \"Create 3-day Rome itinerary\" → itinerary_generation\n\n**Complex (multiple skills):**\n- \"Plan week-long Paris trip for 2, budget $3000\" → budget_tracking → flight_booking → hotel_reservation → itinerary_generation\n- \"Cheapest way to visit London next month\" → budget_tracking + flight_booking + hotel_reservation",
+      "language": "yaml"
+    },
+    {
+      "code": "Current: ecommerce_platform.md (2000 lines)\n\nSplit into:\n1. product_catalog.md (400 lines) - Keywords: product, search, browse\n2. shopping_cart.md (300 lines) - Keywords: cart, add, remove\n3. checkout_payment.md (350 lines) - Keywords: checkout, payment, order\n4. order_management.md (400 lines) - Keywords: order, track, return\n5. admin_tools.md (350 lines) - Keywords: admin, inventory, analytics\n\nRouter: ecommerce_platform.md (200 lines)",
+      "language": "yaml"
+    },
+    {
+      "code": "# [Skill Name] (Router)\n\n## When to Use This Skill\n[Brief description]\n\n## Sub-Skills Available\n\n### [sub_skill_1]\n**Purpose:** [What it does]\n**Keywords:** [Routing keywords]\n**Use for:** [Use cases]\n\n[Repeat for each sub-skill]\n\n## Routing Logic\n[Keyword → sub-skill mapping]\n\n## Multi-Skill Operations\n[Complex operations requiring multiple skills]\n\n## Usage Examples\n[Simple and complex examples]",
+      "language": "json"
+    },
+    {
+      "code": "# Create router + sub-skills structure\nskill-seekers router \\\n  output/skill1/ \\\n  output/skill2/ \\\n  output/skill3/ \\\n  --output output/router/ \\\n  --name skill-router\n\n# Package\nskill-seekers package output/router/ --include-subskills\n\n# Upload\nskill-seekers upload router.zip --target claude",
+      "language": "go"
+    },
+    {
+      "code": "❌ keywords: data, process\n✅ keywords: extract, transform, load, ETL, pipeline",
+      "language": "csharp"
+    },
+    {
+      "code": "## Usage Examples\n\"Load data into database\" → data_loading\n\"Clean CSV file\" → data_transformation",
+      "language": "markdown"
+    },
+    {
+      "code": "user_management.md (800 lines)\n→ user_authentication.md (400 lines)\n→ user_profiles.md (400 lines)",
+      "language": "unknown"
+    },
+    {
+      "code": "main_router.md (100 lines)\n├── user_subsystem_router.md (150 lines)\n│   ├── user_auth.md (400 lines)\n│   ├── user_profiles.md (350 lines)\n│   └── user_permissions.md (380 lines)\n├── product_subsystem_router.md (180 lines)\n│   ├── product_catalog.md (450 lines)\n│   ├── product_inventory.md (420 lines)\n│   └── product_pricing.md (390 lines)\n└── order_subsystem_router.md (160 lines)\n    ├── order_placement.md (440 lines)\n    ├── order_fulfillment.md (410 lines)\n    └── order_returns.md (370 lines)",
+      "language": "unknown"
+    },
+    {
+      "code": "## Routing Logic\n\n**First-time user (no history):**\n- Always activate getting_started skill\n\n**Returning user (has context):**\n- Analyze recent conversation topics\n- Activate relevant sub-skills\n- Skip introductory content\n\n**Error state (previous operation failed):**\n- Activate troubleshooting skill\n- Include context from failed operation",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

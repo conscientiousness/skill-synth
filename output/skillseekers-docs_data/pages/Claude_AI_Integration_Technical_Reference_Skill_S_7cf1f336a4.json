@@ -1,0 +1,328 @@
+{
+  "url": "https://skillseekersweb.com/docs/reference/claude-integration",
+  "title": "Claude AI Integration Technical Reference | Skill Seekers Docs",
+  "content": "Complete technical guide for creating, packaging, and deploying skills to Claude AI.\n\nSkill Seekers is designed as the official skill creation toolkit for Claude AI. This guide covers the technical architecture, file formats, API integration, and development workflows.\n\nVersion: v2.6.0 (Three-Stream GitHub Architecture - Phases 1-5 Complete!)\n\nClaude AI skills use a markdown file with YAML frontmatter:\n\nResult: skill-name.zip (Claude AI format)\n\nNote: Official Skills API is in development. Manual upload recommended for now.\n\nFuture API (planned):\n\n18 tools for skill development:\n\nRestart Claude Desktop to activate MCP tools.\n\nDocumentation Scraping:\n\nSkill Management: 5. package_skill - Package skill for platform 6. upload_skill - Upload to Claude/Gemini/OpenAI 7. enhance_skill - AI enhancement 8. validate_skill - Validate skill structure\n\nCodebase Analysis (C3.x): 9. analyze_codebase - Full codebase analysis 10. extract_patterns - Design pattern detection 11. extract_test_examples - Test example extraction 12. build_how_to_guides - Generate tutorials\n\nGit Config Sources: 13. add_git_source - Add git-based config 14. list_git_sources - List sources 15. remove_git_source - Remove source 16. fetch_git_sources - Fetch updates\n\nUtilities: 17. list_presets - Show available presets 18. get_preset - Get preset config\n\nExample conversation:\n\nFor large projects with extensive codebases and documentation.\n\nSee also: Three-Stream GitHub Architecture\n\nBefore uploading to Claude:\n\nRun before packaging:\n\n1. Custom Instructions\n\n2. Sub-Skills (Router Pattern)\n\nClaude AI supports hierarchical skills with intelligent routing.\n\n3. Conversation Context\n\nSkills can access conversation history and maintain context across turns.\n\nOptional metadata file for package info:\n\nAuto-generated during packaging.\n\nCreate custom package layouts:\n\nSee also: Large Documentation Handling\n\nClaude AI matches skills to conversations based on:\n\nOptimize for discovery:\n\nCause: Documentation changed since skill creation\n\nCause: Skill too large for Claude context window\n\nSee also: Skill Architecture Guide\n\nStatus: ✅ Production Ready (v2.6.0)\n\nFound an issue or have suggestions? Open an issue",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Claude AI Integration Technical Reference",
+      "id": "claude-ai-integration-technical-reference"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "Skill File Format",
+      "id": "skill-file-format"
+    },
+    {
+      "level": "h3",
+      "text": "SKILL.md Structure",
+      "id": "skillmd-structure"
+    },
+    {
+      "level": "h3",
+      "text": "Frontmatter Fields",
+      "id": "frontmatter-fields"
+    },
+    {
+      "level": "h2",
+      "text": "Package Structure",
+      "id": "package-structure"
+    },
+    {
+      "level": "h3",
+      "text": "Standard Package (ZIP)",
+      "id": "standard-package-zip"
+    },
+    {
+      "level": "h3",
+      "text": "Router Package (Multi-Skill)",
+      "id": "router-package-multi-skill"
+    },
+    {
+      "level": "h2",
+      "text": "Claude AI Skills API",
+      "id": "claude-ai-skills-api"
+    },
+    {
+      "level": "h3",
+      "text": "Manual Upload (Browser)",
+      "id": "manual-upload-browser"
+    },
+    {
+      "level": "h3",
+      "text": "Programmatic Upload (API)",
+      "id": "programmatic-upload-api"
+    },
+    {
+      "level": "h2",
+      "text": "Development Workflow",
+      "id": "development-workflow"
+    },
+    {
+      "level": "h3",
+      "text": "1. Create Skill from Documentation",
+      "id": "1-create-skill-from-documentation"
+    },
+    {
+      "level": "h3",
+      "text": "2. Enhance with AI (Optional)",
+      "id": "2-enhance-with-ai-optional"
+    },
+    {
+      "level": "h3",
+      "text": "3. Package for Claude",
+      "id": "3-package-for-claude"
+    },
+    {
+      "level": "h3",
+      "text": "4. Upload to Claude AI",
+      "id": "4-upload-to-claude-ai"
+    },
+    {
+      "level": "h2",
+      "text": "MCP Integration",
+      "id": "mcp-integration"
+    },
+    {
+      "level": "h3",
+      "text": "Skill Seekers MCP Server",
+      "id": "skill-seekers-mcp-server"
+    },
+    {
+      "level": "h3",
+      "text": "Available MCP Tools",
+      "id": "available-mcp-tools"
+    },
+    {
+      "level": "h3",
+      "text": "Using MCP Tools in Claude",
+      "id": "using-mcp-tools-in-claude"
+    },
+    {
+      "level": "h2",
+      "text": "Three-Stream GitHub Architecture",
+      "id": "three-stream-github-architecture"
+    },
+    {
+      "level": "h3",
+      "text": "Architecture Overview",
+      "id": "architecture-overview"
+    },
+    {
+      "level": "h3",
+      "text": "Implementation",
+      "id": "implementation"
+    },
+    {
+      "level": "h2",
+      "text": "Testing and Validation",
+      "id": "testing-and-validation"
+    },
+    {
+      "level": "h3",
+      "text": "Local Testing",
+      "id": "local-testing"
+    },
+    {
+      "level": "h3",
+      "text": "Quality Checks",
+      "id": "quality-checks"
+    },
+    {
+      "level": "h2",
+      "text": "Platform-Specific Features",
+      "id": "platform-specific-features"
+    },
+    {
+      "level": "h3",
+      "text": "Claude AI Exclusive Features",
+      "id": "claude-ai-exclusive-features"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Configuration",
+      "id": "advanced-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "Skill Metadata (metadata.json)",
+      "id": "skill-metadata-metadatajson"
+    },
+    {
+      "level": "h3",
+      "text": "Custom Packaging Scripts",
+      "id": "custom-packaging-scripts"
+    },
+    {
+      "level": "h2",
+      "text": "Token Budget Guidelines",
+      "id": "token-budget-guidelines"
+    },
+    {
+      "level": "h3",
+      "text": "Claude AI Token Limits",
+      "id": "claude-ai-token-limits"
+    },
+    {
+      "level": "h2",
+      "text": "Skill Discovery",
+      "id": "skill-discovery"
+    },
+    {
+      "level": "h3",
+      "text": "How Claude Finds Your Skill",
+      "id": "how-claude-finds-your-skill"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Skill not appearing in Claude",
+      "id": "issue-skill-not-appearing-in-claude"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Skill giving outdated information",
+      "id": "issue-skill-giving-outdated-information"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Token limit exceeded",
+      "id": "issue-token-limit-exceeded"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "---\nname: skill-name\ndescription: When to use this skill (1-2 sentences)\ntags:\n  - tag1\n  - tag2\ncustom_instructions: |\n  Optional: Specific instructions for Claude when using this skill\n---\n\n# Skill Name\n\nComprehensive documentation for the skill...\n\n## Quick Reference\n\nKey APIs, commands, or concepts...\n\n## Examples\n\nPractical code examples...\n\n## References\n\nLinks to official documentation...",
+      "language": "yaml"
+    },
+    {
+      "code": "skill-name.zip\n├── SKILL.md                    # Main skill file\n├── references/                 # Supporting documentation\n│   ├── api/\n│   │   └── api-reference.md\n│   ├── guides/\n│   │   └── getting-started.md\n│   └── examples/\n│       └── code-examples.md\n├── scripts/                    # Optional helper scripts\n│   └── setup.sh\n└── assets/                     # Optional images/diagrams\n    └── architecture.png",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers package output/skill-name/ --target claude",
+      "language": "go"
+    },
+    {
+      "code": "project-router.zip\n├── SKILL.md                    # Router skill\n├── sub-skills/\n│   ├── project-code/\n│   │   ├── SKILL.md\n│   │   └── references/\n│   ├── project-docs/\n│   │   ├── SKILL.md\n│   │   └── references/\n│   └── project-github/\n│       ├── SKILL.md\n│       └── references/\n└── metadata.json               # Package metadata",
+      "language": "go"
+    },
+    {
+      "code": "skill-seekers router output/*/ --output output/project-router/\nskill-seekers package output/project-router/ --include-subskills",
+      "language": "go"
+    },
+    {
+      "code": "from anthropic import Anthropic\n\nclient = Anthropic(api_key=\"sk-ant-...\")\n\n# Upload skill\nskill = client.skills.create(\n    file=open(\"skill-name.zip\", \"rb\"),\n    name=\"skill-name\",\n    description=\"When to use this skill\"\n)\n\nprint(f\"Skill ID: {skill.id}\")",
+      "language": "python"
+    },
+    {
+      "code": "# Scrape documentation\nskill-seekers scrape --config configs/react.json\n\n# Result: output/react/SKILL.md + references/",
+      "language": "markdown"
+    },
+    {
+      "code": "# Use Claude Code Max (FREE, LOCAL mode)\nskill-seekers enhance output/react/ --enhance-local\n\n# Or use API mode (requires ANTHROPIC_API_KEY)\nexport ANTHROPIC_API_KEY=sk-ant-...\nskill-seekers enhance output/react/ --enhance",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers package output/react/ --target claude\n# Result: react.zip",
+      "language": "tsx"
+    },
+    {
+      "code": "# Manual upload (recommended)\n# 1. Go to claude.ai/skills\n# 2. Upload react.zip\n\n# Or use MCP tool (if available)\nskill-seekers upload react.zip --target claude",
+      "language": "markdown"
+    },
+    {
+      "code": "# Install\npip install skill-seekers[mcp]\n\n# Add to Claude Desktop config\n# File: ~/Library/Application Support/Claude/claude_desktop_config.json (macOS)\n# File: %APPDATA%/Claude/claude_desktop_config.json (Windows)\n\n{\n  \"mcpServers\": {\n    \"skill-seekers\": {\n      \"command\": \"uvx\",\n      \"args\": [\"skill-seekers-mcp\"]\n    }\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "You: Create a React skill from the official documentation\n\nClaude: I'll use the MCP tools to create a React skill.\n\n[Claude calls scrape_docs tool]\n{\n  \"config_path\": \"configs/react.json\"\n}\n\n[Scraping completes]\n\n[Claude calls package_skill tool]\n{\n  \"skill_dir\": \"output/react\",\n  \"target\": \"claude\"\n}\n\nDone! I've created react.zip. You can upload it to claude.ai/skills.",
+      "language": "json"
+    },
+    {
+      "code": "┌─────────────────────────────────────────────────────┐\n│ Router Skill (Intelligent Query Routing)            │\n│ - Analyzes user question                            │\n│ - Routes to appropriate sub-skill(s)                │\n│ - Synthesizes comprehensive answer                  │\n└─────────────────────────────────────────────────────┘\n         │\n         ├──────────────┬──────────────┬──────────────┐\n         │              │              │              │\n         ▼              ▼              ▼              ▼\n┌────────────────┐ ┌────────────────┐ ┌────────────────┐\n│ Code Stream    │ │ Docs Stream    │ │ GitHub Stream  │\n│ (C3.x)         │ │ (Scraper)      │ │ (Issues etc)   │\n│                │ │                │ │                │\n│ - Structure    │ │ - API Ref      │ │ - README       │\n│ - Patterns     │ │ - Guides       │ │ - Issues       │\n│ - Tests        │ │ - Tutorials    │ │ - Changelog    │\n│ - How-Tos      │ │ - Examples     │ │ - Releases     │\n└────────────────┘ └────────────────┘ └────────────────┘",
+      "language": "unknown"
+    },
+    {
+      "code": "# Stream 1: Code Analysis\nskill-seekers-codebase react/ --output output/react-code/\n\n# Stream 2: Documentation\nskill-seekers scrape --config configs/react-docs.json\n\n# Stream 3: GitHub Insights\nskill-seekers github facebook/react --output output/react-github/\n\n# Generate Router\nskill-seekers router output/react-*/ --output output/react-router/ --name \"react-complete\"\n\n# Package All\nskill-seekers package output/react-router/ --include-subskills --target claude",
+      "language": "go"
+    },
+    {
+      "code": "# 1. Validate skill structure\nskill-seekers validate output/react/\n\n# Expected output:\n# ✅ SKILL.md exists\n# ✅ Frontmatter valid\n# ✅ Name field present\n# ✅ Description field present\n# ✅ References directory exists\n# ✅ No broken links\n# ✅ Token count: 45,231 (within limits)\n\n# 2. Test with Claude Code locally\ncd output/react/\ncat SKILL.md | claude --stdin \"Explain React hooks\"",
+      "language": "markdown"
+    },
+    {
+      "code": "# Check token count\nskill-seekers validate output/react/ --check-tokens\n\n# Validate links\nskill-seekers validate output/react/ --check-links\n\n# Check formatting\nskill-seekers validate output/react/ --check-format",
+      "language": "markdown"
+    },
+    {
+      "code": "---\nname: react\ndescription: React framework documentation\ncustom_instructions: |\n  When answering React questions:\n  1. Always prefer functional components over class components\n  2. Recommend hooks-based state management\n  3. Use TypeScript examples when possible\n  4. Show both JavaScript and TypeScript variants for complex examples\n---",
+      "language": "yaml"
+    },
+    {
+      "code": "{\n  \"name\": \"react\",\n  \"version\": \"18.2.0\",\n  \"author\": \"Skill Seekers\",\n  \"created\": \"2025-01-14T12:00:00Z\",\n  \"updated\": \"2025-01-14T12:00:00Z\",\n  \"platform\": \"claude\",\n  \"description\": \"Complete React framework knowledge\",\n  \"tags\": [\"react\", \"javascript\", \"frontend\", \"framework\"],\n  \"token_count\": 45231,\n  \"file_count\": 24,\n  \"source_url\": \"https://react.dev/\",\n  \"enhancement_applied\": true,\n  \"enhancement_mode\": \"local\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "from skill_seekers.packaging import SkillPackager\n\npackager = SkillPackager(\n    skill_dir=\"output/react\",\n    target=\"claude\"\n)\n\n# Customize package\npackager.add_file(\"custom-guide.md\", \"references/guides/\")\npackager.exclude_pattern(\"*.tmp\")\npackager.set_metadata({\n    \"author\": \"Your Name\",\n    \"custom_field\": \"value\"\n})\n\n# Build package\npackager.build(\"react-custom.zip\")",
+      "language": "json"
+    },
+    {
+      "code": "---\nname: react\ndescription: Use for React framework questions - hooks, components, state management, routing, testing\ntags:\n  - react\n  - javascript\n  - jsx\n  - frontend\n  - web-development\n  - hooks\n  - components\n---",
+      "language": "yaml"
+    },
+    {
+      "code": "# Re-scrape documentation\nskill-seekers scrape --config configs/project.json\n\n# Re-enhance (optional)\nskill-seekers enhance output/project/ --enhance-local\n\n# Re-package and re-upload\nskill-seekers package output/project/ --target claude",
+      "language": "go"
+    },
+    {
+      "code": "# Use router pattern to split skill\nskill-seekers router output/project/ --max-tokens 50000",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

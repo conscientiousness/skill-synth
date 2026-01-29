@@ -1,0 +1,161 @@
+{
+  "name": "skillseekers-docs",
+  "total_pages": 38,
+  "base_url": "https://skillseekersweb.com/docs/",
+  "llms_txt_detected": false,
+  "llms_txt_variant": null,
+  "pages": [
+    {
+      "title": "Overview | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/getting-started/overview/"
+    },
+    {
+      "title": "Overview | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/getting-started/overview"
+    },
+    {
+      "title": "CLI Overview | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/cli/overview"
+    },
+    {
+      "title": "Create Your First Skill | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/getting-started/first-skill"
+    },
+    {
+      "title": "Installation | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/getting-started/installation"
+    },
+    {
+      "title": "How to Submit a Config | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/guides/submit-config"
+    },
+    {
+      "title": "Troubleshooting Guide | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/guides/troubleshooting"
+    },
+    {
+      "title": "scrape - Documentation Scraping | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/cli/scrape"
+    },
+    {
+      "title": "github - Repository Scraping | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/cli/github"
+    },
+    {
+      "title": "unified - Multi-Source Scraping | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/cli/unified"
+    },
+    {
+      "title": "pdf - PDF Extraction | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/cli/pdf"
+    },
+    {
+      "title": "package - Package Skills | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/cli/package"
+    },
+    {
+      "title": "upload - Upload Skills | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/cli/upload"
+    },
+    {
+      "title": "config - Configuration Management | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/cli/config"
+    },
+    {
+      "title": "Configuration Schema Reference | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/reference/config-schema"
+    },
+    {
+      "title": "AI Skill Standards & Best Practices | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/reference/ai-skill-standards"
+    },
+    {
+      "title": "Three-Stream GitHub Architecture (C3.x Router) | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/reference/c3x-router-architecture"
+    },
+    {
+      "title": "enhance - AI Enhancement | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/cli/enhance"
+    },
+    {
+      "title": "resume - Resume Interrupted Jobs | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/cli/resume"
+    },
+    {
+      "title": "Claude AI Integration Technical Reference | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/reference/claude-integration"
+    },
+    {
+      "title": "Feature Support Matrix & Platform Comparison | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/reference/feature-matrix"
+    },
+    {
+      "title": "Git-Based Config Sources | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/reference/git-config-sources"
+    },
+    {
+      "title": "Skill Architecture Guide - Layering and Splitting | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/reference/skill-architecture"
+    },
+    {
+      "title": "llms.txt Automatic Detection | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/reference/llms-txt-support"
+    },
+    {
+      "title": "Large Documentation Handling | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/reference/large-documentation"
+    },
+    {
+      "title": "Contributing to Skill Seekers | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/community/contributing"
+    },
+    {
+      "title": "Tutorial: Analyzing GitHub Repositories | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/tutorials/analyzing-github"
+    },
+    {
+      "title": "Skill Seekers Development Roadmap | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/community/roadmap"
+    },
+    {
+      "title": "Future Releases Roadmap | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/community/future-releases"
+    },
+    {
+      "title": "Changelog | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/community/changelog"
+    },
+    {
+      "title": "Tutorial: Extracting PDFs | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/tutorials/extracting-pdfs"
+    },
+    {
+      "title": "Tutorial: Multi-Source Skills | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/tutorials/multi-source-skills"
+    },
+    {
+      "title": "Tutorial: Scraping Documentation | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/tutorials/scraping-docs"
+    },
+    {
+      "title": "AI Enhancement | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/manual/enhancement/ai-enhancement"
+    },
+    {
+      "title": "Tutorial: Creating Custom Configs | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/tutorials/creating-configs"
+    },
+    {
+      "title": "C3.x Codebase Analysis | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/manual/codebase-analysis/c3x-codebase-analysis"
+    },
+    {
+      "title": "PDF Documentation | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/manual/scraping/pdf"
+    },
+    {
+      "title": "MCP Setup | Skill Seekers Docs",
+      "url": "https://skillseekersweb.com/docs/manual/mcp/setup"
+    }
+  ]
+}

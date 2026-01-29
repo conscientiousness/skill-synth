@@ -1,0 +1,396 @@
+{
+  "url": "https://skillseekersweb.com/docs/reference/large-documentation",
+  "title": "Large Documentation Handling | Skill Seekers Docs",
+  "content": "Strategies for scraping and managing documentation sites with 10,000+ pages.\n\nLarge documentation sites (10K+ pages) present unique challenges:\n\nBest for: Documentation with clear categorical organization\n\nHow it works: Scrape each category into separate sub-skill, create router\n\nExample: Kubernetes Docs\n\nConfig example (k8s-concepts.json):\n\nBest for: Unorganized docs or uniform structure\n\nHow it works: Auto-split when token budget exceeded\n\nBest for: Pre-planned organization\n\nSpeed up scraping with concurrent workers:\n\nOptimal worker count:\n\nSingle-process async for moderate speedup:\n\nResume interrupted scrapes:\n\nDetect and skip already-scraped pages:\n\nKubernetes Router (4 sub-skills):\n\nExtract only essential content:\n\nReduce token count by 30-50% by excluding non-essential content.\n\nSkip low-value pages:\n\nUpdate only changed pages:\n\nRemove duplicate content:\n\nChallenge: Comprehensive docs across 5 major sections\n\nSolution: Category-based split\n\nChallenge: Large, monolithic documentation\n\nSolution: Automatic size-based split\n\nChallenge: Massive internal wiki with poor organization\n\nSolution: Hybrid approach\n\nFactors affecting speed:\n\nStage 1: Quick scan (get structure)\n\nStage 2: Analyze and plan split\n\nStage 3: Full scrape with split\n\nDefine custom routing rules:\n\nSymptoms: Process killed, MemoryError\n\nEnable streaming mode:\n\nSplit into smaller sub-skills:\n\nSymptoms: Taking 5+ hours for 10K pages\n\nUse parallel workers:\n\nSkip low-value content:\n\nSymptoms: Upload fails, “Token limit exceeded”\n\nSplit into router + sub-skills:\n\nOptimize content extraction:\n\n✅ Before scraping, analyze documentation structure:\n\n✅ Clearer organization, better routing ❌ Avoid arbitrary size-based splits if categories exist\n\n✅ Scrape small sample (100 pages) to validate config:\n\n✅ Enable verbose logging:\n\n✅ Always use --checkpoint for large scrapes ✅ Enables resume if interrupted\n\nStatus: ✅ Production Ready (v2.0.0+)\n\nFound an issue or have suggestions? Open an issue",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Large Documentation Handling",
+      "id": "large-documentation-handling"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "When to Use Large Doc Strategies",
+      "id": "when-to-use-large-doc-strategies"
+    },
+    {
+      "level": "h3",
+      "text": "Size Thresholds",
+      "id": "size-thresholds"
+    },
+    {
+      "level": "h3",
+      "text": "Indicators You Need Splitting",
+      "id": "indicators-you-need-splitting"
+    },
+    {
+      "level": "h2",
+      "text": "Split Strategies",
+      "id": "split-strategies"
+    },
+    {
+      "level": "h3",
+      "text": "1. Category-Based Split (Recommended)",
+      "id": "1-category-based-split-recommended"
+    },
+    {
+      "level": "h3",
+      "text": "2. Size-Based Split (Automatic)",
+      "id": "2-size-based-split-automatic"
+    },
+    {
+      "level": "h3",
+      "text": "3. Router-First Split (Manual)",
+      "id": "3-router-first-split-manual"
+    },
+    {
+      "level": "h2",
+      "text": "Parallel Scraping",
+      "id": "parallel-scraping"
+    },
+    {
+      "level": "h3",
+      "text": "Multi-Worker Scraping",
+      "id": "multi-worker-scraping"
+    },
+    {
+      "level": "h3",
+      "text": "Async Scraping",
+      "id": "async-scraping"
+    },
+    {
+      "level": "h2",
+      "text": "Checkpointing and Resume",
+      "id": "checkpointing-and-resume"
+    },
+    {
+      "level": "h3",
+      "text": "Checkpoint Scraping",
+      "id": "checkpoint-scraping"
+    },
+    {
+      "level": "h3",
+      "text": "Smart Resume",
+      "id": "smart-resume"
+    },
+    {
+      "level": "h2",
+      "text": "Router Pattern for Large Docs",
+      "id": "router-pattern-for-large-docs"
+    },
+    {
+      "level": "h3",
+      "text": "Router SKILL.md Example",
+      "id": "router-skillmd-example"
+    },
+    {
+      "level": "h2",
+      "text": "Optimization Techniques",
+      "id": "optimization-techniques"
+    },
+    {
+      "level": "h3",
+      "text": "1. Selective Content Extraction",
+      "id": "1-selective-content-extraction"
+    },
+    {
+      "level": "h3",
+      "text": "2. Smart Page Filtering",
+      "id": "2-smart-page-filtering"
+    },
+    {
+      "level": "h3",
+      "text": "3. Incremental Updates",
+      "id": "3-incremental-updates"
+    },
+    {
+      "level": "h3",
+      "text": "4. Content Deduplication",
+      "id": "4-content-deduplication"
+    },
+    {
+      "level": "h2",
+      "text": "Case Studies",
+      "id": "case-studies"
+    },
+    {
+      "level": "h3",
+      "text": "Case Study 1: Kubernetes (10,000+ pages)",
+      "id": "case-study-1-kubernetes-10000-pages"
+    },
+    {
+      "level": "h3",
+      "text": "Case Study 2: Python Docs (4,000+ pages)",
+      "id": "case-study-2-python-docs-4000-pages"
+    },
+    {
+      "level": "h3",
+      "text": "Case Study 3: Internal Company Docs (20,000+ pages)",
+      "id": "case-study-3-internal-company-docs-20000-pages"
+    },
+    {
+      "level": "h2",
+      "text": "Performance Guidelines",
+      "id": "performance-guidelines"
+    },
+    {
+      "level": "h3",
+      "text": "Scraping Speed Estimates",
+      "id": "scraping-speed-estimates"
+    },
+    {
+      "level": "h3",
+      "text": "Memory Usage",
+      "id": "memory-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Configuration",
+      "id": "advanced-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "Multi-Stage Scraping",
+      "id": "multi-stage-scraping"
+    },
+    {
+      "level": "h3",
+      "text": "Custom Router Logic",
+      "id": "custom-router-logic"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Out of memory during scraping",
+      "id": "issue-out-of-memory-during-scraping"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Scraping too slow",
+      "id": "issue-scraping-too-slow"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Skill too large for Claude",
+      "id": "issue-skill-too-large-for-claude"
+    },
+    {
+      "level": "h2",
+      "text": "Best Practices",
+      "id": "best-practices"
+    },
+    {
+      "level": "h3",
+      "text": "1. Plan Your Split Strategy",
+      "id": "1-plan-your-split-strategy"
+    },
+    {
+      "level": "h3",
+      "text": "2. Use Category-Based Split When Possible",
+      "id": "2-use-category-based-split-when-possible"
+    },
+    {
+      "level": "h3",
+      "text": "3. Test with Sample First",
+      "id": "3-test-with-sample-first"
+    },
+    {
+      "level": "h3",
+      "text": "4. Monitor Progress",
+      "id": "4-monitor-progress"
+    },
+    {
+      "level": "h3",
+      "text": "5. Use Checkpointing for 5K+ Pages",
+      "id": "5-use-checkpointing-for-5k-pages"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "# 1. Split by category\nskill-seekers scrape --config configs/k8s-concepts.json --output output/k8s-concepts/\nskill-seekers scrape --config configs/k8s-tasks.json --output output/k8s-tasks/\nskill-seekers scrape --config configs/k8s-api.json --output output/k8s-api/\n\n# 2. Create router\nskill-seekers router \\\n  output/k8s-concepts/ \\\n  output/k8s-tasks/ \\\n  output/k8s-api/ \\\n  --output output/k8s-router/ \\\n  --name kubernetes-complete\n\n# 3. Package\nskill-seekers package output/k8s-router/ --include-subskills",
+      "language": "go"
+    },
+    {
+      "code": "{\n  \"name\": \"kubernetes-concepts\",\n  \"base_url\": \"https://kubernetes.io/docs/concepts/\",\n  \"url_patterns\": {\n    \"include\": [\"concepts\"],\n    \"exclude\": []\n  },\n  \"max_pages\": 500\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Automatic splitting at 50K tokens per skill\nskill-seekers scrape --config configs/large-docs.json \\\n  --auto-split \\\n  --max-tokens 50000 \\\n  --output output/large-docs/\n\n# Creates:\n# output/large-docs-part1/\n# output/large-docs-part2/\n# output/large-docs-part3/\n# output/large-docs-router/  (automatically generated)",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"name\": \"django-complete\",\n  \"router_mode\": true,\n  \"sub_skills\": [\n    {\n      \"name\": \"django-tutorial\",\n      \"base_url\": \"https://docs.djangoproject.com/en/stable/intro/\",\n      \"max_pages\": 200\n    },\n    {\n      \"name\": \"django-api\",\n      \"base_url\": \"https://docs.djangoproject.com/en/stable/ref/\",\n      \"max_pages\": 1000\n    },\n    {\n      \"name\": \"django-topics\",\n      \"base_url\": \"https://docs.djangoproject.com/en/stable/topics/\",\n      \"max_pages\": 500\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers scrape --config configs/django-router.json\n# Automatically scrapes all sub-skills and generates router",
+      "language": "markdown"
+    },
+    {
+      "code": "# 4 parallel workers\nskill-seekers scrape --config configs/large-docs.json \\\n  --workers 4 \\\n  --output output/large-docs/\n\n# Performance:\n# - 1 worker: 10,000 pages = 3 hours\n# - 4 workers: 10,000 pages = 45 minutes\n# - 8 workers: 10,000 pages = 25 minutes (diminishing returns)",
+      "language": "markdown"
+    },
+    {
+      "code": "# Async mode (faster than sync, no parallelism overhead)\nskill-seekers scrape --config configs/large-docs.json \\\n  --async \\\n  --output output/large-docs/\n\n# 2-3x faster than synchronous mode",
+      "language": "markdown"
+    },
+    {
+      "code": "# Enable checkpointing (saves progress every 100 pages)\nskill-seekers scrape --config configs/large-docs.json \\\n  --checkpoint \\\n  --checkpoint-interval 100 \\\n  --output output/large-docs/\n\n# If interrupted, resume from last checkpoint:\nskill-seekers scrape --config configs/large-docs.json \\\n  --resume \\\n  --output output/large-docs/",
+      "language": "sql"
+    },
+    {
+      "code": "output/large-docs/.checkpoint/\n├── progress.json       # Pages scraped, current URL, etc.\n├── cache/              # Cached page content\n└── metadata.json       # Scraping metadata",
+      "language": "unknown"
+    },
+    {
+      "code": "# Resume automatically detects existing content\nskill-seekers scrape --config configs/large-docs.json \\\n  --smart-resume \\\n  --output output/large-docs/\n\n# Skips pages that:\n# - Already exist in references/\n# - Have not changed since last scrape (based on Last-Modified header)\n# - Match content hash from previous scrape",
+      "language": "sql"
+    },
+    {
+      "code": "---\nname: kubernetes-complete\ndescription: Complete Kubernetes documentation with intelligent routing\n---\n\n# Kubernetes Complete Router\n\n## Sub-Skills\n\n### 1. kubernetes-concepts\n**When to use:** Understanding Kubernetes architecture and concepts\n**Contains:** Pods, Services, Deployments, ReplicaSets, etc.\n\n### 2. kubernetes-tasks\n**When to use:** Step-by-step how-to guides\n**Contains:** Creating deployments, exposing services, scaling, etc.\n\n### 3. kubernetes-api\n**When to use:** API reference and specifications\n**Contains:** API objects, fields, methods\n\n### 4. kubernetes-tutorials\n**When to use:** End-to-end learning guides\n**Contains:** Hello Minikube, Stateless Applications, etc.\n\n## Routing Strategy\n\n1. **Conceptual questions** → kubernetes-concepts\n2. **How-to questions** → kubernetes-tasks\n3. **API reference questions** → kubernetes-api\n4. **Learning questions** → kubernetes-tutorials\n\nFor complex questions requiring multiple perspectives, consult multiple sub-skills and synthesize answer.",
+      "language": "yaml"
+    },
+    {
+      "code": "{\n  \"name\": \"large-docs\",\n  \"base_url\": \"https://docs.example.com/\",\n  \"selectors\": {\n    \"main_content\": \"article\",\n    \"exclude_selectors\": [\n      \".sidebar\",\n      \".footer\",\n      \".navigation\",\n      \".advertisement\"\n    ]\n  },\n  \"extract_api\": true,\n  \"extract_examples\": true,\n  \"extract_navigation\": false,\n  \"extract_metadata\": false\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"url_patterns\": {\n    \"include\": [\"docs\"],\n    \"exclude\": [\n      \"blog\",\n      \"news\",\n      \"changelog\",\n      \"404\",\n      \"search\"\n    ]\n  },\n  \"min_content_length\": 500,\n  \"skip_duplicate_content\": true\n}",
+      "language": "json"
+    },
+    {
+      "code": "# First scrape (full)\nskill-seekers scrape --config configs/docs.json --output output/docs/\n\n# Later updates (incremental)\nskill-seekers scrape --config configs/docs.json \\\n  --output output/docs/ \\\n  --incremental \\\n  --since \"2025-01-01\"\n\n# Only re-scrapes pages modified after 2025-01-01",
+      "language": "markdown"
+    },
+    {
+      "code": "# Enable deduplication\nskill-seekers scrape --config configs/docs.json \\\n  --deduplicate \\\n  --similarity-threshold 0.9\n\n# Skips pages with > 90% similarity to already-scraped pages",
+      "language": "markdown"
+    },
+    {
+      "code": "# Split into 5 sub-skills\nskill-seekers scrape --config configs/k8s-concepts.json --workers 4\nskill-seekers scrape --config configs/k8s-tasks.json --workers 4\nskill-seekers scrape --config configs/k8s-api.json --workers 6\nskill-seekers scrape --config configs/k8s-tutorials.json --workers 2\nskill-seekers scrape --config configs/k8s-reference.json --workers 4\n\n# Generate router\nskill-seekers router output/k8s-*/ --output output/k8s-router/\n\n# Package\nskill-seekers package output/k8s-router/ --include-subskills",
+      "language": "go"
+    },
+    {
+      "code": "# Auto-split at 50K tokens\nskill-seekers scrape --config configs/python-docs.json \\\n  --auto-split \\\n  --max-tokens 50000 \\\n  --workers 4\n\n# Creates:\n# - python-stdlib (part 1)\n# - python-tutorial (part 2)\n# - python-reference (part 3)\n# - python-howto (part 4)\n# - python-router (auto-generated)",
+      "language": "markdown"
+    },
+    {
+      "code": "# Phase 1: Category-based split (where possible)\nskill-seekers scrape --config configs/company-api.json --workers 4\nskill-seekers scrape --config configs/company-guides.json --workers 4\n\n# Phase 2: Auto-split remaining unorganized docs\nskill-seekers scrape --config configs/company-misc.json \\\n  --auto-split \\\n  --max-tokens 50000 \\\n  --workers 6\n\n# Phase 3: Generate router\nskill-seekers router output/company-*/ --output output/company-router/",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers scrape --config configs/docs.json \\\n  --scan-only \\\n  --output output/docs-scan/\n\n# Creates URL map without full content extraction",
+      "language": "markdown"
+    },
+    {
+      "code": "# Analyze structure\nskill-seekers analyze output/docs-scan/ --suggest-split\n\n# Outputs suggested categories and sizes",
+      "language": "markdown"
+    },
+    {
+      "code": "# Use suggested split\nskill-seekers scrape --config configs/docs.json \\\n  --split-by-categories \\\n  --workers 4 \\\n  --output output/docs/",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"router_config\": {\n    \"name\": \"custom-router\",\n    \"sub_skills\": [\n      {\n        \"name\": \"api-reference\",\n        \"keywords\": [\"api\", \"method\", \"function\", \"class\"],\n        \"priority\": 1\n      },\n      {\n        \"name\": \"user-guide\",\n        \"keywords\": [\"how to\", \"guide\", \"tutorial\", \"example\"],\n        \"priority\": 2\n      },\n      {\n        \"name\": \"concepts\",\n        \"keywords\": [\"concept\", \"overview\", \"architecture\"],\n        \"priority\": 3\n      }\n    ],\n    \"default_skill\": \"user-guide\",\n    \"multi_skill_threshold\": 0.5\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers scrape --config X --batch-size 50",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape --config X --streaming",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape --config X --auto-split --max-pages 1000",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape --config X --workers 4",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape --config X --async",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"url_patterns\": {\n    \"exclude\": [\"blog\", \"news\", \"search\", \"404\"]\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers validate output/skill/ --check-tokens",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers router output/skill/ --max-tokens 50000",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"extract_navigation\": false,\n  \"extract_metadata\": false,\n  \"exclude_selectors\": [\".sidebar\", \".footer\"]\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers analyze https://docs.example.com/ --suggest-split",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape --config X --max-pages 100 --output test/",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape --config X --verbose",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Example: Kubernetes Docs",
+      "code": "# 1. Split by category\nskill-seekers scrape --config configs/k8s-concepts.json --output output/k8s-concepts/\nskill-seekers scrape --config configs/k8s-tasks.json --output output/k8s-tasks/\nskill-seekers scrape --config configs/k8s-api.json --output output/k8s-api/\n\n# 2. Create router\nskill-seekers router \\\n  output/k8s-concepts/ \\\n  output/k8s-tasks/ \\\n  output/k8s-api/ \\\n  --output output/k8s-router/ \\\n  --name kubernetes-complete\n\n# 3. Package\nskill-seekers package output/k8s-router/ --include-subskills"
+    }
+  ],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

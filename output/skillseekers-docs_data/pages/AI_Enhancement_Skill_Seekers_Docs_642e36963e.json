@@ -1,0 +1,391 @@
+{
+  "url": "https://skillseekersweb.com/docs/manual/enhancement/ai-enhancement",
+  "title": "AI Enhancement | Skill Seekers Docs",
+  "content": "Transform basic SKILL.md files into comprehensive, production-quality documentation using AI enhancement.\n\nThe Problem: Auto-generated SKILL.md files are often too generic:\n\nThe Solution: Let Claude analyze your reference documentation and create enhanced SKILL.md with:\n\nUses your Claude Code Max subscription - no API costs!\n\nTime: 30-60 seconds per skill\n\nUses Anthropic API directly (~$0.15-$0.30 per skill):\n\nSkill Seekers supports 4 enhancement modes for different workflows:\n\nBest for: CI/CD pipelines, automation scripts\n\nBest for: When you want to continue working\n\nBest for: Long-running tasks that must survive parent process exit\n\nBest for: Manual work, debugging\n\nLocal Mode (Recommended - No API Key):\n\nModel: Claude Sonnet 4 Format: Maintains YAML frontmatter\n\nModel: Gemini 2.0 Flash Format: Converts to plain markdown (no frontmatter) Output: Updates system_instructions.md\n\nModel: GPT-4o Format: Converts to plain text Output: Updates assistant_instructions.txt\n\nNote: Local mode is FREE and only available for Claude AI.\n\nWhen using --background or --daemon, a status file is created:\n\nLocation: {skill_directory}/.enhancement_status.json\n\nWhat it does: Skips ALL confirmations, auto-answers “yes” to everything\n\nDefault behavior: Force mode is ON by default for maximum automation\n\nDefault timeout: 600 seconds (10 minutes)\n\nAdjust based on skill size:\n\nWhat happens on timeout:\n\nTest Case: steam-economy skill\n\nThe enhancement successfully:\n\nEnhancement creates these files:\n\n“claude command not found”\n\n“Enhancement timed out”\n\n“SKILL.md was not updated”\n\nBackground task not progressing:\n\nStatus file shows error:\n\n“No API key provided”\n\n“No reference files found”\n\n“anthropic package not installed”\n\nDon’t like the result?\n\nUse enhancement when:\n\nSkip enhancement when:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "AI Enhancement Guide",
+      "id": "ai-enhancement-guide"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Start",
+      "id": "quick-start"
+    },
+    {
+      "level": "h3",
+      "text": "LOCAL Enhancement (Recommended - FREE)",
+      "id": "local-enhancement-recommended---free"
+    },
+    {
+      "level": "h3",
+      "text": "API Enhancement (Alternative)",
+      "id": "api-enhancement-alternative"
+    },
+    {
+      "level": "h2",
+      "text": "Enhancement Modes",
+      "id": "enhancement-modes"
+    },
+    {
+      "level": "h3",
+      "text": "1. Headless Mode (Default)",
+      "id": "1-headless-mode-default"
+    },
+    {
+      "level": "h3",
+      "text": "2. Background Mode",
+      "id": "2-background-mode"
+    },
+    {
+      "level": "h3",
+      "text": "3. Daemon Mode",
+      "id": "3-daemon-mode"
+    },
+    {
+      "level": "h3",
+      "text": "4. Terminal Mode (Interactive)",
+      "id": "4-terminal-mode-interactive"
+    },
+    {
+      "level": "h2",
+      "text": "Mode Comparison",
+      "id": "mode-comparison"
+    },
+    {
+      "level": "h2",
+      "text": "What Enhancement Does",
+      "id": "what-enhancement-does"
+    },
+    {
+      "level": "h2",
+      "text": "Example Enhancement",
+      "id": "example-enhancement"
+    },
+    {
+      "level": "h3",
+      "text": "Before (Auto-Generated)",
+      "id": "before-auto-generated"
+    },
+    {
+      "level": "h3",
+      "text": "After (AI-Enhanced)",
+      "id": "after-ai-enhanced"
+    },
+    {
+      "level": "h2",
+      "text": "Multi-Platform Enhancement",
+      "id": "multi-platform-enhancement"
+    },
+    {
+      "level": "h3",
+      "text": "Claude AI (Default)",
+      "id": "claude-ai-default"
+    },
+    {
+      "level": "h3",
+      "text": "Google Gemini",
+      "id": "google-gemini"
+    },
+    {
+      "level": "h3",
+      "text": "OpenAI ChatGPT",
+      "id": "openai-chatgpt"
+    },
+    {
+      "level": "h3",
+      "text": "Platform Comparison",
+      "id": "platform-comparison"
+    },
+    {
+      "level": "h2",
+      "text": "Monitoring Background Tasks",
+      "id": "monitoring-background-tasks"
+    },
+    {
+      "level": "h3",
+      "text": "Status File Format",
+      "id": "status-file-format"
+    },
+    {
+      "level": "h3",
+      "text": "Check Status Command",
+      "id": "check-status-command"
+    },
+    {
+      "level": "h3",
+      "text": "Watch Mode (Real-time)",
+      "id": "watch-mode-real-time"
+    },
+    {
+      "level": "h3",
+      "text": "JSON Output (For Scripts)",
+      "id": "json-output-for-scripts"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Workflows",
+      "id": "advanced-workflows"
+    },
+    {
+      "level": "h3",
+      "text": "Batch Enhancement (Multiple Skills)",
+      "id": "batch-enhancement-multiple-skills"
+    },
+    {
+      "level": "h3",
+      "text": "CI/CD Integration",
+      "id": "cicd-integration"
+    },
+    {
+      "level": "h3",
+      "text": "Long-running Daemon",
+      "id": "long-running-daemon"
+    },
+    {
+      "level": "h2",
+      "text": "Force Mode",
+      "id": "force-mode"
+    },
+    {
+      "level": "h2",
+      "text": "Timeout Configuration",
+      "id": "timeout-configuration"
+    },
+    {
+      "level": "h2",
+      "text": "Cost Estimate (API Mode)",
+      "id": "cost-estimate-api-mode"
+    },
+    {
+      "level": "h2",
+      "text": "Real-World Results",
+      "id": "real-world-results"
+    },
+    {
+      "level": "h2",
+      "text": "File Artifacts",
+      "id": "file-artifacts"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Tools Not Working",
+      "id": "tools-not-working"
+    },
+    {
+      "level": "h3",
+      "text": "Background Task Issues",
+      "id": "background-task-issues"
+    },
+    {
+      "level": "h3",
+      "text": "API Mode Issues",
+      "id": "api-mode-issues"
+    },
+    {
+      "level": "h2",
+      "text": "Best Practices",
+      "id": "best-practices"
+    },
+    {
+      "level": "h2",
+      "text": "When to Use Enhancement",
+      "id": "when-to-use-enhancement"
+    },
+    {
+      "level": "h2",
+      "text": "Mode Selection Guide",
+      "id": "mode-selection-guide"
+    },
+    {
+      "level": "h2",
+      "text": "Comparison with Manual Editing",
+      "id": "comparison-with-manual-editing"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "# Basic enhancement\nskill-seekers enhance output/react/\n\n# With custom timeout\nskill-seekers enhance output/react/ --timeout 1200\n\n# Background mode (non-blocking)\nskill-seekers enhance output/react/ --background\n\n# Daemon mode (survives terminal close)\nskill-seekers enhance output/react/ --daemon",
+      "language": "markdown"
+    },
+    {
+      "code": "# Install dependencies\npip install anthropic\n\n# Set API key\nexport ANTHROPIC_API_KEY=sk-ant-...\n\n# Enhance\nskill-seekers enhance output/react/ --mode api",
+      "language": "markdown"
+    },
+    {
+      "code": "# Runs in foreground, waits for completion\nskill-seekers enhance output/react/\n\n# With force mode (no confirmations)\nskill-seekers enhance output/react/ --force",
+      "language": "markdown"
+    },
+    {
+      "code": "# Start in background\nskill-seekers enhance output/react/ --background\n\n# Returns immediately with status file created\n# Monitor progress:\nskill-seekers enhance-status output/react/\n\n# Watch in real-time:\nskill-seekers enhance-status output/react/ --watch",
+      "language": "markdown"
+    },
+    {
+      "code": "# Start as daemon (fully detached)\nskill-seekers enhance output/react/ --daemon\n\n# Process continues even if you:\n# - Close the terminal\n# - Logout\n# - SSH session ends\n\n# Check status later:\nskill-seekers enhance-status output/react/\n\n# View logs:\ntail -f output/react/.enhancement_daemon.log",
+      "language": "markdown"
+    },
+    {
+      "code": "# Open in new terminal window\nskill-seekers enhance output/react/ --interactive-enhancement",
+      "language": "markdown"
+    },
+    {
+      "code": "## Quick Reference\n\n### Common Patterns\n\n*Quick reference patterns will be added as you use the skill.*",
+      "language": "markdown"
+    },
+    {
+      "code": "## Quick Reference\n\n### Common API Patterns\n\n**Granting promotional items:**\n\\`\\`\\`cpp\nvoid CInventory::GrantPromoItems()\n{\n    SteamItemDef_t newItems[2];\n    newItems[0] = 110;\n    newItems[1] = 111;\n    SteamInventory()->AddPromoItems( &s_GenerateRequestResult, newItems, 2 );\n}\n\\`\\`\\`\n\n**Getting all items in player inventory:**\n\\`\\`\\`cpp\nSteamInventoryResult_t resultHandle;\nbool success = SteamInventory()->GetAllItems( &resultHandle );\n\\`\\`\\`\n\n[... 8 more practical examples ...]",
+      "language": "json"
+    },
+    {
+      "code": "# Uses Claude Code Max (no API costs)\nskill-seekers enhance output/react/",
+      "language": "markdown"
+    },
+    {
+      "code": "# Requires ANTHROPIC_API_KEY\nexport ANTHROPIC_API_KEY=sk-ant-...\nskill-seekers enhance output/react/ --mode api",
+      "language": "markdown"
+    },
+    {
+      "code": "# Install Gemini support\npip install skill-seekers[gemini]\n\n# Set API key\nexport GOOGLE_API_KEY=AIzaSy...\n\n# Enhance with Gemini\nskill-seekers enhance output/react/ --target gemini --mode api",
+      "language": "markdown"
+    },
+    {
+      "code": "# Install OpenAI support\npip install skill-seekers[openai]\n\n# Set API key\nexport OPENAI_API_KEY=sk-proj-...\n\n# Enhance with GPT-4o\nskill-seekers enhance output/react/ --target openai --mode api",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"status\": \"running\",\n  \"message\": \"Running Claude Code enhancement...\",\n  \"progress\": 0.5,\n  \"timestamp\": \"2026-01-03T12:34:56.789012\",\n  \"skill_dir\": \"/path/to/output/react\",\n  \"error\": null,\n  \"pid\": 12345\n}",
+      "language": "json"
+    },
+    {
+      "code": "# One-time check\nskill-seekers enhance-status output/react/\n\n# Output:\n# ============================================================\n# ENHANCEMENT STATUS: RUNNING\n# ============================================================\n#\n# 🔄 Status: RUNNING\n#    Message: Running Claude Code enhancement...\n#    Progress: [██████████░░░░░░░░░░] 50%\n#    PID: 12345",
+      "language": "markdown"
+    },
+    {
+      "code": "# Watch status updates every 2 seconds\nskill-seekers enhance-status output/react/ --watch\n\n# Custom interval\nskill-seekers enhance-status output/react/ --watch --interval 5",
+      "language": "markdown"
+    },
+    {
+      "code": "# Get raw JSON\nskill-seekers enhance-status output/react/ --json\n\n# Use in scripts\nSTATUS=$(skill-seekers enhance-status output/react/ --json | jq -r '.status')\nif [ \"$STATUS\" = \"completed\" ]; then\n    echo \"Enhancement complete!\"\nfi",
+      "language": "bash"
+    },
+    {
+      "code": "#!/bin/bash\n# Enhance multiple skills in parallel\n\nskills=(\"react\" \"vue\" \"django\" \"fastapi\")\n\nfor skill in \"${skills[@]}\"; do\n    echo \"Starting enhancement: $skill\"\n    skill-seekers enhance output/$skill/ --background\ndone\n\necho \"All enhancements started in background!\"\n\n# Monitor all\nfor skill in \"${skills[@]}\"; do\n    skill-seekers enhance-status output/$skill/\ndone",
+      "language": "bash"
+    },
+    {
+      "code": "# GitHub Actions example\n- name: Enhance skill\n  run: |\n    # Headless mode (blocks until done)\n    skill-seekers enhance output/react/ --timeout 1200 --force\n\n    # Check if enhancement succeeded\n    if [ $? -eq 0 ]; then\n      echo \"✅ Enhancement successful\"\n    else\n      echo \"❌ Enhancement failed\"\n      exit 1\n    fi",
+      "language": "markdown"
+    },
+    {
+      "code": "# Start daemon for large skill\nskill-seekers enhance output/godot-large/ --daemon --timeout 3600\n\n# Logout and come back later\n# ... (hours later) ...\n\n# Check if it completed\nskill-seekers enhance-status output/godot-large/",
+      "language": "markdown"
+    },
+    {
+      "code": "# Force mode is ON by default (no flag needed)\nskill-seekers enhance output/react/\n\n# Disable force mode if you want confirmations\nskill-seekers enhance output/react/ --no-force",
+      "language": "markdown"
+    },
+    {
+      "code": "# Small skills (< 100 pages)\nskill-seekers enhance output/hono/ --timeout 300\n\n# Medium skills (100-1000 pages)\nskill-seekers enhance output/react/ --timeout 600\n\n# Large skills (1000+ pages)\nskill-seekers enhance output/godot/ --timeout 1200\n\n# Extra large (with PDF/GitHub sources)\nskill-seekers enhance output/django-unified/ --timeout 1800",
+      "language": "markdown"
+    },
+    {
+      "code": "output/react/\n├── SKILL.md                    # Enhanced file\n├── SKILL.md.backup             # Original backup\n├── .enhancement_status.json    # Status (background/daemon only)\n├── .enhancement_daemon.log     # Logs (daemon only)\n└── .enhancement_daemon.py      # Daemon script (daemon only)",
+      "language": "unknown"
+    },
+    {
+      "code": "# Remove status files after completion\nrm output/react/.enhancement_status.json\nrm output/react/.enhancement_daemon.log\nrm output/react/.enhancement_daemon.py",
+      "language": "markdown"
+    },
+    {
+      "code": "# Install Claude Code CLI\n# See: https://docs.claude.com/claude-code",
+      "language": "markdown"
+    },
+    {
+      "code": "# Increase timeout\nskill-seekers enhance output/react/ --timeout 1200",
+      "language": "markdown"
+    },
+    {
+      "code": "# Check if references exist\nls output/react/references/\n\n# Try terminal mode to see what's happening\nskill-seekers enhance output/react/ --interactive-enhancement",
+      "language": "markdown"
+    },
+    {
+      "code": "# Check status\nskill-seekers enhance-status output/react/ --json\n\n# If stuck, check process\nps aux | grep claude\n\n# Kill if needed\nkill -9 <PID>",
+      "language": "markdown"
+    },
+    {
+      "code": "# Check logs\ncat output/react/.enhancement_daemon.log\n\n# Check status file\ncat output/react/.enhancement_status.json\n\n# Try without force mode\nskill-seekers enhance output/react/ --daemon --no-force",
+      "language": "markdown"
+    },
+    {
+      "code": "# Read error details\nskill-seekers enhance-status output/react/ --json | jq -r '.error'\n\n# Common fixes:\n# 1. Increase timeout\n# 2. Check references exist\n# 3. Try terminal mode to debug",
+      "language": "markdown"
+    },
+    {
+      "code": "export ANTHROPIC_API_KEY=sk-ant-...\n# or\nskill-seekers enhance output/react/ --mode api --api-key sk-ant-...",
+      "language": "markdown"
+    },
+    {
+      "code": "# Make sure you've run the scraper first\nskill-seekers scrape --config configs/react.json",
+      "language": "markdown"
+    },
+    {
+      "code": "pip install anthropic",
+      "language": "unknown"
+    },
+    {
+      "code": "# Restore original\nmv output/react/SKILL.md.backup output/react/SKILL.md\n\n# Try again (may generate different content)\nskill-seekers enhance output/react/",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/tutorials/scraping-docs",
+    "https://skillseekersweb.com/docs/tutorials/multi-source-skills",
+    "https://skillseekersweb.com/docs/manual/mcp/setup",
+    "https://skillseekersweb.com/docs/manual/enhancement/ai-enhancement"
+  ]
+}

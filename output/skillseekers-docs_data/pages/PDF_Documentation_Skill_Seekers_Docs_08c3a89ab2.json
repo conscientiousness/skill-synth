@@ -1,0 +1,429 @@
+{
+  "url": "https://skillseekersweb.com/docs/manual/scraping/pdf",
+  "title": "PDF Documentation | Skill Seekers Docs",
+  "content": "Extract content from PDF documentation and convert to AI skills with advanced features including OCR, table extraction, parallel processing, and MCP integration.\n\nSkill Seekers’ PDF scraper converts PDF documentation into AI skills with:\n\nUses default settings:\n\nCreate configs/manual_pdf.json:\n\nExtract text from scanned PDFs using Optical Character Recognition:\n\nPerformance: ~2-5 seconds per page\n\nHandle encrypted PDFs:\n\nSecurity note: Password is passed via command line (visible in process list). For sensitive documents, use environment variables.\n\nExtract tables from PDFs:\n\nBest with: Well-formatted tables, not complex merged cells\n\nProcess pages in parallel for 3x faster extraction:\n\nNote: Only activates for PDFs with > 5 pages\n\nDetects chapter boundaries automatically:\n\nBreak large PDFs into manageable chunks:\n\nIntelligently merges code blocks split across pages:\n\nResult: Combined into single code block\n\nIf PDF has detectable chapters:\n\nProvide custom categories in config:\n\nThe scrape_pdf MCP tool provides PDF scraping through Model Context Protocol:\n\nSee: MCP Setup for MCP server configuration\n\nUse --from-json for iteration\n\nProblem: Only “content” or “other” category\n\nProblem: Too many poor code examples\n\nProblem: No images in assets/images/\n\nProblem: OCR fails or gives poor results\n\nProblem: Password not accepted",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "PDF Documentation Scraping",
+      "id": "pdf-documentation-scraping"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Start",
+      "id": "quick-start"
+    },
+    {
+      "level": "h3",
+      "text": "Basic Usage",
+      "id": "basic-usage"
+    },
+    {
+      "level": "h3",
+      "text": "Complete Workflow",
+      "id": "complete-workflow"
+    },
+    {
+      "level": "h2",
+      "text": "Usage Modes",
+      "id": "usage-modes"
+    },
+    {
+      "level": "h3",
+      "text": "Mode 1: Direct PDF (Quick)",
+      "id": "mode-1-direct-pdf-quick"
+    },
+    {
+      "level": "h3",
+      "text": "Mode 2: Config File (Recommended)",
+      "id": "mode-2-config-file-recommended"
+    },
+    {
+      "level": "h3",
+      "text": "Mode 3: From Extracted JSON (Iteration)",
+      "id": "mode-3-from-extracted-json-iteration"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Features",
+      "id": "advanced-features"
+    },
+    {
+      "level": "h3",
+      "text": "OCR for Scanned PDFs",
+      "id": "ocr-for-scanned-pdfs"
+    },
+    {
+      "level": "h3",
+      "text": "Password-Protected PDFs",
+      "id": "password-protected-pdfs"
+    },
+    {
+      "level": "h3",
+      "text": "Table Extraction",
+      "id": "table-extraction"
+    },
+    {
+      "level": "h3",
+      "text": "Parallel Processing",
+      "id": "parallel-processing"
+    },
+    {
+      "level": "h2",
+      "text": "Page Chunking and Chapters",
+      "id": "page-chunking-and-chapters"
+    },
+    {
+      "level": "h3",
+      "text": "Automatic Chapter Detection",
+      "id": "automatic-chapter-detection"
+    },
+    {
+      "level": "h3",
+      "text": "Page Chunking",
+      "id": "page-chunking"
+    },
+    {
+      "level": "h3",
+      "text": "Code Block Merging",
+      "id": "code-block-merging"
+    },
+    {
+      "level": "h2",
+      "text": "Categorization",
+      "id": "categorization"
+    },
+    {
+      "level": "h3",
+      "text": "Chapter-Based (Automatic)",
+      "id": "chapter-based-automatic"
+    },
+    {
+      "level": "h3",
+      "text": "Keyword-Based (Configurable)",
+      "id": "keyword-based-configurable"
+    },
+    {
+      "level": "h2",
+      "text": "Output Structure",
+      "id": "output-structure"
+    },
+    {
+      "level": "h3",
+      "text": "Generated Files",
+      "id": "generated-files"
+    },
+    {
+      "level": "h3",
+      "text": "SKILL.md Format",
+      "id": "skillmd-format"
+    },
+    {
+      "level": "h2",
+      "text": "Config File Reference",
+      "id": "config-file-reference"
+    },
+    {
+      "level": "h3",
+      "text": "Complete Example",
+      "id": "complete-example"
+    },
+    {
+      "level": "h3",
+      "text": "Field Reference",
+      "id": "field-reference"
+    },
+    {
+      "level": "h4",
+      "text": "Required Fields",
+      "id": "required-fields"
+    },
+    {
+      "level": "h4",
+      "text": "Optional Fields",
+      "id": "optional-fields"
+    },
+    {
+      "level": "h2",
+      "text": "MCP Integration",
+      "id": "mcp-integration"
+    },
+    {
+      "level": "h3",
+      "text": "Using MCP Tool",
+      "id": "using-mcp-tool"
+    },
+    {
+      "level": "h3",
+      "text": "Complete MCP Workflow",
+      "id": "complete-mcp-workflow"
+    },
+    {
+      "level": "h2",
+      "text": "Combined Usage Examples",
+      "id": "combined-usage-examples"
+    },
+    {
+      "level": "h3",
+      "text": "Maximum Performance",
+      "id": "maximum-performance"
+    },
+    {
+      "level": "h3",
+      "text": "Scanned PDF with Tables",
+      "id": "scanned-pdf-with-tables"
+    },
+    {
+      "level": "h3",
+      "text": "Encrypted PDF with All Features",
+      "id": "encrypted-pdf-with-all-features"
+    },
+    {
+      "level": "h2",
+      "text": "Performance",
+      "id": "performance"
+    },
+    {
+      "level": "h3",
+      "text": "Benchmarks",
+      "id": "benchmarks"
+    },
+    {
+      "level": "h3",
+      "text": "Feature Overhead",
+      "id": "feature-overhead"
+    },
+    {
+      "level": "h3",
+      "text": "Optimization Tips",
+      "id": "optimization-tips"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "No Categories Created",
+      "id": "no-categories-created"
+    },
+    {
+      "level": "h3",
+      "text": "Low-Quality Code Blocks",
+      "id": "low-quality-code-blocks"
+    },
+    {
+      "level": "h3",
+      "text": "Images Not Extracted",
+      "id": "images-not-extracted"
+    },
+    {
+      "level": "h3",
+      "text": "OCR Not Working",
+      "id": "ocr-not-working"
+    },
+    {
+      "level": "h3",
+      "text": "Password Errors",
+      "id": "password-errors"
+    },
+    {
+      "level": "h2",
+      "text": "Best Practices",
+      "id": "best-practices"
+    },
+    {
+      "level": "h3",
+      "text": "For Large PDFs (500+ pages)",
+      "id": "for-large-pdfs-500-pages"
+    },
+    {
+      "level": "h3",
+      "text": "For Scanned PDFs",
+      "id": "for-scanned-pdfs"
+    },
+    {
+      "level": "h3",
+      "text": "For Encrypted PDFs",
+      "id": "for-encrypted-pdfs"
+    },
+    {
+      "level": "h3",
+      "text": "For PDFs with Tables",
+      "id": "for-pdfs-with-tables"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "# Extract from PDF\nskill-seekers pdf --input manual.pdf --output output/manual/\n\n# With OCR for scanned PDFs\nskill-seekers pdf --input scanned.pdf --output output/scanned/ --ocr\n\n# Password-protected PDF\nskill-seekers pdf --input encrypted.pdf --password \"your-password\"\n\n# Extract tables\nskill-seekers pdf --input data.pdf --extract-tables\n\n# Parallel processing (3x faster)\nskill-seekers pdf --input large.pdf --parallel --workers 8",
+      "language": "sql"
+    },
+    {
+      "code": "# 1. Extract from PDF\nskill-seekers pdf --input manual.pdf --output output/manual/\n\n# 2. Enhance (optional)\nskill-seekers enhance output/manual/\n\n# 3. Package\nskill-seekers package output/manual/ --target claude\n\n# 4. Upload\nskill-seekers upload manual-claude.zip",
+      "language": "go"
+    },
+    {
+      "code": "skill-seekers pdf \\\n  --input manual.pdf \\\n  --output output/manual/ \\\n  --extract-images \\\n  --min-quality 6.0",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"name\": \"mymanual\",\n  \"description\": \"My Manual documentation\",\n  \"pdf_path\": \"docs/manual.pdf\",\n  \"extract_options\": {\n    \"chunk_size\": 10,\n    \"min_quality\": 6.0,\n    \"extract_images\": true,\n    \"min_image_size\": 150\n  },\n  \"categories\": {\n    \"getting_started\": [\"introduction\", \"setup\"],\n    \"api\": [\"api\", \"reference\", \"function\"],\n    \"tutorial\": [\"tutorial\", \"example\", \"guide\"]\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers pdf --config configs/manual_pdf.json",
+      "language": "unknown"
+    },
+    {
+      "code": "# Step 1: Extract to JSON (one time)\nskill-seekers pdf --input manual.pdf --extract-only --output manual.json\n\n# Step 2: Build skill from JSON (fast, can iterate)\nskill-seekers pdf --from-json manual.json --output output/manual/",
+      "language": "sql"
+    },
+    {
+      "code": "# Ubuntu/Debian\nsudo apt-get install tesseract-ocr\n\n# macOS\nbrew install tesseract\n\n# Python packages\npip install pytesseract Pillow",
+      "language": "markdown"
+    },
+    {
+      "code": "# Basic OCR\nskill-seekers pdf --input scanned.pdf --ocr\n\n# OCR with other options\nskill-seekers pdf --input scanned.pdf --ocr --parallel --workers 4",
+      "language": "markdown"
+    },
+    {
+      "code": "# Basic usage\nskill-seekers pdf --input encrypted.pdf --password mypassword\n\n# Environment variable (more secure)\nexport PDF_PASSWORD=\"mypassword\"\nskill-seekers pdf --input encrypted.pdf --password \"$PDF_PASSWORD\"",
+      "language": "markdown"
+    },
+    {
+      "code": "# Extract tables\nskill-seekers pdf --input data.pdf --extract-tables\n\n# Tables included in output\n# Formatted as markdown tables in reference files",
+      "language": "markdown"
+    },
+    {
+      "code": "## Data Tables\n\n### Table 1 (Page 5)\n| Header 1 | Header 2 | Header 3 |\n|----------|----------|----------|\n| Data 1   | Data 2   | Data 3   |",
+      "language": "markdown"
+    },
+    {
+      "code": "# Auto-detect CPU count\nskill-seekers pdf --input large.pdf --parallel\n\n# Specify worker count\nskill-seekers pdf --input large.pdf --parallel --workers 8",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"chapters\": [\n    {\n      \"title\": \"Getting Started\",\n      \"start_page\": 1,\n      \"end_page\": 12\n    },\n    {\n      \"title\": \"API Reference\",\n      \"start_page\": 13,\n      \"end_page\": 45\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Default chunking (10 pages per chunk)\nskill-seekers pdf --input manual.pdf\n\n# Custom chunk size\nskill-seekers pdf --input manual.pdf --chunk-size 20\n\n# Disable chunking\nskill-seekers pdf --input manual.pdf --chunk-size 0",
+      "language": "markdown"
+    },
+    {
+      "code": "Page 5:  def calculate_total(items):\n             total = 0\n             for item in items:\n\nPage 6:         total += item.price\n             return total",
+      "language": "python"
+    },
+    {
+      "code": "{\n  \"categories\": {\n    \"getting_started\": [\n      \"introduction\",\n      \"getting started\",\n      \"installation\"\n    ],\n    \"scripting\": [\n      \"gdscript\",\n      \"scripting\",\n      \"code\"\n    ],\n    \"api\": [\n      \"api\",\n      \"class reference\",\n      \"method\"\n    ]\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "output/\n├── manual_extracted.json          # Raw extraction data\n└── manual/                        # Skill directory\n    ├── SKILL.md                   # Main skill file\n    ├── references/                # Reference documentation\n    │   ├── index.md               # Category index\n    │   ├── getting_started.md     # Category 1\n    │   ├── api.md                 # Category 2\n    │   └── tutorial.md            # Category 3\n    ├── scripts/                   # Empty (for user scripts)\n    └── assets/                    # Assets directory\n        └── images/                # Extracted images\n            ├── manual_page5_img1.png\n            └── manual_page12_img2.jpeg",
+      "language": "unknown"
+    },
+    {
+      "code": "# Mymanual Documentation Skill\n\nMy Manual documentation\n\n## When to use this skill\n\nUse this skill when the user asks about mymanual documentation,\nincluding API references, tutorials, examples, and best practices.\n\n## What's included\n\nThis skill contains:\n\n- **Getting Started**: 25 pages\n- **Api**: 80 pages\n- **Tutorial**: 45 pages\n\n## Quick Reference\n\n### Top Code Examples\n\n**Example 1** (Quality: 8.5/10):\n\n\\`\\`\\`python\ndef initialize_system():\n    config = load_config()\n    setup_logging(config)\n    return System(config)\n\\`\\`\\`\n\n## Navigation\n\nSee `references/index.md` for complete documentation structure.\n\n## Languages Covered\n\n- python: 45 examples\n- javascript: 32 examples\n- shell: 8 examples",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"name\": \"godot_manual\",\n  \"description\": \"Godot Engine documentation from PDF manual\",\n  \"pdf_path\": \"docs/godot_manual.pdf\",\n  \"extract_options\": {\n    \"chunk_size\": 15,\n    \"min_quality\": 6.0,\n    \"extract_images\": true,\n    \"min_image_size\": 200,\n    \"ocr\": false,\n    \"extract_tables\": false,\n    \"parallel\": false,\n    \"workers\": 4\n  },\n  \"categories\": {\n    \"getting_started\": [\n      \"introduction\",\n      \"getting started\",\n      \"installation\",\n      \"first steps\"\n    ],\n    \"scripting\": [\n      \"gdscript\",\n      \"scripting\",\n      \"code\",\n      \"programming\"\n    ],\n    \"3d\": [\n      \"3d\",\n      \"spatial\",\n      \"mesh\",\n      \"shader\"\n    ]\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Mode 1: Config file\nresult = await mcp.call_tool(\"scrape_pdf\", {\n    \"config_path\": \"configs/manual_pdf.json\"\n})\n\n# Mode 2: Direct PDF\nresult = await mcp.call_tool(\"scrape_pdf\", {\n    \"pdf_path\": \"manual.pdf\",\n    \"name\": \"mymanual\",\n    \"description\": \"My Manual Docs\"\n})\n\n# Mode 3: From JSON\nresult = await mcp.call_tool(\"scrape_pdf\", {\n    \"from_json\": \"output/manual_extracted.json\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "# 1. Scrape PDF\nscrape_result = await mcp.call_tool(\"scrape_pdf\", {\n    \"pdf_path\": \"docs/api_manual.pdf\",\n    \"name\": \"api_manual\"\n})\n\n# 2. Package skill\npackage_result = await mcp.call_tool(\"package_skill\", {\n    \"skill_dir\": \"output/api_manual/\",\n    \"auto_upload\": True\n})",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers pdf \\\n  --input docs/manual.pdf \\\n  --output output/manual/ \\\n  --extract-images \\\n  --extract-tables \\\n  --parallel \\\n  --workers 8 \\\n  --min-quality 5.0",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers pdf \\\n  --input docs/scanned.pdf \\\n  --output output/scanned/ \\\n  --ocr \\\n  --extract-tables \\\n  --parallel \\\n  --workers 4",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers pdf \\\n  --input docs/encrypted.pdf \\\n  --output output/encrypted/ \\\n  --password mypassword \\\n  --extract-images \\\n  --extract-tables \\\n  --parallel \\\n  --workers 8",
+      "language": "unknown"
+    },
+    {
+      "code": "# Check extracted chapters\ncat output/manual_extracted.json | jq '.chapters'\n\n# Add keyword categories to config if chapters empty\n# Or accept single category for small PDFs",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"extract_options\": {\n    \"min_quality\": 7.0  // Increase threshold\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"extract_options\": {\n    \"extract_images\": true,\n    \"min_image_size\": 50  // Lower threshold\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Check Tesseract installed\ntesseract --version\n\n# Install if missing\n# Ubuntu: sudo apt-get install tesseract-ocr\n# macOS: brew install tesseract\n\n# Try with verbose mode\nskill-seekers pdf --input scanned.pdf --ocr --verbose",
+      "language": "markdown"
+    },
+    {
+      "code": "# Check password is correct\n# Try with quotes\nskill-seekers pdf --input file.pdf --password \"my password\"\n\n# Use environment variable\nexport PDF_PASSWORD=\"my password\"\nskill-seekers pdf --input file.pdf --password \"$PDF_PASSWORD\"",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Usage:",
+      "code": "# Basic OCR\nskill-seekers pdf --input scanned.pdf --ocr\n\n# OCR with other options\nskill-seekers pdf --input scanned.pdf --ocr --parallel --workers 4"
+    },
+    {
+      "description": "Example:",
+      "code": "Page 5:  def calculate_total(items):\n             total = 0\n             for item in items:\n\nPage 6:         total += item.price\n             return total"
+    }
+  ],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/manual/mcp/setup",
+    "https://skillseekersweb.com/docs/tutorials/extracting-pdfs",
+    "https://skillseekersweb.com/docs/tutorials/multi-source-skills",
+    "https://skillseekersweb.com/docs/manual/scraping/pdf"
+  ]
+}

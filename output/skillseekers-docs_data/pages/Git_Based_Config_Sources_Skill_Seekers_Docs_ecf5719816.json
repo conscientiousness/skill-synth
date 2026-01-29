@@ -1,0 +1,522 @@
+{
+  "url": "https://skillseekersweb.com/docs/reference/git-config-sources",
+  "title": "Git-Based Config Sources | Skill Seekers Docs",
+  "content": "Use private or team git repositories to store and share scraping configurations.\n\nGit-based config sources allow you to:\n\nVersion: v2.2.0+ (Git config sources feature)\n\nconfigs/frontend/react.json:\n\nSetup (once per team):\n\nTeam Members (each person):\n\nWhen someone updates configs:\n\nContribute new config:\n\nRepository structure:\n\nExample conversation:\n\nGit sources are cloned to:\n\nError: Failed to clone repository Authentication failed for ‘https://github.com/org/configs.git’\n\nStatus: ✅ Production Ready (v2.2.0+)\n\nFound an issue or have suggestions? Open an issue",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Git-Based Config Sources",
+      "id": "git-based-config-sources"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Start",
+      "id": "quick-start"
+    },
+    {
+      "level": "h3",
+      "text": "1. Add a Git Source",
+      "id": "1-add-a-git-source"
+    },
+    {
+      "level": "h3",
+      "text": "2. Use Config from Git Source",
+      "id": "2-use-config-from-git-source"
+    },
+    {
+      "level": "h3",
+      "text": "3. List and Manage Sources",
+      "id": "3-list-and-manage-sources"
+    },
+    {
+      "level": "h2",
+      "text": "Adding Git Sources",
+      "id": "adding-git-sources"
+    },
+    {
+      "level": "h3",
+      "text": "HTTPS with Token (Recommended for Private Repos)",
+      "id": "https-with-token-recommended-for-private-repos"
+    },
+    {
+      "level": "h3",
+      "text": "SSH Keys (Alternative)",
+      "id": "ssh-keys-alternative"
+    },
+    {
+      "level": "h3",
+      "text": "Public Repositories (No Auth)",
+      "id": "public-repositories-no-auth"
+    },
+    {
+      "level": "h2",
+      "text": "Config Repository Structure",
+      "id": "config-repository-structure"
+    },
+    {
+      "level": "h3",
+      "text": "Recommended Layout",
+      "id": "recommended-layout"
+    },
+    {
+      "level": "h3",
+      "text": "Example Config File",
+      "id": "example-config-file"
+    },
+    {
+      "level": "h2",
+      "text": "Using Git Configs",
+      "id": "using-git-configs"
+    },
+    {
+      "level": "h3",
+      "text": "Full Path Syntax",
+      "id": "full-path-syntax"
+    },
+    {
+      "level": "h3",
+      "text": "Shorthand Syntax",
+      "id": "shorthand-syntax"
+    },
+    {
+      "level": "h3",
+      "text": "Relative Paths",
+      "id": "relative-paths"
+    },
+    {
+      "level": "h2",
+      "text": "Managing Git Sources",
+      "id": "managing-git-sources"
+    },
+    {
+      "level": "h3",
+      "text": "List Sources",
+      "id": "list-sources"
+    },
+    {
+      "level": "h3",
+      "text": "Fetch Updates",
+      "id": "fetch-updates"
+    },
+    {
+      "level": "h3",
+      "text": "Remove Source",
+      "id": "remove-source"
+    },
+    {
+      "level": "h2",
+      "text": "Authentication",
+      "id": "authentication"
+    },
+    {
+      "level": "h3",
+      "text": "GitHub Personal Access Token",
+      "id": "github-personal-access-token"
+    },
+    {
+      "level": "h3",
+      "text": "GitLab Personal Access Token",
+      "id": "gitlab-personal-access-token"
+    },
+    {
+      "level": "h3",
+      "text": "Bitbucket App Password",
+      "id": "bitbucket-app-password"
+    },
+    {
+      "level": "h3",
+      "text": "SSH Keys",
+      "id": "ssh-keys"
+    },
+    {
+      "level": "h2",
+      "text": "Branching and Versioning",
+      "id": "branching-and-versioning"
+    },
+    {
+      "level": "h3",
+      "text": "Use Different Branches",
+      "id": "use-different-branches"
+    },
+    {
+      "level": "h3",
+      "text": "Pin to Specific Commit/Tag",
+      "id": "pin-to-specific-committag"
+    },
+    {
+      "level": "h2",
+      "text": "Team Collaboration",
+      "id": "team-collaboration"
+    },
+    {
+      "level": "h3",
+      "text": "Shared Team Repository",
+      "id": "shared-team-repository"
+    },
+    {
+      "level": "h3",
+      "text": "Config Updates",
+      "id": "config-updates"
+    },
+    {
+      "level": "h2",
+      "text": "Environment-Specific Configs",
+      "id": "environment-specific-configs"
+    },
+    {
+      "level": "h3",
+      "text": "Dev, Staging, Production",
+      "id": "dev-staging-production"
+    },
+    {
+      "level": "h2",
+      "text": "MCP Integration",
+      "id": "mcp-integration"
+    },
+    {
+      "level": "h3",
+      "text": "MCP Tools for Git Sources",
+      "id": "mcp-tools-for-git-sources"
+    },
+    {
+      "level": "h3",
+      "text": "Using in Claude Desktop",
+      "id": "using-in-claude-desktop"
+    },
+    {
+      "level": "h2",
+      "text": "Storage and Caching",
+      "id": "storage-and-caching"
+    },
+    {
+      "level": "h3",
+      "text": "Local Storage",
+      "id": "local-storage"
+    },
+    {
+      "level": "h3",
+      "text": "Cache Behavior",
+      "id": "cache-behavior"
+    },
+    {
+      "level": "h2",
+      "text": "Best Practices",
+      "id": "best-practices"
+    },
+    {
+      "level": "h3",
+      "text": "1. Use Descriptive Source Names",
+      "id": "1-use-descriptive-source-names"
+    },
+    {
+      "level": "h3",
+      "text": "2. Organize Configs Hierarchically",
+      "id": "2-organize-configs-hierarchically"
+    },
+    {
+      "level": "h3",
+      "text": "3. Version Control Everything",
+      "id": "3-version-control-everything"
+    },
+    {
+      "level": "h3",
+      "text": "4. Use Branches for Environments",
+      "id": "4-use-branches-for-environments"
+    },
+    {
+      "level": "h3",
+      "text": "5. Document Your Configs",
+      "id": "5-document-your-configs"
+    },
+    {
+      "level": "h2",
+      "text": "Contributing",
+      "id": "contributing"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Config not found",
+      "id": "issue-config-not-found"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Source behind remote",
+      "id": "issue-source-behind-remote"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: SSH key not found",
+      "id": "issue-ssh-key-not-found"
+    },
+    {
+      "level": "h2",
+      "text": "Configuration File",
+      "id": "configuration-file"
+    },
+    {
+      "level": "h3",
+      "text": "~/.skill-seekers/git-sources.json",
+      "id": "skill-seekersgit-sourcesjson"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "# Add git repository as config source\nskill-seekers add-git-source \\\n  https://github.com/your-org/scraping-configs.git \\\n  --name company-configs \\\n  --branch main\n\n# With authentication (private repo)\nskill-seekers add-git-source \\\n  https://github.com/your-org/private-configs.git \\\n  --name private-configs \\\n  --token ghp_yourPersonalAccessToken",
+      "language": "markdown"
+    },
+    {
+      "code": "# Reference config by source name + path\nskill-seekers scrape \\\n  --config git:company-configs:configs/react.json\n\n# Or use shorthand (auto-detects)\nskill-seekers scrape --config company-configs:react.json",
+      "language": "tsx"
+    },
+    {
+      "code": "# List all configured sources\nskill-seekers list-git-sources\n\n# Fetch latest updates\nskill-seekers fetch-git-sources\n\n# Remove a source\nskill-seekers remove-git-source company-configs",
+      "language": "markdown"
+    },
+    {
+      "code": "# GitHub personal access token\nskill-seekers add-git-source \\\n  https://github.com/your-org/configs.git \\\n  --name my-configs \\\n  --token ghp_abc123... \\\n  --branch main\n\n# GitLab personal access token\nskill-seekers add-git-source \\\n  https://gitlab.com/your-org/configs.git \\\n  --name gitlab-configs \\\n  --token glpat-abc123... \\\n  --branch main\n\n# Bitbucket app password\nskill-seekers add-git-source \\\n  https://bitbucket.org/your-org/configs.git \\\n  --name bitbucket-configs \\\n  --token ATBB...abc123 \\\n  --branch main",
+      "language": "markdown"
+    },
+    {
+      "code": "# Using SSH URL (requires SSH key setup)\nskill-seekers add-git-source \\\n  git@github.com:your-org/configs.git \\\n  --name ssh-configs \\\n  --branch main\n\n# SSH key is read from ~/.ssh/id_rsa automatically",
+      "language": "julia"
+    },
+    {
+      "code": "# Public repo (no token needed)\nskill-seekers add-git-source \\\n  https://github.com/public-org/public-configs.git \\\n  --name public-configs \\\n  --branch main",
+      "language": "markdown"
+    },
+    {
+      "code": "scraping-configs/\n├── README.md\n├── configs/\n│   ├── frontend/\n│   │   ├── react.json\n│   │   ├── vue.json\n│   │   └── angular.json\n│   ├── backend/\n│   │   ├── django.json\n│   │   ├── fastapi.json\n│   │   └── flask.json\n│   ├── game-engines/\n│   │   ├── godot.json\n│   │   └── unity.json\n│   └── internal/\n│       ├── company-docs.json\n│       └── api-docs.json\n├── presets/\n│   └── company-preset.json\n└── .gitignore",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"name\": \"react\",\n  \"description\": \"React framework documentation\",\n  \"base_url\": \"https://react.dev/\",\n  \"extract_api\": true,\n  \"max_pages\": 200,\n  \"selectors\": {\n    \"main_content\": \"article\",\n    \"title\": \"h1\",\n    \"code_blocks\": \"pre code\"\n  },\n  \"categories\": {\n    \"getting_started\": [\"learn\", \"tutorial\"],\n    \"api\": [\"reference\", \"api\"]\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Explicit syntax\nskill-seekers scrape --config git:SOURCE_NAME:PATH/TO/CONFIG.json",
+      "language": "markdown"
+    },
+    {
+      "code": "# React config from company-configs source\nskill-seekers scrape --config git:company-configs:configs/frontend/react.json\n\n# Internal docs config\nskill-seekers scrape --config git:company-configs:configs/internal/company-docs.json",
+      "language": "sql"
+    },
+    {
+      "code": "# Auto-detects git source\nskill-seekers scrape --config SOURCE_NAME:PATH/TO/CONFIG.json",
+      "language": "markdown"
+    },
+    {
+      "code": "# Same as git:company-configs:configs/frontend/react.json\nskill-seekers scrape --config company-configs:configs/frontend/react.json\n\n# Even shorter if config is at root\nskill-seekers scrape --config company-configs:react.json",
+      "language": "tsx"
+    },
+    {
+      "code": "# From configs/ directory\nskill-seekers scrape --config company-configs:frontend/react.json\n\n# From root\nskill-seekers scrape --config company-configs:configs/frontend/react.json",
+      "language": "sql"
+    },
+    {
+      "code": "# Show all configured sources\nskill-seekers list-git-sources\n\n# Output:\n# Name: company-configs\n# URL: https://github.com/your-org/scraping-configs.git\n# Branch: main\n# Status: ✅ Cloned, up-to-date\n# Path: ~/.skill-seekers/git-sources/company-configs\n#\n# Name: gitlab-configs\n# URL: https://gitlab.com/your-org/configs.git\n# Branch: production\n# Status: ⚠️ Behind remote by 3 commits\n# Path: ~/.skill-seekers/git-sources/gitlab-configs",
+      "language": "markdown"
+    },
+    {
+      "code": "# Fetch all sources\nskill-seekers fetch-git-sources\n\n# Fetch specific source\nskill-seekers fetch-git-sources company-configs\n\n# Fetch before every scrape (automatic)\nskill-seekers scrape --config company-configs:react.json --fetch-sources",
+      "language": "tsx"
+    },
+    {
+      "code": "# Remove git source (keeps local cache)\nskill-seekers remove-git-source company-configs\n\n# Remove and delete local cache\nskill-seekers remove-git-source company-configs --delete-cache",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers add-git-source \\\n  https://github.com/your-org/configs.git \\\n  --name github-configs \\\n  --token ghp_abc123...",
+      "language": "yaml"
+    },
+    {
+      "code": "skill-seekers add-git-source \\\n  https://gitlab.com/your-org/configs.git \\\n  --name gitlab-configs \\\n  --token glpat-abc123...",
+      "language": "yaml"
+    },
+    {
+      "code": "skill-seekers add-git-source \\\n  https://bitbucket.org/your-org/configs.git \\\n  --name bitbucket-configs \\\n  --token ATBB...abc123",
+      "language": "yaml"
+    },
+    {
+      "code": "# Generate SSH key (if you don't have one)\nssh-keygen -t ed25519 -C \"your_email@example.com\"\n\n# Add public key to GitHub/GitLab/Bitbucket\ncat ~/.ssh/id_ed25519.pub",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers add-git-source \\\n  git@github.com:your-org/configs.git \\\n  --name ssh-configs",
+      "language": "python"
+    },
+    {
+      "code": "# Production configs\nskill-seekers add-git-source \\\n  https://github.com/your-org/configs.git \\\n  --name prod-configs \\\n  --branch production\n\n# Development configs\nskill-seekers add-git-source \\\n  https://github.com/your-org/configs.git \\\n  --name dev-configs \\\n  --branch development\n\n# Use production config\nskill-seekers scrape --config prod-configs:react.json\n\n# Use development config\nskill-seekers scrape --config dev-configs:react.json",
+      "language": "tsx"
+    },
+    {
+      "code": "# Use specific commit SHA\nskill-seekers add-git-source \\\n  https://github.com/your-org/configs.git \\\n  --name pinned-configs \\\n  --commit abc123def456\n\n# Use specific tag\nskill-seekers add-git-source \\\n  https://github.com/your-org/configs.git \\\n  --name tagged-configs \\\n  --tag v1.2.0",
+      "language": "markdown"
+    },
+    {
+      "code": "# 1. Create git repository for team configs\nmkdir scraping-configs\ncd scraping-configs\ngit init\nmkdir -p configs/{frontend,backend,internal}\n\n# 2. Add configs\n# (create JSON files in configs/)\n\n# 3. Push to team repo\ngit add .\ngit commit -m \"Initial team configs\"\ngit remote add origin https://github.com/your-org/scraping-configs.git\ngit push -u origin main",
+      "language": "markdown"
+    },
+    {
+      "code": "# Add team source\nskill-seekers add-git-source \\\n  https://github.com/your-org/scraping-configs.git \\\n  --name team-configs \\\n  --token ghp_teamToken...\n\n# Use team configs\nskill-seekers scrape --config team-configs:frontend/react.json",
+      "language": "markdown"
+    },
+    {
+      "code": "# Option 1: Manual fetch\nskill-seekers fetch-git-sources team-configs\n\n# Option 2: Auto-fetch before scrape\nskill-seekers scrape --config team-configs:react.json --fetch-sources",
+      "language": "tsx"
+    },
+    {
+      "code": "# 1. Clone team repo\ngit clone https://github.com/your-org/scraping-configs.git\ncd scraping-configs\n\n# 2. Create new config\ncat > configs/backend/new-framework.json <<EOF\n{\n  \"name\": \"new-framework\",\n  \"base_url\": \"https://new-framework.dev/\",\n  ...\n}\nEOF\n\n# 3. Commit and push\ngit add configs/backend/new-framework.json\ngit commit -m \"Add new-framework config\"\ngit push origin main\n\n# 4. Team members fetch updates\nskill-seekers fetch-git-sources team-configs",
+      "language": "json"
+    },
+    {
+      "code": "scraping-configs/\n├── envs/\n│   ├── dev/\n│   │   └── company-docs.json      # Dev docs URL\n│   ├── staging/\n│   │   └── company-docs.json      # Staging docs URL\n│   └── production/\n│       └── company-docs.json      # Production docs URL",
+      "language": "unknown"
+    },
+    {
+      "code": "# Dev environment\nskill-seekers add-git-source \\\n  https://github.com/company/configs.git \\\n  --name dev-configs \\\n  --branch development\n\n# Staging environment\nskill-seekers add-git-source \\\n  https://github.com/company/configs.git \\\n  --name staging-configs \\\n  --branch staging\n\n# Production environment\nskill-seekers add-git-source \\\n  https://github.com/company/configs.git \\\n  --name prod-configs \\\n  --branch production",
+      "language": "markdown"
+    },
+    {
+      "code": "# In dev environment\nskill-seekers scrape --config dev-configs:envs/dev/company-docs.json\n\n# In production environment\nskill-seekers scrape --config prod-configs:envs/production/company-docs.json",
+      "language": "markdown"
+    },
+    {
+      "code": "You: Add our company's scraping configs repository\n\nClaude: I'll add the git source.\n\n[Claude calls add_git_source MCP tool]\n{\n  \"url\": \"https://github.com/company/scraping-configs.git\",\n  \"name\": \"company-configs\",\n  \"token\": \"ghp_...\",\n  \"branch\": \"main\"\n}\n\nDone! You can now use configs with:\nskill-seekers scrape --config company-configs:PATH/TO/CONFIG.json",
+      "language": "json"
+    },
+    {
+      "code": "You: What git sources do I have configured?\n\nClaude: [Claude calls list_git_sources]\n\nYou have 2 git sources:\n1. company-configs (https://github.com/company/configs.git)\n2. team-configs (https://github.com/team/configs.git)",
+      "language": "yaml"
+    },
+    {
+      "code": "~/.skill-seekers/git-sources/SOURCE_NAME/",
+      "language": "unknown"
+    },
+    {
+      "code": "~/.skill-seekers/git-sources/\n├── company-configs/\n│   ├── .git/\n│   ├── configs/\n│   └── README.md\n└── team-configs/\n    ├── .git/\n    └── configs/",
+      "language": "unknown"
+    },
+    {
+      "code": "# Set auto-fetch interval (hours)\nskill-seekers config set git_fetch_interval 6  # Fetch every 6 hours\n\n# Disable auto-fetch\nskill-seekers config set git_auto_fetch false\n\n# Always fetch before scraping\nskill-seekers config set git_always_fetch true",
+      "language": "markdown"
+    },
+    {
+      "code": "# ✅ Good\nskill-seekers add-git-source URL --name company-internal-configs\nskill-seekers add-git-source URL --name team-frontend-configs\n\n# ❌ Bad\nskill-seekers add-git-source URL --name configs1\nskill-seekers add-git-source URL --name source",
+      "language": "markdown"
+    },
+    {
+      "code": "configs/\n├── internal/          # Company-internal docs\n├── external/          # External/open-source docs\n├── production/        # Production configs\n└── experimental/      # Experimental/test configs",
+      "language": "swift"
+    },
+    {
+      "code": "# Add .gitignore\ncat > .gitignore <<EOF\n*.log\n*.tmp\n.DS_Store\nEOF\n\n# Track changes\ngit add configs/\ngit commit -m \"Update React config: increase max_pages to 300\"",
+      "language": "sql"
+    },
+    {
+      "code": "# main - production configs\n# staging - staging configs\n# development - dev configs\n# feature/* - experimental configs",
+      "language": "markdown"
+    },
+    {
+      "code": "# README.md\n\n## Config Repository Structure\n\n- `configs/frontend/` - Frontend framework configs\n- `configs/backend/` - Backend framework configs\n- `configs/internal/` - Internal company documentation\n\n## Usage\n\n```bash\nskill-seekers scrape --config team-configs:frontend/react.json",
+      "language": "markdown"
+    },
+    {
+      "code": "---\n\n## Troubleshooting\n\n### Issue: Authentication failed\n\n**Symptoms:**",
+      "language": "markdown"
+    },
+    {
+      "code": "**Solutions:**\n1. **Verify token is valid:**\n   - GitHub: https://github.com/settings/tokens\n   - GitLab: https://gitlab.com/-/profile/personal_access_tokens\n2. **Check token permissions:**\n   - GitHub: Needs `repo` or `public_repo` scope\n   - GitLab: Needs `read_repository` scope\n3. **Re-add source with correct token:**\n   ```bash\n   skill-seekers remove-git-source SOURCE_NAME\n   skill-seekers add-git-source URL --name SOURCE_NAME --token CORRECT_TOKEN",
+      "language": "yaml"
+    },
+    {
+      "code": "Error: Config file not found: git:source:path/to/config.json",
+      "language": "yaml"
+    },
+    {
+      "code": "ls ~/.skill-seekers/git-sources/SOURCE_NAME/",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers fetch-git-sources SOURCE_NAME",
+      "language": "unknown"
+    },
+    {
+      "code": "# If config is at: configs/frontend/react.json\nskill-seekers scrape --config SOURCE_NAME:configs/frontend/react.json",
+      "language": "markdown"
+    },
+    {
+      "code": "⚠️ Source 'company-configs' is behind remote by 5 commits",
+      "language": "unknown"
+    },
+    {
+      "code": "# Fetch updates\nskill-seekers fetch-git-sources company-configs\n\n# Or auto-fetch before scraping\nskill-seekers scrape --config company-configs:react.json --fetch-sources",
+      "language": "tsx"
+    },
+    {
+      "code": "Error: Could not read from remote repository\nPermission denied (publickey)",
+      "language": "sql"
+    },
+    {
+      "code": "ssh-keygen -t ed25519 -C \"your_email@example.com\"",
+      "language": "python"
+    },
+    {
+      "code": "cat ~/.ssh/id_ed25519.pub\n# Copy output and add to https://github.com/settings/keys",
+      "language": "markdown"
+    },
+    {
+      "code": "ssh -T git@github.com",
+      "language": "python"
+    },
+    {
+      "code": "{\n  \"sources\": [\n    {\n      \"name\": \"company-configs\",\n      \"url\": \"https://github.com/company/configs.git\",\n      \"branch\": \"main\",\n      \"auth_method\": \"token\",\n      \"local_path\": \"~/.skill-seekers/git-sources/company-configs\",\n      \"last_fetch\": \"2025-01-14T10:30:00Z\",\n      \"status\": \"up-to-date\"\n    },\n    {\n      \"name\": \"team-configs\",\n      \"url\": \"git@github.com:team/configs.git\",\n      \"branch\": \"production\",\n      \"auth_method\": \"ssh\",\n      \"local_path\": \"~/.skill-seekers/git-sources/team-configs\",\n      \"last_fetch\": \"2025-01-14T09:15:00Z\",\n      \"status\": \"behind\"\n    }\n  ],\n  \"settings\": {\n    \"auto_fetch\": true,\n    \"fetch_interval_hours\": 24,\n    \"always_fetch\": false\n  }\n}",
+      "language": "json"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Example:",
+      "code": "~/.skill-seekers/git-sources/\n├── company-configs/\n│   ├── .git/\n│   ├── configs/\n│   └── README.md\n└── team-configs/\n    ├── .git/\n    └── configs/"
+    }
+  ],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

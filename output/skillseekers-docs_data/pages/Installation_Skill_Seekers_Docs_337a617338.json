@@ -1,0 +1,193 @@
+{
+  "url": "https://skillseekersweb.com/docs/getting-started/installation",
+  "title": "Installation | Skill Seekers Docs",
+  "content": "Time: 15-30 minutes total (including all installations)\n\nResult: Working Skill Seekers installation ready to create your first Claude skill\n\nBefore starting, you need:\n\nThe easiest way to install Skill Seekers is through PyPI:\n\nFor development or the latest features:\n\n✅ If you see: Python 3.10.x or higher → Skip to Step 2!\n\nLinux (Ubuntu/Debian):\n\n✅ If you see: git version 2.x.x → Skip to Step 3!\n\nWindows: Download from: https://git-scm.com/download/win\n\nSkill Seekers can enhance skills using AI. Set up your API key:\n\nMake it permanent (optional):\n\nAdd the export command to your shell profile (~/.bashrc, ~/.zshrc, or ~/.bash_profile):\n\nMake sure pip’s bin directory is in your PATH:\n\nInstall using pip instead of python:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Installation Guide",
+      "id": "installation-guide"
+    },
+    {
+      "level": "h2",
+      "text": "Prerequisites",
+      "id": "prerequisites"
+    },
+    {
+      "level": "h2",
+      "text": "Method 1: Install via PyPI (Recommended)",
+      "id": "method-1-install-via-pypi-recommended"
+    },
+    {
+      "level": "h2",
+      "text": "Method 2: Install from Source",
+      "id": "method-2-install-from-source"
+    },
+    {
+      "level": "h3",
+      "text": "Step 1: Install Python (5 minutes)",
+      "id": "step-1-install-python-5-minutes"
+    },
+    {
+      "level": "h4",
+      "text": "Check if You Already Have Python",
+      "id": "check-if-you-already-have-python"
+    },
+    {
+      "level": "h3",
+      "text": "Step 2: Install Git (3 minutes)",
+      "id": "step-2-install-git-3-minutes"
+    },
+    {
+      "level": "h3",
+      "text": "Step 3: Clone and Install (2 minutes)",
+      "id": "step-3-clone-and-install-2-minutes"
+    },
+    {
+      "level": "h2",
+      "text": "Set Up API Keys",
+      "id": "set-up-api-keys"
+    },
+    {
+      "level": "h3",
+      "text": "For Claude (Anthropic)",
+      "id": "for-claude-anthropic"
+    },
+    {
+      "level": "h3",
+      "text": "For Google Gemini",
+      "id": "for-google-gemini"
+    },
+    {
+      "level": "h3",
+      "text": "For OpenAI",
+      "id": "for-openai"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "”command not found: skill-seekers”",
+      "id": "command-not-found-skill-seekers"
+    },
+    {
+      "level": "h3",
+      "text": "“No module named ‘skill_seekers’”",
+      "id": "no-module-named-skill_seekers"
+    },
+    {
+      "level": "h3",
+      "text": "Permission errors",
+      "id": "permission-errors"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "# Install base package\npip install skill-seekers\n\n# Or install with specific LLM platform support\npip install skill-seekers[gemini]  # For Google Gemini\npip install skill-seekers[openai]  # For OpenAI ChatGPT\npip install skill-seekers[all]     # For all platforms",
+      "language": "go"
+    },
+    {
+      "code": "skill-seekers --version\n# Should show: skill-seekers 2.7.0 or higher",
+      "language": "markdown"
+    },
+    {
+      "code": "python3 --version",
+      "language": "unknown"
+    },
+    {
+      "code": "# Install Homebrew (if not installed)\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n\n# Install Python\nbrew install python3",
+      "language": "markdown"
+    },
+    {
+      "code": "sudo apt update\nsudo apt install python3 python3-pip",
+      "language": "sql"
+    },
+    {
+      "code": "git --version",
+      "language": "unknown"
+    },
+    {
+      "code": "brew install git",
+      "language": "unknown"
+    },
+    {
+      "code": "sudo apt install git",
+      "language": "unknown"
+    },
+    {
+      "code": "# Create Projects directory\nmkdir -p ~/Projects\ncd ~/Projects\n\n# Clone repository\ngit clone https://github.com/yusufkaraaslan/Skill_Seekers.git\ncd Skill_Seekers\n\n# Install in development mode\npip install -e .\n\n# Or install with all dependencies\npip install -e \".[all]\"",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers --version",
+      "language": "unknown"
+    },
+    {
+      "code": "export ANTHROPIC_API_KEY=\"your-api-key-here\"",
+      "language": "unknown"
+    },
+    {
+      "code": "export GOOGLE_API_KEY=\"your-api-key-here\"",
+      "language": "unknown"
+    },
+    {
+      "code": "export OPENAI_API_KEY=\"your-api-key-here\"",
+      "language": "unknown"
+    },
+    {
+      "code": "echo 'export ANTHROPIC_API_KEY=\"your-api-key-here\"' >> ~/.bashrc\nsource ~/.bashrc",
+      "language": "bash"
+    },
+    {
+      "code": "# Find where pip installed it\npip show skill-seekers\n\n# Add to PATH (adjust path as needed)\nexport PATH=\"$HOME/.local/bin:$PATH\"",
+      "language": "markdown"
+    },
+    {
+      "code": "pip install -e .",
+      "language": "unknown"
+    },
+    {
+      "code": "pip install --user skill-seekers",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

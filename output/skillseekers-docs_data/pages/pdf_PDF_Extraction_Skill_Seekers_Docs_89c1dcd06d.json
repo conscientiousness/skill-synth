@@ -1,0 +1,217 @@
+{
+  "url": "https://skillseekersweb.com/docs/cli/pdf",
+  "title": "pdf - PDF Extraction | Skill Seekers Docs",
+  "content": "Extract content from PDF files and convert to AI skills.\n\nFor large PDFs, enable parallel processing:\n\nExtract complex tables from PDFs:\n\nSome PDFs use images for tables. Enable OCR:\n\nFor very large PDFs, reduce workers:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "pdf - PDF Extraction",
+      "id": "pdf---pdf-extraction"
+    },
+    {
+      "level": "h2",
+      "text": "Basic Usage",
+      "id": "basic-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Examples",
+      "id": "quick-examples"
+    },
+    {
+      "level": "h2",
+      "text": "Options",
+      "id": "options"
+    },
+    {
+      "level": "h3",
+      "text": "Required",
+      "id": "required"
+    },
+    {
+      "level": "h3",
+      "text": "Optional",
+      "id": "optional"
+    },
+    {
+      "level": "h2",
+      "text": "Features",
+      "id": "features"
+    },
+    {
+      "level": "h3",
+      "text": "Basic Extraction",
+      "id": "basic-extraction"
+    },
+    {
+      "level": "h3",
+      "text": "Advanced Features",
+      "id": "advanced-features"
+    },
+    {
+      "level": "h2",
+      "text": "OCR Support",
+      "id": "ocr-support"
+    },
+    {
+      "level": "h3",
+      "text": "Prerequisites",
+      "id": "prerequisites"
+    },
+    {
+      "level": "h3",
+      "text": "Usage",
+      "id": "usage"
+    },
+    {
+      "level": "h2",
+      "text": "Parallel Processing",
+      "id": "parallel-processing"
+    },
+    {
+      "level": "h2",
+      "text": "Table Extraction",
+      "id": "table-extraction"
+    },
+    {
+      "level": "h2",
+      "text": "Output Structure",
+      "id": "output-structure"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Examples",
+      "id": "advanced-examples"
+    },
+    {
+      "level": "h3",
+      "text": "Complete Extraction",
+      "id": "complete-extraction"
+    },
+    {
+      "level": "h3",
+      "text": "Password-Protected PDF",
+      "id": "password-protected-pdf"
+    },
+    {
+      "level": "h3",
+      "text": "Batch Processing",
+      "id": "batch-processing"
+    },
+    {
+      "level": "h2",
+      "text": "Time Estimates",
+      "id": "time-estimates"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "OCR Not Working",
+      "id": "ocr-not-working"
+    },
+    {
+      "level": "h3",
+      "text": "Tables Not Extracting",
+      "id": "tables-not-extracting"
+    },
+    {
+      "level": "h3",
+      "text": "Memory Issues",
+      "id": "memory-issues"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers pdf [OPTIONS]",
+      "language": "unknown"
+    },
+    {
+      "code": "# Basic PDF extraction\nskill-seekers pdf --pdf docs/manual.pdf --name myskill\n\n# Scanned PDFs with OCR\nskill-seekers pdf --pdf docs/scanned.pdf --name myskill --ocr\n\n# Password-protected PDFs\nskill-seekers pdf --pdf docs/encrypted.pdf --name myskill --password mypassword\n\n# Advanced features\nskill-seekers pdf --pdf docs/manual.pdf --name myskill \\\n    --extract-tables \\\n    --parallel \\\n    --workers 8",
+      "language": "markdown"
+    },
+    {
+      "code": "# Install OCR dependencies\npip install pytesseract Pillow\n\n# Install Tesseract OCR engine\n# macOS\nbrew install tesseract\n\n# Linux\nsudo apt install tesseract-ocr\n\n# Windows\n# Download from: https://github.com/UB-Mannheim/tesseract/wiki",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers pdf --pdf scanned_manual.pdf --name myskill --ocr",
+      "language": "unknown"
+    },
+    {
+      "code": "# Use all CPU cores\nskill-seekers pdf --pdf large_manual.pdf --name myskill --parallel\n\n# Specify worker count\nskill-seekers pdf --pdf large_manual.pdf --name myskill --parallel --workers 16",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers pdf --pdf data_report.pdf --name myskill --extract-tables",
+      "language": "unknown"
+    },
+    {
+      "code": "output/\n└── {name}/\n    ├── SKILL.md              # Main content\n    ├── references/\n    │   ├── index.md\n    │   ├── extracted_text.md\n    │   ├── tables.md         # If --extract-tables\n    │   └── code_blocks.md\n    └── assets/\n        ├── image_001.png     # Extracted images\n        └── ...",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers pdf --pdf technical_manual.pdf --name technical \\\n    --description \"Technical manual from PDF\" \\\n    --ocr \\\n    --extract-tables \\\n    --parallel \\\n    --workers 8 \\\n    --output output/technical",
+      "language": "sql"
+    },
+    {
+      "code": "skill-seekers pdf --pdf encrypted.pdf --name secure \\\n    --password \"my-secure-password\" \\\n    --extract-tables",
+      "language": "unknown"
+    },
+    {
+      "code": "# Process multiple PDFs\nfor pdf in docs/*.pdf; do\n    name=$(basename \"$pdf\" .pdf)\n    skill-seekers pdf --pdf \"$pdf\" --name \"$name\" --parallel\ndone",
+      "language": "bash"
+    },
+    {
+      "code": "# Check Tesseract installation\ntesseract --version\n\n# If not found, install:\n# macOS: brew install tesseract\n# Linux: sudo apt install tesseract-ocr",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers pdf --pdf doc.pdf --name myskill --ocr --extract-tables",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers pdf --pdf huge.pdf --name myskill --parallel --workers 2",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

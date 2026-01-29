@@ -1,0 +1,143 @@
+{
+  "url": "https://skillseekersweb.com/docs/cli/scrape",
+  "title": "scrape - Documentation Scraping | Skill Seekers Docs",
+  "content": "Scrape documentation websites and convert them into AI skills.\n\nSkill Seekers includes 24+ ready-to-use configurations:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "scrape - Documentation Scraping",
+      "id": "scrape---documentation-scraping"
+    },
+    {
+      "level": "h2",
+      "text": "Basic Usage",
+      "id": "basic-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Examples",
+      "id": "quick-examples"
+    },
+    {
+      "level": "h2",
+      "text": "Options",
+      "id": "options"
+    },
+    {
+      "level": "h3",
+      "text": "Required (choose one)",
+      "id": "required-choose-one"
+    },
+    {
+      "level": "h3",
+      "text": "Optional",
+      "id": "optional"
+    },
+    {
+      "level": "h2",
+      "text": "Preset Configs",
+      "id": "preset-configs"
+    },
+    {
+      "level": "h2",
+      "text": "Output Structure",
+      "id": "output-structure"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Usage",
+      "id": "advanced-usage"
+    },
+    {
+      "level": "h3",
+      "text": "Custom Config File",
+      "id": "custom-config-file"
+    },
+    {
+      "level": "h3",
+      "text": "With Enhancement",
+      "id": "with-enhancement"
+    },
+    {
+      "level": "h3",
+      "text": "Async Mode",
+      "id": "async-mode"
+    },
+    {
+      "level": "h2",
+      "text": "Features",
+      "id": "features"
+    },
+    {
+      "level": "h2",
+      "text": "Time Estimates",
+      "id": "time-estimates"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers scrape [OPTIONS]",
+      "language": "unknown"
+    },
+    {
+      "code": "# Use preset config (easiest)\nskill-seekers scrape --config configs/react.json\n\n# Quick scrape without config\nskill-seekers scrape --url https://react.dev --name react\n\n# Interactive mode\nskill-seekers scrape --interactive\n\n# With async mode (3x faster)\nskill-seekers scrape --config configs/godot.json --async --workers 8",
+      "language": "markdown"
+    },
+    {
+      "code": "# Game Engines\nskill-seekers scrape --config configs/godot.json\nskill-seekers scrape --config configs/unity.json\n\n# Web Frameworks\nskill-seekers scrape --config configs/react.json\nskill-seekers scrape --config configs/vue.json\nskill-seekers scrape --config configs/django.json\nskill-seekers scrape --config configs/fastapi.json\n\n# And 18+ more...",
+      "language": "markdown"
+    },
+    {
+      "code": "output/\n├── {name}_data/              # Cached scraped data\n│   ├── pages/\n│   │   ├── page_0.json\n│   │   └── ...\n│   └── summary.json\n│\n└── {name}/                   # Built skill\n    ├── SKILL.md             # Main skill file\n    ├── references/          # Categorized docs\n    │   ├── index.md\n    │   ├── getting_started.md\n    │   ├── api.md\n    │   └── ...\n    ├── scripts/\n    └── assets/",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"name\": \"myframework\",\n  \"base_url\": \"https://docs.myframework.com/\",\n  \"description\": \"My framework documentation\",\n  \"start_urls\": [\n    \"https://docs.myframework.com/getting-started\",\n    \"https://docs.myframework.com/api\"\n  ],\n  \"selectors\": {\n    \"main_content\": \"article\",\n    \"title\": \"h1\",\n    \"code_blocks\": \"pre code\"\n  },\n  \"url_patterns\": {\n    \"include\": [\"/docs/\", \"/api/\"],\n    \"exclude\": [\"/blog/\", \"/community/\"]\n  },\n  \"categories\": {\n    \"getting_started\": [\"intro\", \"tutorial\", \"quickstart\"],\n    \"api\": [\"reference\", \"api\"],\n    \"guides\": [\"guide\", \"how-to\"]\n  },\n  \"rate_limit\": 0.5,\n  \"max_pages\": 300\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Local enhancement (free, uses Claude Code)\nskill-seekers scrape --config configs/react.json --enhance-local\n\n# API enhancement (requires ANTHROPIC_API_KEY)\nexport ANTHROPIC_API_KEY=sk-ant-...\nskill-seekers scrape --config configs/react.json --enhance",
+      "language": "markdown"
+    },
+    {
+      "code": "# 3x faster with async mode\nskill-seekers scrape --config configs/godot.json --async --workers 8\n\n# Adjust workers based on CPU cores\nskill-seekers scrape --config configs/react.json --async --workers 16",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

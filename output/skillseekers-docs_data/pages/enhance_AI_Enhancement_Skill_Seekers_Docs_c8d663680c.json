@@ -1,0 +1,269 @@
+{
+  "url": "https://skillseekersweb.com/docs/cli/enhance",
+  "title": "enhance - AI Enhancement | Skill Seekers Docs",
+  "content": "AI-enhance skills to improve quality and add comprehensive examples.\n\nReact uses a virtual representation of the DOM to optimize rendering performance…\n\nEnhancement creates backups:\n\nCosts vary based on skill size and quality level\n\nMake sure Claude Code is running:\n\nOr use local mode (usually faster):",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "enhance - AI Enhancement",
+      "id": "enhance---ai-enhancement"
+    },
+    {
+      "level": "h2",
+      "text": "Basic Usage",
+      "id": "basic-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Examples",
+      "id": "quick-examples"
+    },
+    {
+      "level": "h2",
+      "text": "Options",
+      "id": "options"
+    },
+    {
+      "level": "h2",
+      "text": "Enhancement Modes",
+      "id": "enhancement-modes"
+    },
+    {
+      "level": "h3",
+      "text": "Local Mode (Recommended - FREE)",
+      "id": "local-mode-recommended---free"
+    },
+    {
+      "level": "h3",
+      "text": "API Mode",
+      "id": "api-mode"
+    },
+    {
+      "level": "h2",
+      "text": "AI Providers",
+      "id": "ai-providers"
+    },
+    {
+      "level": "h3",
+      "text": "Anthropic (Claude)",
+      "id": "anthropic-claude"
+    },
+    {
+      "level": "h3",
+      "text": "Google (Gemini)",
+      "id": "google-gemini"
+    },
+    {
+      "level": "h3",
+      "text": "OpenAI (GPT)",
+      "id": "openai-gpt"
+    },
+    {
+      "level": "h2",
+      "text": "Quality Levels",
+      "id": "quality-levels"
+    },
+    {
+      "level": "h3",
+      "text": "Minimal (Fast - 15-30 sec)",
+      "id": "minimal-fast---15-30-sec"
+    },
+    {
+      "level": "h3",
+      "text": "Standard (Default - 30-60 sec)",
+      "id": "standard-default---30-60-sec"
+    },
+    {
+      "level": "h3",
+      "text": "Comprehensive (Thorough - 1-2 min)",
+      "id": "comprehensive-thorough---1-2-min"
+    },
+    {
+      "level": "h2",
+      "text": "What Gets Enhanced",
+      "id": "what-gets-enhanced"
+    },
+    {
+      "level": "h3",
+      "text": "SKILL.md Improvements",
+      "id": "skillmd-improvements"
+    },
+    {
+      "level": "h3",
+      "text": "Virtual DOM",
+      "id": "virtual-dom"
+    },
+    {
+      "level": "h3",
+      "text": "Enhance + Package",
+      "id": "enhance--package"
+    },
+    {
+      "level": "h3",
+      "text": "Complete Workflow",
+      "id": "complete-workflow"
+    },
+    {
+      "level": "h2",
+      "text": "Backup Files",
+      "id": "backup-files"
+    },
+    {
+      "level": "h2",
+      "text": "Cost Estimates",
+      "id": "cost-estimates"
+    },
+    {
+      "level": "h3",
+      "text": "Local Mode (FREE)",
+      "id": "local-mode-free"
+    },
+    {
+      "level": "h3",
+      "text": "API Mode",
+      "id": "api-mode-1"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Local Mode Not Working",
+      "id": "local-mode-not-working"
+    },
+    {
+      "level": "h3",
+      "text": "API Mode Fails",
+      "id": "api-mode-fails"
+    },
+    {
+      "level": "h3",
+      "text": "Enhancement Too Slow",
+      "id": "enhancement-too-slow"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers enhance INPUT_DIR [OPTIONS]",
+      "language": "unknown"
+    },
+    {
+      "code": "# Local enhancement (free, uses Claude Code)\nskill-seekers enhance output/react/\n\n# API enhancement (requires API key)\nexport ANTHROPIC_API_KEY=sk-ant-...\nskill-seekers enhance output/react/ --api\n\n# With specific provider\nskill-seekers enhance output/react/ --provider anthropic --mode api\nskill-seekers enhance output/react/ --provider google --mode api\nskill-seekers enhance output/react/ --provider openai --mode api",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers enhance output/react/",
+      "language": "unknown"
+    },
+    {
+      "code": "export ANTHROPIC_API_KEY=sk-ant-...\nskill-seekers enhance output/react/ --mode api",
+      "language": "unknown"
+    },
+    {
+      "code": "export ANTHROPIC_API_KEY=sk-ant-...\nskill-seekers enhance output/react/ --provider anthropic --mode api",
+      "language": "unknown"
+    },
+    {
+      "code": "pip install skill-seekers[gemini]\nexport GOOGLE_API_KEY=AIzaSy...\nskill-seekers enhance output/react/ --provider google --mode api",
+      "language": "unknown"
+    },
+    {
+      "code": "pip install skill-seekers[openai]\nexport OPENAI_API_KEY=sk-proj-...\nskill-seekers enhance output/react/ --provider openai --mode api",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers enhance output/react/ --quality minimal",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers enhance output/react/",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers enhance output/react/ --quality comprehensive",
+      "language": "unknown"
+    },
+    {
+      "code": "# React Framework\n\nReact is a JavaScript library for building user interfaces.\n\n## Key Features\n- Component-based\n- Virtual DOM\n- JSX syntax",
+      "language": "markdown"
+    },
+    {
+      "code": "# React Framework\n\nReact is a JavaScript library for building user interfaces, developed by Meta (formerly Facebook). It enables developers to create reusable UI components that efficiently update and render based on data changes.\n\n## Key Features\n\n### Component-Based Architecture\nReact applications are built using reusable components that manage their own state and compose to create complex UIs.\n\n**Example:**\n```jsx\nfunction Welcome({ name }) {\n  return <h1>Hello, {name}!</h1>;\n}\n\nfunction App() {\n  return <Welcome name=\"React Developer\" />;\n}",
+      "language": "julia"
+    },
+    {
+      "code": "### Enhancements Include\n\n✅ **Better Explanations**\n- Natural language descriptions\n- Why/how/when context\n- Real-world use cases\n\n✅ **Code Examples**\n- Working code snippets\n- Common patterns\n- Best practices\n\n✅ **Troubleshooting**\n- Common errors\n- Solutions\n- Debugging tips\n\n✅ **Prerequisites**\n- Requirements\n- Setup steps\n- Dependencies\n\n✅ **Next Steps**\n- Related topics\n- Learning paths\n- Advanced features\n\n## Workflow Integration\n\n### Scrape + Enhance\n\n```bash\n# Combined in one command\nskill-seekers scrape --config configs/react.json --enhance-local\n\n# Or separately\nskill-seekers scrape --config configs/react.json\nskill-seekers enhance output/react/",
+      "language": "markdown"
+    },
+    {
+      "code": "# Enhance then package\nskill-seekers enhance output/react/\nskill-seekers package output/react/",
+      "language": "go"
+    },
+    {
+      "code": "# 1. Scrape\nskill-seekers scrape --config configs/react.json\n\n# 2. Enhance\nskill-seekers enhance output/react/\n\n# 3. Package\nskill-seekers package output/react/\n\n# 4. Upload\nskill-seekers upload output/react.zip",
+      "language": "go"
+    },
+    {
+      "code": "output/react/\n├── SKILL.md                # Enhanced version\n├── SKILL.md.backup        # Original version\n└── references/            # Also backed up\n    └── *.md.backup",
+      "language": "unknown"
+    },
+    {
+      "code": "cd output/react\ncp SKILL.md.backup SKILL.md",
+      "language": "unknown"
+    },
+    {
+      "code": "# macOS\nopen -a \"Claude\"\n\n# Check if Claude Code is in PATH\nwhich claude",
+      "language": "markdown"
+    },
+    {
+      "code": "echo $ANTHROPIC_API_KEY\n# Should show: sk-ant-...\n\n# Or set it\nexport ANTHROPIC_API_KEY=sk-ant-...",
+      "language": "bash"
+    },
+    {
+      "code": "skill-seekers enhance output/react/ --quality minimal",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers enhance output/react/",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

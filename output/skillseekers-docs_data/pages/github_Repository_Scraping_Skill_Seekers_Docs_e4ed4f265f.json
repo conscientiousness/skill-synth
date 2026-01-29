@@ -1,0 +1,181 @@
+{
+  "url": "https://skillseekersweb.com/docs/cli/github",
+  "title": "github - Repository Scraping | Skill Seekers Docs",
+  "content": "Scrape GitHub repositories and analyze code with deep AST parsing.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "github - Repository Scraping",
+      "id": "github---repository-scraping"
+    },
+    {
+      "level": "h2",
+      "text": "Basic Usage",
+      "id": "basic-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Examples",
+      "id": "quick-examples"
+    },
+    {
+      "level": "h2",
+      "text": "Options",
+      "id": "options"
+    },
+    {
+      "level": "h3",
+      "text": "Required",
+      "id": "required"
+    },
+    {
+      "level": "h3",
+      "text": "Optional",
+      "id": "optional"
+    },
+    {
+      "level": "h3",
+      "text": "Authentication",
+      "id": "authentication"
+    },
+    {
+      "level": "h2",
+      "text": "Features",
+      "id": "features"
+    },
+    {
+      "level": "h3",
+      "text": "Code Analysis",
+      "id": "code-analysis"
+    },
+    {
+      "level": "h3",
+      "text": "Repository Metadata",
+      "id": "repository-metadata"
+    },
+    {
+      "level": "h3",
+      "text": "GitHub Features",
+      "id": "github-features"
+    },
+    {
+      "level": "h2",
+      "text": "Analysis Depths",
+      "id": "analysis-depths"
+    },
+    {
+      "level": "h3",
+      "text": "Surface (Fast - 1-2 min)",
+      "id": "surface-fast---1-2-min"
+    },
+    {
+      "level": "h3",
+      "text": "Medium (Standard - 5-10 min)",
+      "id": "medium-standard---5-10-min"
+    },
+    {
+      "level": "h3",
+      "text": "Deep (Comprehensive - 20-60 min)",
+      "id": "deep-comprehensive---20-60-min"
+    },
+    {
+      "level": "h2",
+      "text": "Output Structure",
+      "id": "output-structure"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Examples",
+      "id": "advanced-examples"
+    },
+    {
+      "level": "h3",
+      "text": "With All Features",
+      "id": "with-all-features"
+    },
+    {
+      "level": "h3",
+      "text": "Config File",
+      "id": "config-file"
+    },
+    {
+      "level": "h2",
+      "text": "Time Estimates",
+      "id": "time-estimates"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers github [OPTIONS]",
+      "language": "unknown"
+    },
+    {
+      "code": "# Basic repository scraping\nskill-seekers github --repo facebook/react\n\n# Using a config file\nskill-seekers github --config configs/react_github.json\n\n# With authentication (higher rate limits)\nexport GITHUB_TOKEN=ghp_your_token_here\nskill-seekers github --repo facebook/react\n\n# Include issues and changelog\nskill-seekers github --repo django/django \\\n    --include-issues \\\n    --max-issues 100 \\\n    --include-changelog \\\n    --include-releases",
+      "language": "julia"
+    },
+    {
+      "code": "# Set GitHub token for higher rate limits\nexport GITHUB_TOKEN=ghp_your_token_here",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers github --repo facebook/react --code-analysis-depth surface",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers github --repo facebook/react --code-analysis-depth medium",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers github --repo facebook/react --code-analysis-depth deep",
+      "language": "unknown"
+    },
+    {
+      "code": "output/\n└── {repo-name}/\n    ├── SKILL.md\n    ├── references/\n    │   ├── index.md\n    │   ├── api_reference.md\n    │   ├── code_examples.md\n    │   └── github_issues.md\n    └── c3_analysis_temp/    # C3.x analysis data\n        ├── patterns/\n        ├── test_examples/\n        └── config_patterns/",
+      "language": "unknown"
+    },
+    {
+      "code": "export GITHUB_TOKEN=ghp_...\n\nskill-seekers github --repo fastapi/fastapi \\\n    --code-analysis-depth deep \\\n    --include-issues \\\n    --max-issues 200 \\\n    --include-changelog \\\n    --include-releases \\\n    --output output/fastapi",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"name\": \"fastapi\",\n  \"type\": \"github\",\n  \"repo\": \"fastapi/fastapi\",\n  \"include_code\": true,\n  \"code_analysis_depth\": \"deep\",\n  \"include_issues\": true,\n  \"max_issues\": 100,\n  \"include_changelog\": true,\n  \"include_releases\": true\n}",
+      "language": "json"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "url": "https://skillseekersweb.com/docs/tutorials/extracting-pdfs",
+  "title": "Tutorial: Extracting PDFs | Skill Seekers Docs",
+  "content": "Learn how to extract technical documentation from PDFs and create searchable AI skills.\n\nTime: 10 minutes | Level: Beginner | Result: PDF-based skill\n\nSee: PDF Scraping Manual for complete guide.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Tutorial: Extracting PDFs",
+      "id": "tutorial-extracting-pdfs"
+    },
+    {
+      "level": "h2",
+      "text": "Basic PDF Extraction",
+      "id": "basic-pdf-extraction"
+    },
+    {
+      "level": "h2",
+      "text": "OCR for Scanned PDFs",
+      "id": "ocr-for-scanned-pdfs"
+    },
+    {
+      "level": "h2",
+      "text": "Password-Protected PDFs",
+      "id": "password-protected-pdfs"
+    },
+    {
+      "level": "h2",
+      "text": "Extract Tables",
+      "id": "extract-tables"
+    },
+    {
+      "level": "h2",
+      "text": "Parallel Processing (3x Faster)",
+      "id": "parallel-processing-3x-faster"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers pdf \\\n  --input /path/to/manual.pdf \\\n  --output output/manual/",
+      "language": "unknown"
+    },
+    {
+      "code": "# Install Tesseract first\n# Ubuntu: sudo apt-get install tesseract-ocr\n# macOS: brew install tesseract\n\nskill-seekers pdf \\\n  --input /path/to/scanned.pdf \\\n  --output output/scanned/ \\\n  --ocr",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers pdf \\\n  --input /path/to/encrypted.pdf \\\n  --output output/encrypted/ \\\n  --password \"your-password\"",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers pdf \\\n  --input /path/to/spec.pdf \\\n  --output output/spec/ \\\n  --extract-tables",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers pdf \\\n  --input /path/to/large.pdf \\\n  --output output/large/ \\\n  --parallel \\\n  --workers 8",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/manual/scraping/pdf",
+    "https://skillseekersweb.com/docs/tutorials/extracting-pdfs"
+  ]
+}

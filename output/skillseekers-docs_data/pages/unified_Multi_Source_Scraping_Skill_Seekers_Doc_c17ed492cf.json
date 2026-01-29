@@ -1,0 +1,211 @@
+{
+  "url": "https://skillseekersweb.com/docs/cli/unified",
+  "title": "unified - Multi-Source Scraping | Skill Seekers Docs",
+  "content": "Combine multiple sources (docs + GitHub + PDF) into one unified skill with conflict detection.\n\nThe Problem: Documentation and code often drift apart. Docs might be outdated, missing features, or documenting removed features.\n\nThe Solution: Unified scraping combines multiple sources and automatically detects conflicts.\n\nNew in v2.6.0 - GitHub repos are split into three streams:\n\nUnified scraping automatically detects 4 types of conflicts:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "unified - Multi-Source Scraping",
+      "id": "unified---multi-source-scraping"
+    },
+    {
+      "level": "h2",
+      "text": "Basic Usage",
+      "id": "basic-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Examples",
+      "id": "quick-examples"
+    },
+    {
+      "level": "h2",
+      "text": "Why Use Unified Scraping?",
+      "id": "why-use-unified-scraping"
+    },
+    {
+      "level": "h2",
+      "text": "Three-Stream Architecture",
+      "id": "three-stream-architecture"
+    },
+    {
+      "level": "h2",
+      "text": "Config File Format",
+      "id": "config-file-format"
+    },
+    {
+      "level": "h2",
+      "text": "Options",
+      "id": "options"
+    },
+    {
+      "level": "h3",
+      "text": "Required (choose one)",
+      "id": "required-choose-one"
+    },
+    {
+      "level": "h3",
+      "text": "For GitHub Repos",
+      "id": "for-github-repos"
+    },
+    {
+      "level": "h3",
+      "text": "Config-Based",
+      "id": "config-based"
+    },
+    {
+      "level": "h2",
+      "text": "Analysis Depths",
+      "id": "analysis-depths"
+    },
+    {
+      "level": "h3",
+      "text": "Basic (Fast - 1-2 min)",
+      "id": "basic-fast---1-2-min"
+    },
+    {
+      "level": "h3",
+      "text": "C3.x (Comprehensive - 20-60 min)",
+      "id": "c3x-comprehensive---20-60-min"
+    },
+    {
+      "level": "h2",
+      "text": "Conflict Detection",
+      "id": "conflict-detection"
+    },
+    {
+      "level": "h3",
+      "text": "1. Missing in Code (🔴 High Priority)",
+      "id": "1-missing-in-code--high-priority"
+    },
+    {
+      "level": "h3",
+      "text": "2. Missing in Docs (🟡 Medium Priority)",
+      "id": "2-missing-in-docs--medium-priority"
+    },
+    {
+      "level": "h3",
+      "text": "3. Signature Mismatch (⚠️ Warning)",
+      "id": "3-signature-mismatch-️-warning"
+    },
+    {
+      "level": "h2",
+      "text": "Example Configs",
+      "id": "example-configs"
+    },
+    {
+      "level": "h3",
+      "text": "React (Docs + GitHub)",
+      "id": "react-docs--github"
+    },
+    {
+      "level": "h3",
+      "text": "FastAPI (Docs + GitHub + PDF)",
+      "id": "fastapi-docs--github--pdf"
+    },
+    {
+      "level": "h2",
+      "text": "Output Structure",
+      "id": "output-structure"
+    },
+    {
+      "level": "h2",
+      "text": "Time Estimates",
+      "id": "time-estimates"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers unified [OPTIONS]",
+      "language": "unknown"
+    },
+    {
+      "code": "# Use existing unified configs\nskill-seekers unified --config configs/react_unified.json\nskill-seekers unified --config configs/django_unified.json\nskill-seekers unified --config configs/fastapi_unified.json\n\n# Analyze GitHub repo with three-stream architecture\nskill-seekers unified \\\n    --repo-url https://github.com/facebook/react \\\n    --depth c3x \\\n    --fetch-github-metadata",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers unified \\\n    --repo-url https://github.com/fastapi/fastapi \\\n    --depth c3x \\\n    --fetch-github-metadata \\\n    --output-dir output/fastapi",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"name\": \"myframework\",\n  \"description\": \"Complete framework knowledge from docs + code\",\n  \"merge_mode\": \"rule-based\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://docs.myframework.com/\",\n      \"extract_api\": true,\n      \"max_pages\": 200\n    },\n    {\n      \"type\": \"github\",\n      \"repo\": \"owner/myframework\",\n      \"include_code\": true,\n      \"code_analysis_depth\": \"deep\"\n    },\n    {\n      \"type\": \"pdf\",\n      \"pdf_path\": \"docs/manual.pdf\",\n      \"extract_tables\": true\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers unified \\\n    --repo-url https://github.com/fastapi/fastapi \\\n    --depth basic",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers unified \\\n    --repo-url https://github.com/fastapi/fastapi \\\n    --depth c3x \\\n    --fetch-github-metadata",
+      "language": "unknown"
+    },
+    {
+      "code": "#### `initialize_auth(config: dict)`\n\n🔴 **Missing in code**: Documented but not found in implementation\n\n**Documentation:**\n- Purpose: Initialize authentication system\n- Parameters: config (dict) - Auth configuration",
+      "language": "markdown"
+    },
+    {
+      "code": "#### `initialize_auth(config: dict, timeout: int = 30)`\n\n🟡 **Missing in docs**: Implemented but not documented\n\n**Implementation:**\n- File: src/auth.py:45\n- Has additional parameter: timeout (int) = 30",
+      "language": "markdown"
+    },
+    {
+      "code": "#### `move_local_x(delta: float)`\n\n⚠️ **Conflict**: Documentation signature differs from implementation\n\n**Documentation says:**\n```python\ndef move_local_x(delta: float)",
+      "language": "python"
+    },
+    {
+      "code": "def move_local_x(delta: float, snap: bool = False) -> None",
+      "language": "typescript"
+    },
+    {
+      "code": "### 4. Description Mismatch (ℹ️ Info)\n\n```markdown\n#### `get_user_data()`\n\nℹ️ **Conflict**: Different descriptions\n\n**Documentation:** \"Returns all user profile data\"\n**Code docstring:** \"Returns user data excluding sensitive fields\"",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"name\": \"react\",\n  \"description\": \"React docs + GitHub repo\",\n  \"merge_mode\": \"rule-based\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://react.dev/\",\n      \"max_pages\": 300\n    },\n    {\n      \"type\": \"github\",\n      \"repo\": \"facebook/react\",\n      \"code_analysis_depth\": \"deep\"\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"name\": \"fastapi\",\n  \"description\": \"Complete FastAPI knowledge\",\n  \"merge_mode\": \"ai-powered\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://fastapi.tiangolo.com/\"\n    },\n    {\n      \"type\": \"github\",\n      \"repo\": \"fastapi/fastapi\",\n      \"include_issues\": true,\n      \"max_issues\": 100\n    },\n    {\n      \"type\": \"pdf\",\n      \"pdf_path\": \"docs/fastapi_guide.pdf\"\n    }\n  ]\n}",
+      "language": "json"
+    },
+    {
+      "code": "output/\n└── {name}_unified_data/\n    ├── SKILL.md                  # Merged content with conflicts marked\n    ├── references/\n    │   ├── index.md\n    │   ├── from_docs.md         # Documentation content\n    │   ├── from_code.md         # Code analysis\n    │   ├── from_pdf.md          # PDF content\n    │   └── conflicts.md         # Conflict report\n    └── c3_analysis_temp/        # C3.x analysis data",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

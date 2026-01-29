@@ -1,0 +1,326 @@
+{
+  "url": "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+  "title": "Three-Stream GitHub Architecture (C3.x Router) | Skill Seekers Docs",
+  "content": "Complete guide to the Three-Stream GitHub Architecture pattern for handling large codebases and documentation.\n\nThe Three-Stream GitHub Architecture (also called C3.x Router Architecture) is a pattern for creating comprehensive AI skills from large projects with extensive documentation and codebases. Instead of scraping just the documentation or just the codebase, it combines three independent streams of knowledge into a unified skill with intelligent routing.\n\nVersion: v2.6.0 (Phases 1-5 Complete!)\n\nKey Innovation: Each stream scrapes independently, then a router skill intelligently directs Claude to the right sub-skill based on the user’s question.\n\nPurpose: Extract code structure, patterns, and implementation details from the GitHub repository\n\nOutput: output/project-code/SKILL.md + references\n\nPurpose: Extract official documentation from the project website\n\nOutput: output/project-docs/SKILL.md + references\n\nPurpose: Extract community knowledge, issues, discussions, and changelog from GitHub\n\nOutput: output/project-github/SKILL.md + references\n\nAfter creating the three stream skills, generate a router skill that intelligently directs queries to the right sub-skill.\n\nWhat the router does:\n\nThe generated router skill has this structure:\n\nResult: project-complete.zip containing:\n\nEach stream focuses on one knowledge domain:\n\nUpdate any stream without affecting others:\n\nRouter analyzes user intent and routes to the right knowledge source(s).\n\nCombines official docs + code reality + community insights for complete knowledge.\n\nOnly loads relevant sub-skill(s) for each question, not all knowledge at once.\n\nChallenge: Official docs + 1M+ lines of code + 10K+ issues\n\nChallenge: Private codebase + Confluence docs + JIRA issues\n\nChallenge: Small codebase + great docs + active community\n\nCreate router_config.json to customize routing behavior:\n\nFor complex questions, route to multiple sub-skills:\n\nRouter can express confidence and route accordingly:\n\nIf question doesn’t match any sub-skill clearly:\n\nGodot Engine Example (Three-Stream Architecture):\n\nCause: Sub-skill descriptions too similar or routing keywords overlap\n\nCause: User question doesn’t match any routing patterns\n\nCause: Router loading multiple sub-skills unnecessarily\n\nEach sub-skill should have a distinct purpose:\n\nUse clear, descriptive sub-skill names:\n\nChoose keywords that clearly distinguish each sub-skill:\n\nUpdate streams independently as needed:\n\nStatus: ✅ Production Ready (v2.6.0 - Three-Stream Architecture Complete!)\n\nFound an issue or have suggestions? Open an issue",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Three-Stream GitHub Architecture (C3.x Router)",
+      "id": "three-stream-github-architecture-c3x-router"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "The Three Streams",
+      "id": "the-three-streams"
+    },
+    {
+      "level": "h3",
+      "text": "Stream 1: Code Analysis (C3.x Codebase)",
+      "id": "stream-1-code-analysis-c3x-codebase"
+    },
+    {
+      "level": "h3",
+      "text": "Stream 2: Documentation Scraping",
+      "id": "stream-2-documentation-scraping"
+    },
+    {
+      "level": "h3",
+      "text": "Stream 3: GitHub Insights",
+      "id": "stream-3-github-insights"
+    },
+    {
+      "level": "h2",
+      "text": "Router Skill Generation",
+      "id": "router-skill-generation"
+    },
+    {
+      "level": "h3",
+      "text": "Automatic Router Generation",
+      "id": "automatic-router-generation"
+    },
+    {
+      "level": "h2",
+      "text": "Router SKILL.md Structure",
+      "id": "router-skillmd-structure"
+    },
+    {
+      "level": "h2",
+      "text": "Complete Workflow",
+      "id": "complete-workflow"
+    },
+    {
+      "level": "h3",
+      "text": "Step 1: Create Three Stream Skills",
+      "id": "step-1-create-three-stream-skills"
+    },
+    {
+      "level": "h3",
+      "text": "Step 2: Generate Router Skill",
+      "id": "step-2-generate-router-skill"
+    },
+    {
+      "level": "h3",
+      "text": "Step 3: Package Router + Sub-Skills",
+      "id": "step-3-package-router--sub-skills"
+    },
+    {
+      "level": "h3",
+      "text": "Step 4: Upload to Claude",
+      "id": "step-4-upload-to-claude"
+    },
+    {
+      "level": "h2",
+      "text": "Architecture Benefits",
+      "id": "architecture-benefits"
+    },
+    {
+      "level": "h3",
+      "text": "1. Separation of Concerns",
+      "id": "1-separation-of-concerns"
+    },
+    {
+      "level": "h3",
+      "text": "2. Independent Updates",
+      "id": "2-independent-updates"
+    },
+    {
+      "level": "h3",
+      "text": "3. Intelligent Routing",
+      "id": "3-intelligent-routing"
+    },
+    {
+      "level": "h3",
+      "text": "4. Comprehensive Coverage",
+      "id": "4-comprehensive-coverage"
+    },
+    {
+      "level": "h3",
+      "text": "5. Token Efficiency",
+      "id": "5-token-efficiency"
+    },
+    {
+      "level": "h2",
+      "text": "Use Cases",
+      "id": "use-cases"
+    },
+    {
+      "level": "h3",
+      "text": "Use Case 1: Large Framework (React, Vue, Angular)",
+      "id": "use-case-1-large-framework-react-vue-angular"
+    },
+    {
+      "level": "h3",
+      "text": "Use Case 2: Internal Company Project",
+      "id": "use-case-2-internal-company-project"
+    },
+    {
+      "level": "h3",
+      "text": "Use Case 3: Open Source Library",
+      "id": "use-case-3-open-source-library"
+    },
+    {
+      "level": "h2",
+      "text": "Router Configuration",
+      "id": "router-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "Custom Routing Rules",
+      "id": "custom-routing-rules"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Features",
+      "id": "advanced-features"
+    },
+    {
+      "level": "h3",
+      "text": "1. Multi-Skill Routing",
+      "id": "1-multi-skill-routing"
+    },
+    {
+      "level": "h3",
+      "text": "2. Confidence-Based Routing",
+      "id": "2-confidence-based-routing"
+    },
+    {
+      "level": "h3",
+      "text": "3. Fallback Routing",
+      "id": "3-fallback-routing"
+    },
+    {
+      "level": "h2",
+      "text": "Performance Metrics",
+      "id": "performance-metrics"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Router always routes to same sub-skill",
+      "id": "issue-router-always-routes-to-same-sub-skill"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Router doesn’t route to any sub-skill",
+      "id": "issue-router-doesnt-route-to-any-sub-skill"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: Too much token usage",
+      "id": "issue-too-much-token-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Best Practices",
+      "id": "best-practices"
+    },
+    {
+      "level": "h3",
+      "text": "1. Clear Sub-Skill Separation",
+      "id": "1-clear-sub-skill-separation"
+    },
+    {
+      "level": "h3",
+      "text": "2. Descriptive Names",
+      "id": "2-descriptive-names"
+    },
+    {
+      "level": "h3",
+      "text": "3. Routing Keywords",
+      "id": "3-routing-keywords"
+    },
+    {
+      "level": "h3",
+      "text": "4. Regular Updates",
+      "id": "4-regular-updates"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers-codebase path/to/repo/ \\\n  --output output/project-code/ \\\n  --extract-patterns \\\n  --extract-test-examples \\\n  --build-how-to-guides",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape --config configs/project-docs.json",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers github owner/repo \\\n  --output output/project-github/ \\\n  --include-issues \\\n  --max-issues 200 \\\n  --include-changelog \\\n  --include-releases",
+      "language": "unknown"
+    },
+    {
+      "code": "# Generate router from existing skills\nskill-seekers router \\\n  output/project-code/ \\\n  output/project-docs/ \\\n  output/project-github/ \\\n  --output output/project-router/ \\\n  --name \"project-complete\"",
+      "language": "sql"
+    },
+    {
+      "code": "---\nname: project-complete\ndescription: Complete project knowledge - intelligently routes questions to code, docs, or GitHub insights\n---\n\n# Project Complete Router\n\nYou are an intelligent routing assistant for the Project ecosystem.\n\n## Your Sub-Skills\n\nYou have access to three specialized sub-skills:\n\n### 1. project-code (Codebase Analysis)\n**When to use:** Implementation details, code patterns, architecture\n**Contains:**\n- Project structure\n- Design patterns\n- Test examples\n- How-to guides\n\n### 2. project-docs (Official Documentation)\n**When to use:** API reference, official guides, tutorials\n**Contains:**\n- API documentation\n- User guides\n- Official examples\n\n### 3. project-github (GitHub Insights)\n**When to use:** Community knowledge, issues, known problems\n**Contains:**\n- README\n- Issues and discussions\n- Changelog and releases\n\n## Routing Strategy\n\nFor each user question:\n\n1. **Analyze intent**\n   - Implementation/code question → project-code\n   - API/usage question → project-docs\n   - Problem/issue question → project-github\n\n2. **Route to appropriate sub-skill(s)**\n   - Use one skill for focused questions\n   - Use multiple skills for comprehensive questions\n\n3. **Synthesize answer**\n   - Combine information from multiple streams if needed\n   - Provide source attribution\n\n## Example Routing\n\n**User:** \"How do I implement authentication?\"\n→ **Route to:** project-docs (API reference) + project-code (implementation patterns)\n\n**User:** \"Why is feature X not working?\"\n→ **Route to:** project-github (known issues) + project-docs (usage guide)\n\n**User:** \"What design patterns are used in the codebase?\"\n→ **Route to:** project-code (pattern detection)\n\n**User:** \"What changed in version 2.0?\"\n→ **Route to:** project-github (changelog) + project-docs (migration guide)",
+      "language": "yaml"
+    },
+    {
+      "code": "# Stream 1: Code Analysis\nskill-seekers-codebase path/to/repo/ \\\n  --output output/project-code/\n\n# Stream 2: Documentation\nskill-seekers scrape --config configs/project-docs.json\n\n# Stream 3: GitHub Insights\nskill-seekers github owner/repo \\\n  --output output/project-github/ \\\n  --include-issues \\\n  --max-issues 200",
+      "language": "markdown"
+    },
+    {
+      "code": "skill-seekers router \\\n  output/project-code/ \\\n  output/project-docs/ \\\n  output/project-github/ \\\n  --output output/project-router/ \\\n  --name \"project-complete\"",
+      "language": "unknown"
+    },
+    {
+      "code": "# Package all skills together\nskill-seekers package output/project-router/ \\\n  --include-subskills \\\n  --target claude",
+      "language": "go"
+    },
+    {
+      "code": "skill-seekers upload project-complete.zip --target claude",
+      "language": "unknown"
+    },
+    {
+      "code": "# Re-scrape just documentation\nskill-seekers scrape --config configs/project-docs.json\n\n# Regenerate router (automatically detects changes)\nskill-seekers router output/*/ --output output/project-router/",
+      "language": "markdown"
+    },
+    {
+      "code": "# Stream 1: Code patterns\nskill-seekers-codebase react/ --output output/react-code/\n\n# Stream 2: Official docs\nskill-seekers scrape --config configs/react-docs.json\n\n# Stream 3: GitHub insights\nskill-seekers github facebook/react --output output/react-github/ --max-issues 500\n\n# Router\nskill-seekers router output/react-*/ --output output/react-router/ --name \"react-complete\"",
+      "language": "markdown"
+    },
+    {
+      "code": "# Stream 1: Code analysis\nskill-seekers-codebase company-app/ --output output/app-code/\n\n# Stream 2: Confluence docs (via PDF export or web scraping)\nskill-seekers scrape --config configs/confluence-docs.json\n\n# Stream 3: JIRA export (JSON)\nskill-seekers github-json jira-export.json --output output/app-issues/\n\n# Router\nskill-seekers router output/app-*/ --output output/app-router/ --name \"company-app-complete\"",
+      "language": "markdown"
+    },
+    {
+      "code": "# All three streams\nskill-seekers unified --config configs/library-unified.json\n\n# Router auto-generated\n# (unified mode automatically creates router if multiple sources)",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"name\": \"project-complete\",\n  \"description\": \"Complete project knowledge router\",\n  \"sub_skills\": [\n    {\n      \"name\": \"project-code\",\n      \"path\": \"output/project-code/\",\n      \"keywords\": [\"implementation\", \"code\", \"pattern\", \"architecture\"],\n      \"priority\": 2\n    },\n    {\n      \"name\": \"project-docs\",\n      \"path\": \"output/project-docs/\",\n      \"keywords\": [\"api\", \"usage\", \"tutorial\", \"guide\"],\n      \"priority\": 1\n    },\n    {\n      \"name\": \"project-github\",\n      \"path\": \"output/project-github/\",\n      \"keywords\": [\"issue\", \"bug\", \"problem\", \"changelog\"],\n      \"priority\": 3\n    }\n  ],\n  \"routing_strategy\": \"multi-skill-when-needed\",\n  \"default_skill\": \"project-docs\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers router --config router_config.json --output output/project-router/",
+      "language": "unknown"
+    },
+    {
+      "code": "**User:** \"How do I implement authentication and what are common issues?\"\n\n**Router decision:**\n1. Route to project-docs (authentication API)\n2. Route to project-code (implementation patterns)\n3. Route to project-github (known authentication issues)\n\n**Synthesized answer:** Combines all three perspectives",
+      "language": "unknown"
+    },
+    {
+      "code": "**High confidence:** Route to single best sub-skill\n**Medium confidence:** Route to top 2 sub-skills\n**Low confidence:** Route to all sub-skills and synthesize",
+      "language": "unknown"
+    },
+    {
+      "code": "**Strategy:**\n1. Try project-docs first (most general)\n2. If no good answer, try project-code\n3. If still no good answer, try project-github",
+      "language": "unknown"
+    },
+    {
+      "code": "# Monthly: Re-scrape documentation\nskill-seekers scrape --config configs/project-docs.json\n\n# Weekly: Update GitHub insights\nskill-seekers github owner/repo --output output/project-github/\n\n# As needed: Re-analyze code\nskill-seekers-codebase path/to/repo/ --output output/project-code/\n\n# Regenerate router\nskill-seekers router output/*/ --output output/project-router/",
+      "language": "sql"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Usage:",
+      "code": "skill-seekers router --config router_config.json --output output/project-router/"
+    }
+  ],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

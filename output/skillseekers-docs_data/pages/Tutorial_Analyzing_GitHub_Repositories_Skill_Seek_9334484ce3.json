@@ -1,0 +1,78 @@
+{
+  "url": "https://skillseekersweb.com/docs/tutorials/analyzing-github",
+  "title": "Tutorial: Analyzing GitHub Repositories | Skill Seekers Docs",
+  "content": "Learn how to analyze GitHub repositories and generate comprehensive codebase documentation with C3.x analysis.\n\nTime: 20 minutes | Level: Intermediate | Result: Complete codebase skill with patterns, examples, and architecture\n\nSee: GitHub Analysis Manual for complete details.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Tutorial: Analyzing GitHub Repositories",
+      "id": "tutorial-analyzing-github-repositories"
+    },
+    {
+      "level": "h2",
+      "text": "What You’ll Learn",
+      "id": "what-youll-learn"
+    },
+    {
+      "level": "h2",
+      "text": "Step 1: Basic GitHub Scraping",
+      "id": "step-1-basic-github-scraping"
+    },
+    {
+      "level": "h2",
+      "text": "Step 2: Add Local Analysis (Unlimited!)",
+      "id": "step-2-add-local-analysis-unlimited"
+    },
+    {
+      "level": "h2",
+      "text": "Step 3: Review Generated Files",
+      "id": "step-3-review-generated-files"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers github \\\n  --repository facebook/react \\\n  --output output/react-repo/",
+      "language": "unknown"
+    },
+    {
+      "code": "# Clone repo locally first\ngit clone https://github.com/facebook/react.git /tmp/react\n\n# Analyze with C3.x features\nskill-seekers github \\\n  --repository facebook/react \\\n  --local-repo-path /tmp/react \\\n  --output output/react-complete/",
+      "language": "markdown"
+    },
+    {
+      "code": "output/react-complete/\n├── SKILL.md\n├── ARCHITECTURE.md              # NEW: Comprehensive overview\n├── references/\n│   ├── api_reference.md\n│   ├── dependencies.md\n│   └── codebase_analysis/\n│       ├── patterns/            # Design patterns detected\n│       ├── examples/            # Test examples extracted\n│       ├── guides/              # How-to tutorials generated\n│       └── configuration/       # Config files analyzed",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/tutorials/analyzing-github"
+  ]
+}

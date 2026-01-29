@@ -1,0 +1,82 @@
+{
+  "url": "https://skillseekersweb.com/docs/tutorials/creating-configs",
+  "title": "Tutorial: Creating Custom Configs | Skill Seekers Docs",
+  "content": "Learn how to create custom configuration files for documentation websites not covered by presets.\n\nTime: 15 minutes | Level: Intermediate | Result: Working custom config\n\nThe easiest way to create a config:\n\nCreate configs/my-framework.json:\n\nSee: Config Format Reference for all available options.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Tutorial: Creating Custom Configs",
+      "id": "tutorial-creating-custom-configs"
+    },
+    {
+      "level": "h2",
+      "text": "Interactive Config Creation",
+      "id": "interactive-config-creation"
+    },
+    {
+      "level": "h2",
+      "text": "Manual Config Creation",
+      "id": "manual-config-creation"
+    },
+    {
+      "level": "h2",
+      "text": "Test Your Config",
+      "id": "test-your-config"
+    },
+    {
+      "level": "h2",
+      "text": "Share Your Config",
+      "id": "share-your-config"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers scrape --interactive",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"name\": \"my-framework\",\n  \"base_url\": \"https://docs.my-framework.com/\",\n  \"selectors\": {\n    \"content\": \"article.documentation\",\n    \"title\": \"h1.page-title\",\n    \"code\": \"pre code\"\n  },\n  \"url_patterns\": [\n    \"^https://docs.my-framework.com/guide/\",\n    \"^https://docs.my-framework.com/api/\"\n  ],\n  \"exclude_patterns\": [\n    \"/changelog/\",\n    \"/blog/\"\n  ],\n  \"max_pages\": 200,\n  \"rate_limit\": 0.5\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Estimate page count\nskill-seekers estimate --config configs/my-framework.json\n\n# Test on first 10 pages\nskill-seekers scrape \\\n  --config configs/my-framework.json \\\n  --max-pages 10 \\\n  --output output/test/",
+      "language": "markdown"
+    },
+    {
+      "code": "# Submit to community\nskill-seekers submit-config \\\n  --config configs/my-framework.json \\\n  --description \"My Framework documentation config\"",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/tutorials/creating-configs"
+  ]
+}

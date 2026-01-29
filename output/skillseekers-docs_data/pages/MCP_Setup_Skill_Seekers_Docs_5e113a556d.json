@@ -1,0 +1,423 @@
+{
+  "url": "https://skillseekersweb.com/docs/manual/mcp/setup",
+  "title": "MCP Setup | Skill Seekers Docs",
+  "content": "Set up the Skill Seekers MCP server to use all features through Model Context Protocol with Claude Code and other AI coding agents.\n\nThe Skill Seekers MCP server provides 18 tools accessible through the Model Context Protocol, enabling natural language interaction with all Skill Seekers features.\n\nThe script automatically:\n\nNote: Paths shown are for macOS. Linux and Windows paths detected automatically.\n\nIf you prefer manual setup or the script doesn’t work:\n\nEdit ~/Library/Application Support/Claude/mcp.json:\n\nEdit ~/Library/Application Support/Cursor/mcp_settings.json:\n\nNote: For HTTP-based agents, start the server first:\n\nBest for: Claude Code, VS Code + Cline\n\nBest for: Cursor, Windsurf, IntelliJ IDEA\n\nWhen running in HTTP mode:\n\ngenerate_config - Generate config for any documentation site\n\nlist_configs - List all available preset configurations\n\nvalidate_config - Validate config file structure\n\nestimate_pages - Estimate page count before scraping\n\nscrape_docs - Scrape documentation and build skill\n\nscrape_github - Scrape GitHub repositories\n\nscrape_pdf - Extract content from PDF files\n\npackage_skill - Package skill for platform\n\nupload_skill - Upload to LLM platform\n\nenhance_skill - AI-enhance SKILL.md\n\ninstall_skill - Complete install workflow\n\nfetch_config - Fetch configs from sources\n\nsubmit_config - Submit new configs\n\nadd_config_source - Register private git repositories\n\nlist_config_sources - List all registered sources\n\nremove_config_source - Remove registered sources\n\nsplit_config - Split large documentation configs\n\ngenerate_router - Generate router/hub skills\n\nIn Claude Code, tools appear in the tool use panel when relevant. You can also ask:\n\nThe setup script detects all installed agents:\n\nProblem: MCP tools don’t show up in Claude Code\n\nProblem: HTTP server fails to start\n\nProblem: Can’t write to config file\n\nProblem: ModuleNotFoundError: No module named 'mcp'\n\nProblem: Setup script doesn’t detect your agent\n\nUpdate agent configs to use new port:\n\nRun multiple servers on different ports:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "MCP Setup Guide",
+      "id": "mcp-setup-guide"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Start",
+      "id": "quick-start"
+    },
+    {
+      "level": "h3",
+      "text": "One-Command Setup (Recommended)",
+      "id": "one-command-setup-recommended"
+    },
+    {
+      "level": "h2",
+      "text": "Supported Agents",
+      "id": "supported-agents"
+    },
+    {
+      "level": "h2",
+      "text": "Manual Installation",
+      "id": "manual-installation"
+    },
+    {
+      "level": "h3",
+      "text": "Step 1: Install Dependencies",
+      "id": "step-1-install-dependencies"
+    },
+    {
+      "level": "h3",
+      "text": "Step 2: Test the Server",
+      "id": "step-2-test-the-server"
+    },
+    {
+      "level": "h3",
+      "text": "Step 3: Configure Your Agent",
+      "id": "step-3-configure-your-agent"
+    },
+    {
+      "level": "h4",
+      "text": "For Claude Code (stdio)",
+      "id": "for-claude-code-stdio"
+    },
+    {
+      "level": "h4",
+      "text": "For Cursor (HTTP)",
+      "id": "for-cursor-http"
+    },
+    {
+      "level": "h2",
+      "text": "Transport Modes",
+      "id": "transport-modes"
+    },
+    {
+      "level": "h3",
+      "text": "Stdio Transport (Default)",
+      "id": "stdio-transport-default"
+    },
+    {
+      "level": "h3",
+      "text": "HTTP Transport",
+      "id": "http-transport"
+    },
+    {
+      "level": "h3",
+      "text": "HTTP Endpoints",
+      "id": "http-endpoints"
+    },
+    {
+      "level": "h2",
+      "text": "Available MCP Tools",
+      "id": "available-mcp-tools"
+    },
+    {
+      "level": "h3",
+      "text": "Config Tools (3)",
+      "id": "config-tools-3"
+    },
+    {
+      "level": "h3",
+      "text": "Scraping Tools (4)",
+      "id": "scraping-tools-4"
+    },
+    {
+      "level": "h3",
+      "text": "Packaging Tools (4)",
+      "id": "packaging-tools-4"
+    },
+    {
+      "level": "h3",
+      "text": "Source Tools (5)",
+      "id": "source-tools-5"
+    },
+    {
+      "level": "h3",
+      "text": "Splitting Tools (2)",
+      "id": "splitting-tools-2"
+    },
+    {
+      "level": "h2",
+      "text": "Verification",
+      "id": "verification"
+    },
+    {
+      "level": "h3",
+      "text": "Test in Claude Code",
+      "id": "test-in-claude-code"
+    },
+    {
+      "level": "h3",
+      "text": "Check Tool Availability",
+      "id": "check-tool-availability"
+    },
+    {
+      "level": "h3",
+      "text": "Manual Tool Testing",
+      "id": "manual-tool-testing"
+    },
+    {
+      "level": "h2",
+      "text": "Multi-Agent Configuration",
+      "id": "multi-agent-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "Configure All Agents at Once",
+      "id": "configure-all-agents-at-once"
+    },
+    {
+      "level": "h3",
+      "text": "Agent-Specific Notes",
+      "id": "agent-specific-notes"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Tools Not Appearing",
+      "id": "tools-not-appearing"
+    },
+    {
+      "level": "h3",
+      "text": "HTTP Server Not Starting",
+      "id": "http-server-not-starting"
+    },
+    {
+      "level": "h3",
+      "text": "Permission Errors",
+      "id": "permission-errors"
+    },
+    {
+      "level": "h3",
+      "text": "Import Errors",
+      "id": "import-errors"
+    },
+    {
+      "level": "h3",
+      "text": "Agent Not Detected",
+      "id": "agent-not-detected"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Configuration",
+      "id": "advanced-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "Custom Port",
+      "id": "custom-port"
+    },
+    {
+      "level": "h3",
+      "text": "Debug Logging",
+      "id": "debug-logging"
+    },
+    {
+      "level": "h3",
+      "text": "Multiple Instances",
+      "id": "multiple-instances"
+    },
+    {
+      "level": "h3",
+      "text": "Environment Variables",
+      "id": "environment-variables"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "# Clone repository\ngit clone https://github.com/yusufkaraaslan/Skill_Seekers.git\ncd Skill_Seekers\n\n# Run setup script\n./setup_mcp.sh",
+      "language": "markdown"
+    },
+    {
+      "code": "# Create virtual environment (recommended)\npython3 -m venv venv\nsource venv/bin/activate  # On Windows: venv\\Scripts\\activate\n\n# Install Skill Seekers with MCP support\npip install -e \".[mcp]\"\n\n# Or install MCP dependencies separately\npip install mcp anthropic-mcp fastmcp",
+      "language": "markdown"
+    },
+    {
+      "code": "# Test stdio mode (default)\npython -m skill_seekers.mcp.server_fastmcp\n\n# Should show:\n# MCP Server running in stdio mode\n# Connected to client...\n# (Press Ctrl+C to exit)\n\n# Test HTTP mode\npython -m skill_seekers.mcp.server_fastmcp --http --port 3000\n\n# Should show:\n# MCP Server running in HTTP mode on http://localhost:3000\n# Health check: http://localhost:3000/health\n# SSE endpoint: http://localhost:3000/sse",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"mcpServers\": {\n    \"skill-seeker\": {\n      \"command\": \"python\",\n      \"args\": [\"-m\", \"skill_seekers.mcp.server_fastmcp\"]\n    }\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"mcpServers\": {\n    \"skill-seeker\": {\n      \"url\": \"http://localhost:3000/sse\"\n    }\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Start in background\npython -m skill_seekers.mcp.server_fastmcp --http --port 3000 &",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"mcpServers\": {\n    \"skill-seeker\": {\n      \"command\": \"python\",\n      \"args\": [\"-m\", \"skill_seekers.mcp.server_fastmcp\"]\n    }\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"mcpServers\": {\n    \"skill-seeker\": {\n      \"url\": \"http://localhost:3000/sse\"\n    }\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Foreground\npython -m skill_seekers.mcp.server_fastmcp --http --port 3000\n\n# Background (macOS/Linux)\npython -m skill_seekers.mcp.server_fastmcp --http --port 3000 &\n\n# With custom port\npython -m skill_seekers.mcp.server_fastmcp --http --port 8080\n\n# With debug logging\npython -m skill_seekers.mcp.server_fastmcp --http --log-level DEBUG",
+      "language": "markdown"
+    },
+    {
+      "code": "curl http://localhost:3000/health",
+      "language": "json"
+    },
+    {
+      "code": "{\n  \"status\": \"healthy\",\n  \"server\": \"skill-seeker-mcp\",\n  \"version\": \"2.7.0\",\n  \"transport\": \"http\",\n  \"tools\": 18\n}",
+      "language": "json"
+    },
+    {
+      "code": "http://localhost:3000/sse",
+      "language": "yaml"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"generate_config\", {\n    \"name\": \"myframework\",\n    \"url\": \"https://docs.myframework.com/\",\n    \"description\": \"My Framework documentation\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"list_configs\", {})",
+      "language": "swift"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"validate_config\", {\n    \"config_path\": \"configs/myframework.json\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"estimate_pages\", {\n    \"config_path\": \"configs/react.json\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"scrape_docs\", {\n    \"config_path\": \"configs/react.json\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"scrape_github\", {\n    \"repository\": \"facebook/react\",\n    \"local_repo_path\": \"/path/to/react\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"scrape_pdf\", {\n    \"pdf_path\": \"manual.pdf\",\n    \"name\": \"mymanual\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"package_skill\", {\n    \"skill_dir\": \"output/react/\",\n    \"target\": \"claude\"  # or \"gemini\", \"openai\", \"markdown\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"upload_skill\", {\n    \"skill_zip\": \"output/react.zip\",\n    \"target\": \"claude\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"enhance_skill\", {\n    \"skill_dir\": \"output/react/\",\n    \"mode\": \"local\"  # or \"api\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"install_skill\", {\n    \"config_path\": \"configs/react.json\",\n    \"target\": \"claude\",\n    \"enhance\": true\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"fetch_config\", {\n    \"name\": \"custom_framework\",\n    \"source\": \"community\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"submit_config\", {\n    \"config_path\": \"configs/myframework.json\",\n    \"description\": \"My Framework documentation config\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"add_config_source\", {\n    \"name\": \"company_configs\",\n    \"url\": \"https://github.com/company/configs.git\",\n    \"type\": \"git\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"list_config_sources\", {})",
+      "language": "swift"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"remove_config_source\", {\n    \"name\": \"company_configs\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"split_config\", {\n    \"config_path\": \"configs/large_docs.json\",\n    \"split_by\": \"category\"\n})",
+      "language": "json"
+    },
+    {
+      "code": "result = await mcp.call_tool(\"generate_router\", {\n    \"sub_skills\": [\"react_basics\", \"react_hooks\", \"react_routing\"]\n})",
+      "language": "json"
+    },
+    {
+      "code": "\"Generate a skill for Vue.js documentation\"",
+      "language": "unknown"
+    },
+    {
+      "code": "\"What Skill Seekers tools do you have access to?\"",
+      "language": "unknown"
+    },
+    {
+      "code": "# Test with MCP inspector (if installed)\nnpx @modelcontextprotocol/inspector python -m skill_seekers.mcp.server_fastmcp\n\n# Or test directly\npython -m skill_seekers.mcp.server_fastmcp\n# (Will wait for MCP client connection)",
+      "language": "markdown"
+    },
+    {
+      "code": "./setup_mcp.sh",
+      "language": "unknown"
+    },
+    {
+      "code": "🔍 Detecting installed AI agents...\n\nFound the following agents:\n✓ Claude Code (stdio)\n✓ Cursor (HTTP)\n✓ VS Code + Cline (stdio)\n\nWould you like to configure all agents? (Y/n): Y\n\n✅ Configured Claude Code\n✅ Configured Cursor\n✅ Configured VS Code + Cline\n🚀 Starting HTTP server for Cursor...\n\nAll agents configured successfully!",
+      "language": "unknown"
+    },
+    {
+      "code": "# 1. Check config file exists\ncat ~/Library/Application\\ Support/Claude/mcp.json\n\n# 2. Restart Claude Code completely\n\n# 3. Test server manually\npython -m skill_seekers.mcp.server_fastmcp\n# Should show \"MCP Server running in stdio mode\"\n\n# 4. Check Python path\nwhich python3\n# Make sure it matches the path in config",
+      "language": "markdown"
+    },
+    {
+      "code": "# Check port not in use\nlsof -i :3000\n\n# Use different port\npython -m skill_seekers.mcp.server_fastmcp --http --port 8080\n\n# Check firewall settings\n# Make sure localhost:3000 is not blocked",
+      "language": "markdown"
+    },
+    {
+      "code": "# Check file permissions\nls -la ~/Library/Application\\ Support/Claude/mcp.json\n\n# Create directory if missing\nmkdir -p ~/Library/Application\\ Support/Claude/\n\n# Create empty config if needed\necho '{\"mcpServers\":{}}' > ~/Library/Application\\ Support/Claude/mcp.json",
+      "language": "json"
+    },
+    {
+      "code": "# Install MCP dependencies\npip install -e \".[mcp]\"\n\n# Or install individually\npip install mcp anthropic-mcp fastmcp\n\n# Verify installation\npython -c \"import mcp; print(mcp.__version__)\"",
+      "language": "swift"
+    },
+    {
+      "code": "# 1. Check agent is installed\n# 2. Look for config file manually\n# 3. Add config manually (see Manual Installation)\n# 4. Report issue with agent details",
+      "language": "markdown"
+    },
+    {
+      "code": "# Start HTTP server on custom port\npython -m skill_seekers.mcp.server_fastmcp --http --port 8080",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"mcpServers\": {\n    \"skill-seeker\": {\n      \"url\": \"http://localhost:8080/sse\"\n    }\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "# Enable debug logging\npython -m skill_seekers.mcp.server_fastmcp --http --log-level DEBUG\n\n# Logs show:\n# - Tool calls\n# - Request/response details\n# - Error stack traces",
+      "language": "markdown"
+    },
+    {
+      "code": "# Terminal 1 - Cursor\npython -m skill_seekers.mcp.server_fastmcp --http --port 3000\n\n# Terminal 2 - Windsurf\npython -m skill_seekers.mcp.server_fastmcp --http --port 3001",
+      "language": "markdown"
+    },
+    {
+      "code": "# Set default port\nexport MCP_HTTP_PORT=3000\n\n# Set log level\nexport MCP_LOG_LEVEL=DEBUG\n\n# Then start server\npython -m skill_seekers.mcp.server_fastmcp --http",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/tutorials/scraping-docs",
+    "https://skillseekersweb.com/docs/tutorials/creating-configs",
+    "https://skillseekersweb.com/docs/manual/mcp/setup"
+  ]
+}

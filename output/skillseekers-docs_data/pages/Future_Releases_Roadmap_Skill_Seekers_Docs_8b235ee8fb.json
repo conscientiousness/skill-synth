@@ -1,0 +1,209 @@
+{
+  "url": "https://skillseekersweb.com/docs/community/future-releases",
+  "title": "Future Releases Roadmap | Skill Seekers Docs",
+  "content": "This document outlines planned features, improvements, and the vision for upcoming releases of Skill Seekers.\n\nWe follow semantic versioning (MAJOR.MINOR.PATCH) and maintain backward compatibility wherever possible. Each release focuses on delivering value to users while maintaining code quality and test coverage.\n\nFocus: Test Coverage & Quality Improvements\n\nFocus: Web Presence & Community Growth\n\nGitHub Pages website (skillseekersweb.com)\n\nPlugin system foundation\n\nSupport for additional documentation formats\n\nImproved caching strategies\n\nFocus: Developer Experience & Integrations\n\nWeb UI for config generation\n\nCI/CD integration examples\n\nDocker containerization\n\nREST API documentation formats\n\nReal-time documentation monitoring\n\nMulti-language documentation\n\nCollaborative skill curation\n\nSemantic understanding\n\nFeatures are prioritized based on:\n\nSee our Flexible Roadmap for:\n\nPick any task and submit a PR! See Contributing Guide for guidelines.\n\nWe aim for predictable releases:\n\nHave questions about the roadmap or want to suggest a feature?\n\nTogether, we’re building the future of documentation-to-AI skill conversion! 🚀",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Future Releases Roadmap",
+      "id": "future-releases-roadmap"
+    },
+    {
+      "level": "h2",
+      "text": "Release Philosophy",
+      "id": "release-philosophy"
+    },
+    {
+      "level": "h2",
+      "text": "✅ Release: v2.1.0 (Released: November 29, 2025)",
+      "id": "-release-v210-released-november-29-2025"
+    },
+    {
+      "level": "h3",
+      "text": "Completed Features",
+      "id": "completed-features"
+    },
+    {
+      "level": "h4",
+      "text": "Testing & Quality",
+      "id": "testing--quality"
+    },
+    {
+      "level": "h2",
+      "text": "Release: v2.2.0 (Estimated: Q1 2026)",
+      "id": "release-v220-estimated-q1-2026"
+    },
+    {
+      "level": "h3",
+      "text": "Planned Features",
+      "id": "planned-features"
+    },
+    {
+      "level": "h4",
+      "text": "Community & Documentation",
+      "id": "community--documentation"
+    },
+    {
+      "level": "h4",
+      "text": "Enhancements",
+      "id": "enhancements"
+    },
+    {
+      "level": "h4",
+      "text": "Performance",
+      "id": "performance"
+    },
+    {
+      "level": "h2",
+      "text": "Release: v2.3.0 (Estimated: Q2 2026)",
+      "id": "release-v230-estimated-q2-2026"
+    },
+    {
+      "level": "h3",
+      "text": "Planned Features",
+      "id": "planned-features-1"
+    },
+    {
+      "level": "h4",
+      "text": "Developer Tools",
+      "id": "developer-tools"
+    },
+    {
+      "level": "h4",
+      "text": "API & Integrations",
+      "id": "api--integrations"
+    },
+    {
+      "level": "h2",
+      "text": "Long-term Vision (v3.0+)",
+      "id": "long-term-vision-v30"
+    },
+    {
+      "level": "h3",
+      "text": "Major Features Under Consideration",
+      "id": "major-features-under-consideration"
+    },
+    {
+      "level": "h4",
+      "text": "Advanced Scraping",
+      "id": "advanced-scraping"
+    },
+    {
+      "level": "h4",
+      "text": "Collaboration",
+      "id": "collaboration"
+    },
+    {
+      "level": "h4",
+      "text": "AI & Intelligence",
+      "id": "ai--intelligence"
+    },
+    {
+      "level": "h2",
+      "text": "Backlog Ideas",
+      "id": "backlog-ideas"
+    },
+    {
+      "level": "h3",
+      "text": "Features Requested by Community",
+      "id": "features-requested-by-community"
+    },
+    {
+      "level": "h3",
+      "text": "Technical Improvements",
+      "id": "technical-improvements"
+    },
+    {
+      "level": "h3",
+      "text": "Ecosystem",
+      "id": "ecosystem"
+    },
+    {
+      "level": "h2",
+      "text": "How to Influence the Roadmap",
+      "id": "how-to-influence-the-roadmap"
+    },
+    {
+      "level": "h3",
+      "text": "Priority System",
+      "id": "priority-system"
+    },
+    {
+      "level": "h3",
+      "text": "Ways to Contribute",
+      "id": "ways-to-contribute"
+    },
+    {
+      "level": "h4",
+      "text": "1. Vote on Features",
+      "id": "1-vote-on-features"
+    },
+    {
+      "level": "h4",
+      "text": "2. Contribute Code",
+      "id": "2-contribute-code"
+    },
+    {
+      "level": "h4",
+      "text": "3. Share Feedback",
+      "id": "3-share-feedback"
+    },
+    {
+      "level": "h4",
+      "text": "4. Help with Documentation",
+      "id": "4-help-with-documentation"
+    },
+    {
+      "level": "h2",
+      "text": "Release Schedule",
+      "id": "release-schedule"
+    },
+    {
+      "level": "h3",
+      "text": "Current Schedule",
+      "id": "current-schedule"
+    },
+    {
+      "level": "h2",
+      "text": "Stay Updated",
+      "id": "stay-updated"
+    },
+    {
+      "level": "h2",
+      "text": "Questions?",
+      "id": "questions"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

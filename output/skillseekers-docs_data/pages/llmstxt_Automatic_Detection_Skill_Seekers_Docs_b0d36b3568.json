@@ -1,0 +1,342 @@
+{
+  "url": "https://skillseekersweb.com/docs/reference/llms-txt-support",
+  "title": "llms.txt Automatic Detection | Skill Seekers Docs",
+  "content": "Skill Seekers automatically detects llms.txt files for 10x faster scraping with AI-optimized content.\n\nllms.txt is an emerging standard for providing AI-optimized documentation in a single file. When a website offers llms.txt, Skill Seekers automatically detects and prioritizes it over traditional web scraping.\n\nSkill Seekers checks for llms.txt variants in this order:\n\nDetection happens automatically - no configuration needed!\n\nDescription of the function…\n\nExplicitly use llms.txt even if web scraping is preferred:\n\nForce traditional web scraping:\n\nUse llms.txt (automatic detection) when:\n\nForce web scraping when:\n\nFramework Documentation:\n\nThe llms.txt format is a community-driven standard for AI-optimized documentation:\n\nLearn more: llms.txt specification (if site exists)\n\nFor documentation site owners:\n\nNext.js Documentation:\n\nSupabase Documentation:\n\nContact site maintainers to update llms.txt\n\nUse web scraping (automatic fallback)\n\nRequest llms.txt from site owner\n\nSymptoms: Skill missing expected sections\n\nSupplement with web scraping:\n\nUse web scraping only:\n\n✅ Skill Seekers intelligently detects and uses llms.txt when beneficial\n\n✅ After using llms.txt, spot-check the generated skill:\n\n✅ If llms.txt is > 60 days old, consider web scraping:\n\n✅ Use llms.txt as base, add GitHub issues/changelog:\n\nStatus: ✅ Production Ready (v2.5.0+)\n\nFound an issue or have suggestions? Open an issue",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "llms.txt Automatic Detection",
+      "id": "llmstxt-automatic-detection"
+    },
+    {
+      "level": "h2",
+      "text": "Overview",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "How It Works",
+      "id": "how-it-works"
+    },
+    {
+      "level": "h3",
+      "text": "Automatic Detection Order",
+      "id": "automatic-detection-order"
+    },
+    {
+      "level": "h3",
+      "text": "Example Workflow",
+      "id": "example-workflow"
+    },
+    {
+      "level": "h2",
+      "text": "llms.txt Format",
+      "id": "llmstxt-format"
+    },
+    {
+      "level": "h3",
+      "text": "Standard Structure",
+      "id": "standard-structure"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Start",
+      "id": "quick-start"
+    },
+    {
+      "level": "h1",
+      "text": "API Reference",
+      "id": "api-reference"
+    },
+    {
+      "level": "h2",
+      "text": "Core Functions",
+      "id": "core-functions"
+    },
+    {
+      "level": "h3",
+      "text": "doSomething(param)",
+      "id": "dosomethingparam"
+    },
+    {
+      "level": "h1",
+      "text": "Examples",
+      "id": "examples"
+    },
+    {
+      "level": "h2",
+      "text": "Basic Example",
+      "id": "basic-example"
+    },
+    {
+      "level": "h3",
+      "text": "Force llms.txt",
+      "id": "force-llmstxt"
+    },
+    {
+      "level": "h3",
+      "text": "Disable llms.txt",
+      "id": "disable-llmstxt"
+    },
+    {
+      "level": "h2",
+      "text": "Comparison: llms.txt vs. Web Scraping",
+      "id": "comparison-llmstxt-vs-web-scraping"
+    },
+    {
+      "level": "h3",
+      "text": "Speed",
+      "id": "speed"
+    },
+    {
+      "level": "h3",
+      "text": "Quality",
+      "id": "quality"
+    },
+    {
+      "level": "h3",
+      "text": "When to Use Each",
+      "id": "when-to-use-each"
+    },
+    {
+      "level": "h2",
+      "text": "Sites with llms.txt Support",
+      "id": "sites-with-llmstxt-support"
+    },
+    {
+      "level": "h3",
+      "text": "Known Sites (as of 2025)",
+      "id": "known-sites-as-of-2025"
+    },
+    {
+      "level": "h2",
+      "text": "Advanced Usage",
+      "id": "advanced-usage"
+    },
+    {
+      "level": "h3",
+      "text": "Inspect llms.txt Before Using",
+      "id": "inspect-llmstxt-before-using"
+    },
+    {
+      "level": "h3",
+      "text": "Combine llms.txt with Additional Sources",
+      "id": "combine-llmstxt-with-additional-sources"
+    },
+    {
+      "level": "h3",
+      "text": "Manual Download and Conversion",
+      "id": "manual-download-and-conversion"
+    },
+    {
+      "level": "h2",
+      "text": "llms.txt Standard",
+      "id": "llmstxt-standard"
+    },
+    {
+      "level": "h3",
+      "text": "Specification",
+      "id": "specification"
+    },
+    {
+      "level": "h3",
+      "text": "Creating Your Own llms.txt",
+      "id": "creating-your-own-llmstxt"
+    },
+    {
+      "level": "h2",
+      "text": "Configuration Options",
+      "id": "configuration-options"
+    },
+    {
+      "level": "h3",
+      "text": "Config File Support",
+      "id": "config-file-support"
+    },
+    {
+      "level": "h2",
+      "text": "Performance Metrics",
+      "id": "performance-metrics"
+    },
+    {
+      "level": "h3",
+      "text": "Real-World Examples",
+      "id": "real-world-examples"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: llms.txt is outdated",
+      "id": "issue-llmstxt-is-outdated"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: llms.txt not found",
+      "id": "issue-llmstxt-not-found"
+    },
+    {
+      "level": "h3",
+      "text": "Issue: llms.txt incomplete",
+      "id": "issue-llmstxt-incomplete"
+    },
+    {
+      "level": "h2",
+      "text": "Best Practices",
+      "id": "best-practices"
+    },
+    {
+      "level": "h3",
+      "text": "1. Trust Automatic Detection",
+      "id": "1-trust-automatic-detection"
+    },
+    {
+      "level": "h3",
+      "text": "2. Verify Content Completeness",
+      "id": "2-verify-content-completeness"
+    },
+    {
+      "level": "h3",
+      "text": "3. Check Last Modified Date",
+      "id": "3-check-last-modified-date"
+    },
+    {
+      "level": "h3",
+      "text": "4. Combine with Other Sources",
+      "id": "4-combine-with-other-sources"
+    },
+    {
+      "level": "h2",
+      "text": "Next Steps",
+      "id": "next-steps"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "# Standard scraping command\nskill-seekers scrape https://example.com/ --output output/example/\n\n# Behind the scenes:\n# 1. Check https://example.com/llms-full.txt ✅ Found!\n# 2. Download llms-full.txt (2 seconds)\n# 3. Parse and convert to skill format\n# 4. Done! (vs. 5 minutes to scrape 200 pages)",
+      "language": "markdown"
+    },
+    {
+      "code": "# Example.com Documentation\n\n> AI-optimized documentation for Example.com\n\n# Getting Started\n\n## Installation\n\n```bash\nnpm install example",
+      "language": "markdown"
+    },
+    {
+      "code": "const result = doSomething('value');",
+      "language": "javascript"
+    },
+    {
+      "code": "**Key Features:**\n- Plain markdown format\n- Hierarchical structure\n- Code examples included\n- Comprehensive and complete\n\n---\n\n## Detection and Usage\n\n### Automatic Detection (Default)\n\n**No configuration needed:**\n\n```bash\n# Automatically uses llms.txt if available\nskill-seekers scrape https://docs.example.com/ --output output/example/",
+      "language": "markdown"
+    },
+    {
+      "code": "🔍 Checking for llms.txt...\n✅ Found llms-full.txt at https://docs.example.com/llms-full.txt\n📥 Downloading (2.3 MB)...\n✅ Downloaded in 1.8 seconds\n📝 Parsing content...\n✅ Skill created: example (4,231 tokens)\n⚡ Time saved: 4m 32s (llms.txt vs. traditional scraping)",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers scrape https://docs.example.com/ \\\n  --prefer-llms-txt \\\n  --output output/example/",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape https://docs.example.com/ \\\n  --no-llms-txt \\\n  --output output/example/",
+      "language": "unknown"
+    },
+    {
+      "code": "# Test if site has llms.txt\ncurl -I https://docs.example.com/llms-full.txt\ncurl -I https://docs.example.com/llms.txt\ncurl -I https://docs.example.com/llms-small.txt",
+      "language": "markdown"
+    },
+    {
+      "code": "# Download and inspect\ncurl https://docs.example.com/llms-full.txt -o llms-full.txt\nhead -n 50 llms-full.txt\n\n# Check file size and last modified\ncurl -I https://docs.example.com/llms-full.txt | grep -E 'Content-Length|Last-Modified'",
+      "language": "markdown"
+    },
+    {
+      "code": "# Use llms.txt as base, scrape additional pages\nskill-seekers scrape https://docs.example.com/ \\\n  --use-llms-txt \\\n  --additional-pages \"changelog,releases,roadmap\" \\\n  --output output/example/",
+      "language": "markdown"
+    },
+    {
+      "code": "# 1. Download manually\ncurl https://docs.example.com/llms-full.txt -o llms-full.txt\n\n# 2. Convert to skill\nskill-seekers convert llms-full.txt \\\n  --format llms-txt \\\n  --output output/example/",
+      "language": "markdown"
+    },
+    {
+      "code": "# Your Project Documentation\n\n> Complete documentation for Your Project - optimized for LLMs\n\n# Overview\n\nBrief description of your project...\n\n# Installation\n\nStep-by-step installation guide...\n\n# API Reference\n\nComplete API documentation...\n\n# Examples\n\nPractical code examples...\n\n# FAQ\n\nCommon questions and answers...",
+      "language": "markdown"
+    },
+    {
+      "code": "{\n  \"name\": \"example\",\n  \"base_url\": \"https://docs.example.com/\",\n  \"llms_txt\": {\n    \"enabled\": true,\n    \"prefer\": \"full\",\n    \"fallback_to_scraping\": true,\n    \"max_age_days\": 30\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "⚠️ llms.txt last modified: 45 days ago\n⚠️ Using web scraping instead",
+      "language": "julia"
+    },
+    {
+      "code": "skill-seekers scrape URL --force-llms-txt",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape URL --no-llms-txt",
+      "language": "unknown"
+    },
+    {
+      "code": "🔍 Checking for llms.txt...\n❌ Not found: llms-full.txt\n❌ Not found: llms.txt\n❌ Not found: llms-small.txt\nℹ️ Falling back to web scraping",
+      "language": "unknown"
+    },
+    {
+      "code": "curl -I https://docs.example.com/llms.txt",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape URL --use-llms-txt --additional-pages \"missing-section\"",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers scrape URL --no-llms-txt",
+      "language": "unknown"
+    },
+    {
+      "code": "cat output/example/SKILL.md | head -n 100",
+      "language": "unknown"
+    },
+    {
+      "code": "curl -I https://docs.example.com/llms.txt | grep Last-Modified",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers unified --config unified-config.json\n# Where unified-config uses llms.txt + GitHub scraping",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

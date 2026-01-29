@@ -1,0 +1,87 @@
+{
+  "url": "https://skillseekersweb.com/docs/tutorials/multi-source-skills",
+  "title": "Tutorial: Multi-Source Skills | Skill Seekers Docs",
+  "content": "Learn how to combine multiple sources (docs + GitHub + PDFs) into one comprehensive skill.\n\nTime: 25 minutes | Level: Advanced | Result: Unified skill with complete knowledge\n\nProblem: Documentation alone doesn’t show real usage. Code alone doesn’t explain concepts. PDFs have specs but no examples.\n\nSolution: Combine all sources into one skill!\n\nSkill Seekers automatically detects and resolves duplicate content:\n\nResult: Complete Django knowledge - concepts, examples, patterns, and specifications - all in one skill!\n\nSee: Unified Scraping Manual for advanced techniques.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Tutorial: Multi-Source Skills (Unified Scraping)",
+      "id": "tutorial-multi-source-skills-unified-scraping"
+    },
+    {
+      "level": "h2",
+      "text": "Why Unified Skills?",
+      "id": "why-unified-skills"
+    },
+    {
+      "level": "h2",
+      "text": "Step 1: Create Unified Config",
+      "id": "step-1-create-unified-config"
+    },
+    {
+      "level": "h2",
+      "text": "Step 2: Run Unified Scraper",
+      "id": "step-2-run-unified-scraper"
+    },
+    {
+      "level": "h2",
+      "text": "Step 3: Review Conflict Detection",
+      "id": "step-3-review-conflict-detection"
+    },
+    {
+      "level": "h2",
+      "text": "Step 4: Enhance and Package",
+      "id": "step-4-enhance-and-package"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "{\n  \"name\": \"django-complete\",\n  \"sources\": [\n    {\n      \"type\": \"documentation\",\n      \"base_url\": \"https://docs.djangoproject.com/en/stable/\",\n      \"max_pages\": 500,\n      \"priority\": 1\n    },\n    {\n      \"type\": \"github\",\n      \"repository\": \"django/django\",\n      \"local_repo_path\": \"/path/to/django\",\n      \"include_issues\": true,\n      \"priority\": 2\n    },\n    {\n      \"type\": \"pdf\",\n      \"directory\": \"/path/to/django-books/\",\n      \"priority\": 3\n    }\n  ],\n  \"conflict_resolution\": \"priority\"\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers unified \\\n  --config configs/django-complete.json \\\n  --output output/django-unified/",
+      "language": "unknown"
+    },
+    {
+      "code": "⚠️ Conflict Detection Report:\n- 23 duplicate pages found\n- 18 resolved by priority\n- 5 merged (complementary content)\n✅ Final skill: 892 unique pages",
+      "language": "json"
+    },
+    {
+      "code": "# Enhance\nskill-seekers enhance output/django-unified/\n\n# Package\nskill-seekers package output/django-unified/ --target claude",
+      "language": "go"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases",
+    "https://skillseekersweb.com/docs/tutorials/multi-source-skills"
+  ]
+}

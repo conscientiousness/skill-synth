@@ -1,0 +1,421 @@
+{
+  "url": "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+  "title": "AI Skill Standards & Best Practices | Skill Seekers Docs",
+  "content": "Version: 1.0 Last Updated: 2026-01-11 Scope: Cross-platform AI skills for Claude, Gemini, OpenAI, and generic LLMs\n\nAn AI skill is a focused knowledge package that enhances an AI agent’s capabilities in a specific domain. Skills include:\n\nModern AI skills follow three core principles:\n\nThese standards apply to all platforms (Claude, Gemini, OpenAI, generic).\n\nFormat: Gerund form (verb + -ing)\n\nWhy: Clearly describes the activity or capability the skill provides.\n\nFormat: Third person, actionable, includes BOTH “what” and “when”\n\nWhy: Injected into system prompts; inconsistent POV causes discovery problems.\n\nWhy: Token efficiency is critical—unused context wastes capacity.\n\nExample Transformation:\n\nRequired Sections (in order):\n\nFile Structure (Open Agent Skills Standard):\n\nYAML Frontmatter (required for all platforms):\n\nOfficial Standard: Agent Skills Best Practices\n\nOfficial Standard: Grounding Best Practices\n\nGrounding Enhancements:\n\nNote: Grounding costs $14 per 1,000 queries (as of Jan 5, 2026).\n\nOfficial Standard: Key Guidelines for Custom GPTs\n\nUse Case: Documentation sites, internal wikis, non-LLM tools\n\nFormat: Standard markdown with minimal metadata\n\nBest Practice: Focus on human readability over token economy\n\nModern AI skills leverage advanced RAG (Retrieval-Augmented Generation) patterns for optimal knowledge delivery.\n\nPattern: Multi-query, context-aware retrieval with agent orchestration\n\nImplementation in Skills:\n\nWhy: Agent can navigate structure to find exactly what’s needed.\n\nPattern: Knowledge graph structures for complex reasoning\n\nUse Case: Large codebases, interconnected concepts, architectural analysis\n\nBenefits: Multi-hop reasoning, relationship exploration, complex queries\n\nPattern: Specialized agents for different knowledge domains\n\nUse Case: Enterprise workflows, compliance requirements, multi-domain expertise\n\nPattern: Self-evaluation and refinement before finalizing responses\n\nBenefits: Higher quality outputs, fewer errors, better adherence to standards\n\nPattern: Semantic search over embeddings for concept-based retrieval\n\nUse Case: Large documentation sets, conceptual queries, similarity search\n\nUse this rubric to assess AI skill quality on a 10-point scale.\n\nProblem: Including everything about a topic instead of focusing on actionable knowledge.\n\nFix: Focus on what the user needs to do, not history or background.\n\nProblem: Using “I” or “you” in metadata (breaks Claude discovery).\n\nFix: Always use third person in description field.\n\nProblem: Redundant explanations, verbose phrasing, or filler content.\n\nFix: Use bullet points, remove filler, focus on distinctions.\n\nProblem: Code examples that don’t compile or run.\n\nFix: Test all code examples, ensure they compile/run.\n\nProblem: Description explains what but not when.\n\nFix: Always include “Use when…” or “Use for…” clause.\n\nProblem: All references in one file or directory, no organization.\n\nFix: Organize by category, enable agent navigation.\n\nProblem: Including deprecated APIs or old best practices.\n\nFix: Regularly update skills, include version info.\n\nModel Context Protocol (MCP): Standardizes how agents access tools and data\n\nMulti-Modal Skills: Beyond text (images, audio, video)\n\nSkill Composition: Skills that reference other skills\n\nReal-Time Grounding: Skills + live data sources\n\nFederated Skill Repositories: Decentralized skill discovery\n\nDocument Maintenance:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "AI Skill Standards & Best Practices (2026)",
+      "id": "ai-skill-standards--best-practices-2026"
+    },
+    {
+      "level": "h2",
+      "text": "Table of Contents",
+      "id": "table-of-contents"
+    },
+    {
+      "level": "h2",
+      "text": "Introduction",
+      "id": "introduction"
+    },
+    {
+      "level": "h3",
+      "text": "What is an AI Skill?",
+      "id": "what-is-an-ai-skill"
+    },
+    {
+      "level": "h3",
+      "text": "Design Philosophy",
+      "id": "design-philosophy"
+    },
+    {
+      "level": "h2",
+      "text": "Universal Standards",
+      "id": "universal-standards"
+    },
+    {
+      "level": "h3",
+      "text": "1. Naming Conventions",
+      "id": "1-naming-conventions"
+    },
+    {
+      "level": "h3",
+      "text": "2. Description Field (Critical for Discovery)",
+      "id": "2-description-field-critical-for-discovery"
+    },
+    {
+      "level": "h3",
+      "text": "3. Token Budget (Progressive Disclosure)",
+      "id": "3-token-budget-progressive-disclosure"
+    },
+    {
+      "level": "h3",
+      "text": "4. Conciseness & Relevance",
+      "id": "4-conciseness--relevance"
+    },
+    {
+      "level": "h3",
+      "text": "5. Structure & Organization",
+      "id": "5-structure--organization"
+    },
+    {
+      "level": "h3",
+      "text": "6. Code Examples Quality",
+      "id": "6-code-examples-quality"
+    },
+    {
+      "level": "h3",
+      "text": "7. Cross-Platform Compatibility",
+      "id": "7-cross-platform-compatibility"
+    },
+    {
+      "level": "h2",
+      "text": "Platform-Specific Guidelines",
+      "id": "platform-specific-guidelines"
+    },
+    {
+      "level": "h3",
+      "text": "Claude AI (Agent Skills)",
+      "id": "claude-ai-agent-skills"
+    },
+    {
+      "level": "h3",
+      "text": "Google Gemini (Actions)",
+      "id": "google-gemini-actions"
+    },
+    {
+      "level": "h3",
+      "text": "OpenAI (GPT Actions)",
+      "id": "openai-gpt-actions"
+    },
+    {
+      "level": "h3",
+      "text": "Generic Markdown (Platform-Agnostic)",
+      "id": "generic-markdown-platform-agnostic"
+    },
+    {
+      "level": "h2",
+      "text": "Knowledge Base Design Patterns",
+      "id": "knowledge-base-design-patterns"
+    },
+    {
+      "level": "h3",
+      "text": "1. Agentic RAG (Recommended for 2026+)",
+      "id": "1-agentic-rag-recommended-for-2026"
+    },
+    {
+      "level": "h3",
+      "text": "2. GraphRAG (Advanced Use Cases)",
+      "id": "2-graphrag-advanced-use-cases"
+    },
+    {
+      "level": "h3",
+      "text": "3. Multi-Agent Systems (Enterprise Scale)",
+      "id": "3-multi-agent-systems-enterprise-scale"
+    },
+    {
+      "level": "h3",
+      "text": "4. Reflection Pattern (Quality Assurance)",
+      "id": "4-reflection-pattern-quality-assurance"
+    },
+    {
+      "level": "h3",
+      "text": "5. Vector Database Integration",
+      "id": "5-vector-database-integration"
+    },
+    {
+      "level": "h2",
+      "text": "Quality Grading Rubric",
+      "id": "quality-grading-rubric"
+    },
+    {
+      "level": "h3",
+      "text": "Categories & Weights",
+      "id": "categories--weights"
+    },
+    {
+      "level": "h3",
+      "text": "Detailed Scoring",
+      "id": "detailed-scoring"
+    },
+    {
+      "level": "h4",
+      "text": "1. Discovery & Metadata (10%)",
+      "id": "1-discovery--metadata-10"
+    },
+    {
+      "level": "h4",
+      "text": "2. Conciseness & Token Economy (15%)",
+      "id": "2-conciseness--token-economy-15"
+    },
+    {
+      "level": "h4",
+      "text": "3. Structural Organization (15%)",
+      "id": "3-structural-organization-15"
+    },
+    {
+      "level": "h4",
+      "text": "4. Code Example Quality (20%)",
+      "id": "4-code-example-quality-20"
+    },
+    {
+      "level": "h4",
+      "text": "5. Accuracy & Correctness (20%)",
+      "id": "5-accuracy--correctness-20"
+    },
+    {
+      "level": "h4",
+      "text": "6. Actionability (10%)",
+      "id": "6-actionability-10"
+    },
+    {
+      "level": "h4",
+      "text": "7. Cross-Platform Compatibility (10%)",
+      "id": "7-cross-platform-compatibility-10"
+    },
+    {
+      "level": "h3",
+      "text": "Overall Grade Calculation",
+      "id": "overall-grade-calculation"
+    },
+    {
+      "level": "h2",
+      "text": "Common Pitfalls",
+      "id": "common-pitfalls"
+    },
+    {
+      "level": "h3",
+      "text": "1. Encyclopedic Content",
+      "id": "1-encyclopedic-content"
+    },
+    {
+      "level": "h3",
+      "text": "2. First-Person Descriptions",
+      "id": "2-first-person-descriptions"
+    },
+    {
+      "level": "h3",
+      "text": "3. Token Waste",
+      "id": "3-token-waste"
+    },
+    {
+      "level": "h3",
+      "text": "4. Untested Examples",
+      "id": "4-untested-examples"
+    },
+    {
+      "level": "h3",
+      "text": "5. Missing “When to Use”",
+      "id": "5-missing-when-to-use"
+    },
+    {
+      "level": "h3",
+      "text": "6. Flat Reference Structure",
+      "id": "6-flat-reference-structure"
+    },
+    {
+      "level": "h3",
+      "text": "7. Outdated Information",
+      "id": "7-outdated-information"
+    },
+    {
+      "level": "h2",
+      "text": "Future-Proofing",
+      "id": "future-proofing"
+    },
+    {
+      "level": "h3",
+      "text": "Emerging Standards (2026-2030)",
+      "id": "emerging-standards-2026-2030"
+    },
+    {
+      "level": "h3",
+      "text": "Recommendations",
+      "id": "recommendations"
+    },
+    {
+      "level": "h2",
+      "text": "References",
+      "id": "references"
+    },
+    {
+      "level": "h3",
+      "text": "Official Documentation",
+      "id": "official-documentation"
+    },
+    {
+      "level": "h3",
+      "text": "Industry Standards",
+      "id": "industry-standards"
+    },
+    {
+      "level": "h3",
+      "text": "Design Patterns",
+      "id": "design-patterns"
+    },
+    {
+      "level": "h3",
+      "text": "Knowledge Base Architecture",
+      "id": "knowledge-base-architecture"
+    },
+    {
+      "level": "h3",
+      "text": "Community Resources",
+      "id": "community-resources"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "name: building-react-applications  # kebab-case, gerund form\ndescription: Building modern React applications with hooks, routing, and state management",
+      "language": "yaml"
+    },
+    {
+      "code": "[What it does]. Use when [specific triggers/scenarios].",
+      "language": "json"
+    },
+    {
+      "code": "## Quick Reference\n*30-second overview with most common patterns*\n\n[Core content - 3,000-4,500 tokens]\n\n## Extended Reference\n*See references/api.md for complete API documentation*",
+      "language": "json"
+    },
+    {
+      "code": "React is a popular JavaScript library for building user interfaces.\nIt was created by Facebook and is now maintained by Meta and the\nopen-source community. React uses a component-based architecture\nwhere you build encapsulated components that manage their own state.",
+      "language": "sql"
+    },
+    {
+      "code": "Component-based UI library. Build reusable components with local\nstate, compose them into complex UIs, and efficiently update the\nDOM via virtual DOM reconciliation.",
+      "language": "sql"
+    },
+    {
+      "code": "---\nname: skill-name\ndescription: [What + When in third person]\n---\n\n# Skill Title\n\n[1-2 sentence elevator pitch]\n\n## 💡 When to Use This Skill\n\n[3-5 specific scenarios with trigger phrases]\n\n## ⚡ Quick Reference\n\n[30-second overview, most common patterns]\n\n## 📝 Code Examples\n\n[Real-world, tested, copy-paste ready]\n\n## 🔧 API Reference\n\n[Core APIs, signatures, parameters - link to full reference]\n\n## 🏗️ Architecture\n\n[Key patterns, design decisions, trade-offs]\n\n## ⚠️ Common Issues\n\n[Known problems, workarounds, gotchas]\n\n## 📚 References\n\n[Links to deeper documentation]",
+      "language": "json"
+    },
+    {
+      "code": "### Example: User Authentication\n\n\\```typescript\n// Complete working example\nimport { useState } from 'react';\nimport { signIn } from './auth';\n\nexport function LoginForm() {\n  const [email, setEmail] = useState('');\n  const [password, setPassword] = useState('');\n\n  const handleSubmit = async (e: React.FormEvent) => {\n    e.preventDefault();\n    await signIn(email, password);\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <input value={email} onChange={e => setEmail(e.target.value)} />\n      <input type=\"password\" value={password} onChange={e => setPassword(e.target.value)} />\n      <button type=\"submit\">Sign In</button>\n    </form>\n  );\n}\n\\```\n\n**Why this works**: Demonstrates state management, event handling, async operations, and TypeScript types in a real-world pattern.",
+      "language": "jsx"
+    },
+    {
+      "code": "skill-name/\n├── SKILL.md                # Main instructions (<5k tokens)\n├── skill.yaml              # Metadata (optional, redundant with frontmatter)\n├── references/             # On-demand resources\n│   ├── api.md\n│   ├── patterns.md\n│   ├── examples/\n│   │   ├── basic.md\n│   │   └── advanced.md\n│   └── index.md\n└── resources/              # Optional: scripts, configs, templates\n    ├── .clinerules\n    └── templates/",
+      "language": "unknown"
+    },
+    {
+      "code": "---\nname: skill-name              # kebab-case, max 64 chars\ndescription: >                # What + When, max 1024 chars\n  Building modern React applications with TypeScript.\n  Use when implementing React components or managing state.\nversion: 1.0.0                # Semantic versioning\nplatforms:                    # Tested platforms\n  - claude\n  - gemini\n  - openai\n  - markdown\ntags:                         # Discovery keywords\n  - react\n  - typescript\n  - frontend\n  - web\n---",
+      "language": "yaml"
+    },
+    {
+      "code": "description: >\n  Building modern React applications with TypeScript, hooks, and routing.\n  Use when implementing React components, managing application state,\n  configuring build tools, or debugging React applications.",
+      "language": "yaml"
+    },
+    {
+      "code": "## When to Use This Skill\n\nUse this skill when:\n- Implementing React components (skill provides patterns)\n- Checking latest React version (grounding provides current info)\n- Debugging common errors (skill + grounding = comprehensive solution)",
+      "language": "markdown"
+    },
+    {
+      "code": "## Instructions\n\n### When user asks about React state management\n\n1. First, identify the state management need (local vs global)\n2. Then, recommend appropriate solution:\n   - Local state → useState or useReducer\n   - Global state → Context API or Redux\n3. Provide code example matching their use case\n4. Finally, explain trade-offs and alternatives\n\nTake your time to understand the user's specific requirements before recommending a solution.\n\n---\n\n### When user asks about React performance\n\n[Similar structured approach]",
+      "language": "markdown"
+    },
+    {
+      "code": "User Query → Agent Plans Retrieval → Multi-Source Fetch →\nContext Synthesis → Response Generation → Self-Verification",
+      "language": "swift"
+    },
+    {
+      "code": "references/\n├── index.md              # Navigation hub\n├── api/                  # API references (structured)\n│   ├── components.md\n│   ├── hooks.md\n│   └── utilities.md\n├── patterns/             # Design patterns (by use case)\n│   ├── state-management.md\n│   └── performance.md\n└── examples/             # Code examples (by complexity)\n    ├── basic/\n    ├── intermediate/\n    └── advanced/",
+      "language": "unknown"
+    },
+    {
+      "code": "references/\n├── entities/              # Nodes in knowledge graph\n│   ├── Component.md\n│   ├── Hook.md\n│   └── Context.md\n├── relationships/         # Edges in knowledge graph\n│   ├── Component-uses-Hook.md\n│   └── Context-provides-State.md\n└── graph.json            # Machine-readable graph",
+      "language": "unknown"
+    },
+    {
+      "code": "Skill Repository\n├── research-agent-skill/      # Explores information space\n├── verification-agent-skill/  # Checks factual claims\n├── synthesis-agent-skill/     # Combines findings\n└── governance-agent-skill/    # Ensures compliance",
+      "language": "unknown"
+    },
+    {
+      "code": "## Usage Instructions\n\nWhen providing code examples:\n1. Generate initial example\n2. Evaluate against these criteria:\n   - Completeness (can user copy-paste and run?)\n   - Best practices (follows framework conventions?)\n   - Security (no vulnerabilities?)\n   - Performance (efficient patterns?)\n3. Refine example based on evaluation\n4. Present final version with explanations",
+      "language": "markdown"
+    },
+    {
+      "code": "Total Score = (Discovery × 0.10) +\n              (Conciseness × 0.15) +\n              (Structure × 0.15) +\n              (Examples × 0.20) +\n              (Accuracy × 0.20) +\n              (Actionability × 0.10) +\n              (Compatibility × 0.10)",
+      "language": "unknown"
+    },
+    {
+      "code": "❌ BAD:\nReact was created by Jordan Walke, a software engineer at Facebook,\nin 2011. It was first deployed on Facebook's newsfeed in 2011 and\nlater on Instagram in 2012. It was open-sourced at JSConf US in May\n2013. Over the years, React has evolved significantly...\n\n✅ GOOD:\nReact is a component-based UI library. Build reusable components,\nmanage state with hooks, and efficiently update the DOM.",
+      "language": "sql"
+    },
+    {
+      "code": "❌ BAD:\ndescription: I will help you build React applications with best practices\n\n✅ GOOD:\ndescription: Building modern React applications with TypeScript, hooks,\n  and routing. Use when implementing components or managing state.",
+      "language": "yaml"
+    },
+    {
+      "code": "❌ BAD (85 tokens):\nWhen you are working on a project and you need to manage state in your\nReact application, you have several different options available to you.\nOne option is to use the useState hook, which is great for managing\nlocal component state. Another option is to use useReducer, which is\nbetter for more complex state logic.\n\n✅ GOOD (28 tokens):\nState management options:\n- Local state → useState (simple values)\n- Complex logic → useReducer (state machines)\n- Global state → Context API or Redux",
+      "language": "jsx"
+    },
+    {
+      "code": "❌ BAD:\nfunction Example() {\n  const [data, setData] = useState();  // No type, no initial value\n  useEffect(() => {\n    fetchData();  // Function doesn't exist\n  });  // Missing dependency array\n  return <div>{data}</div>;  // TypeScript error\n}\n\n✅ GOOD:\ninterface User {\n  id: number;\n  name: string;\n}\n\nfunction Example() {\n  const [data, setData] = useState<User | null>(null);\n\n  useEffect(() => {\n    fetch('/api/user')\n      .then(r => r.json())\n      .then(setData);\n  }, []);  // Empty deps = run once\n\n  return <div>{data?.name ?? 'Loading...'}</div>;\n}",
+      "language": "jsx"
+    },
+    {
+      "code": "❌ BAD:\ndescription: Documentation for React hooks and component patterns\n\n✅ GOOD:\ndescription: Building React applications with hooks and components.\n  Use when implementing UI components, managing state, or optimizing\n  React performance.",
+      "language": "yaml"
+    },
+    {
+      "code": "❌ BAD:\nreferences/\n├── everything.md  (20,000+ tokens)\n\n✅ GOOD:\nreferences/\n├── index.md\n├── api/\n│   ├── components.md\n│   └── hooks.md\n├── patterns/\n│   ├── state-management.md\n│   └── performance.md\n└── examples/\n    ├── basic/\n    └── advanced/",
+      "language": "unknown"
+    },
+    {
+      "code": "❌ BAD (deprecated in React 18):\nUse componentDidMount() and componentWillUnmount() for side effects.\n\n✅ GOOD (current as of 2026):\nUse useEffect() hook for side effects in function components.",
+      "language": "jsx"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Pattern: Multi-query, context-aware retrieval with agent orchestration",
+      "code": "User Query → Agent Plans Retrieval → Multi-Source Fetch →\nContext Synthesis → Response Generation → Self-Verification"
+    },
+    {
+      "description": "Pattern: Knowledge graph structures for complex reasoning",
+      "code": "references/\n├── entities/              # Nodes in knowledge graph\n│   ├── Component.md\n│   ├── Hook.md\n│   └── Context.md\n├── relationships/         # Edges in knowledge graph\n│   ├── Component-uses-Hook.md\n│   └── Context-provides-State.md\n└── graph.json            # Machine-readable graph"
+    },
+    {
+      "description": "Pattern: Specialized agents for different knowledge domains",
+      "code": "Skill Repository\n├── research-agent-skill/      # Explores information space\n├── verification-agent-skill/  # Checks factual claims\n├── synthesis-agent-skill/     # Combines findings\n└── governance-agent-skill/    # Ensures compliance"
+    },
+    {
+      "description": "Pattern: Self-evaluation and refinement before finalizing responses",
+      "code": "## Usage Instructions\n\nWhen providing code examples:\n1. Generate initial example\n2. Evaluate against these criteria:\n   - Completeness (can user copy-paste and run?)\n   - Best practices (follows framework conventions?)\n   - Security (no vulnerabilities?)\n   - Performance (efficient patterns?)\n3. Refine example based on evaluation\n4. Present final version with explanations"
+    },
+    {
+      "description": "Pattern: Semantic search over embeddings for concept-based retrieval",
+      "code": "Total Score = (Discovery × 0.10) +\n              (Conciseness × 0.15) +\n              (Structure × 0.15) +\n              (Examples × 0.20) +\n              (Accuracy × 0.20) +\n              (Actionability × 0.10) +\n              (Compatibility × 0.10)"
+    }
+  ],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}

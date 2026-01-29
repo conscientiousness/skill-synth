@@ -1,0 +1,45 @@
+{
+  "name": "skillseekers-docs",
+  "description": "Use this skill for Skill Seekers documentation: setup, scraping, enhancement, packaging, and CLI workflows.",
+  "base_url": "https://skillseekersweb.com/docs/",
+  "start_urls": ["https://skillseekersweb.com/docs/getting-started/overview/"],
+  "selectors": {
+    "main_content": "article.prose",
+    "title": "title",
+    "code_blocks": "pre code"
+  },
+  "url_patterns": {
+    "include": ["/docs/"],
+    "exclude": [
+      "/zh/",
+      "search",
+      "#",
+      "/getting-started/quick-start",
+      "/getting-started/quickstart",
+      "/features/documentation-scraping",
+      "/features/c3x-codebase-analysis",
+      "/features/multi-llm-support",
+      "/features/three-stream-architecture",
+      "/features/pdf-scraping",
+      "/features/ai-enhancement",
+      "/features/unified-scraping",
+      "/manual/scraping/documentation",
+      "/manual/scraping/github",
+      "/manual/scraping/unified",
+      "/manual/platforms/overview",
+      "/manual/mcp/tools",
+      "/guides/mcp-setup",
+      "/guides/usage",
+      "/guides/upload-guide",
+      "/guides/multi-token-config",
+      "/guides/rate-limit-management",
+      "/integrations/gemini",
+      "/integrations/openai",
+      "/community/flexible-roadmap",
+      "/class-reference/config-format",
+      "/cli/enhance-status"
+    ]
+  },
+  "rate_limit": 0.5,
+  "max_pages": 300
+}

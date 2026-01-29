@@ -1,0 +1,364 @@
+{
+  "url": "https://skillseekersweb.com/docs/cli/resume",
+  "title": "resume - Resume Interrupted Jobs | Skill Seekers Docs",
+  "content": "Resume interrupted scraping jobs from saved checkpoints and manage job history.\n\nSkill Seekers automatically saves progress for resumable operations:\n\nAuto-saved operations:\n\nShows additional details:\n\nIf a GitHub scraping job hit rate limits:\n\nConfigured in skill-seekers config:\n\nWarning: This deletes ALL resumable jobs, including recent ones.\n\nProblem: Internet disconnected during documentation scraping\n\nResult: Resumes from page 450, skips already-scraped pages\n\nProblem: GitHub API rate limit exceeded during repository analysis\n\nResult: Continues analysis from last checkpoint\n\nProblem: Computer crashed during unified scraping\n\nResult: Resumes from last auto-save (default: 60 seconds)\n\nProblem: Accidentally canceled long-running job\n\nResult: Picks up where it left off\n\nWhile running, resumed jobs show progress:\n\nConfigure resume behavior in skill-seekers config:\n\nThese operations cannot be resumed:\n\nThese operations resume with limitations:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "resume - Resume Interrupted Jobs",
+      "id": "resume---resume-interrupted-jobs"
+    },
+    {
+      "level": "h2",
+      "text": "Basic Usage",
+      "id": "basic-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Quick Examples",
+      "id": "quick-examples"
+    },
+    {
+      "level": "h2",
+      "text": "Options",
+      "id": "options"
+    },
+    {
+      "level": "h3",
+      "text": "Actions",
+      "id": "actions"
+    },
+    {
+      "level": "h3",
+      "text": "Display Options",
+      "id": "display-options"
+    },
+    {
+      "level": "h2",
+      "text": "Resume Feature",
+      "id": "resume-feature"
+    },
+    {
+      "level": "h3",
+      "text": "When Jobs are Saved",
+      "id": "when-jobs-are-saved"
+    },
+    {
+      "level": "h3",
+      "text": "Progress Storage",
+      "id": "progress-storage"
+    },
+    {
+      "level": "h2",
+      "text": "Listing Jobs",
+      "id": "listing-jobs"
+    },
+    {
+      "level": "h3",
+      "text": "Basic List",
+      "id": "basic-list"
+    },
+    {
+      "level": "h3",
+      "text": "Verbose List",
+      "id": "verbose-list"
+    },
+    {
+      "level": "h3",
+      "text": "JSON Format",
+      "id": "json-format"
+    },
+    {
+      "level": "h2",
+      "text": "Resuming Jobs",
+      "id": "resuming-jobs"
+    },
+    {
+      "level": "h3",
+      "text": "Resume by Job ID",
+      "id": "resume-by-job-id"
+    },
+    {
+      "level": "h3",
+      "text": "Resume Latest Job",
+      "id": "resume-latest-job"
+    },
+    {
+      "level": "h3",
+      "text": "Resume After Rate Limit",
+      "id": "resume-after-rate-limit"
+    },
+    {
+      "level": "h2",
+      "text": "Clean Up",
+      "id": "clean-up"
+    },
+    {
+      "level": "h3",
+      "text": "Auto-Cleanup",
+      "id": "auto-cleanup"
+    },
+    {
+      "level": "h3",
+      "text": "Manual Cleanup",
+      "id": "manual-cleanup"
+    },
+    {
+      "level": "h3",
+      "text": "Force Cleanup All",
+      "id": "force-cleanup-all"
+    },
+    {
+      "level": "h2",
+      "text": "Resume Scenarios",
+      "id": "resume-scenarios"
+    },
+    {
+      "level": "h3",
+      "text": "Scenario 1: Network Interruption",
+      "id": "scenario-1-network-interruption"
+    },
+    {
+      "level": "h3",
+      "text": "Scenario 2: Rate Limit Hit",
+      "id": "scenario-2-rate-limit-hit"
+    },
+    {
+      "level": "h3",
+      "text": "Scenario 3: System Crash",
+      "id": "scenario-3-system-crash"
+    },
+    {
+      "level": "h3",
+      "text": "Scenario 4: Manual Cancellation",
+      "id": "scenario-4-manual-cancellation"
+    },
+    {
+      "level": "h2",
+      "text": "Progress Tracking",
+      "id": "progress-tracking"
+    },
+    {
+      "level": "h3",
+      "text": "Understanding Progress",
+      "id": "understanding-progress"
+    },
+    {
+      "level": "h3",
+      "text": "Real-Time Updates",
+      "id": "real-time-updates"
+    },
+    {
+      "level": "h2",
+      "text": "Resume Configuration",
+      "id": "resume-configuration"
+    },
+    {
+      "level": "h3",
+      "text": "Auto-Save Interval",
+      "id": "auto-save-interval"
+    },
+    {
+      "level": "h3",
+      "text": "Auto-Cleanup Age",
+      "id": "auto-cleanup-age"
+    },
+    {
+      "level": "h2",
+      "text": "Limitations",
+      "id": "limitations"
+    },
+    {
+      "level": "h3",
+      "text": "Not Resumable",
+      "id": "not-resumable"
+    },
+    {
+      "level": "h3",
+      "text": "Partial Resume",
+      "id": "partial-resume"
+    },
+    {
+      "level": "h2",
+      "text": "Integration with Other Commands",
+      "id": "integration-with-other-commands"
+    },
+    {
+      "level": "h3",
+      "text": "GitHub Command",
+      "id": "github-command"
+    },
+    {
+      "level": "h3",
+      "text": "Unified Command",
+      "id": "unified-command"
+    },
+    {
+      "level": "h2",
+      "text": "Troubleshooting",
+      "id": "troubleshooting"
+    },
+    {
+      "level": "h3",
+      "text": "Job Not Found",
+      "id": "job-not-found"
+    },
+    {
+      "level": "h3",
+      "text": "Corrupted Checkpoint",
+      "id": "corrupted-checkpoint"
+    },
+    {
+      "level": "h3",
+      "text": "Permission Error",
+      "id": "permission-error"
+    },
+    {
+      "level": "h2",
+      "text": "Best Practices",
+      "id": "best-practices"
+    },
+    {
+      "level": "h2",
+      "text": "See Also",
+      "id": "see-also"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "skill-seekers resume [OPTIONS] [JOB_ID]",
+      "language": "unknown"
+    },
+    {
+      "code": "# List all resumable jobs\nskill-seekers resume --list\n\n# Resume specific job by ID\nskill-seekers resume abc123def456\n\n# Clean up old job files\nskill-seekers resume --clean\n\n# View job details\nskill-seekers resume --list --verbose",
+      "language": "markdown"
+    },
+    {
+      "code": "~/.local/share/skill-seekers/progress/<job-id>.json",
+      "language": "unknown"
+    },
+    {
+      "code": "{\n  \"job_id\": \"abc123def456\",\n  \"command\": \"skill-seekers github --repo facebook/react\",\n  \"started_at\": \"2026-01-18T10:30:00Z\",\n  \"last_updated\": \"2026-01-18T10:45:00Z\",\n  \"progress\": {\n    \"phase\": \"Code Analysis\",\n    \"files_processed\": 1234,\n    \"files_total\": 2000,\n    \"percent_complete\": 61.7\n  },\n  \"checkpoints\": {\n    \"scraping_complete\": true,\n    \"analysis_phase_1\": true,\n    \"analysis_phase_2\": false\n  },\n  \"metadata\": {\n    \"repo\": \"facebook/react\",\n    \"output_dir\": \"output/react\"\n  }\n}",
+      "language": "json"
+    },
+    {
+      "code": "skill-seekers resume --list",
+      "language": "unknown"
+    },
+    {
+      "code": "Resumable Jobs (3 found)\n─────────────────────────────────────────────────────────────────\n\nJOB ID: abc123def456\nStarted: 2026-01-18 10:30:00\nCommand: skill-seekers github --repo facebook/react\nProgress: Code Analysis (61.7% - 1234/2000 files)\nLast Updated: 2 minutes ago\n\nJOB ID: def456ghi789\nStarted: 2026-01-17 15:20:00\nCommand: skill-seekers scrape https://docs.astro.build\nProgress: Scraping (450/500 pages)\nLast Updated: 1 day ago\n\nJOB ID: ghi789jkl012\nStarted: 2026-01-16 09:00:00\nCommand: skill-seekers unified --config configs/godot_full.json\nProgress: Source 2 of 3 (GitHub Analysis)\nLast Updated: 2 days ago",
+      "language": "yaml"
+    },
+    {
+      "code": "skill-seekers resume --list --verbose",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers resume --list --format json",
+      "language": "unknown"
+    },
+    {
+      "code": "skill-seekers resume abc123def456",
+      "language": "unknown"
+    },
+    {
+      "code": "# List and resume the most recent job\nskill-seekers resume --list\nskill-seekers resume $(skill-seekers resume --list --format json | jq -r '.[0].job_id')",
+      "language": "markdown"
+    },
+    {
+      "code": "# Check job status\nskill-seekers resume --list\n\n# Wait for rate limit reset or switch profile\nskill-seekers config --github  # Add another profile\n\n# Resume with different profile\nskill-seekers resume abc123def456 --profile work",
+      "language": "markdown"
+    },
+    {
+      "code": "# Remove all jobs older than configured age\nskill-seekers resume --clean",
+      "language": "markdown"
+    },
+    {
+      "code": "Cleaning up old job files...\n✓ Removed abc123def456 (started 10 days ago)\n✓ Removed def456ghi789 (started 15 days ago)\nKept ghi789jkl012 (started 2 days ago)\n\nCleaned up 2 job files.",
+      "language": "unknown"
+    },
+    {
+      "code": "# Remove all job files regardless of age\nskill-seekers resume --clean --all",
+      "language": "markdown"
+    },
+    {
+      "code": "# Original command\nskill-seekers scrape https://docs.django.com --max-pages 1000\n\n# ... network interruption at page 450 ...\n\n# Resume after network restored\nskill-seekers resume --list\nskill-seekers resume abc123def456",
+      "language": "markdown"
+    },
+    {
+      "code": "# Original command\nskill-seekers github --repo microsoft/vscode\n\n# ... rate limit hit after 30 minutes ...\n\n# Option 1: Wait and resume\n# (waits for rate limit reset)\nskill-seekers resume abc123def456\n\n# Option 2: Switch profile and resume\nskill-seekers config --github  # Add new profile\nskill-seekers resume abc123def456 --profile work",
+      "language": "markdown"
+    },
+    {
+      "code": "# Original command\nskill-seekers unified --config configs/godot_full.json\n\n# ... system crash ...\n\n# After reboot, list jobs\nskill-seekers resume --list\n\n# Resume from checkpoint\nskill-seekers resume abc123def456",
+      "language": "sql"
+    },
+    {
+      "code": "# Press Ctrl+C during execution\n\n# Later, resume it\nskill-seekers resume --list\nskill-seekers resume abc123def456",
+      "language": "markdown"
+    },
+    {
+      "code": "Resuming job abc123def456...\nLoaded checkpoint: Code Analysis (phase 1 complete)\n\nProcessing files: [████████░░░░░░░░] 1500/2000 (75%)\nCurrent file: src/components/Button.tsx\nElapsed: 45m 23s | Remaining: ~15m 12s",
+      "language": "yaml"
+    },
+    {
+      "code": "skill-seekers config\n# → Select \"4. Resume Settings\"\n# → Select \"Auto-save interval\"\n# → Enter new value (30-300 seconds recommended)",
+      "language": "sql"
+    },
+    {
+      "code": "skill-seekers config\n# → Select \"4. Resume Settings\"\n# → Select \"Auto-cleanup age\"\n# → Enter new value (1-30 days recommended)",
+      "language": "sql"
+    },
+    {
+      "code": "# Start GitHub scraping\nskill-seekers github --repo facebook/react\n\n# If interrupted, resume it\nskill-seekers resume <job-id>\n\n# Resume with different options\nskill-seekers resume <job-id> --profile work --non-interactive",
+      "language": "markdown"
+    },
+    {
+      "code": "# Start multi-source scraping\nskill-seekers unified --config configs/framework.json\n\n# If interrupted during source 2, resume\nskill-seekers resume <job-id>\n\n# Continue from checkpoint: source 2 analysis",
+      "language": "sql"
+    },
+    {
+      "code": "# Verify job exists\nskill-seekers resume --list\n\n# Check progress file location\nls -la ~/.local/share/skill-seekers/progress/\n\n# Recreate progress directory if missing\nmkdir -p ~/.local/share/skill-seekers/progress/",
+      "language": "markdown"
+    },
+    {
+      "code": "# If resume fails with \"corrupted checkpoint\":\n\n# Option 1: Start fresh\nskill-seekers github --repo owner/repo --output output/repo_new\n\n# Option 2: Delete corrupted checkpoint\nrm ~/.local/share/skill-seekers/progress/<job-id>.json",
+      "language": "markdown"
+    },
+    {
+      "code": "# Fix permissions on progress directory\nchmod 700 ~/.local/share/skill-seekers/progress/\nchmod 600 ~/.local/share/skill-seekers/progress/*.json",
+      "language": "markdown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://skillseekersweb.com/docs/getting-started/overview",
+    "https://skillseekersweb.com/docs/getting-started/installation",
+    "https://skillseekersweb.com/docs/getting-started/first-skill",
+    "https://skillseekersweb.com/docs/guides/troubleshooting",
+    "https://skillseekersweb.com/docs/guides/submit-config",
+    "https://skillseekersweb.com/docs/cli/overview",
+    "https://skillseekersweb.com/docs/cli/scrape",
+    "https://skillseekersweb.com/docs/cli/github",
+    "https://skillseekersweb.com/docs/cli/pdf",
+    "https://skillseekersweb.com/docs/cli/unified",
+    "https://skillseekersweb.com/docs/cli/package",
+    "https://skillseekersweb.com/docs/cli/upload",
+    "https://skillseekersweb.com/docs/cli/enhance",
+    "https://skillseekersweb.com/docs/cli/config",
+    "https://skillseekersweb.com/docs/cli/resume",
+    "https://skillseekersweb.com/docs/reference/ai-skill-standards",
+    "https://skillseekersweb.com/docs/reference/config-schema",
+    "https://skillseekersweb.com/docs/reference/c3x-router-architecture",
+    "https://skillseekersweb.com/docs/reference/claude-integration",
+    "https://skillseekersweb.com/docs/reference/feature-matrix",
+    "https://skillseekersweb.com/docs/reference/git-config-sources",
+    "https://skillseekersweb.com/docs/reference/large-documentation",
+    "https://skillseekersweb.com/docs/reference/llms-txt-support",
+    "https://skillseekersweb.com/docs/reference/skill-architecture",
+    "https://skillseekersweb.com/docs/community/contributing",
+    "https://skillseekersweb.com/docs/community/roadmap",
+    "https://skillseekersweb.com/docs/community/changelog",
+    "https://skillseekersweb.com/docs/community/future-releases"
+  ]
+}
