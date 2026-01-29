@@ -1,0 +1,80 @@
+{
+  "url": "https://tastyworks-api.readthedocs.io/en/latest/installation.html",
+  "title": "Installation - tastytrade 11.1.0 documentation",
+  "content": "The easiest way to install the SDK is using pip:\n\nYou can also install from source. Make sure you have uv installed beforehand.\n\nIf you’re contributing, you’ll want to run tests on your changes locally:\n\nIf you want to build the documentation (usually not necessary):\n\nIf you want to install from source on Windows, you can’t use the Makefile, so just run the commands individually. For example:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Installation¶",
+      "id": "installation"
+    },
+    {
+      "level": "h2",
+      "text": "Via pypi¶",
+      "id": "via-pypi"
+    },
+    {
+      "level": "h2",
+      "text": "From source¶",
+      "id": "from-source"
+    },
+    {
+      "level": "h2",
+      "text": "Windows¶",
+      "id": "windows"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "$ pip install tastytrade",
+      "language": "unknown"
+    },
+    {
+      "code": "$ git clone https://github.com/tastyware/tastytrade.git\n$ cd tastytrade\n$ make install",
+      "language": "unknown"
+    },
+    {
+      "code": "$ make lint\n$ make test",
+      "language": "unknown"
+    },
+    {
+      "code": "$ make docs",
+      "language": "unknown"
+    },
+    {
+      "code": "$ git clone https://github.com/tastyware/tastytrade.git\n$ cd tastytrade\n$ uv sync\n$ uv pip install -e .",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "If you want to install from source on Windows, you can’t use the Makefile, so just run the commands individually. For example:",
+      "code": "$ git clone https://github.com/tastyware/tastytrade.git\n$ cd tastytrade\n$ uv sync\n$ uv pip install -e ."
+    }
+  ],
+  "links": [
+    "https://tastyworks-api.readthedocs.io/en/latest/installation.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/index.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sync-async.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/accounts.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/orders.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/account-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/data-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/watchlists.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/account.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/dxfeed.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/metrics.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/order.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/session.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/utils.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/watchlists.html"
+  ]
+}

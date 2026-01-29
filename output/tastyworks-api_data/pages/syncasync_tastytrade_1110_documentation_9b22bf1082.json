@@ -1,0 +1,48 @@
+{
+  "url": "https://tastyworks-api.readthedocs.io/en/latest/sync-async.html",
+  "title": "sync/async - tastytrade 11.1.0 documentation",
+  "content": "After creating a session (which is always initialized synchronously), the rest of the API endpoints implemented in the SDK have both sync and async implementations as of version 9.0.\n\nLet’s see how this looks:\n\nThe async implementation is similar:\n\nThat’s it! All sync methods have a parallel async method that starts with a_.\n\nPlease note that two modules, tastytrade.backtest and tastytrade.streamer, only have async implementations. But for everything else, you can use what you’d like!",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "sync/async¶",
+      "id": "sync-async"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "from tastytrade Account, Session\nsession = Session(username, password)\n# using sync implementation\naccounts = Account.get(session)",
+      "language": "julia"
+    },
+    {
+      "code": "from tastytrade Account, Session\nsession = Session(username, password)\n# using async implementation\naccounts = await Account.a_get(session)",
+      "language": "julia"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tastyworks-api.readthedocs.io/en/latest/index.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/installation.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sync-async.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/accounts.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/orders.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/account-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/data-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/watchlists.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/account.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/dxfeed.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/metrics.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/order.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/session.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/utils.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/watchlists.html"
+  ]
+}

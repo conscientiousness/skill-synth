@@ -1,0 +1,79 @@
+{
+  "url": "https://tastyworks-api.readthedocs.io/en/latest/account-streamer.html",
+  "title": "Account Streamer - tastytrade 11.1.0 documentation",
+  "content": "The account streamer is used to track account-level updates, such as order fills, watchlist updates and quote alerts. Typically, you’ll want a separate task running for the account streamer, which can then notify your application about important events.\n\nHere’s an example of setting up an account streamer to continuously wait for events and print them:\n\nProbably the most important information the account streamer handles is order fills. We can listen just for orders like so:\n\nThe disconnect callback can be used to run arbitrary code when the websocket connection has been disconnected. This is useful for notification purposes in your application when you need high availability. The callback function should look something like this:\n\nThe requirements are that the first parameter be the AlertStreamer instance, and the function should be asynchronous. This callback can then be used when creating the streamer:\n\nThe account streamer has a special “callback” function which can be used to execute arbitrary code whenever the websocket reconnects. This is useful for re-subscribing to whatever alerts you wanted to subscribe to initially (in fact, you can probably use the same function/code you use when initializing the connection). The callback function should look something like this:\n\nThe requirements are that the first parameter be the AlertStreamer instance, and the function should be asynchronous. Other than that, you have the flexibility to decide what arguments you want to use. This callback can then be used when creating the streamer:\n\nThe reconnection uses websockets’ exponential backoff algorithm, which can be configured through environment variables here. The difference between the disconnect and reconnect callbacks is that the disconnect will be called immediately when the connection is broken, whereas the reconnect callback will only be called once the connection is re-established.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Account Streamer¶",
+      "id": "account-streamer"
+    },
+    {
+      "level": "h2",
+      "text": "Basic usage¶",
+      "id": "basic-usage"
+    },
+    {
+      "level": "h2",
+      "text": "Disconnect callback¶",
+      "id": "disconnect-callback"
+    },
+    {
+      "level": "h2",
+      "text": "Retry callback¶",
+      "id": "retry-callback"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "from tastytrade import Account, AlertStreamer, Watchlist\n\nasync with AlertStreamer(session) as streamer:\n    accounts = Account.get(session)\n\n    # updates to balances, orders, and positions\n    await streamer.subscribe_accounts(accounts)\n    # changes in public watchlists\n    await streamer.subscribe_public_watchlists()\n    # quote alerts configured by the user\n    await streamer.subscribe_quote_alerts()\n\n    async for wl in streamer.listen(Watchlist):\n        print(wl)",
+      "language": "python"
+    },
+    {
+      "code": "from tastytrade.order import PlacedOrder\n\nasync with AlertStreamer(session) as streamer:\n    accounts = Account.get(session)\n    await streamer.subscribe_accounts(accounts)\n\n    async for order in streamer.listen(PlacedOrder):\n        print(order)",
+      "language": "swift"
+    },
+    {
+      "code": "async def disconnect_callback(streamer: AlertStreamer):\n    print(\"Disconnected!\")",
+      "language": "python"
+    },
+    {
+      "code": "async with AlertStreamer(session, disconnect_fn=disconnect_callback) as streamer:\n    # ...",
+      "language": "typescript"
+    },
+    {
+      "code": "async def reconnect_callback(streamer: AlertStreamer, arg1, arg2):\n    await streamer.subscribe_quote_alerts()",
+      "language": "python"
+    },
+    {
+      "code": "async with AlertStreamer(session, reconnect_fn=reconnect_callback, reconnect_args=(arg1, arg2)) as streamer:\n    # ...",
+      "language": "typescript"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tastyworks-api.readthedocs.io/en/latest/account-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/index.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/installation.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sync-async.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/accounts.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/orders.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/data-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/watchlists.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/account.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/dxfeed.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/metrics.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/order.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/session.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/utils.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/watchlists.html"
+  ]
+}

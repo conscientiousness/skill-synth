@@ -1,0 +1,44 @@
+{
+  "url": "https://tastyworks-api.readthedocs.io/en/latest/index.html",
+  "title": "tastytrade 11.1.0 documentation",
+  "content": "A simple, reverse-engineered, sync/async SDK for Tastytrade built on their (now mostly public) API. This will allow you to create trading algorithms for whatever strategies you may have quickly and painlessly in Python.\n\nWant to see the SDK in action? Check out tastytrade-cli, a CLI for Tastytrade that showcases many of the SDK’s features.\n\nWant to build an advanced trading system? Check out streaQ, an async job queuing library for Python that’s perfect for complex applications!",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Tastytrade Python SDK¶",
+      "id": "tastytrade-python-sdk"
+    },
+    {
+      "level": "h1",
+      "text": "Indices and tables¶",
+      "id": "indices-and-tables"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tastyworks-api.readthedocs.io/en/latest/index.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/installation.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sync-async.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/accounts.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/orders.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/account-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/data-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/watchlists.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/account.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/dxfeed.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/metrics.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/order.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/session.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/utils.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/watchlists.html"
+  ]
+}

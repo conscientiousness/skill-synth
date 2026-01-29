@@ -1,0 +1,101 @@
+{
+  "name": "tastyworks-api",
+  "total_pages": 23,
+  "base_url": "https://tastyworks-api.readthedocs.io/en/latest/",
+  "llms_txt_detected": false,
+  "llms_txt_variant": null,
+  "pages": [
+    {
+      "title": "tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/index.html"
+    },
+    {
+      "title": "Installation - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/installation.html"
+    },
+    {
+      "title": "Sessions - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/sessions.html"
+    },
+    {
+      "title": "sync/async - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/sync-async.html"
+    },
+    {
+      "title": "Accounts - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/accounts.html"
+    },
+    {
+      "title": "Orders - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/orders.html"
+    },
+    {
+      "title": "Instruments - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/instruments.html"
+    },
+    {
+      "title": "Account Streamer - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/account-streamer.html"
+    },
+    {
+      "title": "Data Streamer - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/data-streamer.html"
+    },
+    {
+      "title": "Market Data - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/market-data.html"
+    },
+    {
+      "title": "Watchlists - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/watchlists.html"
+    },
+    {
+      "title": "Market Sessions - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/market-sessions.html"
+    },
+    {
+      "title": "tastytrade.account - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/account.html"
+    },
+    {
+      "title": "tastytrade.metrics - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/metrics.html"
+    },
+    {
+      "title": "tastytrade.market_data - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/market-data.html"
+    },
+    {
+      "title": "tastytrade.market_sessions - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/market-sessions.html"
+    },
+    {
+      "title": "tastytrade.dxfeed - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/dxfeed.html"
+    },
+    {
+      "title": "tastytrade.order - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/order.html"
+    },
+    {
+      "title": "tastytrade.instruments - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/instruments.html"
+    },
+    {
+      "title": "tastytrade.utils - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/utils.html"
+    },
+    {
+      "title": "tastytrade.streamer - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/streamer.html"
+    },
+    {
+      "title": "tastytrade.session - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/session.html"
+    },
+    {
+      "title": "tastytrade.watchlists - tastytrade 11.1.0 documentation",
+      "url": "https://tastyworks-api.readthedocs.io/en/latest/api/watchlists.html"
+    }
+  ]
+}

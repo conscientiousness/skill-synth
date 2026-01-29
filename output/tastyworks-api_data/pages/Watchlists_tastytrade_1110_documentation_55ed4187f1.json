@@ -1,0 +1,68 @@
+{
+  "url": "https://tastyworks-api.readthedocs.io/en/latest/watchlists.html",
+  "title": "Watchlists - tastytrade 11.1.0 documentation",
+  "content": "To use watchlists you’ll need a production session:\n\nLet’s fetch an existing watchlist:\n\nTo add a symbol to the watchlist:\n\nIn this case, the symbol is present locally, but not remotely, so we need to update the remote list:\n\nWe can also create a new watchlist from scratch, then publish it to the Tastytrade server:\n\nYou can also fetch public watchlists:",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Watchlists¶",
+      "id": "watchlists"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "from tastytrade import Session\nsession = Session(user, password)",
+      "language": "python"
+    },
+    {
+      "code": "from tastytrade import PrivateWatchlist\nwatchlist = PrivateWatchlist.get(session, 'MyWatchlist')\nprint(watchlist.watchlist_entries)",
+      "language": "python"
+    },
+    {
+      "code": ">>> [{'symbol': 'AAPL', 'instrument-type': 'Equity'}, {'symbol': 'MSFT', 'instrument-type': 'Equity'}]",
+      "language": "unknown"
+    },
+    {
+      "code": "from tastytrade.instruments import InstrumentType\nwatchlist.add_symbol('SPY', InstrumentType.EQUITY)",
+      "language": "sql"
+    },
+    {
+      "code": "watchlist.update(session)",
+      "language": "unknown"
+    },
+    {
+      "code": "new_watchlist = PrivateWatchlist(name='NewWatchlist')\nnew_watchlist.add_symbol('USO', InstrumentType.EQUITY)\nnew_watchlist.upload(session)",
+      "language": "unknown"
+    },
+    {
+      "code": "from tastytrade import PublicWatchlist\npublic_watchlist = PublicWatchlist.get(session, \"Tom's Watchlist\")\nprint(public_watchlist.watchlist_entries)",
+      "language": "python"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tastyworks-api.readthedocs.io/en/latest/index.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/installation.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sync-async.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/accounts.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/orders.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/account-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/data-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/watchlists.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/account.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/dxfeed.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/metrics.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/order.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/session.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/utils.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/watchlists.html"
+  ]
+}

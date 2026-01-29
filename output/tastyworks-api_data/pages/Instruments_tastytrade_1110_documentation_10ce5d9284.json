@@ -1,0 +1,87 @@
+{
+  "url": "https://tastyworks-api.readthedocs.io/en/latest/instruments.html",
+  "title": "Instruments - tastytrade 11.1.0 documentation",
+  "content": "In the Tastytrade API, an instrument is a tradeable object, such as a cryptocurrency, an option, an equity/ETF, futures, futures options, and warrants. The SDK makes it easy to fetch, trade, and perform various other operations for these instruments.\n\nInstruments follow a basic schema for initialization. To create an instrument(s), use the classmethods for the desired type of instrument:\n\nThese functions take the session object as the first parameter, and the symbol (or list of symbols) as the second. Note that ETFs and indices are treated as equities for the purposes of the API.\n\nThe different instruments have a host of properties that will be automatically populated with their associated values upon initialization. You can explore these properties in depth in the “SDK Reference” section.\n\nThe symbol structure for options and futures options is somewhat complex, so you can use get_option_chain() and get_future_option_chain() to get the instruments for a specific underlying as explained below.\n\nAlternatively, NestedOptionChain and NestedFutureOptionChain provide a structured way to fetch chain expirations and available strikes.\n\nEach expiration contains a list of these strikes, which have the associated put and call symbols that can then be used to fetch option objects via Option.get_options() or converted to dxfeed symbols for use with the streamer via Option.occ_to_streamer_symbol().\n\nProbably the most powerful tool available for instruments is the build_leg() function. This allows an instrument to be quickly converted into a tradeable ‘leg’, which by itself or together with other legs forms the basis for a trade. This makes placing new trades across a wide variety of instruments surprisingly simple:\n\nThat’s it! We just sold a micro crude oil futures strangle in a few lines of code. Note that price is per quantity, not the price for the entire order! So if the legs looked like this:\n\nthe price would still be Decimal('1.25'), and the total credit collected would be $2.50. This holds true for ratio spreads, so a 4:2 ratio spread should be priced as a 2:1 ratio spread.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Instruments¶",
+      "id": "instruments"
+    },
+    {
+      "level": "h2",
+      "text": "Initialization¶",
+      "id": "initialization"
+    },
+    {
+      "level": "h2",
+      "text": "Options chains¶",
+      "id": "options-chains"
+    },
+    {
+      "level": "h2",
+      "text": "Placing trades¶",
+      "id": "placing-trades"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "from tastytrade.instruments import Equity, FutureOption\n\nequities = Equity.get(session, ['SPY', 'AAPL'])\nprint(equities[0].is_etf, equities[0].description)\nfuture_option = FutureOption.get(session, './GCJ4 OG4G4 240223P1915')\nprint(future_option.exchange)",
+      "language": "swift"
+    },
+    {
+      "code": ">>> (False, 'APPLE INC')\n>>> 'CME'",
+      "language": "unknown"
+    },
+    {
+      "code": "from tastytrade.instruments import get_option_chain, get_future_option_chain\nfrom tastytrade.utils import get_tasty_monthly\n\nchain = get_option_chain(session, 'SPLG')\nexp = get_tasty_monthly()  # 45 DTE expiration!\nprint(chain[exp][0])\nfuture_chain = get_future_option_chain(session, '/MCL')\nprint(future_chain.keys())  # print all expirations",
+      "language": "swift"
+    },
+    {
+      "code": ">>> instrument_type=<InstrumentType.EQUITY_OPTION: 'Equity Option'> symbol='SPLG  240315C00024000' active=True strike_price=Decimal('24.0') root_symbol='SPLG' underlying_symbol='SPLG' expiration_date=datetime.date(2024, 3, 15) exercise_style='American' shares_per_contract=100 option_type=<OptionType.CALL: 'C'> option_chain_type='Standard' expiration_type='Regular' settlement_type='PM' stops_trading_at=datetime.datetime(2024, 3, 15, 20, 0, tzinfo=datetime.timezone.utc) market_time_instrument_collection='Equity Option' days_to_expiration=38 expires_at=datetime.datetime(2024, 3, 15, 20, 0, tzinfo=datetime.timezone.utc) is_closing_only=False listed_market=None halted_at=None old_security_number=None streamer_symbol='.SPLG240315C24'\n>>> dict_keys([datetime.date(2024, 7, 17), datetime.date(2024, 6, 14), datetime.date(2024, 9, 17), datetime.date(2024, 11, 15), datetime.date(2024, 12, 16), datetime.date(2024, 2, 9), datetime.date(2024, 5, 16), datetime.date(2025, 1, 15), datetime.date(2024, 8, 15), datetime.date(2024, 2, 16), datetime.date(2024, 2, 14), datetime.date(2024, 10, 17), datetime.date(2024, 4, 17), datetime.date(2024, 3, 15)])",
+      "language": "rust"
+    },
+    {
+      "code": "from tastytrade.instruments import NestedOptionChain\n\nchain = NestedOptionChain.get(session, 'SPY')\nprint(chain.expirations[0].strikes[0])",
+      "language": "swift"
+    },
+    {
+      "code": ">>> Strike(strike_price=Decimal('437.0'), call='SPY   240417C00437000', put='SPY   240417P00437000', call_streamer_symbol='.SPY240417C437', put_streamer_symbol='.SPY240417P437')",
+      "language": "unknown"
+    },
+    {
+      "code": "from tastytrade.instruments import get_future_option_chain\nfrom tastytrade.order import *\nfrom datetime import date\n\nchain = get_future_option_chain(session, '/MCL')\nput = chain[date(2024, 3, 15)][286]\ncall = chain[date(2024, 3, 15)][187]\n\norder = NewOrder(\n    time_in_force=OrderTimeInForce.DAY,\n    order_type=OrderType.LIMIT,\n    legs=[\n        # two parameters: quantity and order action\n        put.build_leg(Decimal(1), OrderAction.SELL_TO_OPEN),\n        call.build_leg(Decimal(1), OrderAction.SELL_TO_OPEN)\n    ],\n    price=Decimal('1.25')  # price is always per quantity, not total\n)\n# assuming an initialized account\naccount.place_order(session, order, dry_run=False)",
+      "language": "python"
+    },
+    {
+      "code": "legs=[\n    put.build_leg(Decimal(2), OrderAction.SELL_TO_OPEN),\n    call.build_leg(Decimal(2), OrderAction.SELL_TO_OPEN)\n]",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tastyworks-api.readthedocs.io/en/latest/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/index.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/installation.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/sync-async.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/accounts.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/orders.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/account-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/data-streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/watchlists.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/account.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/dxfeed.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/instruments.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-data.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/market-sessions.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/metrics.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/order.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/session.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/streamer.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/utils.html",
+    "https://tastyworks-api.readthedocs.io/en/latest/api/watchlists.html"
+  ]
+}
