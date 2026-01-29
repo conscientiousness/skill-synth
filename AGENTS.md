@@ -7,6 +7,21 @@
 - Prefer instructions over scripts; use `scripts/` only when you need determinism or external calls, and document exact commands.
 - Write step-by-step, imperative instructions with required inputs, permissions, and expected outputs/paths.
 
+## Skill Seekers Best Practices (Docs Standard)
+- Naming: use kebab-case gerund (verb + "ing") to describe the capability (e.g., `building-react-applications`).
+- Description: third-person, actionable, and includes both "what" and "when" (discovery depends on this).
+- Token budget: use progressive disclosure (Quick Reference first, deeper details later, then point to `references/`).
+- Structure: YAML frontmatter required; organize references by category instead of one giant file.
+- Quality: avoid verbose history, ensure examples run, and update regularly to prevent deprecated guidance.
+- Scraping configs: start with `rate_limit: 0.5`, use `max_pages` only for testing, and tune `url_patterns.exclude` to avoid 404 noise.
+
+## Claude Skills Best Practices (Condensed)
+- `SKILL.md` is required with YAML frontmatter; `name` becomes the `/slash-command` and must be lowercase letters, digits, or hyphens (max 64 chars).
+- `description` drives auto-invocation; write “what + when” clearly to avoid under/over-triggering.
+- Keep `SKILL.md` concise (<500 lines) and move deep detail into `references/` or `examples/`.
+- Use `disable-model-invocation: true` for side-effecting tasks; use `user-invocable: false` for background knowledge skills.
+- Restrict tool access with `allowed-tools` when a skill should not use broad permissions.
+
 ## Project Structure & Module Organization
 - `main.py` is a minimal entrypoint; `pyproject.toml` pins Python 3.14+ and `skill-seekers`.
 - `configs/` holds Skill Seekers configs by source (`docs/`, `github/`, `pdf/`, `unified/`).
