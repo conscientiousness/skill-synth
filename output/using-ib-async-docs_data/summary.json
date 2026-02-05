@@ -14,14 +14,6 @@
       "url": "https://ib-api-reloaded.github.io/ib_async/readme.html"
     },
     {
-      "title": "Code recipes — ib_async 2.1.0 documentation",
-      "url": "https://ib-api-reloaded.github.io/ib_async/recipes.html"
-    },
-    {
-      "title": "ib_async Changelog — ib_async 2.1.0 documentation",
-      "url": "https://ib-api-reloaded.github.io/ib_async/changelog.html"
-    },
-    {
       "title": "Source code — ib_async 2.1.0 documentation",
       "url": "https://ib-api-reloaded.github.io/ib_async/code.html"
     },
@@ -30,52 +22,60 @@
       "url": "https://ib-api-reloaded.github.io/ib_async/notebooks.html"
     },
     {
-      "title": "API docs — ib_async 2.1.0 documentation",
-      "url": "https://ib-api-reloaded.github.io/ib_async/api.html"
+      "title": "Code recipes — ib_async 2.1.0 documentation",
+      "url": "https://ib-api-reloaded.github.io/ib_async/recipes.html"
     },
     {
-      "title": "Contents — ib_async 2.1.0 documentation",
-      "url": "https://ib-api-reloaded.github.io/ib_async/"
+      "title": "ib_async Changelog — ib_async 2.1.0 documentation",
+      "url": "https://ib-api-reloaded.github.io/ib_async/changelog.html"
+    },
+    {
+      "title": "API docs — ib_async 2.1.0 documentation",
+      "url": "https://ib-api-reloaded.github.io/ib_async/api.html"
     },
     {
       "title": "Links — ib_async 2.1.0 documentation",
       "url": "https://ib-api-reloaded.github.io/ib_async/links.html"
     },
     {
-      "title": "ib_async.contract — ib_async 2.1.0 documentation",
-      "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/contract.html"
+      "title": "Contents — ib_async 2.1.0 documentation",
+      "url": "https://ib-api-reloaded.github.io/ib_async/"
     },
     {
       "title": "ib_async.client — ib_async 2.1.0 documentation",
       "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/client.html"
     },
     {
-      "title": "ib_async.objects — ib_async 2.1.0 documentation",
-      "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/objects.html"
-    },
-    {
       "title": "ib_async.ib — ib_async 2.1.0 documentation",
       "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/ib.html"
-    },
-    {
-      "title": "ib_async.ticker — ib_async 2.1.0 documentation",
-      "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/ticker.html"
     },
     {
       "title": "ib_async.order — ib_async 2.1.0 documentation",
       "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/order.html"
     },
     {
+      "title": "ib_async.objects — ib_async 2.1.0 documentation",
+      "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/objects.html"
+    },
+    {
+      "title": "ib_async.ticker — ib_async 2.1.0 documentation",
+      "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/ticker.html"
+    },
+    {
+      "title": "ib_async.contract — ib_async 2.1.0 documentation",
+      "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/contract.html"
+    },
+    {
       "title": "ib_async.wrapper — ib_async 2.1.0 documentation",
       "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/wrapper.html"
     },
     {
-      "title": "ib_async.util — ib_async 2.1.0 documentation",
-      "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/util.html"
-    },
-    {
       "title": "ib_async.flexreport — ib_async 2.1.0 documentation",
       "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/flexreport.html"
+    },
+    {
+      "title": "ib_async.util — ib_async 2.1.0 documentation",
+      "url": "https://ib-api-reloaded.github.io/ib_async/_modules/ib_async/util.html"
     },
     {
       "title": "ib_async.ibcontroller — ib_async 2.1.0 documentation",
